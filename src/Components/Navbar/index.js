@@ -17,7 +17,7 @@ export default function Index(props) {
 
     return (
         <>
-            <div className="w-full">
+            <div className="w-full px-4">
                 <div className="container mx-auto my-5">
                     <div className="flex items-center justify-between">
                         <div className="logo mr-5">

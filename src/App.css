@@ -2,6 +2,53 @@
 .text-dark-blue {
   color: #003C5A;
 }
+.text-blue {
+  color: #006191;
+}
+
+.bg-blue-light {
+  background-color: #E5EFF4;
+}
+
+
+.bg-dark-blue-grad {
+  background: linear-gradient(0deg, #013651 0%, #014F77 100%);
+}
+
+.border-blue {
+  border: 2px solid #006191;
+}
+
+.hero-wrapper {
+  background-image: url('./Assets/img/bg_abstract_1.png');
+  background-repeat: no-repeat;
+  
+}
+
+.hero-wrapper-2 {
+  background: url('./Assets/img/bg_abstract_2.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
+  background-repeat: no-repeat;
+  
+}
+.hero-wrapper-3 {
+  background-image: url('./Assets/img/bg_abstract_3.png');
+  background-repeat: no-repeat;
+  
+}
+
+.hero-wrapper-5 {
+  background: url('./Assets/img/bg_abstract_5.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
+  background-repeat: no-repeat;
+  background-position: right;
+  
+}
+
+.hero-wrapper-6 {
+  background-image: url('./Assets/img/bg_abstract_6.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  
+}
 
 .hero-img-overlay{
   background: radial-gradient(527.72% 147.43% at 14.08% -13.43%, rgba(0, 97, 145, 0.5) 34.9%, rgba(0, 97, 146, 0) 98.96%);
