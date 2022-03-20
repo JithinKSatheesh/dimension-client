@@ -16,7 +16,7 @@ export default function Service(props) {
                 <div className="pb-24 text-3xl text-dark-blue font-semibold ">
                 Our services
                 </div>
-                <div class="grid grid-cols-1 xl:grid-cols-3 xl:grid-flow-col gap-24">
+                <div className="grid grid-cols-1 xl:grid-cols-3 xl:grid-flow-col gap-24">
                     <div className='bg-blue-light rounded-xl p-7'>
                         <IconHome />
                         <div className="py-7 font-semibold text-2xl text-dark-blue">

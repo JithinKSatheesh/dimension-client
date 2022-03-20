@@ -5,6 +5,8 @@ import Mission from './Mission'
 import Service from './Service'
 import Protfolio from './Protfolio'
 import Research from './Research'
+import News from './News'
+import Footer from 'Components/Footer'
 
 export default function Home(props) {
     
@@ -17,6 +19,9 @@ export default function Home(props) {
            <Service />
            <Protfolio />
            <Research />
+           <News />
+           <Footer />
+
         </div>
     )
 }

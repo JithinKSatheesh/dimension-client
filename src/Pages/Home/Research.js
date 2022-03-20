@@ -67,14 +67,14 @@ export default function Research(props) {
                             Market researches
                         </div>
                         <div className="text-base text-dark-blue flex items-center cursor-pointer">
-                            <div className="mr-3">All&nbsp;projects</div>
+                            <div className="mr-3 font-bold">All&nbsp;researches</div>
                             <IconRightArrow  />
                         </div>
                     </div>
                     {/* --------------------------- */}
-                    <div class="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
-                        {_data.map(item =>
-                            <ProtfolioCard item={item} />)
+                    <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
+                        {_data.map((item, index) =>
+                            <ProtfolioCard key={index} item={item} />)
                         }
                     </div>
                 </div>
