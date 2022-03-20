@@ -17,6 +17,7 @@ import Brand_1 from 'Assets/brands/abcfin.png'
 import Brand_2 from 'Assets/brands/brand2.png'
 import Brand_3 from 'Assets/brands/fininfo.png'
 import Brand_4 from 'Assets/brands/brand3.png'
+import Brand_5 from 'Assets/brands/exit.png'
 
 
 
@@ -34,13 +35,12 @@ export default function Index(props) {
                         <input style={{width : '335px'}} type="text" name="" id="" className=' h-14 pl-10 rounded-xl' />
                     </div>
                 </div>
-                <div className="my-28">
+                <div className="mt-28 mb-32">
                     <div className="grid grid-cols-1 xl:grid-cols-4 gap-16 ">
                         <div className=' text-dark-blue'>
                             <div className="font-semibold mb-4"> About us </div>
                             <div className='mb-4'><Link to="/" > About Dimension </Link></div>
                             <div className='mb-4'><Link to="/" > Corporate structure </Link></div>
-                            <div className='mb-4'><Link to="/" > Significant Shareholders </Link></div>
                             <div className='mb-4'><Link to="/" > Significant Shareholders </Link></div>
                             <div className='mb-4'><Link to="/" > Teammates </Link></div>
                             <div className='mb-4'><Link to="/" > Mission and vision </Link></div>
@@ -69,9 +69,9 @@ export default function Index(props) {
                             <div className='mb-5 flex'><div className="mr-3"> <MailIcon /> </div> info@dimension.am </div>
                             <div className='mb-5 flex'><div className="mr-3"> <LocationIcon /> </div> Baghramyan Street 2, 6th floor, 27/1 </div>
                             <div className="mt-16 flex">
-                                <a href="" className='mr-4'> <FacebookIcon /> </a>
-                                <a href="" className='mr-4'> <TwitterIcon /> </a>
-                                <a href="" className='mr-4'> <LinkedinIcon /> </a>
+                                <a href="/" className='mr-4'> <FacebookIcon /> </a>
+                                <a href="/" className='mr-4'> <TwitterIcon /> </a>
+                                <a href="/" className='mr-4'> <LinkedinIcon /> </a>
                             </div>
                         </div>
                     </div>
@@ -83,14 +83,18 @@ export default function Index(props) {
                         <div className='grow mr-11'><img src={Brand_3} alt="" className=' w-full' /></div>
                         <div className='grow '><img src={Brand_4} alt="" className=' w-full' /></div>
                     </div>
-                    <div style={{width : '600px'}} className="text-sm text-dark-blue text-center xl:text-right mb-10  order-1  xl:order-2">
+                    <div style={{width : '600px'}} className="text-xs text-dark-blue text-center xl:text-right mb-10  order-1  xl:order-2">
                         Dimension is not responsible for the accuracy and reliability of the information and/or advertisements presented on the third party websites linked from this website and assumes no responsibility for the consequences arising from the use of the said 
                     </div>
                 </div>
                 <div className="pt-24">
-                    <div className="flex">
+                    <div className="flex justify-between items-center">
                         <div className="text-sm text-dark-blue">
                             &#169; 2022 All Rights Reserved.
+                        </div>
+                        <div className="text-sm text-dark-blue flex items-">
+                           <div className="mr-3">Powered by</div>  
+                           <img src={Brand_5} alt="" />
                         </div>
                     </div>
                 </div>

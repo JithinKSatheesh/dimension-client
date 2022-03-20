@@ -10,6 +10,10 @@
   background-color: #E5EFF4;
 }
 
+.bg-menu-blue-light:hover{
+  background-color: #e5eff42e;
+}
+
 
 .bg-dark-blue-grad {
   background: linear-gradient(0deg, #013651 0%, #014F77 100%);
@@ -54,6 +58,14 @@
   background-image: url('./Assets/img/bg_abstract_8.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
   background-repeat: no-repeat;
   
+}
+
+.mission-wrapper-1 {
+  background: url('./Assets/img/bg_abstract_10.png'), #E5EFF4;
+  background-repeat: no-repeat;
+  
+  background-position: center;
+
 }
 
 .hero-img-overlay{

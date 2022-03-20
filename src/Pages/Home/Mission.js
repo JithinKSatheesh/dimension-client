@@ -7,7 +7,7 @@ export default function Mission(props) {
         <>
         <div className=" bg-dark-blue-grad relative hero-wrapper-2">
             <div className="container py-32 mx-auto px-4 ">
-                <div className="px-14 pt-14 bg-blue-light rounded-xl">
+                <div className="px-14 pt-14 bg-blue-light rounded-xl mission-wrapper-1">
                     <div className="flex flex-wrap">
                         <div className="w-full xl:w-1/2 mb-14">
                             <div className="pb-7 text-3xl text-dark-blue font-semibold">

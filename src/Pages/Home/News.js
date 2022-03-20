@@ -74,7 +74,7 @@ export default function News(props) {
             <div className="container py-32 mx-auto px-4 ">
                 <div className="flex justify-between items-center pb-24 ">
                     <div className="text-3xl  font-semibold text-white">
-                        News
+                        Recent news
                     </div>
                     <div className="text-base text-white flex items-center cursor-pointer">
                         <div className="mr-3 font-bold">All&nbsp;news</div>

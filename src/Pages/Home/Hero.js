@@ -8,7 +8,7 @@ export default function Hero(props) {
         <>
             <div className="w-full px-4 py-12 xl:py-36 hero-wrapper">
                 <div className="container mx-auto">
-                    <div className="flex flex-wrap justify-between">
+                    <div className="flex flex-wrap items-center justify-between">
                         <div>
                             <div className="hero-h1 text-5xl text-dark-blue font-semibold">
                             Better way <br /> to invest
