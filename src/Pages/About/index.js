@@ -8,6 +8,7 @@ import Team from './Team'
 import Partners from './Partners'
 import Mission from './Mission'
 import Corporatestructure from './CorporateStructure'
+import Statuorydocuments from './StatuoryDocuments'
 
 import Footer from 'Components/Footer'
 
@@ -25,6 +26,7 @@ export default function About(props) {
                 <Partners />
                 <Mission />
                 <Corporatestructure />
+                <Statuorydocuments />
                 <Footer />
             </div>
         </>

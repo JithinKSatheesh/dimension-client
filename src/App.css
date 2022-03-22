@@ -153,6 +153,18 @@
   background-repeat: no-repeat;
 }
 
+.about-wrapper-7 {
+  background-image: url('./Assets/img/bg_abstract_left.png'),url('./Assets/img/bg_abstract_right.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);;
+  background-position: left -1800px, right -0px  ,center;
+  background-repeat: no-repeat;
+}
+
+.about-wrapper-8 {
+  background-image: url('./Assets/img/bg_abstract_right.png');
+  background-position: right 70%;
+  background-repeat: no-repeat;
+}
+
 @media only screen and (max-width: 1280px) {
   .hero-wrapper {
     background-image: url('./Assets/img/bg_abs/bg_abstract_mob_1.png');
