@@ -13,7 +13,7 @@ export default function Home(props) {
 
     return (
         <div >
-           <Navbar /> 
+           <Navbar  /> 
            <Hero />
            <Mission />
            <Service />
