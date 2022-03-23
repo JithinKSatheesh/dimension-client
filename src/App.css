@@ -39,6 +39,10 @@
   border: 2px solid #006191;
 }
 
+.border-blue-light {
+  border-color: #E5EFF4;;
+}
+
 .border-dark-blue {
   border-color:  #003C5A;
 }
@@ -154,7 +158,7 @@
 }
 
 .about-wrapper-7 {
-  background-image: url('./Assets/img/bg_abstract_left.png'),url('./Assets/img/bg_abstract_right.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);;
+  background-image: url('./Assets/img/bg_abstract_left.png'),url('./Assets/img/bg_abstract_right.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
   background-position: left -1800px, right -0px  ,center;
   background-repeat: no-repeat;
 }
@@ -163,6 +167,56 @@
   background-image: url('./Assets/img/bg_abstract_right.png');
   background-position: right 70%;
   background-repeat: no-repeat;
+}
+
+/* ----------------------------------------------- */
+/* Services */
+/* ----------------------------------------------- */
+
+.accrodion-wrapper-1 {
+  background: url('./Assets/icons/logo_2.svg'),linear-gradient(0deg, #013651 0%, #014F77 100%);;
+  background-repeat: no-repeat;
+  background-position: 80% 20px, center;
+  background-size: 100px, cover;
+}
+
+.accrodion-wrapper-2 {
+  background: url('./Assets/icons/logo_2.svg'),linear-gradient(0deg, #013651 0%, #014F77 100%);;
+  background-repeat: no-repeat;
+  background-position: 80% -110px, center;
+  background-size: 100px, cover;
+}
+
+.service-wrapper-2 {
+  background-image: url('./Assets/img/bg_abstract_left.png');
+  background-position: left 100%;
+    background-repeat: no-repeat;
+}
+
+.service-wrapper-3 {
+  background-image:  url('./Assets/img/bg_abstract_right.png');
+  background-position:  right 500px;
+  background-repeat: no-repeat;
+}
+
+.investor-relations-wrapper-1 {
+  background:  url('./Assets/img/bg_abstract_left.png'), url('./Assets/img/bg_abstract_right.png'), linear-gradient(180deg, rgba(1, 54, 81, 0.9) 0%, rgba(1, 79, 119, 0.9) 100%) , url('./Assets/img/relation_bg.png');
+  background-position: left -10% , right 140%, left, left ; 
+  background-repeat: no-repeat;
+  background-size: auto, auto, auto ,cover;
+}
+
+.investor-relations-wrapper-2 {
+  background:   url('./Assets/img/bg_abstract_left.png'), linear-gradient(180deg, #013651 0%, #014F77 100%) ;
+  background-position: left 50% ; 
+  background-repeat: no-repeat;
+  background-size: auto, auto, auto ,cover;
+}
+
+.misc-wrapper-2 {
+  background-image: url('./Assets/img/bg_abstract_left.png');
+  background-position: left -383px;
+    background-repeat: no-repeat;
 }
 
 @media only screen and (max-width: 1280px) {

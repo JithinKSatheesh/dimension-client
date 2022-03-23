@@ -56,7 +56,7 @@ export default function Index(props) {
                         </div>
                         <div className=' text-dark-blue'>
                             <div className="font-semibold mb-4"> Client rights </div>
-                            <div className='font-semibold mb-4'><Link to="/" > Investor relations </Link></div>
+                            <div className='font-semibold mb-4'><Link to="/investor-relation" > Investor relations </Link></div>
                             <div className='font-semibold mb-4'><Link to="/" > Regultions </Link></div>
                             <div className='font-semibold mb-4'><Link to="/" > Market research </Link></div>
                             <div className='font-semibold mb-4'><Link to="/" > News </Link></div>
