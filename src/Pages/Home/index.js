@@ -8,6 +8,7 @@ import Research from './Research'
 import News from './News'
 import Footer from 'Components/Footer'
 
+
 export default function Home(props) {
     
 

@@ -63,7 +63,7 @@ export default function Team(props) {
                             
                         </div>
                         <div className="mt-24">
-                            <div className="grid grid-cols-1 xl:grid-cols-4 gap-16">
+                            <div className="grid grid-cols-1 xl:grid-cols-4 gap-12">
                                 {_members.map(person => <TeamCard key={person.id} item={person} />)}
                             </div>
 

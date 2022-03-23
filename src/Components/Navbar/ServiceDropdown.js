@@ -70,22 +70,28 @@ export const ServiceDropdown = (props) => {
                     <div className="container px-4 mx-auto">
                         <div className="grid grid-cols-1 xl:grid-cols-3">
                             <div className="bg-menu-blue-light pt-7">
-                                <MenuContent
-                                    icon={<IconHome />}
-                                    title={<>Capital Markets <br /> Advisory</>}
-                                    desc="Capital Markets Advisory is a key business area of Dimension and an integral part of its ability to achieve the Mission and Vision of the company." />
+                                <Link to={'/services/capital-market'}>
+                                    <MenuContent
+                                        icon={<IconHome />}
+                                        title={<>Capital Markets <br /> Advisory</>}
+                                        desc="Capital Markets Advisory is a key business area of Dimension and an integral part of its ability to achieve the Mission and Vision of the company." />
+                                </Link>
                             </div>
                             <div className="bg-menu-blue-light pt-7">
+                            <Link to={'/services/investment-security'}>
                                 <MenuContent
                                     icon={<IconShield />}
                                     title="Investment Securities Services"
                                     desc="We have years of experience in executing large and complex corporate securities transactions in the Armenian capital market and beyond. By upholding our ." />
+                            </Link>
                             </div>
                             <div className="bg-menu-blue-light pt-7">
+                            <Link to={'/services/asset-management'}>
                                 <MenuContent
                                     icon={<IconManage />}
                                     title={<>Asset <br /> Management</>}
                                     desc="In the Armenian capital markets, Dimension is involved in managing its own investment portfolio of equity and debt instruments, as well as two open, non-public, leveraged fixed income funds." />
+                                    </Link>
                             </div>
 
 

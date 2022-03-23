@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ReactComponent as IconDownload } from 'Assets/icons/download_2.svg';
 
 
 export const DetailsButton = ({children, ...props}) => {
@@ -24,3 +25,19 @@ export const GetButton = ({children, ...props}) => {
     </Link>
     )
 }
+
+
+
+export const DownloadDocumentButton = (props) => {
+
+    return (
+        <div
+            onClick={props.onClick}
+            className={`max-w-lg rounded-xl bg-blue-light p-4 ${props.className}`}>
+            <div className='flex text-dark-blue cursor-pointer'>
+                <IconDownload className='mr-3' />
+                {props.children}
+            </div>
+        </div>
+    );
+};
