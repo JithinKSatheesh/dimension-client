@@ -26,7 +26,7 @@ export default function Hero(props) {
                                 
                             </div>
                             <div className="w-full h-full xl:w-1/2 mb-16 flex  justify-end">
-                                <DownloadDocumentButton className="w-fit px-14">
+                                <DownloadDocumentButton className="w-fit pl-5 pr-14">
                                     Regilation documents
                                 </DownloadDocumentButton>
                             </div>

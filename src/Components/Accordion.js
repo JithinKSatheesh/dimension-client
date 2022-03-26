@@ -15,7 +15,7 @@ export const Accordion = (props) => {
                 className={` ${className} p-8  rounded-xl text-white flex justify-between items-center cursor-pointer`}
                 onClick={() => setExpanded(isOpen ? false : id)}
             >
-                <div className="w-56 font-bold">
+                <div className=" font-bold">
                     {props?.title}
                 </div>
                 <IconDown className={`${isOpen && 'rotate-180'}`} />

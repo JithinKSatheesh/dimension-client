@@ -35,12 +35,17 @@
   background: linear-gradient(0deg, #013651 0%, #014F77 100%);
 }
 
+.bg-dark-blue-grad-hover:hover {
+  background: linear-gradient(0deg, #013651 0%, #014F77 100%);
+  color: white;
+}
+
 .border-blue {
   border: 2px solid #006191;
 }
 
 .border-blue-light {
-  border-color: #E5EFF4;;
+  border-color: #E5EFF4;
 }
 
 .border-dark-blue {
@@ -207,8 +212,8 @@
 }
 
 .investor-relations-wrapper-2 {
-  background:   url('./Assets/img/bg_abstract_left.png'), linear-gradient(180deg, #013651 0%, #014F77 100%) ;
-  background-position: left 50% ; 
+  background:   url('./Assets/img/bg_abstract_left.png'),url('./Assets/img/bg_abstract_right.png'),  linear-gradient(180deg, #013651 0%, #014F77 100%) ;
+  background-position: left 340% ,right -300% , center; 
   background-repeat: no-repeat;
   background-size: auto, auto, auto ,cover;
 }
@@ -218,6 +223,41 @@
   background-position: left -383px;
     background-repeat: no-repeat;
 }
+
+.client-rights-wrapper-2 {
+  background-image: url('./Assets/img/bg_abstract_left.png');
+  background-position: left -448px;
+    background-repeat: no-repeat;
+  
+}
+
+.faq-wrapper-2 {
+  background-image: url('./Assets/img/bg_abstract_left.png');
+  background-position: left -380px;
+  background-repeat: no-repeat;
+}
+
+.faq-wrapper-3 {
+  background-image: url('./Assets/img/bg_abstract_left.png'), linear-gradient(180deg, #013651 0%, #014F77 100%);
+  background-position: left -1100px, center;
+  background-repeat: no-repeat;
+}
+
+.news-wrapper-1 {
+  background-image: url('./Assets/img/bg_abstract_left.png');
+  background-position: left -0px;
+  background-repeat: no-repeat;
+}
+
+
+.popup-wrapper-1 {
+  background-image: url('./Assets/icons/logo_2.svg'), linear-gradient(180deg, #013651 0%, #014F77 100%);
+  background-repeat: no-repeat;
+  background-position: right, center;
+  background-size: contain, auto;
+}
+
+
 
 @media only screen and (max-width: 1280px) {
   .hero-wrapper {

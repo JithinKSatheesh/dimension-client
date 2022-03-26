@@ -36,28 +36,6 @@ export default function Research(props) {
     ]
 
 
-    const ProtfolioCard = (props) => {
-
-        return(
-            <div className="bg-blue-light rounded-xl p-7 ">
-                <div className="text-center py-20">
-                    <img src={BrandImg} alt="" className='mx-auto' />
-                </div>
-                <div className="py-5 text-center font-semibold text-xl text-dark-blue">
-                    {props?.item?.title}
-                </div>
-                <div className=" text-center text-sm text-dark-blue">
-                    {props?.item?.desc}
-                </div>
-                <div className="text-center pt-10">
-                    <GetButton to="/" className="px-16 py-2"> Get&nbsp;it </GetButton>
-                </div>
-            </div>
-        )
-
-    }
-    
-
     return (
         <>
             <div className=" hero-wrapper-6">
@@ -74,11 +52,36 @@ export default function Research(props) {
                     {/* --------------------------- */}
                     <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
                         {_data.map((item, index) =>
-                            <ProtfolioCard key={index} item={item} />)
+                            <ResearchCard to="/market-research" key={index} item={item} />)
                         }
                     </div>
                 </div>
             </div>
         </>
     )
+}
+
+
+export const ResearchCard = (props) => {
+
+    return(
+        <div className="bg-blue-light rounded-xl p-7 ">
+            <div className="text-center py-20">
+                <img src={BrandImg} alt="" className='mx-auto' />
+            </div>
+            <div className="py-5 text-center font-semibold text-xl text-dark-blue">
+                {props?.item?.title}
+            </div>
+            <div className=" text-center text-sm text-dark-blue">
+                {props?.item?.desc}
+            </div>
+            <div className="text-center pt-10">
+                <GetButton 
+                    to={props?.to}  
+                    onClick={props?.onClick}
+                    className="px-24 py-2 bg-dark-blue-grad-hover cursor-pointer"> Get&nbsp;it </GetButton>
+            </div>
+        </div>
+    )
+
 }

@@ -27,7 +27,7 @@ export default function Hero(props) {
                                 In international markets, Dimension offers private portfolio and wealth management solutions to institutional clients, high net worth individuals, and other investors based in Armenia and abroad.
                             </div>
                             <div className="w-full h-full xl:w-1/2 mb-16 flex  justify-end">
-                                <DownloadDocumentButton className="w-fit px-14">
+                                <DownloadDocumentButton className="w-fit pl-5 pr-14">
                                     Regilation documents
                                 </DownloadDocumentButton>
                             </div>

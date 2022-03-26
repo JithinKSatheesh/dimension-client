@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { motion } from "framer-motion";
 
 // ** assets
-import { Accordion } from './Accordion';
+import { Accordion } from 'Components/Accordion';
 import Otherservices from './OtherServices';
 
 export default function Contents(props) {

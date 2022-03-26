@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { ReactComponent as IconPdf } from 'Assets/icons/pdfIcon.svg'
-import { ReactComponent as Logo2 } from 'Assets/icons/logo_2.svg'
+import { UpdateStatus } from '../../Components/UpdateStatus'
+
 
 export default function Financialstatement(props) {
 
@@ -110,14 +111,7 @@ export default function Financialstatement(props) {
                         <ReportDownloadButton title="3 Quarter" />
                         <ReportDownloadButton title="4 Quarter" />
                     </TableRow>
-                    <div className="pt-32">
-                        <div className="flex justify-end items-center">
-                            <div className="text-sm text-white mr-4">
-                                updated: 15.02.2022
-                            </div>
-                            <Logo2 />
-                        </div>
-                    </div>
+                    <UpdateStatus className="pt-32 text-white"  type="dark" date="15.02.2022" />
 
                 </div>
             </div>
@@ -125,3 +119,4 @@ export default function Financialstatement(props) {
         </>
     )
 }
+

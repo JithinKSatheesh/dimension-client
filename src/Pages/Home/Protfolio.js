@@ -30,28 +30,6 @@ export default function Protfolio(props) {
         },
     ]
 
-
-    const ProtfolioCard = (props) => {
-
-        return(
-            <div className="bg-blue-light rounded-xl p-7 ">
-                <div className="w-36 h-36 bg-white mx-auto rounded-full"></div>
-                <div className="py-5 text-center font-semibold text-xl text-dark-blue">
-                    {props?.item?.title}
-                </div>
-                <div className="text-center text-blue">
-                    {props?.item?.type}
-                </div>
-                <div className="py-5 text-center text-sm text-dark-blue">
-                    {props?.item?.desc}
-                </div>
-                <div className="text-center pt-5">
-                    <DetailsButton to=""> Read&nbsp;more </DetailsButton>
-                </div>
-            </div>
-        )
-
-    }
     
 
     return (
@@ -77,4 +55,26 @@ export default function Protfolio(props) {
         </div>
         </>
     )
+}
+
+export const ProtfolioCard = (props) => {
+
+    return(
+        <div className="bg-blue-light rounded-xl p-7 ">
+            <div className="w-36 h-36 bg-white mx-auto rounded-full"></div>
+            <div className="py-5 text-center font-semibold text-xl text-dark-blue">
+                {props?.item?.title}
+            </div>
+            <div className="text-center text-blue">
+                {props?.item?.type}
+            </div>
+            <div className="py-5 text-center text-sm text-dark-blue">
+                {props?.item?.desc}
+            </div>
+            <div className="text-center pt-5">
+                <DetailsButton to=""> Read&nbsp;more </DetailsButton>
+            </div>
+        </div>
+    )
+
 }

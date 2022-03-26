@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { motion } from "framer-motion";
 
 // ** assets
-import { Accordion } from './Accordion';
+import { Accordion } from 'Components/Accordion';
 import Otherservices from './OtherServices';
 
 export default function Contents(props) {
@@ -67,7 +67,7 @@ export default function Contents(props) {
                                     <Accordion
                                         id={5} expanded={expanded} setExpanded={setExpanded}
                                         className="accrodion-wrapper-2"
-                                        title="Corporate Registry & Securities Custody"
+                                        title={<>Corporate Registry <br/> & Securities Custody</>}
                                     >
                                         Dimension is a licensed Account Operator of the Central Depository of Armenia. We employ a team of licensed, award-winning specialists who with the assistance of the in-house lawyers provide high quality depository services. Our positioning and expertise in the field puts us at the forefronts of the Armenian market, where we are proud to serve more than 100 corporate clients.
                                         <br /><br />
