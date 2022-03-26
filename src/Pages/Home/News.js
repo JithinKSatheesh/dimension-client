@@ -36,36 +36,6 @@ export default function News(props) {
             id : 4
         },
     ]
-
-    const NewsCard = (props) => {
-        return(<div className={`news-card  ${(props.index === 0 || props.index === 3 ) && 'col-span-1 xl:col-span-2'}`}>
-        <div 
-            style={{
-                backgroundImage : `url(${props?.item?.img ? props?.item?.img :  NewsPlaceholder})`,
-                backgroundSize : 'cover',
-            }} 
-            className="relative h-80 rounded-xl" >
-             <div className="absolute w-full h-full news-img-overlay ">
-                 <div className="flex h-full items-end">
-                     <div className='p-7 text-white'>
-                        <div className="text-sm py-2.5 font-bold">
-                            {props.item?.date}
-                        </div>
-                        <div className="text-2xl  font-bold ">
-                            {props.item?.title}
-                        </div>
-                        <div className="py-2 5 flex items-center font-bold">
-                            <Link to="/" > Read more </Link>
-                            <div className="ml-4">
-                                <IconRightArrow  />
-                            </div>
-                        </div>
-                     </div>
-                 </div>
-             </div>
-        </div>
-    </div>)
-    }
     
 
     return (
@@ -97,4 +67,35 @@ export default function News(props) {
         </div>    
         </>
     )
+}
+
+
+export const NewsCard = (props) => {
+    return(<div className={`news-card  ${(props.index === 0 || props.index === 3 ) && 'col-span-1 xl:col-span-2'}`}>
+    <div 
+        style={{
+            backgroundImage : `url(${props?.item?.img ? props?.item?.img :  NewsPlaceholder})`,
+            backgroundSize : 'cover',
+        }} 
+        className="relative h-80 rounded-xl" >
+         <div className="absolute w-full h-full news-img-overlay ">
+             <div className="flex h-full items-end">
+                 <div className='p-7 text-white'>
+                    <div className="text-sm py-2.5 font-bold">
+                        {props.item?.date}
+                    </div>
+                    <div className="text-2xl  font-bold ">
+                        {props.item?.title}
+                    </div>
+                    <div className="py-2 5 flex items-center font-bold">
+                        <Link to="/" > Read more </Link>
+                        <div className="ml-4">
+                            <IconRightArrow  />
+                        </div>
+                    </div>
+                 </div>
+             </div>
+         </div>
+    </div>
+</div>)
 }

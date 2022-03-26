@@ -26,12 +26,12 @@ export const NewsCard = (props) => {
                             {item?.date}
                         </div>
                         <div className="text-2xl xl:text-3xl pb-5 font-bold">
-                            {item?.date}
+                            {item?.title}
                         </div>
                         <p className='h-32 overflow-hidden  text-ellipsis'>
                             {item?.content}
                         </p>
-                        <div className="pt-7 text-left xl:text-right">
+                        <div className=" text-left xl:text-right">
                             <DetailsButton to={`/news/${item?.id}`}> Read more </DetailsButton>
                         </div>
                     </div>

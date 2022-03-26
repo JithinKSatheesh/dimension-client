@@ -251,9 +251,9 @@
 
 
 .popup-wrapper-1 {
-  background-image: url('./Assets/icons/logo_2.svg'), linear-gradient(180deg, #013651 0%, #014F77 100%);
+  background-image: url('./Assets/icons/logo_2.svg'), linear-gradient(0deg, #013651 0%, #014F77 100%);
   background-repeat: no-repeat;
-  background-position: right, center;
+  background-position: right 30px, left;
   background-size: contain, auto;
 }
 

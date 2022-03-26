@@ -55,7 +55,7 @@ export default function Content(props) {
                                 <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
                                     {_data.map((item, index) =>
                                         <ResearchCard 
-                                            onClick={() => setPopup(item.id)}
+                                            onClick={() => setPopup(true)}
                                             key={index} item={item} />)
                                     }
                                 </div>
@@ -65,19 +65,16 @@ export default function Content(props) {
                     </div>
                 </section>
             </div>
-            <PopUpcontainer heading="Send request" onClose={() => setPopup(false)} open={popup}  >
+            <PopUpcontainer heading="Research request" onClose={() => setPopup(false)} open={popup}  >
                 <div className="text-white w-96">
-                    <div className="py-3 font-xs"> First name </div>
+                    <div className="py-3 font-xs"> Full name </div>
                     <input className='w-full h-12 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
                     <div className="py-3 font-xs"> Email address </div>
                     <input className='w-full h-12 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
-                    <div className="py-3 font-xs"> Subject </div>
-                    <input className='w-full h-12 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
-                    <div className="py-3 font-xs"> What are you interested in? </div>
-                    <textarea className='w-full h-32 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
+                    
                     <div
                         onClick={() => {}}
-                        className="mx-auto xl:ml-auto xl:mr-0 mt-5 border border-blue-light rounded-xl py-2 px-5 cursor-pointer text-center  font-bold text-white">
+                        className="mx-auto xl:ml-auto xl:mr-0 mt-10 border border-blue-light rounded-xl py-2 px-5 cursor-pointer text-center  font-bold text-white">
                         Send request
                     </div>
                 </div>
