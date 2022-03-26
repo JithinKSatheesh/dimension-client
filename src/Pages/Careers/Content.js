@@ -7,14 +7,16 @@ export default function Content(props) {
     
     const [expanded, setExpanded] = useState(false)
 
-    const questions = [
+    const jobs = [
         {
             id :1,
+            position : 'Angular Developer',
             _q : 'Do you provide customer support?',
             _a : " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
         },
         {
             id :2,
+            position : 'Angular Developer',
             _q : 'Do you provide customer support?',
             _a : " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
         },
@@ -25,23 +27,29 @@ export default function Content(props) {
         },
         {
             id :4,
+            position : 'Angular Developer',
             _q : 'Do you provide customer support?',
             _a : " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
         },
         {
             id :5,
+            position : 'Angular Developer',
             _q : 'Do you provide customer support?',
             _a : " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
         },
         {
             id :6,
+            position : 'Angular Developer',
             _q : 'Do you provide customer support?',
             _a : " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
         },
 
     ]
 
-    const leftArray = questions.splice(0, Math.floor(questions.length / 2));
+    const leftArray = jobs.splice(0, Math.floor(jobs.length / 2));
+
+
+    const AccordionWrapper = ({item}) => {}
 
     return (
         <>
@@ -50,7 +58,7 @@ export default function Content(props) {
                     <div className="py-32">
                         <div className="flex justify-between items-center pb-16">
                             <div className="text-2xl xl:text-3xl font-bold flex items-center my-2 text-dark-blue">
-                            Careers
+                                Careers
                             </div>
 
                         </div>
@@ -59,12 +67,20 @@ export default function Content(props) {
                             {/* --------- Col left ---------- */}
                             <div>                            
                             {
-                                questions.map(item => 
+                                jobs.map(item => 
                                     <div className='pb-8'>
                                     <Accordion
                                         id={item?.id} expanded={expanded} setExpanded={setExpanded}
                                         className={`${ expanded === item?.id ? "bg-dark-blue-grad" : 'bg-blue-light text-dark-blue'}`}
-                                        title={item?._q}
+                                        headerElement={<>
+                                            <div className={`flex flex-wrapper ${expanded === item?.id ? 'text-white' : 'text-dark-blue'} `}>
+                                                <div className="w-full xl:w-1/2">
+                                                    <div className="text-xs"> Position </div>
+                                                    <div className="text- font-bold"> {item?.position} </div>
+                                                </div>
+                                                <div className="w-full xl:w-1/2"></div>
+                                            </div>
+                                        </>}
                                     >
                                         {item?._a}
                                     </Accordion>
@@ -82,7 +98,7 @@ export default function Content(props) {
                                     <Accordion
                                         id={item?.id} expanded={expanded} setExpanded={setExpanded}
                                         className={`${ expanded === item?.id ? "bg-dark-blue-grad" : 'bg-blue-light text-dark-blue'}`}
-                                        title={item?._q}
+                                        headingElement={<></>}
                                     >
                                         {item?._a}
                                     </Accordion>
