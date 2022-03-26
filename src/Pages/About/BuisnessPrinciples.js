@@ -13,7 +13,7 @@ export default function Buisnessprinciples(props) {
 
     return (
         <>
-            <div className=" about-wrapper-2">
+            <div id="buisness-principles" className=" about-wrapper-2">
                 <div className="container mx-auto px-4">
                     <div className="py-36">
                         <div className="mb-6 font-bold text-2xl xl:text-3xl pb-24">

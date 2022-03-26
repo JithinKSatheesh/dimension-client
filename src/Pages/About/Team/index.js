@@ -46,7 +46,7 @@ export default function Team(props) {
 
     return (
         <>
-            <div className=" about-wrapper-4">
+            <div id="team" className=" about-wrapper-4">
                 <div className="container mx-auto px-4">
                     <div className="py-36">
                         <div className="flex flex-wrap">

@@ -7,7 +7,7 @@ export default function Ownership(props) {
 
     return (
         <>
-             <div className=" about-wrapper-3">
+             <div id="ownership" className=" about-wrapper-3">
                 <div className="container mx-auto px-4">
                 <div className="py-36">
                     <div className="mb-6 text-white font-bold text-2xl xl:text-3xl pb-24">

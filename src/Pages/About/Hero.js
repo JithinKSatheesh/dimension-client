@@ -9,7 +9,7 @@ export default function Hero(props) {
 
     return (
         <>
-        <div className="about-wrapper-1 w-full">
+        <div id="about" className="about-wrapper-1 w-full">
             <Navbar variant="white" />
             <section>
                 <div className="py-28  px-4 text-white">

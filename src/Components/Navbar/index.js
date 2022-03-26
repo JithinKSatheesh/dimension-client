@@ -43,15 +43,19 @@ export default function Index(props) {
     const {variant = ''} = props
 
     const [isHover, toggleHover] = useState(false);
-    const [isHover2, toggleHover2] = useState(false);
+    // const [isHover2, toggleHover2] = useState(false);
 
-    const toggleHoverMenu = () => {
-        toggleHover(!isHover);
+    const toggleHoverMenu = (id) => {
+        toggleHover(id);
     }
 
-    const toggleHoverMenu2 = () => {
-        toggleHover2(!isHover2);
+    const toggleHoverOut = () => {
+        toggleHover(false);
     }
+
+    // const toggleHoverMenu2 = () => {
+    //     toggleHover2(!isHover2);
+    // }
 
     
     
@@ -61,60 +65,79 @@ export default function Index(props) {
             <div className="w-full px-4 pt-8 xl:pt-0">
                 <div className="container mx-auto ">
                     <div className="flex items-center justify-between">
+                        {/* desktop logo */}
                         <div className="logo mr-5 hidden xl:block">
+                            <Link to="/">
                             {variant === 'white' ? <LogoWhite /> : <Logo  />}
+                            </Link>
                         </div>
                         {/* Mobile logo */}
                         <div className="logo block xl:hidden">
+                            <Link to="/">
                             {variant === 'white' ? 
                                 <LogoWhite height={"40px"} width="101px" /> 
                                 : 
                                 <Logo height={"40px"} width="101px" />}
+                            </Link>
                         </div>
                         <div className="nav-links  hidden xl:flex">
                             <NavLinks 
-                                onHoverStart={toggleHoverMenu2} 
-                                onHoverEnd={toggleHoverMenu2}
+                                onHoverStart={() => toggleHover('about')} 
+                                onHoverEnd={toggleHoverOut}
                                 variant={variant}
-                                isHover={isHover2}
+                                isHover={isHover === 'about'}
                                 to="/about" > About&nbsp;us&nbsp;&nbsp;<DownArrow/> 
-                                <div className="relative">
-                                    <AboutDropdown isHover={isHover2} />
+                                <div className="">
+                                    <AboutDropdown isHover={isHover === 'about'} />
                                 </div>    
                             </NavLinks>
                             <NavLinks
-                                onHoverStart={toggleHoverMenu} 
-                                onHoverEnd={toggleHoverMenu}
-                                isHover={isHover}
+                                onHoverStart={() => toggleHover('services')} 
+                                onHoverEnd={toggleHoverOut}
+                                isHover={isHover === 'services'}
                                 variant={variant}
-                                to="/">Services&nbsp;&nbsp;<DownArrow/>
-                                <div className="relative">
-                                    <ServiceDropdown isHover={isHover} />
+                                to="/services/capital-market">Services&nbsp;&nbsp;<DownArrow/>
+                                <div className="">
+                                    <ServiceDropdown isHover={isHover === 'services'} />
                                 </div>    
                             </NavLinks>
                             <NavLinks 
+                                onHoverStart={() => toggleHover('indices')} 
+                                onHoverEnd={toggleHoverOut}
+                                isHover={isHover === 'indices'}
                                 variant={variant}
                                 to="/">
                                     Indices
                             </NavLinks>
 
                             <NavLinks 
+                                onHoverStart={() => toggleHover('protfolio')} 
+                                onHoverEnd={toggleHoverOut}
+                                isHover={isHover === 'protfolio'}
                                 variant={variant}
-                                to="/">
+                                to="/protfolio">
                                 Portfolio
                             </NavLinks>
                             <NavLinks 
+                                onHoverStart={() => toggleHover('news')} 
+                                onHoverEnd={toggleHoverOut}
+                                isHover={isHover === 'news'}
                                 variant={variant}
-                                to="/">
+                                to="/news">
                                     news
                             </NavLinks>
                         </div>
                         <div className="lang  hidden xl:flex">
-                            <NavLinks  variant={variant} to="/" > Contacts</NavLinks>
-                            <div className={`lang py-3 self-center ${variant === 'white' && 'text-white'}`}><Lang /></div>
+                            <NavLinks  
+                                variant={variant} to="/" > 
+                                Contacts
+                            </NavLinks>
+                            <div className={`lang py-3 self-center cursor-pointer ${variant === 'white' && 'text-white'}`}>
+                                <Lang />
+                            </div>
                         </div>
-                        <div className="block xl:hidden">
-                            <Burger />
+                        <div className={`block xl:hidden  ${variant === 'white' && 'text-white'}`}>
+                            <Burger  />
                         </div>
                     </div>
                 </div>

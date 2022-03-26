@@ -25,7 +25,7 @@ export default function Service(props) {
                         <div className="pb-10 text-dark-blue">
                             Capital Markets Advisory is a key business area of Dimension and an integral part of its ability to achieve the Mission and Vision of the company.
                         </div>
-                        <DetailsButton to="/"> Details </DetailsButton>
+                        <DetailsButton to="/services/capital-market"> Details </DetailsButton>
                        
                     </div>
                     <div className='bg-blue-light rounded-xl p-7'>
@@ -36,7 +36,7 @@ export default function Service(props) {
                         <div className="pb-10 text-dark-blue">
                             We have years of experience in executing large and complex corporate securities transactions in the Armenian capital market and beyond. By upholding our 
                         </div>
-                        <DetailsButton to="/"> Details </DetailsButton>
+                        <DetailsButton to="/services/investment-security"> Details </DetailsButton>
                     </div>
                     <div className='bg-blue-light rounded-xl p-7'>
                         <IconManage />
@@ -46,7 +46,7 @@ export default function Service(props) {
                         <div className="pb-10 text-dark-blue">
                             In the Armenian capital markets, Dimension is involved in managing its own investment portfolio of equity and debt instruments, as well as two open, non-public, leveraged fixed income funds. 
                         </div>
-                        <DetailsButton to="/"> Details </DetailsButton>
+                        <DetailsButton to="/services/asset-management"> Details </DetailsButton>
                     </div>
                 </div>
             </div>

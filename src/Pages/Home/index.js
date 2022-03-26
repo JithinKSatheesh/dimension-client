@@ -1,4 +1,9 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+
+// ** hooks
+import { useScrollBehaviours } from 'Components/Hooks/useScrollBehaviours'
+
+
 import Navbar from 'Components/Navbar'
 import Hero from './Hero'
 import Mission from './Mission'
@@ -10,6 +15,12 @@ import Footer from 'Components/Footer'
 
 
 export default function Home(props) {
+
+    const { ScrollToTop } = useScrollBehaviours()
+
+    useEffect(() => {
+        ScrollToTop()
+    }, [])
     
 
     return (

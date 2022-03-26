@@ -4,6 +4,7 @@ import {ReactComponent as IconRightArrow} from 'Assets/icons/ArrowRight.svg'
 
 // components
 import { DetailsButton } from 'Components/Buttons'
+import { Link } from 'react-router-dom'
 
 export default function Protfolio(props) {
 
@@ -41,7 +42,9 @@ export default function Protfolio(props) {
                         Portfolio
                     </div>
                     <div className="text-base text-white flex items-center cursor-pointer">
-                        <div className="mr-3 font-bold">All&nbsp;projects</div>
+                        <Link to='/protfolio'>
+                            <div className="mr-3 font-bold">All&nbsp;projects</div>
+                        </Link>
                         <IconRightArrow />
                     </div>
                 </div>

@@ -5,6 +5,7 @@ import BrandImg from 'Assets/brands/brand1.png'
 
 // components
 import { GetButton } from 'Components/Buttons'
+import { Link } from 'react-router-dom'
 
 export default function Research(props) {
 
@@ -45,7 +46,9 @@ export default function Research(props) {
                             Market researches
                         </div>
                         <div className="text-base text-dark-blue flex items-center cursor-pointer">
+                            <Link to="/market-research">
                             <div className="mr-3 font-bold">All&nbsp;researches</div>
+                            </Link>
                             <IconRightArrow  />
                         </div>
                     </div>

@@ -28,7 +28,7 @@ export const AboutDropdown = (props) => {
     };
 
     return (
-        <div style={{top : '104px'}} className="fixed left-0   w-full normal-case z-30">
+        <div style={{top : '104px'}} className="absolute left-0   w-full normal-case z-30">
             <motion.div
                 className=" bg-dark-blue-grad"
                 initial="exit"
@@ -38,22 +38,22 @@ export const AboutDropdown = (props) => {
                 <div className="w-full">
                     <div className="container px-4 mx-auto">
                         <div className="grid grid-cols-6">
-                            <Link to="/" className="bg-menu-blue-light text-white py-7 text-center">
+                            <Link to="/about#about" className="bg-menu-blue-light text-white py-7 text-center">
                                 About Dimension
                             </Link >
-                            <Link to="/" className="bg-menu-blue-light text-white py-7 text-center">
-                            Corporate structure
+                            <Link to="/about#corporate-structure" className="bg-menu-blue-light text-white py-7 text-center">
+                                Corporate structure
                             </Link >
-                            <Link to="/" className="bg-menu-blue-light text-white py-7 text-center">
+                            <Link to="/about#ownership" className="bg-menu-blue-light text-white py-7 text-center">
                             Significant Shareholders
                             </Link >
-                            <Link to="/" className="bg-menu-blue-light text-white py-7 text-center">
+                            <Link to="/about#team" className="bg-menu-blue-light text-white py-7 text-center">
                             Teammates
                             </Link >
-                            <Link to="/" className="bg-menu-blue-light text-white py-7 text-center">
+                            <Link to="/about#mission" className="bg-menu-blue-light text-white py-7 text-center">
                             Mission and vision
                             </Link >
-                            <Link to="/" className="bg-menu-blue-light text-white py-7 text-center">
+                            <Link to="/about#statuory-documents" className="bg-menu-blue-light text-white py-7 text-center">
                             Statuory documents
                             </Link >
 

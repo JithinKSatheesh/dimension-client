@@ -13,7 +13,7 @@ export default function Partners(props) {
 
     return (
         <>
-            <div className=" about-wrapper-5">
+            <div id="partners" className=" about-wrapper-5">
                 <div className="container mx-auto px-4">
                     <div className="py-36">
                         <div className="mb-6 text-white font-bold text-2xl xl:text-3xl pb-16">

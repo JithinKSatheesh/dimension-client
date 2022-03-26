@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 
 import { Accordion } from 'Components/Accordion';
 
+import { DetailsButton} from 'Components/Buttons'
+
 
 export default function Content(props) {
     
@@ -11,35 +13,40 @@ export default function Content(props) {
         {
             id :1,
             position : 'Angular Developer',
+            type : 'Full time',
+            due : '30.2.2022',
             _q : 'Do you provide customer support?',
             _a : " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
         },
         {
             id :2,
             position : 'Angular Developer',
-            _q : 'Do you provide customer support?',
-            _a : " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
-        },
-        {
-            id :3,
+            type : 'Full time',
+            due : '30.2.2022',
             _q : 'Do you provide customer support?',
             _a : " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
         },
         {
             id :4,
             position : 'Angular Developer',
+            type : 'Full time',
+            due : '30.2.2022',
             _q : 'Do you provide customer support?',
             _a : " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
         },
         {
             id :5,
             position : 'Angular Developer',
+            type : 'Full time',
+            due : '30.2.2022',
             _q : 'Do you provide customer support?',
             _a : " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
         },
         {
             id :6,
             position : 'Angular Developer',
+            type : 'Full time',
+            due : '30.2.2022',
             _q : 'Do you provide customer support?',
             _a : " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
         },
@@ -49,7 +56,7 @@ export default function Content(props) {
     const leftArray = jobs.splice(0, Math.floor(jobs.length / 2));
 
 
-    const AccordionWrapper = ({item}) => {}
+    
 
     return (
         <>
@@ -69,20 +76,35 @@ export default function Content(props) {
                             {
                                 jobs.map(item => 
                                     <div className='pb-8'>
-                                    <Accordion
+                                     <Accordion
                                         id={item?.id} expanded={expanded} setExpanded={setExpanded}
                                         className={`${ expanded === item?.id ? "bg-dark-blue-grad" : 'bg-blue-light text-dark-blue'}`}
                                         headerElement={<>
-                                            <div className={`flex flex-wrapper ${expanded === item?.id ? 'text-white' : 'text-dark-blue'} `}>
-                                                <div className="w-full xl:w-1/2">
+                                            <div className={`flex flex-wrap ${expanded === item?.id ? 'text-white' : 'text-dark-blue'}  `}>
+                                                <div className="w-full xl:w-8/12 mb-5 xl:mb-0">
                                                     <div className="text-xs"> Position </div>
                                                     <div className="text- font-bold"> {item?.position} </div>
                                                 </div>
-                                                <div className="w-full xl:w-1/2"></div>
+                                                <div className="w-full xl:w-4/12 flex xl:justify-between justify-left">
+                                                    <div>
+                                                        <div className="text-xs"> Job type </div>
+                                                        <div className="text- font-bold"> {item?.type} </div>
+                                                    </div>
+                                                    <div className='px-5'>
+                                                        <div className="text-xs"> Due date </div>
+                                                        <div className="text- font-bold"> {item?.due} </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </>}
                                     >
+                                        <div className="font-xs pb-3">
+                                        Requirments
+                                        </div>
                                         {item?._a}
+                                        <div className="pt-10">
+                                            <DetailsButton>Apply for a job</DetailsButton>
+                                        </div>
                                     </Accordion>
                                 </div>
                                 )
@@ -98,9 +120,32 @@ export default function Content(props) {
                                     <Accordion
                                         id={item?.id} expanded={expanded} setExpanded={setExpanded}
                                         className={`${ expanded === item?.id ? "bg-dark-blue-grad" : 'bg-blue-light text-dark-blue'}`}
-                                        headingElement={<></>}
+                                        headerElement={<>
+                                            <div className={`flex flex-wrap ${expanded === item?.id ? 'text-white' : 'text-dark-blue'}  `}>
+                                                <div className="w-full xl:w-8/12 mb-5 xl:mb-0">
+                                                    <div className="text-xs"> Position </div>
+                                                    <div className="text- font-bold"> {item?.position} </div>
+                                                </div>
+                                                <div className="w-full xl:w-4/12 flex xl:justify-between justify-left">
+                                                    <div>
+                                                        <div className="text-xs"> Job type </div>
+                                                        <div className="text- font-bold"> {item?.type} </div>
+                                                    </div>
+                                                    <div className='px-5'>
+                                                        <div className="text-xs"> Due date </div>
+                                                        <div className="text- font-bold"> {item?.due} </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </>}
                                     >
+                                        <div className="font-xs pb-3">
+                                        Requirments
+                                        </div>
                                         {item?._a}
+                                        <div className="pt-10">
+                                            <DetailsButton>Apply for a job</DetailsButton>
+                                        </div>
                                     </Accordion>
                                 </div>
                                 )

@@ -12,7 +12,7 @@ export const Accordion = (props) => {
     return (
         <div>
             <div
-                className={` ${className} p-8  rounded-xl text-white flex justify-between items-center cursor-pointer`}
+                className={` ${className} p-8  rounded-xl text-white flex justify-between items-start xl:items-center cursor-pointer`}
                 onClick={() => setExpanded(isOpen ? false : id)}
             >
                 {props?.headerElement ? 

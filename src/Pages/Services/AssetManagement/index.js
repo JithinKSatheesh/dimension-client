@@ -1,4 +1,7 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+
+// ** hooks
+import { useScrollBehaviours } from 'Components/Hooks/useScrollBehaviours'
 
 import Hero from './Hero'
 import Contents from './Contents'
@@ -6,6 +9,13 @@ import Contents from './Contents'
 import Footer from 'Components/Footer'
 
 export default function Capitalmarket(props) {
+
+    const { ScrollToTop } = useScrollBehaviours()
+
+    useEffect(() => {
+        ScrollToTop()
+    }, [])
+
     
 
     return (
