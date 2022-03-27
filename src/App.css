@@ -57,15 +57,17 @@
 }
 
 .hero-wrapper {
-  background-image: url('./Assets/img/bg_abstract_1.png');
+  background-image: url('./Assets/img/bg_abstract_left.png');
+  background-position: left -40px;
   background-repeat: no-repeat;
   
 }
 
 
 .hero-wrapper-2 {
-  background: url('./Assets/img/bg_abstract_2.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
+  background: url('./Assets/img/bg_abstract_left.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
   background-repeat: no-repeat;
+  background-position: left -800px, left;
   
 }
 

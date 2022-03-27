@@ -19,10 +19,10 @@ export default function Service(props) {
                 <div className="grid grid-cols-1 xl:grid-cols-3 xl:grid-flow-col gap-24">
                     <div className='bg-blue-light rounded-xl p-7'>
                         <IconHome />
-                        <div className="py-7 font-semibold text-2xl text-dark-blue">
-                            Capital Markets Advisory
+                        <div className="py-7 font-semibold text-xl 2xl:text-2xl text-dark-blue">
+                            Capital Markets <br/> Advisory
                         </div>
-                        <div className="pb-10 text-dark-blue">
+                        <div className="xl:h-40 pb-10 text-sm 2xl:text-base text-dark-blue">
                             Capital Markets Advisory is a key business area of Dimension and an integral part of its ability to achieve the Mission and Vision of the company.
                         </div>
                         <DetailsButton to="/services/capital-market"> Details </DetailsButton>
@@ -30,20 +30,20 @@ export default function Service(props) {
                     </div>
                     <div className='bg-blue-light rounded-xl p-7'>
                         <IconShield />
-                        <div className="py-7 font-semibold text-2xl text-dark-blue">
-                            Investment Securities Services
+                        <div className="py-7 font-semibold text-xl 2xl:text-2xl text-dark-blue">
+                            Investment <br/> Securities Services
                         </div>
-                        <div className="pb-10 text-dark-blue">
+                        <div className="xl:h-40 pb-10 text-sm 2xl:text-base text-dark-blue">
                             We have years of experience in executing large and complex corporate securities transactions in the Armenian capital market and beyond. By upholding our 
                         </div>
                         <DetailsButton to="/services/investment-security"> Details </DetailsButton>
                     </div>
                     <div className='bg-blue-light rounded-xl p-7'>
                         <IconManage />
-                        <div className="py-7 font-semibold text-2xl text-dark-blue">
-                            Asset Management
+                        <div className="py-7 font-semibold text-xl 2xl:text-2xl text-dark-blue">
+                            Asset <br/> Management
                         </div>
-                        <div className="pb-10 text-dark-blue">
+                        <div className="xl:h-40 pb-10 text-sm 2xl:text-base text-dark-blue">
                             In the Armenian capital markets, Dimension is involved in managing its own investment portfolio of equity and debt instruments, as well as two open, non-public, leveraged fixed income funds. 
                         </div>
                         <DetailsButton to="/services/asset-management"> Details </DetailsButton>

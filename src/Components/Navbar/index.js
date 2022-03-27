@@ -12,6 +12,7 @@ import { ReactComponent as Burger} from 'Assets/icons/burger.svg'
 
 import { ServiceDropdown } from './ServiceDropdown';
 import { AboutDropdown } from './AboutDropdown';
+import { MobileMenu } from './MobileMenu';
 
 const NavLinks = ({ children, ...props }) => {
     return (
@@ -22,7 +23,7 @@ const NavLinks = ({ children, ...props }) => {
             className={`
                 nav-item  
                 uppercase 
-                text-base  
+                text-sm  2xl:text-base
                 cursor-pointer self-center py-10 px-8 
                 ${props.isHover ? 'text-white  bg-dark-blue-grad' : ''} 
                 ${props.variant === 'white' ? 'text-white' : ''}
@@ -43,6 +44,7 @@ export default function Index(props) {
     const {variant = ''} = props
 
     const [isHover, toggleHover] = useState(false);
+    const [open, setOpen] = useState(false)
     // const [isHover2, toggleHover2] = useState(false);
 
     const toggleHoverMenu = (id) => {
@@ -68,7 +70,7 @@ export default function Index(props) {
                         {/* desktop logo */}
                         <div className="logo mr-5 hidden xl:block">
                             <Link to="/">
-                            {variant === 'white' ? <LogoWhite /> : <Logo  />}
+                            {variant === 'white' ? <LogoWhite  /> : <Logo className='w-32 2xl:w-fit'  />}
                             </Link>
                         </div>
                         {/* Mobile logo */}
@@ -80,6 +82,9 @@ export default function Index(props) {
                                 <Logo height={"40px"} width="101px" />}
                             </Link>
                         </div>
+                        {/* -------------------------- */}
+                        {/* Nav list */}
+                        {/* -------------------------- */}
                         <div className="nav-links  hidden xl:flex">
                             <NavLinks 
                                 onHoverStart={() => toggleHover('about')} 
@@ -133,17 +138,26 @@ export default function Index(props) {
                                 Contacts
                             </NavLinks>
                             <div className={`lang py-3 self-center cursor-pointer ${variant === 'white' && 'text-white'}`}>
-                                <Lang />
+                                <Lang className='h-5 2xl:w-fit' />
                             </div>
                         </div>
-                        <div className={`block xl:hidden  ${variant === 'white' && 'text-white'}`}>
+
+                        {/* ------------------------ */}
+                        {/* mobile menu burger */}
+                        {/* ------------------------ */}
+                        <div 
+                            onClick={() => setOpen(true)}
+                            className={`block xl:hidden  ${variant === 'white' && 'text-white'} cursor-pointer `}>
                             <Burger  />
                         </div>
                     </div>
                 </div>
             </div>
+            {/* -------------------------------------- */}
+            {/* Mobile menu */}
+            {/* -------------------------------------- */}
+            <MobileMenu open={open} setOpen={setOpen} />
             
         </>
     )
 }
-

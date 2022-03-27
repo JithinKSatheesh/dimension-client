@@ -41,18 +41,18 @@ export default function Index(props) {
                     <div className="grid grid-cols-1 xl:grid-cols-4 gap-16 text-center xl:text-left">
                         <div className=' text-dark-blue '>
                             <div className="font-semibold mb-4"> About us </div>
-                            <div className='mb-4'><Link to="/" > About Dimension </Link></div>
-                            <div className='mb-4'><Link to="/" > Corporate structure </Link></div>
-                            <div className='mb-4'><Link to="/" > Significant Shareholders </Link></div>
-                            <div className='mb-4'><Link to="/" > Teammates </Link></div>
-                            <div className='mb-4'><Link to="/" > Mission and vision </Link></div>
-                            <div className='mb-4'><Link to="/" > Statuory documents </Link></div>
+                            <div className='mb-4'><Link to="/about#about" > About Dimension </Link></div>
+                            <div className='mb-4'><Link to="/about#corporate-structure" > Corporate structure </Link></div>
+                            <div className='mb-4'><Link to="/about#ownership" > Significant Shareholders </Link></div>
+                            <div className='mb-4'><Link to="/about#team" > Teammates </Link></div>
+                            <div className='mb-4'><Link to="/about#mission" > Mission and vision </Link></div>
+                            <div className='mb-4'><Link to="/about#statuory-documents" > Statuory documents </Link></div>
                         </div>
                         <div className=' text-dark-blue'>
                             <div className="font-semibold mb-4"> Services</div>
-                            <div className='mb-4'><Link to="/" >Capital Markets Advisory </Link></div>
-                            <div className='mb-4'><Link to="/" >Investment Securities Services </Link></div>
-                            <div className='mb-4'><Link to="/" > Asset Management </Link></div>
+                            <div className='mb-4'><Link to="/services/capital-market" >Capital Markets Advisory </Link></div>
+                            <div className='mb-4'><Link to="/services/investment-security" >Investment Securities Services </Link></div>
+                            <div className='mb-4'><Link to="/services/asset-management" > Asset Management </Link></div>
                         </div>
                         <div className=' text-dark-blue'>
                             

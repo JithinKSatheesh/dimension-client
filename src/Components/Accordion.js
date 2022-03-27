@@ -10,7 +10,9 @@ export const Accordion = (props) => {
     const isOpen = id === expanded;
 
     return (
-        <div>
+        <motion.div
+            key={id}
+            >
             <div
                 className={` ${className} p-8  rounded-xl text-white flex justify-between items-start xl:items-center cursor-pointer`}
                 onClick={() => setExpanded(isOpen ? false : id)}
@@ -45,7 +47,7 @@ export const Accordion = (props) => {
                     </motion.section>
                 )}
             </AnimatePresence>
-        </div>
+        </motion.div>
     );
 };
 
