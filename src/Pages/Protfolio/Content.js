@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { PopUpcontainer } from 'Components/PopUpcontainer'
 // import { NewsCard } from './NewsCard'
+import { SlideTop} from 'Components/SlideAnimation'
+
 
 import { UpdateStatus } from 'Components/UpdateStatus'
 
@@ -47,7 +49,9 @@ export default function Content(props) {
                         <div className="container mx-auto">
                             <div className="flex justify-between items-center">
                                 <div className="text-2xl xl:text-3xl font-bold flex items-center my-2">
-                                Portfolio
+                                    <SlideTop>
+                                        Portfolio
+                                    </SlideTop>
                                 </div>
 
                             </div>

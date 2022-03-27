@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { SlideBottom } from 'Components/SlideAnimation'
+
 import {ReactComponent as IconRightArrow} from 'Assets/icons/ArrowRight.svg'
 
 // components
@@ -63,6 +65,8 @@ export default function Protfolio(props) {
 export const ProtfolioCard = (props) => {
 
     return(
+        <SlideBottom>
+
         <div className="bg-blue-light rounded-xl p-7 ">
             <div className="w-36 h-36 bg-white mx-auto rounded-full"></div>
             <div className="py-5 text-center font-semibold text-xl text-dark-blue">
@@ -78,6 +82,8 @@ export const ProtfolioCard = (props) => {
                 <DetailsButton to=""> Read&nbsp;more </DetailsButton>
             </div>
         </div>
+        </SlideBottom>
+
     )
 
 }

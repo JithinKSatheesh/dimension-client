@@ -1,5 +1,8 @@
 import React from 'react'
 
+import {SlideTop } from 'Components/SlideAnimation'
+
+
 import { NewsCard } from './NewsCard'
 
 import {UpdateStatus} from 'Components/UpdateStatus'
@@ -36,7 +39,9 @@ export default function Content(props) {
                         <div className="container mx-auto">
                             <div className="flex justify-between items-center">
                                 <div className="text-2xl xl:text-3xl font-bold flex items-center my-2">
+                                  <SlideTop>
                                     News
+                                  </SlideTop>
                                 </div>
                                 <div className='flex '>
                                     <div className="py-2 px-5 mr-3 rounded-xl bg-blue-light cursor-pointer hover:border border-dark-blue">

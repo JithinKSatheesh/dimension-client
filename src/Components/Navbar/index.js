@@ -111,7 +111,7 @@ export default function Index(props) {
                                 onHoverEnd={toggleHoverOut}
                                 isHover={isHover === 'indices'}
                                 variant={variant}
-                                to="/">
+                                to="/indices">
                                     Indices
                             </NavLinks>
 
@@ -134,7 +134,7 @@ export default function Index(props) {
                         </div>
                         <div className="lang  hidden xl:flex text-dark-blue">
                             <NavLinks  
-                                variant={variant} to="/" > 
+                                variant={variant} to="/contacts" > 
                                 Contacts
                             </NavLinks>
                             <div className={`lang py-3 self-center cursor-pointer ${variant === 'white' && 'text-white'}`}>

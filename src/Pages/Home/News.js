@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 import {ReactComponent as IconRightArrow} from 'Assets/icons/ArrowRight.svg'
 import {ReactComponent as Logo2} from 'Assets/icons/logo_2.svg'
 

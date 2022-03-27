@@ -1,5 +1,6 @@
 import React from 'react';
 import { DetailsButton } from 'Components/Buttons';
+import {SlideBottom} from 'Components/SlideAnimation'
 
 
 export const NewsCard = (props) => {
@@ -7,6 +8,8 @@ export const NewsCard = (props) => {
     const { item } = props;
 
     return (
+        <SlideBottom>
+
         <div className="mb-20">
             <div className="flex flex-wrap bg-blue-light rounded-xl">
                 <div className="w-full xl:w-1/3">
@@ -28,16 +31,18 @@ export const NewsCard = (props) => {
                         <div className="text-2xl xl:text-3xl pb-5 font-bold">
                             {item?.title}
                         </div>
-                        <p className='h-32 overflow-hidden  text-ellipsis'>
+                        <p className='h-32 overflow-hidden  text-ellipsis text-sm 2xl:text-base'>
                             {item?.content}
                         </p>
-                        <div className=" text-left xl:text-right">
+                        <div className=" text-left xl:text-right text-sm 2xl:text-base">
                             <DetailsButton to={`/news/${item?.id}`}> Read more </DetailsButton>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </SlideBottom>
+
 
     );
 };
