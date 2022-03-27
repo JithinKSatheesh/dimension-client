@@ -8,9 +8,9 @@ export const TeamCard = (props) => {
     const { item } = props;
 
     return (
-        <div className="max-w-sm mx-auto cursor-pointer">
-            <div className="h-64  bg-blue-light rounded-t-xl relative overflow-none">
-                <img src={item?.img} alt="" className='mx-auto  w-full absolute bottom-0' />
+        <div className="max-w-xs mx-auto cursor-pointer w-full">
+            <div className="h-72  bg-blue-light rounded-t-xl relative overflow-none">
+                <img src={item?.img} alt="" className='mx-auto   w-full absolute bottom-0' />
             </div>
             <div className="p-7 bg-dark-blue-grad rounded-b-xl text-white">
                 <div className="text-xl font-bold pb-3">

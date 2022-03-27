@@ -69,20 +69,20 @@ export const ResearchCard = (props) => {
 
     return(
         <div className="bg-blue-light rounded-xl p-7 ">
-            <div className="text-center py-20">
+            <div className="text-center py-16">
                 <img src={BrandImg} alt="" className='mx-auto' />
             </div>
             <div className="py-5 text-center font-semibold text-xl text-dark-blue">
                 {props?.item?.title}
             </div>
-            <div className=" text-center text-sm text-dark-blue">
+            <div className=" text-center text-xs 2xl:text-sm text-dark-blue">
                 {props?.item?.desc}
             </div>
             <div className="text-center pt-10">
                 <GetButton 
                     to={props?.to}  
                     onClick={props?.onClick}
-                    className="px-24 py-2 bg-dark-blue-grad-hover cursor-pointer"> Get&nbsp;it </GetButton>
+                    className="px-20 py-2 bg-dark-blue-grad-hover cursor-pointer"> Get&nbsp;it </GetButton>
             </div>
         </div>
     )

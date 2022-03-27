@@ -46,14 +46,22 @@ export default function News(props) {
                     <div className="text-3xl  font-semibold text-white">
                         Recent news
                     </div>
+                        <Link to="/news">
                     <div className="text-base text-white flex items-center cursor-pointer">
                         <div className="mr-3 font-bold">All&nbsp;news</div>
                         <IconRightArrow />
                     </div>
+                        </Link>
                 </div>
                 {/* ---------------------------- */}
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-16 ">
-                    {newsData.map((item, index) => (<NewsCard key={index} item={item} index={index} />))}
+                    {newsData.map((item, index) => (
+                        <div className={`  ${(index === 0 || index === 3 ) && 'col-span-1 xl:col-span-2'}`}>
+                            <Link to={`/news/${item?.id}`}>
+                                <NewsCard key={index} item={item} index={index} />
+                            </Link>
+                        </div>
+                    ))}
                 </div>
                 <div className="pt-32">
                     <div className="flex justify-end items-center">
@@ -71,7 +79,7 @@ export default function News(props) {
 
 
 export const NewsCard = (props) => {
-    return(<div className={`news-card  ${(props.index === 0 || props.index === 3 ) && 'col-span-1 xl:col-span-2'}`}>
+    return(<div className={`news-card`}>
     <div 
         style={{
             backgroundImage : `url(${props?.item?.img ? props?.item?.img :  NewsPlaceholder})`,

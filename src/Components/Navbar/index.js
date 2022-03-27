@@ -85,7 +85,7 @@ export default function Index(props) {
                         {/* -------------------------- */}
                         {/* Nav list */}
                         {/* -------------------------- */}
-                        <div className="nav-links  hidden xl:flex">
+                        <div className="nav-links  hidden xl:flex text-dark-blue">
                             <NavLinks 
                                 onHoverStart={() => toggleHover('about')} 
                                 onHoverEnd={toggleHoverOut}
@@ -132,7 +132,7 @@ export default function Index(props) {
                                     news
                             </NavLinks>
                         </div>
-                        <div className="lang  hidden xl:flex">
+                        <div className="lang  hidden xl:flex text-dark-blue">
                             <NavLinks  
                                 variant={variant} to="/" > 
                                 Contacts

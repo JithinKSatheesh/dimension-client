@@ -85,15 +85,16 @@
 }
 
 .hero-wrapper-6 {
-  background-image: url('./Assets/img/bg_abstract_6.png');
+  background-image: url('./Assets/img/bg_abstract_right.png'), url('./Assets/img/bg_abstract_left.png');
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right -1400px, left 500px;
   
 }
 
 .hero-wrapper-8 {
-  background-image: url('./Assets/img/bg_abstract_8.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
+  background-image: url('./Assets/img/bg_abstract_left.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
   background-repeat: no-repeat;
+  background-position: left -300px, left;
   
 }
 
