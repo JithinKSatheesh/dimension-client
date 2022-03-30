@@ -26,9 +26,34 @@ import MarketResearch from 'Pages/MarketResearch'
 import Careers from 'Pages/Careers'
 import Protfolio from 'Pages/Protfolio';
 
+// ** Store
+import { StateProvider as ProviderProtfolio } from 'Store/protfolio'
+import { StateProvider as ProviderMarketResearch } from 'Store/marketResearch'
+import { StateProvider as ProviderArticles } from 'Store/articles'
+import { StateProvider as ProviderServices } from 'Store/services'
+
 function App() {
   return (
     <div className="App">
+      <ProviderProtfolio>
+        <ProviderMarketResearch>
+          <ProviderArticles>
+            <ProviderServices>
+
+              <RoutesConfig />
+
+            </ProviderServices>
+          </ProviderArticles>
+        </ProviderMarketResearch>
+      </ProviderProtfolio>
+    </div>
+  );
+}
+
+const RoutesConfig = () => {
+
+  return (
+    <div>
       <Routes>
         <Route path="/" element={ <Home/> } />
         <Route path="about" element={ <About/> } />
@@ -48,7 +73,7 @@ function App() {
         <Route path="*" element={ <Notfound/> } />
       </Routes>
     </div>
-  );
+  )
 }
 
 export default App;

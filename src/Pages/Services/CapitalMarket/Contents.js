@@ -8,6 +8,8 @@ import Otherservices from './OtherServices';
 
 export default function Contents(props) {
 
+    const { getServices } = props
+    
     const [expanded, setExpanded] = useState(false)
 
 
@@ -108,7 +110,7 @@ export default function Contents(props) {
 
                     </div>
                 </div>
-                <Otherservices />
+                <Otherservices getServices={getServices} />
             </div>
         </>
     )

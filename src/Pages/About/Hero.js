@@ -1,8 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Navbar from 'Components/Navbar'
 
 import AboutImage1 from 'Assets/img/about_hero_1.png'
 import AboutImage2 from 'Assets/img/about_hero_2.png'
+
+
+// ** Store
+import useStoreItem from 'Store/hooks/getStoreItems'
+import initStoreItem from 'Store/hooks/initStoreItems'
 
 export default function Hero(props) {
 

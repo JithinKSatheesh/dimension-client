@@ -6,8 +6,13 @@ import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
 import { ReactComponent as IconShield } from 'Assets/icons/service_shield.svg'
 import { ReactComponent as IconManage } from 'Assets/icons/service_manage.svg'
 import {ReactComponent as Logo3} from 'Assets/icons/logo_3.svg'
+import { formatDate } from 'Utils/time'
 
 export default function Otherservices(props) {
+
+    const {getServices} = props
+
+    const _date = getServices?.services?.attributes?.updatedAt
 
 
     return (
@@ -37,7 +42,7 @@ export default function Otherservices(props) {
                         <div className="pt-24">
                             <div className="flex justify-end items-center">
                                 <div className="text-sm text-dark-blue mr-4">
-                                    updated: 15.02.2022
+                                    updated: {formatDate(_date)}
                                 </div>
                                 <Logo3  />
                             </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import {ReactComponent as IconRightArrow} from 'Assets/icons/ArrowRight.svg'
 import BrandImg from 'Assets/brands/brand1.png'
@@ -7,7 +7,18 @@ import BrandImg from 'Assets/brands/brand1.png'
 import { GetButton } from 'Components/Buttons'
 import { Link } from 'react-router-dom'
 
+// ** Store
+import useStoreItem from 'Store/hooks/getStoreItems'
+import initStoreItem from 'Store/hooks/initStoreItems'
+
 export default function Research(props) {
+
+    const { getMarketResearch } = useStoreItem()
+    const { initMarketResearch } = initStoreItem()
+
+    const data = getMarketResearch?.marketResearch ?? []
+
+    useEffect(() => initMarketResearch(), [])
 
     const _data = [
         { 
@@ -54,8 +65,8 @@ export default function Research(props) {
                     </div>
                     {/* --------------------------- */}
                     <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
-                        {_data.map((item, index) =>
-                            <ResearchCard to="/market-research" key={index} item={item} />)
+                        {[...data].map((item, index) =>
+                            <ResearchCard to="/market-research" key={item?.id} item={item?.attributes} />)
                         }
                     </div>
                 </div>
@@ -76,7 +87,7 @@ export const ResearchCard = (props) => {
                 {props?.item?.title}
             </div>
             <div className=" text-center text-xs 2xl:text-sm text-dark-blue">
-                {props?.item?.desc}
+                {props?.item?.description}
             </div>
             <div className="text-center pt-10">
                 <GetButton 

@@ -8,7 +8,18 @@ import Contents from './Contents'
 // import Otherservices from './OtherServices'
 import Footer from 'Components/Footer'
 
+
+// ** Store
+import useStoreItem from 'Store/hooks/getStoreItems'
+import initStoreItem from 'Store/hooks/initStoreItems'
+
+
 export default function Capitalmarket(props) {
+    
+    const { getServices } = useStoreItem()
+    const { initServices } = initStoreItem()
+
+    useEffect(() => initServices(), [])
 
     const { ScrollToTop } = useScrollBehaviours()
 
@@ -20,8 +31,8 @@ export default function Capitalmarket(props) {
 
     return (
         <>
-        <Hero />
-        <Contents />
+        <Hero getServices={getServices} />
+        <Contents getServices={getServices} />
         {/* <Otherservices /> */}
         <Footer />
             

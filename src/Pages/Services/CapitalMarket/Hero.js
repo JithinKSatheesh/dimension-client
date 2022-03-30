@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import Navbar from 'Components/Navbar'
 import { DownloadDocumentButton } from 'Components/Buttons'
@@ -7,9 +7,19 @@ import { SlideLeft, SlideRight, JustAppear, SlideTop, SlideBottom} from 'Compone
 // ** assets
 import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
 
-export default function Hero(props) {
-    
 
+
+export default function Hero(props) {
+
+    const { getServices } = props
+   
+    const data = getServices?.services ?? []
+
+    const pdf_url = data?.attributes?.regilation_documents_capital_market_pdf?.data?.attributes?.url ?? ''
+    const _regilation_documents_capital_market_pdf = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : ''
+
+    // console.log(data)
+    
     return (
         <>
         <div className="about-wrapper-1 w-full">
@@ -40,7 +50,9 @@ export default function Hero(props) {
                             <div className="w-full h-full xl:w-1/2 mb-16 flex  justify-end">
                                 <SlideBottom>
 
-                            <DownloadDocumentButton className="w-fit pl-5 pr-14">
+                            <DownloadDocumentButton 
+                                onClick={() => window.open(_regilation_documents_capital_market_pdf, '_blank', 'noopener,noreferrer')}
+                                className="w-fit pl-5 pr-14">
                                     Regilation documents
                                 </DownloadDocumentButton>
                                 </SlideBottom>

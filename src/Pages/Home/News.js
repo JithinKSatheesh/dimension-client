@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 
@@ -8,7 +8,22 @@ import {ReactComponent as Logo2} from 'Assets/icons/logo_2.svg'
 // **assets
 import NewsPlaceholder from 'Assets/img/news_sample_1.png'
 
+
+// ** Store
+import useStoreItem from 'Store/hooks/getStoreItems'
+import initStoreItem from 'Store/hooks/initStoreItems'
+
+// ** utils
+import { formatDate } from 'Utils/time'
+
 export default function News(props) {
+
+    const { getArticles } = useStoreItem()
+    const { initArticles } = initStoreItem()
+
+    const data = getArticles?.articles ?? []
+
+    useEffect(() => initArticles(), [])
 
 
     const newsData = [
@@ -37,6 +52,8 @@ export default function News(props) {
             id : 4
         },
     ]
+
+    // console.log(data)
     
 
     return (
@@ -56,10 +73,10 @@ export default function News(props) {
                 </div>
                 {/* ---------------------------- */}
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-16 ">
-                    {newsData.map((item, index) => (
-                        <div className={`  ${(index === 0 || index === 3 ) && 'col-span-1 xl:col-span-2'}`}>
+                    {[...data].map((item, index) => (
+                        <div key={item?.id} className={`  ${(index === 0 || index === 3 ) && 'col-span-1 xl:col-span-2'}`}>
                             <Link to={`/news/${item?.id}`}>
-                                <NewsCard key={index} item={item} index={index} />
+                                <NewsCard  item={item?.attributes} index={index} />
                             </Link>
                         </div>
                     ))}
@@ -80,10 +97,14 @@ export default function News(props) {
 
 
 export const NewsCard = (props) => {
+
+    const _imageURL =  props?.item?.image?.data ? `${process.env.REACT_APP_API_URL}${props?.item?.image?.data?.attributes?.url}` : NewsPlaceholder
+
+
     return(<div className={`news-card`}>
     <div 
         style={{
-            backgroundImage : `url(${props?.item?.img ? props?.item?.img :  NewsPlaceholder})`,
+            backgroundImage : `url(${_imageURL})`,
             backgroundSize : 'cover',
         }} 
         className="relative h-80 rounded-xl" >
@@ -91,7 +112,7 @@ export const NewsCard = (props) => {
              <div className="flex h-full items-end">
                  <div className='p-7 text-white'>
                     <div className="text-sm py-2.5 font-bold">
-                        {props.item?.date}
+                        {formatDate(props.item?.publishedAt)}
                     </div>
                     <div className="text-2xl  font-bold ">
                         {props.item?.title}

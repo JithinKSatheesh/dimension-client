@@ -11,6 +11,13 @@ import { ReactComponent as IconManage } from 'Assets/icons/service_manage.svg'
 
 export default function Hero(props) {
     
+    const { getServices } = props
+   
+    const data = getServices?.services ?? []
+
+    const pdf_url = data?.attributes?.regilation_documents_capital_market_pdf?.data?.attributes?.url ?? ''
+    const _regilation_documents_capital_market_pdf = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : ''
+
 
     return (
         <>
@@ -40,7 +47,9 @@ export default function Hero(props) {
                             <div className="w-full h-full xl:w-1/2 mb-16 flex  justify-end">
                                 <SlideTop>
 
-                                <DownloadDocumentButton className="w-fit pl-5 pr-14">
+                                <DownloadDocumentButton 
+                                    onClick={() => window.open(_regilation_documents_capital_market_pdf, '_blank', 'noopener,noreferrer')}
+                                    className="w-fit pl-5 pr-14">
                                     Regilation documents
                                 </DownloadDocumentButton>
                                 </SlideTop>
