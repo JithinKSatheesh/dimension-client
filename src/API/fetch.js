@@ -26,3 +26,11 @@ export function fetchServicesPage  (query) {
 export function fetchClientRightsPage  (query) {
     return  axios.get(`${BASE_URL}client-rights-page?${query}`)
 }
+
+export function fetchTeam (query) {
+    return  axios.get(`${BASE_URL}teams?${query}`)
+}
+
+export function fetchAboutPage (query) {
+    return  axios.get(`${BASE_URL}about-page?${query}`)
+}

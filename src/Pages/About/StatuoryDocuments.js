@@ -2,9 +2,26 @@ import React from 'react'
 
 import {ReactComponent as Logo3} from 'Assets/icons/logo_3.svg'
 import { DownloadDocumentButton } from 'Components/Buttons'
+import { formatDate } from 'Utils/time'
 
 export default function Statuorydocuments(props) {
 
+    const { getAboutPage } = props
+
+    const data = getAboutPage?.about ?? []
+    const _date = getAboutPage?.about?.attributes?.updatedAt
+
+    const license_pdf = data?.attributes?.license_pdf?.data?.attributes?.url ?? ''
+    const _license_pdf = license_pdf ? `${process.env.REACT_APP_API_URL}${license_pdf}` : ''
+    
+    const regilation_pdf = data?.attributes?.license_pdf?.data?.attributes?.url ?? ''
+    const _regilation_pdf = regilation_pdf ? `${process.env.REACT_APP_API_URL}${regilation_pdf}` : ''
+    
+    const charter_pdf = data?.attributes?.license_pdf?.data?.attributes?.url ?? ''
+    const _charter_pdf = charter_pdf ? `${process.env.REACT_APP_API_URL}${charter_pdf}` : ''
+    
+
+    
 
     return (
         <>
@@ -15,20 +32,26 @@ export default function Statuorydocuments(props) {
                             Statuory Documents
                         </div>
                         <div className="flex flex-wrap">
-                                <DownloadDocumentButton className="xl:mr-10 w-full xl:w-1/4 mb-7">
+                                <DownloadDocumentButton 
+                                    onClick={() => window.open(_license_pdf, '_blank', 'noopener,noreferrer')}
+                                    className="xl:mr-10 w-full xl:w-1/4 mb-7">
                                     License
                                 </DownloadDocumentButton>
-                                <DownloadDocumentButton className="xl:mr-10 w-full xl:w-1/4 mb-7">
+                                <DownloadDocumentButton 
+                                    onClick={() => window.open(_regilation_pdf, '_blank', 'noopener,noreferrer')}
+                                    className="xl:mr-10 w-full xl:w-1/4 mb-7">
                                 Charter
                                 </DownloadDocumentButton>
-                                <DownloadDocumentButton className=" w-full xl:w-1/4 mb-7">
+                                <DownloadDocumentButton 
+                                 onClick={() => window.open(_charter_pdf, '_blank', 'noopener,noreferrer')}
+                                className=" w-full xl:w-1/4 mb-7">
                                 Regilation documents
                                 </DownloadDocumentButton>
                         </div>
                         <div className="pt-32">
                             <div className="flex justify-end items-center">
                                 <div className="text-sm text-dark-blue mr-4">
-                                    updated: 15.02.2022
+                                    {formatDate(_date)}
                                 </div>
                                 <Logo3  />
                             </div>

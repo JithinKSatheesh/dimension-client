@@ -26,7 +26,7 @@ export default function Buisnessprinciples(props) {
                                 </div>
                             </div>
                             <div className="w-full xl:w-2/3 order-1 xl:order-2 pl-0 xl:pl-44">
-                                <div class="grid grid-cols-1  xl:grid-cols-2 gap-x-32">
+                                <div className="grid grid-cols-1  xl:grid-cols-2 gap-x-32">
                                     <div >
                                         <div className="max-w-xl mb-20">
 

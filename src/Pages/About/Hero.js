@@ -6,8 +6,8 @@ import AboutImage2 from 'Assets/img/about_hero_2.png'
 
 
 // ** Store
-import useStoreItem from 'Store/hooks/getStoreItems'
-import initStoreItem from 'Store/hooks/initStoreItems'
+// import useStoreItem from 'Store/hooks/getStoreItems'
+// import initStoreItem from 'Store/hooks/initStoreItems'
 
 export default function Hero(props) {
 

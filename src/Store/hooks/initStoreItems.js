@@ -1,12 +1,14 @@
 import React, {useContext} from 'react'
 
-import { fetchProtfolio, fetchMarketResearch, fetchArticles, fetchServicesPage, fetchClientRightsPage } from 'API/fetch'
+import { fetchProtfolio, fetchMarketResearch, fetchArticles, fetchServicesPage, fetchClientRightsPage, fetchTeam, fetchAboutPage } from 'API/fetch'
 
 import { Store as StoreProtfolio } from 'Store/protfolio'
 import { Store as StoreMarketResearch } from 'Store/marketResearch'
 import { Store as StoreArticles } from 'Store/articles'
 import { Store as StoreServices } from 'Store/services'
 import { Store as StoreClientRights } from 'Store/clientRights'
+import { Store as StoreTeam } from 'Store/team'
+import { Store as StoreAboutPage } from 'Store/aboutPage'
 
 const qs = require('qs');
 
@@ -17,6 +19,9 @@ export default function Initstore(props) {
     const _StoreArticles = useContext(StoreArticles)
     const _StoreServices = useContext(StoreServices)
     const _StoreClientRights = useContext(StoreClientRights)
+    const _StoreAboutPage = useContext(StoreAboutPage)
+    const _StoreTeam = useContext(StoreTeam)
+
     
     const initProtfolio = async() => {
 
@@ -104,7 +109,7 @@ export default function Initstore(props) {
         try {
 
             const res = await fetchServicesPage(query)
-            const data = res?.data?.data || []
+            const data = res?.data?.data || {}
             // console.log(data)
             _StoreServices.dispatch({
                 type : 'initState',
@@ -129,7 +134,7 @@ export default function Initstore(props) {
         try {
 
             const res = await fetchClientRightsPage(query)
-            const data = res?.data?.data || []
+            const data = res?.data?.data || {}
             // console.log(data)
             _StoreClientRights.dispatch({
                 type : 'initState',
@@ -142,6 +147,55 @@ export default function Initstore(props) {
         }
         
     }
+    const initTeam = async() => {
 
-    return {initProtfolio, initMarketResearch, initArticles,  initServices, initClientRights}
+        const query = qs.stringify({
+            populate : ["image"],
+          }, {
+            encodeValuesOnly: true, // prettify url
+          });
+
+        try {
+
+            const res = await fetchTeam(query)
+            const data = res?.data?.data || []
+            // console.log(data)
+            _StoreTeam.dispatch({
+                type : 'initState',
+                payload : [...data]
+            })
+
+
+        } catch (ex) {
+            console.log(ex)
+        }
+        
+    }
+
+    const initAboutpage = async() => {
+
+        const query = qs.stringify({
+            populate : ["license_pdf", "charter_pdf", "regilation_pdf", "central_bank_regulation_pdf"]
+          }, {
+            encodeValuesOnly: true, // prettify url
+          });
+
+        try {
+
+            const res = await fetchAboutPage(query)
+            const data = res?.data?.data || {}
+            // console.log(data)
+            _StoreAboutPage.dispatch({
+                type : 'initState',
+                payload : {...data}
+            })
+
+
+        } catch (ex) {
+            console.log(ex)
+        }
+        
+    }
+
+    return {initProtfolio, initMarketResearch, initArticles,  initServices, initClientRights, initTeam, initAboutpage}
 }

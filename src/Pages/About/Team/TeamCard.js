@@ -7,23 +7,26 @@ export const TeamCard = (props) => {
 
     const { item } = props;
 
+    // console.log(item)
+    const _imageURL =  item?.image?.data ? `${process.env.REACT_APP_API_URL}${item?.image?.data?.attributes?.url}` : null
+
     return (
         <div className="max-w-xs mx-auto cursor-pointer w-full">
             <div className="h-72  bg-blue-light rounded-t-xl relative overflow-none">
-                <img src={item?.img} alt="" className='mx-auto   w-full absolute bottom-0' />
+                <img src={_imageURL} alt="" className='mx-auto   w-full absolute bottom-0' />
             </div>
             <div className="p-7 bg-dark-blue-grad rounded-b-xl text-white">
                 <div className="text-xl font-bold pb-3">
-                    {item?.name}
+                    {item?.full_name}
                 </div>
                 <div className="text-sm pb-10">
                     {item?.position}
                 </div>
                 <div className="flex justify-between">
                     <div className="flex">
-                        <a href="/" className='mr-3'> <IconLinkedin /> </a>
-                        <a href="/" className='mr-3'> <IconTwitter /> </a>
-                        <a href="/"> <IconFB /> </a>
+                        <a href={item?.fb_link} className='mr-3'> <IconLinkedin /> </a>
+                        <a href={item?.twitter_link} className='mr-3'> <IconTwitter /> </a>
+                        <a href={item?.linkedin_link}> <IconFB /> </a>
                     </div>
 
                 </div>

@@ -33,6 +33,8 @@ import { StateProvider as ProviderMarketResearch } from 'Store/marketResearch'
 import { StateProvider as ProviderArticles } from 'Store/articles'
 import { StateProvider as ProviderServices } from 'Store/services'
 import { StateProvider as ProviderClientRights } from 'Store/clientRights'
+import { StateProvider as ProviderTeam} from 'Store/team'
+import { StateProvider as ProviderAboutPage} from 'Store/aboutPage'
 
 function App() {
   return (
@@ -42,10 +44,15 @@ function App() {
           <ProviderArticles>
             <ProviderServices>
               <ProviderClientRights>
+              <ProviderTeam>
+                <ProviderAboutPage>
+
 
 
               <RoutesConfig />
 
+                </ProviderAboutPage>
+              </ProviderTeam>
               </ProviderClientRights>
             </ProviderServices>
           </ProviderArticles>

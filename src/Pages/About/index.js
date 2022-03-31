@@ -16,10 +16,20 @@ import Statuorydocuments from './StatuoryDocuments'
 
 import Footer from 'Components/Footer'
 
+// ** Store
+import useStoreItem from 'Store/hooks/getStoreItems'
+import initStoreItem from 'Store/hooks/initStoreItems'
+
 export default function About(props) {
 
+    const { getAboutPage } = useStoreItem()
+    const { initAboutpage } = initStoreItem()
+
+    
     const { ScrollToTop } = useScrollBehaviours()
     const location = useLocation()
+    
+    useEffect(() => initAboutpage(), [])
 
     useEffect(() => {
         if (location.hash.slice(1)) {
@@ -34,18 +44,21 @@ export default function About(props) {
     }, [location])
     
 
+    // console.log(getAboutPage)
+
+
     return (
         <>
             <div>
                 {/* <Navbar /> */}
                 <Hero />
                 <Buisnessprinciples />
-                <Ownership />
+                <Ownership getAboutPage={getAboutPage} />
                 <Team />
                 <Partners />
                 <Mission />
                 <Corporatestructure />
-                <Statuorydocuments />
+                <Statuorydocuments getAboutPage={getAboutPage} />
                 <Footer />
             </div>
         </>
