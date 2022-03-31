@@ -13,9 +13,21 @@ import {ReactComponent as Logo3} from 'Assets/icons/logo_3.svg'
 // ** components
 import { DownloadDocumentButton } from 'Components/Buttons'
 import { UpdateStatus } from 'Components/UpdateStatus';
+import { formatDate } from 'Utils/time';
 
 export default function Contents(props) {
 
+    const { getClientRights } = props
+   
+    const data = getClientRights?.clientRights ?? {}
+
+    const _date = getClientRights?.clientRights?.attributes?.updatedAt
+    
+    const pdf_url = data?.attributes?.regilation_documents_pdf?.data?.attributes?.url ?? ''
+    const _regilation_documents_pdf = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : ''
+    // console.log(_regilation_documents_pdf)
+
+    
 
     return (
         <>
@@ -32,7 +44,9 @@ export default function Contents(props) {
                                         ներկայացնելու ձեր հետ կնքվող պայմանագրից բխող պահանջները ֆինանսական համակարգի հաշտարարին, որպես «Դայմենշն» ՓԲԸ-ի ֆիզիկական անձ Հաճախորդ:
                                     </div>
                                     <div className='hidden xl:block'>
-                                        <DownloadDocumentButton className="w-fit pr-14" > Regilation documents </DownloadDocumentButton>
+                                        <DownloadDocumentButton 
+                                            onClick={() => window.open(_regilation_documents_pdf, '_blank', 'noopener,noreferrer')}
+                                            className="w-fit pr-14" > Regilation documents </DownloadDocumentButton>
                                     </div>
                                 </div>
                             </div>
@@ -75,14 +89,16 @@ export default function Contents(props) {
                                 </div>
                               
                                 <div className='block xl:hidden'>
-                                    <DownloadDocumentButton className="w-fit pr-14" > 
+                                    <DownloadDocumentButton 
+                                        onClick={() => window.open(_regilation_documents_pdf, '_blank', 'noopener,noreferrer')}
+                                        className="w-fit pr-14" > 
                                         Regilation documents 
                                     </DownloadDocumentButton>
                                 </div>
                             </div>
                            
                         </div>
-                        <UpdateStatus className="pt-32 "   date="15.02.2022" />
+                        <UpdateStatus className="pt-32 "   date={formatDate(_date)} />
                     </div>
                 </div>
             </div>

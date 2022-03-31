@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import {SlideTop } from 'Components/SlideAnimation'
 
@@ -7,7 +7,21 @@ import { NewsCard } from './NewsCard'
 
 import {UpdateStatus} from 'Components/UpdateStatus'
 
+
+// ** Store
+import useStoreItem from 'Store/hooks/getStoreItems'
+import initStoreItem from 'Store/hooks/initStoreItems'
+import { formatDate } from 'Utils/time'
+
 export default function Content(props) {
+
+    const { getArticles } = useStoreItem()
+    const { initArticles } = initStoreItem()
+
+    const data = getArticles?.articles ?? []
+    const _date = getArticles?.articles?.[0]?.attributes?.updatedAt
+
+    useEffect(() => initArticles(), [])
 
 
     const _news = [
@@ -54,9 +68,9 @@ export default function Content(props) {
                                 </div>
                             </div>
                             <div className="py-16">
-                                {_news.map(item =>  <NewsCard key={item.id} item={item} />)}
+                                {data.map((item, index) =>  <NewsCard key={item?.id} item={item?.attributes} index={index} />)}
                             </div>
-                            <UpdateStatus date="30.3.2022" />
+                            <UpdateStatus date={formatDate(_date)} />
                         </div>
                     </div>
                 </section>

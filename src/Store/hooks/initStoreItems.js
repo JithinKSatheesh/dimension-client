@@ -1,11 +1,12 @@
 import React, {useContext} from 'react'
 
-import { fetchProtfolio, fetchMarketResearch, fetchArticles, fetchServicesPage } from 'API/fetch'
+import { fetchProtfolio, fetchMarketResearch, fetchArticles, fetchServicesPage, fetchClientRightsPage } from 'API/fetch'
 
 import { Store as StoreProtfolio } from 'Store/protfolio'
 import { Store as StoreMarketResearch } from 'Store/marketResearch'
 import { Store as StoreArticles } from 'Store/articles'
 import { Store as StoreServices } from 'Store/services'
+import { Store as StoreClientRights } from 'Store/clientRights'
 
 const qs = require('qs');
 
@@ -15,11 +16,12 @@ export default function Initstore(props) {
     const _StoreMarketResearch = useContext(StoreMarketResearch)
     const _StoreArticles = useContext(StoreArticles)
     const _StoreServices = useContext(StoreServices)
+    const _StoreClientRights = useContext(StoreClientRights)
     
     const initProtfolio = async() => {
 
         const query = qs.stringify({
-            // populate : ["image"]
+            populate : ["image"]
             
           }, {
             encodeValuesOnly: true, // prettify url
@@ -116,5 +118,30 @@ export default function Initstore(props) {
         
     }
 
-    return {initProtfolio, initMarketResearch, initArticles,  initServices}
+    const initClientRights = async() => {
+
+        const query = qs.stringify({
+            populate : ["regilation_documents_pdf"],
+          }, {
+            encodeValuesOnly: true, // prettify url
+          });
+
+        try {
+
+            const res = await fetchClientRightsPage(query)
+            const data = res?.data?.data || []
+            // console.log(data)
+            _StoreClientRights.dispatch({
+                type : 'initState',
+                payload : {...data}
+            })
+
+
+        } catch (ex) {
+            console.log(ex)
+        }
+        
+    }
+
+    return {initProtfolio, initMarketResearch, initArticles,  initServices, initClientRights}
 }

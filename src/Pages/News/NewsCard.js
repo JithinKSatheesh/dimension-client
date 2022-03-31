@@ -2,10 +2,17 @@ import React from 'react';
 import { DetailsButton } from 'Components/Buttons';
 import {SlideBottom} from 'Components/SlideAnimation'
 
+import MarkdownView from 'react-showdown';
+
+// **assets
+import NewsPlaceholder from 'Assets/img/news_sample_1.png'
+
 
 export const NewsCard = (props) => {
 
     const { item } = props;
+
+    const _imageURL =  item?.image?.data ? `${process.env.REACT_APP_API_URL}${item?.image?.data?.attributes?.url}` : NewsPlaceholder
 
     return (
         <SlideBottom>
@@ -15,8 +22,9 @@ export const NewsCard = (props) => {
                 <div className="w-full xl:w-1/3">
                     <div
                         style={{
-                            background: `radial-gradient(527.72% 147.43% at 14.08% -13.43%, rgba(0, 97, 145, 0.5) 34.9%, rgba(0, 97, 146, 0) 98.96%), url(${item?.img})`,
-                            backgroundSize: 'cover',
+                            background: `radial-gradient(527.72% 147.43% at 14.08% -13.43%, rgba(0, 97, 145, 0.5) 34.9%, rgba(0, 97, 146, 0) 98.96%), url(${_imageURL})`,
+                            backgroundSize: 'cover, cover',
+                            backgroundRepeat : 'no-repeat',
                             backgroundPosition: 'center'
                         }}
                         className="w-full h-72 xl:h-full  overflow-hidden rounded-t-xl  xl:rounded-l-xl xl:rounded-tr-none  bg-center">
@@ -32,7 +40,11 @@ export const NewsCard = (props) => {
                             {item?.title}
                         </div>
                         <p className='h-32 overflow-hidden  text-ellipsis text-sm 2xl:text-base'>
-                            {item?.content}
+                            
+                                <MarkdownView
+                                    markdown={item?.description}
+                                    options={{ tables: false, emoji: true }}
+                                />
                         </p>
                         <div className=" text-left xl:text-right text-sm 2xl:text-base">
                             <DetailsButton to={`/news/${item?.id}`}> Read more </DetailsButton>

@@ -86,7 +86,7 @@ export const ProtfolioCard = (props) => {
 
     const _imageURL =  `${process.env.REACT_APP_API_URL}${props?.item?.image?.data?.attributes?.url}`
 
-    // console.log(_imageURL)
+    console.log(props?.item)
 
     return(
         <SlideBottom>
@@ -104,10 +104,10 @@ export const ProtfolioCard = (props) => {
             <div className="py-5 text-center font-semibold text-xl text-dark-blue">
                 {props?.item?.title}
             </div>
-            <div className="text-center text-blue">
+            <div className="text-center text-blue h-12">
                 {props?.item?.type}
             </div>
-            <div className="py-5 text-center text-sm text-dark-blue">
+            <div className=" text-center text-sm text-dark-blue h-28">
                 {props?.item?.description}
             </div>
             <div className="text-center pt-5">

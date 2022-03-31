@@ -1,16 +1,30 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { PopUpcontainer } from 'Components/PopUpcontainer'
 // import { NewsCard } from './NewsCard'
 import { SlideTop} from 'Components/SlideAnimation'
 
 
 import { UpdateStatus } from 'Components/UpdateStatus'
-
 import { ProtfolioCard } from 'Pages/Home/Protfolio'
+
+// ** Store
+import useStoreItem from 'Store/hooks/getStoreItems'
+import initStoreItem from 'Store/hooks/initStoreItems'
+import { formatDate } from 'Utils/time'
 
 export default function Content(props) {
 
     const [popup, setPopup] = useState(false)
+
+    const { getProtfolio } = useStoreItem()
+    const { initProtfolio } = initStoreItem()
+
+    const data = getProtfolio?.protfolio ?? []
+    const _date = getProtfolio?.protfolio?.[0]?.attributes?.updatedAt
+
+    useEffect(() => initProtfolio(), [])
+
+    console.log(data)
 
     const _data = [
         {
@@ -57,14 +71,12 @@ export default function Content(props) {
                             </div>
                             <div className="py-16">
                                 <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
-                                    {_data.map((item, index) =>
-                                        <ProtfolioCard 
-                                            onClick={() => setPopup(true)}
-                                            key={index} item={item} />)
+                                    {[...data].map((item, index) =>
+                                        <ProtfolioCard key={item?.id} item={item?.attributes} />)
                                     }
                                 </div>
                             </div>
-                            <UpdateStatus date="30.3.2022" />
+                            <UpdateStatus date={formatDate(_date)} />
                         </div>
                     </div>
                 </section>

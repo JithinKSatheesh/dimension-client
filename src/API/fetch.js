@@ -22,3 +22,7 @@ export function fetchArticles  (query) {
 export function fetchServicesPage  (query) {
     return  axios.get(`${BASE_URL}services-page?${query}`)
 }
+
+export function fetchClientRightsPage  (query) {
+    return  axios.get(`${BASE_URL}client-rights-page?${query}`)
+}

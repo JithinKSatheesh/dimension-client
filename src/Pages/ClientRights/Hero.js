@@ -7,8 +7,8 @@ import { DownloadDocumentButton } from 'Components/Buttons'
 // import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
 
 export default function Hero(props) {
-    
 
+ 
     return (
         <>
         <div className="investor-relations-wrapper-1 w-full">

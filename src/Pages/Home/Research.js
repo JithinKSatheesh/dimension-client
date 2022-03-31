@@ -78,18 +78,29 @@ export default function Research(props) {
 
 export const ResearchCard = (props) => {
 
+    const _imageURL =  `${process.env.REACT_APP_API_URL}${props?.item?.image?.data?.attributes?.url}`
+
     return(
         <div className="bg-blue-light rounded-xl p-7 ">
-            <div className="text-center py-16">
-                <img src={BrandImg} alt="" className='mx-auto' />
-            </div>
+            {/* <div className="text-center py-16">
+                <img src={_imageURL} alt="" className='mx-auto' />
+            </div> */}
+            <div 
+                style={{
+                    backgroundImage : `url(${_imageURL})`,
+                    backgroundPosition : 'center',
+                    backgroundRepeat : 'no-repeat',
+                    backgroundSize : 'contain'
+
+                }}
+                className="w-36 h-36   mx-auto "></div>
             <div className="py-5 text-center font-semibold text-xl text-dark-blue">
                 {props?.item?.title}
             </div>
-            <div className=" text-center text-xs 2xl:text-sm text-dark-blue">
+            <div className=" text-center text-xs 2xl:text-sm text-dark-blue h-24">
                 {props?.item?.description}
             </div>
-            <div className="text-center pt-10">
+            <div className="text-center pt-5">
                 <GetButton 
                     to={props?.to}  
                     onClick={props?.onClick}

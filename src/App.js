@@ -25,12 +25,14 @@ import Article from 'Pages/Article'
 import MarketResearch from 'Pages/MarketResearch'
 import Careers from 'Pages/Careers'
 import Protfolio from 'Pages/Protfolio';
+import Indices from 'Pages/Indices'
 
 // ** Store
 import { StateProvider as ProviderProtfolio } from 'Store/protfolio'
 import { StateProvider as ProviderMarketResearch } from 'Store/marketResearch'
 import { StateProvider as ProviderArticles } from 'Store/articles'
 import { StateProvider as ProviderServices } from 'Store/services'
+import { StateProvider as ProviderClientRights } from 'Store/clientRights'
 
 function App() {
   return (
@@ -39,9 +41,12 @@ function App() {
         <ProviderMarketResearch>
           <ProviderArticles>
             <ProviderServices>
+              <ProviderClientRights>
+
 
               <RoutesConfig />
 
+              </ProviderClientRights>
             </ProviderServices>
           </ProviderArticles>
         </ProviderMarketResearch>
@@ -69,6 +74,7 @@ const RoutesConfig = () => {
         <Route path="market-research" element={ <MarketResearch/> } />
         <Route path="careers" element={ <Careers/> } />
         <Route path="protfolio" element={ <Protfolio/> } />
+        <Route path="indices" element={ <Indices/> } />
 
         <Route path="*" element={ <Notfound/> } />
       </Routes>
