@@ -7,7 +7,7 @@ export const UpdateStatus = (props) => {
 
     return (
         <div className={props?.className}>
-            <div className="flex justify-end items-center">
+            <div className="flex justify-center xl:justify-end items-center">
                 <div className="text-sm  mr-4">
                     updated: {props?.date}
                 </div>

@@ -1,5 +1,8 @@
 import React from 'react'
 
+import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
+
+
 import { ReactComponent as IconPdf } from 'Assets/icons/pdfIcon.svg'
 import { UpdateStatus } from '../../Components/UpdateStatus'
 
@@ -28,13 +31,17 @@ export default function Financialstatement(props) {
             <div className="flex flex-wrap justify-end  p-5 border-blue-light border-b items-center ">
                 <div className="w-full xl:w-1/2 py-5 xl:py-0">
                     <div className="font-bold">
+                        <SlideLeft>
                         {props?.title}
+                        </SlideLeft>
                     </div>
                 </div>
                 <div className="w-full xl:w-1/2">
+                        <JustAppear>
                     <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
-                        {props?.children}
+                            {props?.children}
                     </div>
+                        </JustAppear>
                 </div>
             </div>
         )
@@ -46,10 +53,15 @@ export default function Financialstatement(props) {
             <div className="container mx-auto px-4">
                 <div className="py-36 text-white">
                     <div className="mb-24  font-bold text-2xl xl:text-3xl">
+                        <SlideLeft>
                         Financial statments & Normatives
+                        </SlideLeft>
                     </div>
                     <div className="pb-5 border-blue-light border-b font-bold">
+                    <SlideLeft>
+
                         Annual
+                    </SlideLeft>
                     </div>
                     <TableRow title="">
                         <ReportDownloadButton title="2018" />
@@ -58,7 +70,10 @@ export default function Financialstatement(props) {
                         <ReportDownloadButton title="2018" />
                     </TableRow>
                     <div className="mt-24 pb-5 border-blue-light border-b font-bold">
+                        <SlideLeft>
+
                         Quarterly
+                        </SlideLeft>
                     </div>
                     <TableRow title="2018">
                         <ReportDownloadButton title="1 Quarter" />

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
+
 import Navbar from 'Components/Navbar'
 import { DownloadDocumentButton } from 'Components/Buttons'
 
@@ -17,7 +19,9 @@ export default function Hero(props) {
                 <div className="py-28  px-4 text-white">
                     <div className="container mx-auto">
                         <div className="text-2xl xl:text-3xl font-bold flex items-center">
-                        FAQ
+                        <SlideLeft>
+                            FAQ
+                        </SlideLeft>
                         </div>
                     </div>
                 </div>

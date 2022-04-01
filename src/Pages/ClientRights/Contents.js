@@ -1,5 +1,8 @@
 import React from 'react'
 
+import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
+
+
 import { ReactComponent as IconGlobe } from 'Assets/icons/lang.svg';
 import { ReactComponent as IconPerson } from 'Assets/icons/person.svg';
 import { ReactComponent as IconPrinter } from 'Assets/icons/printer.svg';
@@ -35,27 +38,38 @@ export default function Contents(props) {
                 <div className="container mx-auto px-4">
                     <div className="py-36">
                         <div className="text-dark-blue font-bold text-2xl xl:text-3xl pb-24">
+                            <SlideLeft>
                             Դուք կարող եք
+                            </SlideLeft>
                         </div>
                         <div className="flex flex-wrap">
                             <div className="w-full  xl:w-2/3 pb-7 ">
                                 <div className="flex h-full  flex-col justify-between ">
                                     <div className="text-sm text-dark-blue max-w-2xl ">
+                                        <SlideBottom>
+
                                         ներկայացնելու ձեր հետ կնքվող պայմանագրից բխող պահանջները ֆինանսական համակարգի հաշտարարին, որպես «Դայմենշն» ՓԲԸ-ի ֆիզիկական անձ Հաճախորդ:
+                                        </SlideBottom>
                                     </div>
                                     <div className='hidden xl:block'>
+                                        <SlideTop>
+
                                         <DownloadDocumentButton 
                                             onClick={() => window.open(_regilation_documents_pdf, '_blank', 'noopener,noreferrer')}
                                             className="w-fit pr-14" > Regilation documents </DownloadDocumentButton>
+                                            </SlideTop>
                                     </div>
                                 </div>
                             </div>
                             <div className="w-full xl:w-1/3 pb-7">
                                 <div className="text-sm text-dark-blue ">
+                                    <SlideBottom>
+
                                     Ֆինանսական համակարգի հաշտարարի գրասենյակ:
+                                    </SlideBottom>
                                 </div>
                                 <div className="py-5 text-dark-blue">
-
+                                    <SlideBottom>
                                     <AddressRow
                                         title="Հաշտարար:"
                                         value="Փիրուզ Սարգսյան"
@@ -86,14 +100,18 @@ export default function Contents(props) {
                                         value={<> www.fsm.am </>}
                                         icon={<IconGlobe />}
                                     />
+                                    </SlideBottom>
                                 </div>
                               
                                 <div className='block xl:hidden'>
+                                    <SlideTop>
+
                                     <DownloadDocumentButton 
                                         onClick={() => window.open(_regilation_documents_pdf, '_blank', 'noopener,noreferrer')}
                                         className="w-fit pr-14" > 
                                         Regilation documents 
                                     </DownloadDocumentButton>
+                                        </SlideTop>
                                 </div>
                             </div>
                            

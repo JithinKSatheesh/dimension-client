@@ -35,6 +35,8 @@ import { StateProvider as ProviderServices } from 'Store/services'
 import { StateProvider as ProviderClientRights } from 'Store/clientRights'
 import { StateProvider as ProviderTeam} from 'Store/team'
 import { StateProvider as ProviderAboutPage} from 'Store/aboutPage'
+import { StateProvider as ProviderFaq} from 'Store/faq'
+import { StateProvider as ProviderCareers } from 'Store/careers'
 
 function App() {
   return (
@@ -46,11 +48,14 @@ function App() {
               <ProviderClientRights>
               <ProviderTeam>
                 <ProviderAboutPage>
+                  <ProviderFaq>
+                    <ProviderCareers>
 
 
+                    <RoutesConfig />
 
-              <RoutesConfig />
-
+                    </ProviderCareers>
+                  </ProviderFaq>
                 </ProviderAboutPage>
               </ProviderTeam>
               </ProviderClientRights>

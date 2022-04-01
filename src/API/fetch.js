@@ -31,6 +31,14 @@ export function fetchTeam (query) {
     return  axios.get(`${BASE_URL}teams?${query}`)
 }
 
+export function fetchFaq (query) {
+    return  axios.get(`${BASE_URL}faq-pages?${query}`)
+}
+
+export function fetchCareers (query) {
+    return  axios.get(`${BASE_URL}careers?${query}`)
+}
+
 export function fetchAboutPage (query) {
     return  axios.get(`${BASE_URL}about-page?${query}`)
 }

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 
-import { fetchProtfolio, fetchMarketResearch, fetchArticles, fetchServicesPage, fetchClientRightsPage, fetchTeam, fetchAboutPage } from 'API/fetch'
+import { fetchProtfolio, fetchMarketResearch, fetchArticles, fetchServicesPage, fetchClientRightsPage, fetchTeam, fetchAboutPage, fetchFaq, fetchCareers } from 'API/fetch'
 
 import { Store as StoreProtfolio } from 'Store/protfolio'
 import { Store as StoreMarketResearch } from 'Store/marketResearch'
@@ -9,6 +9,8 @@ import { Store as StoreServices } from 'Store/services'
 import { Store as StoreClientRights } from 'Store/clientRights'
 import { Store as StoreTeam } from 'Store/team'
 import { Store as StoreAboutPage } from 'Store/aboutPage'
+import { Store as StoreFaq } from 'Store/faq'
+import { Store as StoreCareers } from 'Store/careers'
 
 const qs = require('qs');
 
@@ -21,6 +23,8 @@ export default function Initstore(props) {
     const _StoreClientRights = useContext(StoreClientRights)
     const _StoreAboutPage = useContext(StoreAboutPage)
     const _StoreTeam = useContext(StoreTeam)
+    const _StoreFaq = useContext(StoreFaq)
+    const _StoreCareers = useContext(StoreCareers)
 
     
     const initProtfolio = async() => {
@@ -171,6 +175,55 @@ export default function Initstore(props) {
         }
         
     }
+    const initFaq = async() => {
+
+        const query = qs.stringify({
+            // populate : ["image"],
+          }, {
+            encodeValuesOnly: true, // prettify url
+          });
+
+        try {
+
+            const res = await fetchFaq(query)
+            const data = res?.data?.data || []
+            // console.log(data)
+            _StoreFaq.dispatch({
+                type : 'initState',
+                payload : [...data]
+            })
+
+
+        } catch (ex) {
+            console.log(ex)
+        }
+        
+    }
+
+    const initCareers = async() => {
+
+        const query = qs.stringify({
+            // populate : ["image"],
+          }, {
+            encodeValuesOnly: true, // prettify url
+          });
+
+        try {
+
+            const res = await fetchCareers(query)
+            const data = res?.data?.data || []
+            // console.log(data)
+            _StoreCareers.dispatch({
+                type : 'initState',
+                payload : [...data]
+            })
+
+
+        } catch (ex) {
+            console.log(ex)
+        }
+        
+    }
 
     const initAboutpage = async() => {
 
@@ -197,5 +250,5 @@ export default function Initstore(props) {
         
     }
 
-    return {initProtfolio, initMarketResearch, initArticles,  initServices, initClientRights, initTeam, initAboutpage}
+    return {initProtfolio, initMarketResearch, initArticles,  initServices, initClientRights, initTeam, initAboutpage, initFaq, initCareers}
 }

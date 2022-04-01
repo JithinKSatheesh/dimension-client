@@ -64,7 +64,7 @@ export const PdfDownloadButton = (props) => {
             onClick={props?.onClick}
             className="rounded-xl rounded-r-2xl bg-dark-blue-grad flex items-center cursor-pointer">
             <div className='m-5 text-white'> <IconPdf /> </div>
-            <div className='flex-grow h-full rounded-xl   bg-blue-light  font-bold text-dark-blue flex items-center justify-end'>
+            <div className='flex-grow h-full rounded-xl   bg-blue-light text-sm 2xl:text-base  font-bold text-dark-blue flex items-center justify-end'>
                 <div className=" px-5 text-right">
                 {props?.title}
                 </div>

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
+
 import Navbar from 'Components/Navbar'
 import { DownloadDocumentButton } from 'Components/Buttons'
 
@@ -17,11 +19,15 @@ export default function Hero(props) {
                 <div className="py-28  px-4 text-white">
                     <div className="container mx-auto">
                         <div className="text-2xl xl:text-3xl font-bold flex items-center">
+                        <SlideLeft>
                         Client rights
+                        </SlideLeft>
                         </div>
                         <div className="flex flex-wrap pt-8 items-end">
                             <div className="w-full xl:w-1/2 text-sm mb-16 max-w-lg">
+                                <SlideBottom>
                                 Ի կատարումն «Ֆինանսական համակարգի հաշտարարի մասին» Հայաստանի Հանրապետության օրենքի պահանջների ընկերությունը հաստատել է «Հաճախորդների բողոք-պահանջների քննության կանոնակարգ», որը սահմանում է Հաճախորդների բողոք-պահանջների ներկայացման, քննության և դրանց վերաբերյալ որոշումների կայացման կանոնները, ինչպես նաև բողոք-պահանջները քննող աշխատակցի իրավուքներն ու պարտականությունները:  
+                                </SlideBottom>
                             </div>
                             <div className="w-full h-full xl:w-1/2 mb-16 flex  justify-end">
                                

@@ -4,6 +4,9 @@ import { Accordion } from 'Components/Accordion';
 
 import { DetailsButton} from 'Components/Buttons'
 
+import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
+
+
 
 export default function Content(props) {
     
@@ -65,7 +68,9 @@ export default function Content(props) {
                     <div className="py-32">
                         <div className="flex justify-between items-center pb-16">
                             <div className="text-2xl xl:text-3xl font-bold flex items-center my-2 text-dark-blue">
-                                Careers
+                                <SlideLeft>
+                                    Careers
+                                </SlideLeft>
                             </div>
 
                         </div>
@@ -80,7 +85,7 @@ export default function Content(props) {
                                         id={item?.id} expanded={expanded} setExpanded={setExpanded}
                                         className={`${ expanded === item?.id ? "bg-dark-blue-grad" : 'bg-blue-light text-dark-blue'}`}
                                         headerElement={<>
-                                            <div className={`flex flex-wrap ${expanded === item?.id ? 'text-white' : 'text-dark-blue'}  `}>
+                                            <div className={`flex flex-wrap text-sm 2xl:text-base ${expanded === item?.id ? 'text-white' : 'text-dark-blue'}  `}>
                                                 <div className="w-full xl:w-8/12 mb-5 xl:mb-0">
                                                     <div className="text-xs"> Position </div>
                                                     <div className="text- font-bold"> {item?.position} </div>
@@ -121,7 +126,7 @@ export default function Content(props) {
                                         id={item?.id} expanded={expanded} setExpanded={setExpanded}
                                         className={`${ expanded === item?.id ? "bg-dark-blue-grad" : 'bg-blue-light text-dark-blue'}`}
                                         headerElement={<>
-                                            <div className={`flex flex-wrap ${expanded === item?.id ? 'text-white' : 'text-dark-blue'}  `}>
+                                            <div className={`flex flex-wrap text-sm 2xl:text-base  ${expanded === item?.id ? 'text-white' : 'text-dark-blue'}  `}>
                                                 <div className="w-full xl:w-8/12 mb-5 xl:mb-0">
                                                     <div className="text-xs"> Position </div>
                                                     <div className="text- font-bold"> {item?.position} </div>
@@ -139,7 +144,7 @@ export default function Content(props) {
                                             </div>
                                         </>}
                                     >
-                                        <div className="font-xs pb-3">
+                                        <div className="font-xs pb-3 text">
                                         Requirments
                                         </div>
                                         {item?._a}

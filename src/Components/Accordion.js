@@ -22,7 +22,7 @@ export const Accordion = (props) => {
                         {props?.headerElement}
                     </div>
                     :
-                    <div className=" font-bold">
+                    <div className=" font-bold text-sm 2xl:text-base">
                         {props?.title}
                     </div>
                 }
