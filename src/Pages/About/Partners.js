@@ -1,5 +1,8 @@
 import React from 'react'
 
+import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop} from 'Components/SlideAnimation'
+
+
 //  ** Brands
 import LogoRvs from 'Assets/brands/Rvs.png'
 import LogoDefoe from 'Assets/brands/defoe.png'
@@ -17,9 +20,12 @@ export default function Partners(props) {
                 <div className="container mx-auto px-4">
                     <div className="py-36">
                         <div className="mb-6 text-white font-bold text-2xl xl:text-3xl pb-16">
+                        <SlideLeft>
                         Our partners
+                        </SlideLeft>
                         </div>
                         <div className="grid grid-cols-1 xl:grid-cols-3 gap-24">
+                            <SlideBottom>
                             <div className="p-8 rounded-xl bg-blue-light text-dark-blue">
                                 <div className="h-32 border-b-2 border-color-blue">
                                     <img src={LogoRvs} alt="" />
@@ -28,6 +34,9 @@ export default function Partners(props) {
                                    <IconLocation className='mr-4' /> Newport Beach, California
                                 </div>
                             </div>
+                            </SlideBottom>
+                            <SlideTop>
+
                             <div className="p-8 rounded-xl bg-blue-light">
                                 <div className="h-32 border-b-2 border-color-blue">
                                     <img src={LogoDefoe} alt="" />
@@ -36,6 +45,9 @@ export default function Partners(props) {
                                 <IconLocation className='mr-4' /> Zagreb, Croatia
                                 </div>
                             </div>
+                            </SlideTop>
+                            <SlideBottom>
+
                             <div className="p-8 rounded-xl bg-blue-light">
                                 <div className="h-32 border-b-2 border-color-blue">
                                     <img src={LogoAdriatic} alt="" />
@@ -44,6 +56,7 @@ export default function Partners(props) {
                                 <IconLocation className='mr-4' /> London, UK
                                 </div>
                             </div>
+                            </SlideBottom>
 
                         </div>
                     </div>

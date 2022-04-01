@@ -3,6 +3,9 @@ import { ReactComponent as IconFB } from 'Assets/icons/facebook_small.svg';
 import { ReactComponent as IconTwitter } from 'Assets/icons/twitter_small.svg';
 import { ReactComponent as IconLinkedin } from 'Assets/icons/linkedin_small.svg';
 
+import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop} from 'Components/SlideAnimation'
+
+
 export const TeamCard = (props) => {
 
     const { item } = props;
@@ -12,6 +15,7 @@ export const TeamCard = (props) => {
 
     return (
         <div className="max-w-xs mx-auto cursor-pointer w-full">
+            <SlideBottom>
             <div className="h-72  bg-blue-light rounded-t-xl relative overflow-none">
                 <img src={_imageURL} alt="" className='mx-auto   w-full absolute bottom-0' />
             </div>
@@ -32,7 +36,7 @@ export const TeamCard = (props) => {
                 </div>
             </div>
 
-
+            </SlideBottom>
         </div>
     );
 };

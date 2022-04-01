@@ -107,7 +107,7 @@ export const ProtfolioCard = (props) => {
             <div className="text-center text-blue h-12">
                 {props?.item?.type}
             </div>
-            <div className=" text-center text-sm text-dark-blue h-28">
+            <div className=" text-center text-xs 2xl:text-sm text-dark-blue h-28 overflow-y-hidden">
                 {props?.item?.description}
             </div>
             <div className="text-center pt-5">

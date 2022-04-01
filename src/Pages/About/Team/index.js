@@ -3,6 +3,8 @@ import { FilterTab } from './FilterTab'
 
 import { TeamCard } from './TeamCard'
 
+import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop} from 'Components/SlideAnimation'
+
 
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
@@ -64,13 +66,18 @@ export default function Team(props) {
                         <div className="flex flex-wrap">
                             <div className=" w-full xl:w-1/3">
                                 <div className="text-2xl xl:text-3xl text-center xl:text-left mb-16 xl:mb-0 font-bold text-dark-blue">
+                                    <SlideLeft>
                                     Our team
+                                    </SlideLeft>
                                 </div>
                             </div>
                             <div className="w-full xl:w-2/3 pl-0 xl:pl-44">
+                                <SlideRight>
+
                                 <FilterTab 
                                     active={active} 
                                     changeActive={changeActive} />
+                                </SlideRight>
                             </div>
                             
                         </div>

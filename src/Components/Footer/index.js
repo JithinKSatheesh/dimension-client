@@ -92,7 +92,7 @@ export default function Index(props) {
                 </div>
                 <div className="pt-24">
                     <div className="flex flex-wrap justify-center xl:justify-between items-center">
-                        <div className="text-sm text-dark-blue order-2 xl:order-1">
+                        <div className="w-full xl:w-1/2 text-sm text-dark-blue order-2 xl:order-1 text-center xl:text-left">
                             &#169; 2022 All Rights Reserved.
                         </div>
                         <div className="text-sm text-dark-blue flex order-1  xl:order-2 mb-5 xl:mb-0">

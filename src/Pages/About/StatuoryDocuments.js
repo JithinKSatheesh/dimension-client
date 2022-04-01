@@ -1,5 +1,8 @@
 import React from 'react'
 
+import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
+
+
 import {ReactComponent as Logo3} from 'Assets/icons/logo_3.svg'
 import { DownloadDocumentButton } from 'Components/Buttons'
 import { formatDate } from 'Utils/time'
@@ -29,9 +32,13 @@ export default function Statuorydocuments(props) {
                 <div className="container mx-auto px-4">
                     <div className="pt-36 pb-32">
                         <div className="mb-6 text-dark-blue font-bold text-2xl xl:text-3xl pb-16">
+                           <SlideLeft>
                             Statuory Documents
+                           </SlideLeft>
                         </div>
+                                <SlideBottom>
                         <div className="flex flex-wrap">
+
                                 <DownloadDocumentButton 
                                     onClick={() => window.open(_license_pdf, '_blank', 'noopener,noreferrer')}
                                     className="xl:mr-10 w-full xl:w-1/4 mb-7">
@@ -48,6 +55,8 @@ export default function Statuorydocuments(props) {
                                 Regilation documents
                                 </DownloadDocumentButton>
                         </div>
+                        </SlideBottom>
+
                         <div className="pt-32">
                             <div className="flex justify-end items-center">
                                 <div className="text-sm text-dark-blue mr-4">
