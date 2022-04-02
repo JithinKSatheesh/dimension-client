@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
@@ -6,7 +6,31 @@ import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Compon
 import { PdfDownloadButton } from 'Components/Buttons'
 import { UpdateStatus } from 'Components/UpdateStatus'
 
+
+// ** Store
+import useStoreItem from 'Store/hooks/getStoreItems'
+import initStoreItem from 'Store/hooks/initStoreItems'
+
 export default function Content(props) {
+
+    const { getRegulations } = useStoreItem()
+    const { initRegulationsPage } = initStoreItem()
+
+    const data = getRegulations?.regulations ?? []
+
+    const civil_code_of_armenia = data?.attributes?.civil_code_of_armenia ?? ''
+    const law_on_securities_market = data?.attributes?.law_on_securities_market ?? ''
+    const law_on_the_central_bank_of_armenia = data?.attributes?.law_on_the_central_bank_of_armenia ?? ''
+    const law_on_currency_regulation = data?.attributes?.law_on_currency_regulation ?? ''
+    const anti_money_laundering_law = data?.attributes?.anti_money_laundering_law ?? ''
+    const law_on_financial_system_mediator = data?.attributes?.law_on_financial_system_mediator ?? ''
+    const rules_of_amx_armenia = data?.attributes?.rules_of_amx_armenia ?? ''
+    const rules_of_central_depository = data?.attributes?.rules_of_central_depository ?? ''
+
+
+    
+
+    useEffect(() => initRegulationsPage(), [])
 
 
     return (
@@ -24,12 +48,24 @@ export default function Content(props) {
                         <JustAppear>
 
                         <div className="grid grid-cols-1 xl:grid-cols-3 gap-16">
-                            <PdfDownloadButton title={<>Civil Code of Armenia</>} />
-                            <PdfDownloadButton title={<>Law on Securities Market</>} />
-                            <PdfDownloadButton title={<>Law on the Central <br /> Bank of Armenia</>} />
-                            <PdfDownloadButton title={<>Law on Currency <br /> Regulation</>} />
-                            <PdfDownloadButton title={<>Anti-Money Laundering <br /> & Terrorism Financing Law</>} />
-                            <PdfDownloadButton title={<>Law on Financial <br /> System Mediator</>} />
+                            <PdfDownloadButton 
+                                onClick={() => window.open(civil_code_of_armenia, '_blank', 'noopener,noreferrer')}
+                                title={<>Civil Code of Armenia</>} />
+                            <PdfDownloadButton 
+                                onClick={() => window.open(law_on_securities_market, '_blank', 'noopener,noreferrer')}
+                                title={<>Law on Securities Market</>} />
+                            <PdfDownloadButton 
+                                onClick={() => window.open(law_on_the_central_bank_of_armenia, '_blank', 'noopener,noreferrer')}
+                                title={<>Law on the Central <br /> Bank of Armenia</>} />
+                            <PdfDownloadButton 
+                                onClick={() => window.open(law_on_currency_regulation, '_blank', 'noopener,noreferrer')}
+                                title={<>Law on Currency <br /> Regulation</>} />
+                            <PdfDownloadButton 
+                                onClick={() => window.open(anti_money_laundering_law, '_blank', 'noopener,noreferrer')}
+                                title={<>Anti-Money Laundering <br /> & Terrorism Financing Law</>} />
+                            <PdfDownloadButton 
+                                onClick={() => window.open(law_on_financial_system_mediator, '_blank', 'noopener,noreferrer')}
+                                title={<>Law on Financial <br /> System Mediator</>} />
                         </div>
                         </JustAppear>
                         <div className="pt-36">
@@ -58,12 +94,16 @@ export default function Content(props) {
                                         <SlideTop>
                                         <div className="pb-3">
                                             Rules of AMX Armenia stock exchange can be viewed and
-                                            <span className='font-bold cursor-pointer'> downloaded here.</span>
+                                            <span 
+                                                onClick={() => window.open(rules_of_amx_armenia, '_blank', 'noopener,noreferrer')}
+                                                className='font-bold cursor-pointer'> downloaded here.</span>
                                         </div>
                                         <div>
 
                                             Rules of Central Depository of Armenia can be viewed and
-                                            <span className='font-bold cursor-pointer'> downloaded here.</span>
+                                            <span 
+                                                onClick={() => window.open(rules_of_central_depository, '_blank', 'noopener,noreferrer')}
+                                                className='font-bold cursor-pointer'> downloaded here.</span>
                                         </div>
                                         </SlideTop>
                                     </div>

@@ -7,7 +7,7 @@ export const PopUpcontainer = (props) => {
         <>
             {props?.open ?
                 <div
-                    className="fixed left-0 top-0 w-full h-full bg-black/80 z-30">
+                    className="fixed left-0 top-0 w-full h-full bg-black/80 z-50">
                     <div className="flex justify-center h-full items-center">
                         <div className="absolute  bg-dark-blue-grad rounded-xl ">
                             <Outsideclick onOutsideClick={props.onClose}>

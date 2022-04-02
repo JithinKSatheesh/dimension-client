@@ -22,7 +22,7 @@ export const MobileMenu = (props) => {
 
     return (
         
-            <div className={`${open ? 'translate-x-0' : 'translate-x-full'} transition-transform fixed z-30  top-0 right-0 h-full w-full bg-dark-blue-grad p-7 overflow-y-scroll`}>
+            <div className={`${open ? 'translate-x-0' : 'translate-x-full'} transition-transform fixed z-50  top-0 right-0 h-full w-full bg-dark-blue-grad p-7 overflow-y-scroll`}>
                 <div className="container mx-auto">
 
                 <div className='flex justify-between items-center text-white'>

@@ -86,7 +86,7 @@ export const ProtfolioCard = (props) => {
 
     const _imageURL =  `${process.env.REACT_APP_API_URL}${props?.item?.image?.data?.attributes?.url}`
 
-    console.log(props?.item)
+    // console.log(props?.item)
 
     return(
         <SlideBottom>

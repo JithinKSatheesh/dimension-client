@@ -42,3 +42,7 @@ export function fetchCareers (query) {
 export function fetchAboutPage (query) {
     return  axios.get(`${BASE_URL}about-page?${query}`)
 }
+
+export function fetchRegulations (query) {
+    return  axios.get(`${BASE_URL}regulations-pdf?${query}`)
+}
