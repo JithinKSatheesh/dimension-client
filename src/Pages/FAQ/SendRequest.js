@@ -32,13 +32,13 @@ export default function Sendrequest(props) {
             </div>
             <PopUpcontainer heading="Send request" onClose={() => setPopup(false)} open={popup}  >
                 <div className="text-white w-96">
-                    <div className="py-3 font-xs"> First name </div>
+                    <div className="py-3 text-xs"> First name </div>
                     <input className='w-full h-12 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
-                    <div className="py-3 font-xs"> Email address </div>
+                    <div className="py-3 text-xs"> Email address </div>
                     <input className='w-full h-12 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
-                    <div className="py-3 font-xs"> Subject </div>
+                    <div className="py-3 text-xs"> Subject </div>
                     <input className='w-full h-12 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
-                    <div className="py-3 font-xs"> What are you interested in? </div>
+                    <div className="py-3 text-xs"> What are you interested in? </div>
                     <textarea className='w-full h-32 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
                     <div
                         onClick={() => {}}

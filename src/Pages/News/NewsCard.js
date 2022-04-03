@@ -10,7 +10,7 @@ import NewsPlaceholder from 'Assets/img/news_sample_1.png'
 
 export const NewsCard = (props) => {
 
-    const { item } = props;
+    const { item, id } = props;
 
     const _imageURL =  item?.image?.data ? `${process.env.REACT_APP_API_URL}${item?.image?.data?.attributes?.url}` : NewsPlaceholder
 
@@ -47,7 +47,7 @@ export const NewsCard = (props) => {
                                 />
                         </p>
                         <div className=" text-left xl:text-right text-sm 2xl:text-base">
-                            <DetailsButton to={`/news/${item?.id}`}> Read more </DetailsButton>
+                            <DetailsButton to={`/news/${id}`}> Read more </DetailsButton>
                         </div>
                     </div>
                 </div>

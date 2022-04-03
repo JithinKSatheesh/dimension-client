@@ -38,6 +38,7 @@ import { StateProvider as ProviderAboutPage} from 'Store/aboutPage'
 import { StateProvider as ProviderFaq} from 'Store/faq'
 import { StateProvider as ProviderCareers } from 'Store/careers'
 import { StateProvider as ProviderRegulations } from 'Store/regulations'
+import { StateProvider as ProviderAnnualReports } from 'Store/annualReports'
 
 function App() {
   return (
@@ -52,9 +53,12 @@ function App() {
                   <ProviderFaq>
                     <ProviderCareers>
                       <ProviderRegulations>
+                        <ProviderAnnualReports>
+
 
                         <RoutesConfig />
 
+                        </ProviderAnnualReports>
                       </ProviderRegulations>
                     </ProviderCareers>
                   </ProviderFaq>

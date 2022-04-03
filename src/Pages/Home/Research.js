@@ -78,7 +78,10 @@ export default function Research(props) {
 
 export const ResearchCard = (props) => {
 
-    const _imageURL =  `${process.env.REACT_APP_API_URL}${props?.item?.image?.data?.attributes?.url}`
+    // const _imageURL =  `${process.env.REACT_APP_API_URL}${props?.item?.image?.data?.attributes?.url}`
+    const _APIimage = props?.item?.image?.data?.attributes?.url
+    const _imageURL =  _APIimage ? `${process.env.REACT_APP_API_URL}${props?.item?.image?.data?.attributes?.url}` : '/assets/photos/sample-icon-2.png'
+
 
     return(
         <div className="bg-blue-light rounded-xl p-7 ">

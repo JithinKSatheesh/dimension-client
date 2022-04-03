@@ -46,3 +46,7 @@ export function fetchAboutPage (query) {
 export function fetchRegulations (query) {
     return  axios.get(`${BASE_URL}regulations-pdf?${query}`)
 }
+
+export function fetchAnnualReports (query) {
+    return  axios.get(`${BASE_URL}annual-reports?${query}`)
+}

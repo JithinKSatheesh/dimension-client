@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 
-import { fetchProtfolio, fetchMarketResearch, fetchArticles, fetchServicesPage, fetchClientRightsPage, fetchTeam, fetchAboutPage, fetchFaq, fetchCareers, fetchRegulations } from 'API/fetch'
+import { fetchProtfolio, fetchMarketResearch, fetchArticles, fetchServicesPage, fetchClientRightsPage, fetchTeam, fetchAboutPage, fetchFaq, fetchCareers, fetchRegulations, fetchAnnualReports } from 'API/fetch'
 
 import { Store as StoreProtfolio } from 'Store/protfolio'
 import { Store as StoreMarketResearch } from 'Store/marketResearch'
@@ -12,6 +12,7 @@ import { Store as StoreAboutPage } from 'Store/aboutPage'
 import { Store as StoreFaq } from 'Store/faq'
 import { Store as StoreCareers } from 'Store/careers'
 import { Store as StoreRegulations } from 'Store/regulations'
+import { Store as StoreAnnualReports } from 'Store/annualReports'
 
 const qs = require('qs');
 
@@ -27,6 +28,7 @@ export default function Initstore(props) {
     const _StoreFaq = useContext(StoreFaq)
     const _StoreCareers = useContext(StoreCareers)
     const _StoreRegulations = useContext(StoreRegulations)
+    const _StoreAnnualReports = useContext(StoreAnnualReports)
 
     
     const initProtfolio = async() => {
@@ -276,6 +278,32 @@ export default function Initstore(props) {
         }
         
     }
+    const initAnnualReports = async() => {
 
-    return {initProtfolio, initMarketResearch, initArticles,  initServices, initClientRights, initTeam, initAboutpage, initFaq, initCareers, initRegulationsPage}
+        const query = qs.stringify({
+
+            populate : ["pdf"]
+            
+          }, {
+            encodeValuesOnly: true, // prettify url
+          });
+
+        try {
+
+            const res = await fetchAnnualReports(query)
+            const data = res?.data?.data || []
+            console.log(data, "here")
+            _StoreAnnualReports.dispatch({
+                type : 'initState',
+                payload : [...data]
+            })
+
+
+        } catch (ex) {
+            console.log(ex)
+        }
+        
+    }
+
+    return {initProtfolio, initMarketResearch, initArticles,  initServices, initClientRights, initTeam, initAboutpage, initFaq, initCareers, initRegulationsPage, initAnnualReports}
 }

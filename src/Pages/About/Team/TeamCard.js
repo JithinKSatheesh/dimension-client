@@ -11,7 +11,7 @@ export const TeamCard = (props) => {
     const { item } = props;
 
     // console.log(item)
-    const _imageURL =  item?.image?.data ? `${process.env.REACT_APP_API_URL}${item?.image?.data?.attributes?.url}` : null
+    const _imageURL =  item?.image?.data ? `${process.env.REACT_APP_API_URL}${item?.image?.data?.attributes?.url}` : '/assets/photos/profile.png'
 
     return (
         <div className="max-w-xs mx-auto cursor-pointer w-full">
