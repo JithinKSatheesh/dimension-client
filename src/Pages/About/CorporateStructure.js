@@ -209,20 +209,20 @@ export default function Corporatestructure(props) {
                                     <div style={{ height: '400px', left: '30px', top: '0px' }} className="absolute  w-1  bg-blue-lazur "></div>
 
                                     {/* block 4 */}
-                                    <div style={{ left: '80px', top: '-10px', width: '260px' }} className="p-3 bg-dark-blue-grad w-fit  rounded-xl text-white absolute ">
+                                    <div style={{ left: '80px', top: '-10px' }} className="p-3 bg-dark-blue-grad w-fit  rounded-xl text-white absolute ">
                                         Հետազոտությունների և վերլուծությունների բաժին
                                     </div>
                                     {/* block 5 */}
-                                    <div style={{ left: '80px', top: '90px', width: '260px' }} className="p-3 bg-dark-blue-grad w-fit rounded-xl text-white absolute  ">
+                                    <div style={{ left: '80px', top: '90px',  }} className="p-3 bg-dark-blue-grad w-fit rounded-xl text-white absolute  ">
                                         Կապիտալ շուկաների բաժին
                                     </div>
-                                    <div style={{ left: '80px', top: '170px', width: '260px' }} className="p-3 bg-dark-blue-grad w-fit rounded-xl text-white absolute  ">
+                                    <div style={{ left: '80px', top: '170px',  }} className="p-3 bg-dark-blue-grad w-fit rounded-xl text-white absolute  ">
                                         Ակտիվների կառավարման և արժեթղթերով գործառնությունների բաժին
                                     </div>
-                                    <div style={{ left: '80px', top: '290px', width: '260px' }} className="p-3 bg-dark-blue-grad w-fit rounded-xl text-white absolute  ">
+                                    <div style={{ left: '80px', top: '290px',  }} className="p-3 bg-dark-blue-grad w-fit rounded-xl text-white absolute  ">
                                         Իրավաբանական բաժին
                                     </div>
-                                    <div style={{ left: '80px', top: '380px', width: '260px' }} className="p-3 bg-dark-blue-grad w-fit rounded-xl text-white absolute  ">
+                                    <div style={{ left: '80px', top: '380px',  }} className="p-3 bg-dark-blue-grad w-fit rounded-xl text-white absolute  ">
                                         Մարքեթինգի բաժին
                                     </div>
                                 </div>
@@ -244,15 +244,15 @@ export default function Corporatestructure(props) {
                                         Dimension CJSC
                                         <div className="text-xs">28.09.2018</div>
                                     </div>
-                                    <div style={{ left: 0, top: '300px', width: '250px' }} className="p-3 bg-dark-blue border-dark-blue border-2 w-fit rounded-xl text-white absolute ">
+                                    <div style={{ left: 0, top: '300px' }} className="p-3 bg-dark-blue border-dark-blue border-2 w-fit rounded-xl text-white absolute ">
                                         Դայմենշն Ֆանդզ Մենեջմենթ ՍՊԸ
                                         <div className="text-xs">31.01.2020</div>
                                     </div>
-                                    <div style={{ left: '100px', top: '400px', width: '220px' }} className="p-3 bg-dark-blue border-dark-blue border-2 w-fit rounded-xl text-white absolute ">
+                                    <div style={{ left: '100px', top: '400px', width: '150px' }} className="p-3 bg-dark-blue border-dark-blue border-2 w-fit rounded-xl text-white absolute ">
                                         Դայմենշն Ֆիքսդ Ինքամ Ֆոնդ
                                         <div className="text-xs">31.01.2020</div>
                                     </div>
-                                    <div style={{ left: '100px', top: '500px', width: '220px' }} className="p-3 bg-dark-blue border-dark-blue border-2 w-fit rounded-xl text-white absolute ">
+                                    <div style={{ left: '100px', top: '500px', width: '150px' }} className="p-3 bg-dark-blue border-dark-blue border-2 w-fit rounded-xl text-white absolute ">
                                         Դայմենշն Ֆիքսդ նքամ ՅՈՒԷՍԴԻ Ֆոնդ
                                         <div className="text-xs">11.09.2021</div>
                                     </div>

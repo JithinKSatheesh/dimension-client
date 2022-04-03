@@ -58,7 +58,7 @@ export default function Statuorydocuments(props) {
                         </SlideBottom>
 
                         <div className="pt-32">
-                            <div className="flex justify-end items-center">
+                            <div className="flex justify-center xl:justify-end items-center">
                                 <div className="text-sm text-dark-blue mr-4">
                                     {formatDate(_date)}
                                 </div>

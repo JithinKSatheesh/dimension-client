@@ -1,7 +1,7 @@
-
 .text-dark-blue {
   color: #003C5A;
 }
+
 .text-blue {
   color: #006191;
 }
@@ -18,7 +18,7 @@
   background-color: #E5EFF41A;
 }
 
-.bg-menu-blue-light:hover{
+.bg-menu-blue-light:hover {
   background-color: #e5eff42e;
 }
 
@@ -49,18 +49,18 @@
 }
 
 .border-dark-blue {
-  border-color:  #003C5A;
+  border-color: #003C5A;
 }
 
 .border-color-blue {
-  border-color:  #006191;
+  border-color: #006191;
 }
 
 .hero-wrapper {
   background-image: url('./Assets/img/bg_abstract_left.png');
   background-position: left -40px;
   background-repeat: no-repeat;
-  
+
 }
 
 
@@ -68,50 +68,50 @@
   background: url('./Assets/img/bg_abstract_left.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
   background-repeat: no-repeat;
   background-position: left -800px, left;
-  
+
 }
 
 .hero-wrapper-3 {
   background-image: url('./Assets/img/bg_abstract_3.png');
   background-repeat: no-repeat;
-  
+
 }
 
 .hero-wrapper-5 {
   background: url('./Assets/img/bg_abstract_5.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
   background-repeat: no-repeat;
   background-position: right;
-  
+
 }
 
 .hero-wrapper-6 {
   background-image: url('./Assets/img/bg_abstract_right.png'), url('./Assets/img/bg_abstract_left.png');
   background-repeat: no-repeat;
   background-position: right -1400px, left 500px;
-  
+
 }
 
 .hero-wrapper-8 {
   background-image: url('./Assets/img/bg_abstract_left.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
   background-repeat: no-repeat;
   background-position: left -300px, left;
-  
+
 }
 
 .mission-wrapper-1 {
   background: url('./Assets/img/bg_abstract_10.png'), #E5EFF4;
   background-repeat: no-repeat;
-  
+
   background-position: center;
 
 }
 
-.hero-img-overlay{
+.hero-img-overlay {
   background: radial-gradient(527.72% 147.43% at 14.08% -13.43%, rgba(0, 97, 145, 0.5) 34.9%, rgba(0, 97, 146, 0) 98.96%);
   border-radius: 10px;
 }
 
-.news-img-overlay{
+.news-img-overlay {
   background: rgba(0, 97, 146, 0.166);
   /* opacity: 0.6; */
   background-size: cover;
@@ -124,10 +124,10 @@
 /* ***************************************************** */
 
 .about-wrapper-1 {
-  background:  url('./Assets/img/bg_abstract_left.png'), url('./Assets/img/bg_abstract_right.png'), linear-gradient(180deg, rgba(1, 54, 81, 0.9) 0%, rgba(1, 79, 119, 0.9) 100%) , url('./Assets/img/bg_about.png');
-  background-position: left -10% , right 140%, left, left ; 
+  background: url('./Assets/img/bg_abstract_left.png'), url('./Assets/img/bg_abstract_right.png'), linear-gradient(180deg, rgba(1, 54, 81, 0.9) 0%, rgba(1, 79, 119, 0.9) 100%), url('./Assets/img/bg_about.png');
+  background-position: left -10%, right 140%, left, left;
   background-repeat: no-repeat;
-  background-size: auto, auto, auto ,cover;
+  background-size: auto, auto, auto, cover;
 }
 
 .about-principle-wrapper {
@@ -136,14 +136,14 @@
 }
 
 .about-wrapper-2 {
-  background:  url('./Assets/img/bg_abstract_left.png'), url('./Assets/img/bg_abstract_right.png');
+  background: url('./Assets/img/bg_abstract_left.png'), url('./Assets/img/bg_abstract_right.png');
   background-repeat: no-repeat;
   background-position: left -1100px, right 800px;
 }
 
 .about-wrapper-3 {
   background-image: url('./Assets/img/bg_abstract_right.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
-  background-position: right ;
+  background-position: right;
   background-repeat: no-repeat;
 }
 
@@ -166,8 +166,8 @@
 }
 
 .about-wrapper-7 {
-  background-image: url('./Assets/img/bg_abstract_left.png'),url('./Assets/img/bg_abstract_right.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
-  background-position: left -1800px, right -0px  ,center;
+  background-image: url('./Assets/img/bg_abstract_left.png'), url('./Assets/img/bg_abstract_right.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
+  background-position: left -1800px, right -0px, center;
   background-repeat: no-repeat;
 }
 
@@ -182,14 +182,16 @@
 /* ----------------------------------------------- */
 
 .accrodion-wrapper-1 {
-  background: url('./Assets/icons/logo_2.svg'),linear-gradient(0deg, #013651 0%, #014F77 100%);;
+  background: url('./Assets/icons/logo_2.svg'), linear-gradient(0deg, #013651 0%, #014F77 100%);
+  ;
   background-repeat: no-repeat;
   background-position: 80% 20px, center;
   background-size: 100px, cover;
 }
 
 .accrodion-wrapper-2 {
-  background: url('./Assets/icons/logo_2.svg'),linear-gradient(0deg, #013651 0%, #014F77 100%);;
+  background: url('./Assets/icons/logo_2.svg'), linear-gradient(0deg, #013651 0%, #014F77 100%);
+  ;
   background-repeat: no-repeat;
   background-position: 80% -110px, center;
   background-size: 100px, cover;
@@ -198,40 +200,40 @@
 .service-wrapper-2 {
   background-image: url('./Assets/img/bg_abstract_left.png');
   background-position: left 100%;
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
 }
 
 .service-wrapper-3 {
-  background-image:  url('./Assets/img/bg_abstract_right.png');
-  background-position:  right 500px;
+  background-image: url('./Assets/img/bg_abstract_right.png');
+  background-position: right 500px;
   background-repeat: no-repeat;
 }
 
 .investor-relations-wrapper-1 {
-  background:  url('./Assets/img/bg_abstract_left.png'), url('./Assets/img/bg_abstract_right.png'), linear-gradient(180deg, rgba(1, 54, 81, 0.9) 0%, rgba(1, 79, 119, 0.9) 100%) , url('./Assets/img/relation_bg.png');
-  background-position: left -10% , right 140%, left, left ; 
+  background: url('./Assets/img/bg_abstract_left.png'), url('./Assets/img/bg_abstract_right.png'), linear-gradient(180deg, rgba(1, 54, 81, 0.9) 0%, rgba(1, 79, 119, 0.9) 100%), url('./Assets/img/relation_bg.png');
+  background-position: left -10%, right 140%, left, left;
   background-repeat: no-repeat;
-  background-size: auto, auto, auto ,cover;
+  background-size: auto, auto, auto, cover;
 }
 
 .investor-relations-wrapper-2 {
-  background:   url('./Assets/img/bg_abstract_left.png'),url('./Assets/img/bg_abstract_right.png'),  linear-gradient(180deg, #013651 0%, #014F77 100%) ;
-  background-position: left 340% ,right -300% , center; 
+  background: url('./Assets/img/bg_abstract_left.png'), url('./Assets/img/bg_abstract_right.png'), linear-gradient(180deg, #013651 0%, #014F77 100%);
+  background-position: left 340%, right -300%, center;
   background-repeat: no-repeat;
-  background-size: auto, auto, auto ,cover;
+  background-size: auto, auto, auto, cover;
 }
 
 .misc-wrapper-2 {
   background-image: url('./Assets/img/bg_abstract_left.png');
   background-position: left -383px;
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
 }
 
 .client-rights-wrapper-2 {
   background-image: url('./Assets/img/bg_abstract_left.png');
   background-position: left -448px;
-    background-repeat: no-repeat;
-  
+  background-repeat: no-repeat;
+
 }
 
 .faq-wrapper-2 {
@@ -273,14 +275,30 @@
     background: url('./Assets/img/bg_abs/bg_abstract_mob_10.png'), #E5EFF4;
     background-repeat: no-repeat;
     background-position: left bottom;
-  
+
   }
+
+
+  .hero-wrapper-2 {
+    background: linear-gradient(0deg, #013651 0%, #014F77 100%);
+    background-repeat: no-repeat;
+    /* background-position: left -800px, left; */
+
+  }
+
 
   .hero-wrapper-3 {
     background-image: url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png');
     background-repeat: no-repeat;
-    background-position: 0px -350px, right 400px, left 1000px, right 1600px;
-    
+    background-position: 0px -350px, right 400px, left 1000px, right 1400px;
+
+  }
+
+  .hero-wrapper-5 {
+    background: linear-gradient(0deg, #013651 0%, #014F77 100%);
+    background-repeat: no-repeat;
+    background-position: right;
+
   }
 
 
@@ -288,14 +306,22 @@
     background-image: url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png');
     background-repeat: no-repeat;
     background-position: 0px -500px, right 200px, left 40%, right 75%, left 120%;
-    
+
   }
-  
+
   .hero-wrapper-8 {
-    background-image: url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
+    background-image: url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
     background-repeat: no-repeat;
-    background-position: 0px -20%, right 50%, left 100%, right 135%;
-    
+    background-position: 0px -250px, right 300px, left 800px, right 1300px, center;
+
+  }
+
+
+  .about-wrapper-1 {
+    background: url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), linear-gradient(180deg, rgba(1, 54, 81, 0.9) 0%, rgba(1, 79, 119, 0.9) 100%), url('./Assets/img/bg_about.png');
+    background-position: left 900px, right 0px, right 1500px, left;
+    background-repeat: no-repeat;
+    background-size: auto, auto, auto, cover;
   }
 
   .about-wrapper-2 {
@@ -306,8 +332,72 @@
 
   .about-wrapper-3 {
     background-image: linear-gradient(0deg, #013651 0%, #014F77 100%);
-   
+
   }
-  
+
+  .about-wrapper-4 {
+    background-image: url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png');
+    background-repeat: no-repeat;
+    background-position: left -300px, right 300px, left 800px, right 1400px, left 2300px;
+  }
+
+
+  .about-wrapper-5 {
+    background-image: linear-gradient(0deg, #013651 0%, #014F77 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .about-wrapper-6 {
+    background-image: url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png');
+    background-repeat: no-repeat;
+    background-position: left -300px, right 300px;
+  }
+
+  .about-wrapper-7 {
+    background-image: linear-gradient(0deg, #013651 0%, #014F77 100%);
+    background-position: center;
+  }
+
+  .about-wrapper-8 {
+    background-image: url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png');
+    background-repeat: no-repeat;
+    background-position: left 300px, right -300px;
+  }
+
+  .news-wrapper-1 {
+
+    background-image: url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png');
+    background-repeat: no-repeat;
+    background-position: left 0px, right 300px, left 800px, right 1400px, left 2300px;
+
+  }
+
+  .investor-relations-wrapper-1 {
+
+    background: url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), linear-gradient(180deg, rgba(1, 54, 81, 0.9) 0%, rgba(1, 79, 119, 0.9) 100%), url('./Assets/img/relation_bg.png');
+    background-position: right 300px, center, center;
+    background-repeat: no-repeat;
+    background-size: auto, auto, cover, cover;
+
+  }
+
+  .client-rights-wrapper-2 {
+
+    background: url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png');
+    background-position: right -200px, left 500px, center;
+    background-repeat: no-repeat;
+    background-size: auto, auto, cover, cover;
+
+  }
+
+  .misc-wrapper-2 {
+
+    background: url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png');
+    background-position: right -200px, left 500px, center;
+    background-repeat: no-repeat;
+    background-size: auto, auto, cover, cover;
+
+  }
 
 }
