@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 
+import { truncate } from 'Utils/string'
 import {ReactComponent as IconRightArrow} from 'Assets/icons/ArrowRight.svg'
 import BrandImg from 'Assets/brands/brand1.png'
 
@@ -10,6 +11,7 @@ import { Link } from 'react-router-dom'
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
+
 
 export default function Research(props) {
 
@@ -101,7 +103,7 @@ export const ResearchCard = (props) => {
                 {props?.item?.title}
             </div>
             <div className=" text-center text-xs 2xl:text-sm text-dark-blue h-24">
-                {props?.item?.description}
+                { truncate(props?.item?.description) }
             </div>
             <div className="text-center pt-5">
                 <GetButton 

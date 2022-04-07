@@ -56,6 +56,12 @@
   border-color: #006191;
 }
 
+.truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
 .hero-wrapper {
   background-image: url('./Assets/img/bg_abstract_left.png');
   background-position: left -40px;

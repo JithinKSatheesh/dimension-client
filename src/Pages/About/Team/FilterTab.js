@@ -23,15 +23,15 @@ export const FilterTab = (props) => {
     ];
 
     return (
-        <div className="grid grid-cols-3 ">
+        <div className="grid grid-cols-3 gap-0 border-color-blue border-2 rounded-2xl">
             {filters.map((item, index) => <div
                 key={item.id}
                 className={`
-                    py-3 text-center border-blue  
-                    cursor-pointer text-lg
-                    ${active === item.value && 'bg-dark-blue text-white'} 
-                    ${index === 0 && 'rounded-l-xl'}
-                    ${index === filters.length - 1 && 'rounded-r-xl'}
+                    py-3 text-center   
+                    cursor-pointer text-base 2xl:text-lg
+                    ${active === item.value && 'bg-dark-blue-2 border-color-blue  text-white'} 
+                    ${index === 0 && 'rounded-l-xl  border-color-blue  border-r-2'}
+                    ${index === filters.length - 1 && 'rounded-r-xl border-color-blue  border-l-2'}
                     `}
                 onClick={() => changeActive(item.value)}
             >

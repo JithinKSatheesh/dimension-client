@@ -1,6 +1,7 @@
 import React, {  useEffect, useState } from 'react'
 
 import { SlideBottom } from 'Components/SlideAnimation'
+import { truncate } from 'Utils/string'
 
 import {ReactComponent as IconRightArrow} from 'Assets/icons/ArrowRight.svg'
 
@@ -12,6 +13,7 @@ import { Link } from 'react-router-dom'
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
+
 
 export default function Protfolio(props) {
 
@@ -108,8 +110,8 @@ export const ProtfolioCard = (props) => {
             <div className="text-center text-blue h-12">
                 {props?.item?.type}
             </div>
-            <div className=" text-center text-xs 2xl:text-sm text-dark-blue h-28 overflow-y-hidden">
-                {props?.item?.description}
+            <div className=" text-center text-xs 2xl:text-sm text-dark-blue h-28 overflow-hidden truncate-2">
+                { truncate(props?.item?.description) }
             </div>
             <div className="text-center pt-5">
                 <a 
