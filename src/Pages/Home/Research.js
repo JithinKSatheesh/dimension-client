@@ -86,7 +86,7 @@ export const ResearchCard = (props) => {
 
 
     return(
-        <div className="bg-blue-light rounded-xl p-7 ">
+        <div className="bg-blue-light rounded-xl p-7 hover-border-outline border-2">
             {/* <div className="text-center py-16">
                 <img src={_imageURL} alt="" className='mx-auto' />
             </div> */}
@@ -105,7 +105,7 @@ export const ResearchCard = (props) => {
             <div className=" text-center text-xs 2xl:text-sm text-dark-blue h-24">
                 { truncate(props?.item?.description) }
             </div>
-            <div className="text-center pt-5">
+            <div className="text-center py-5">
                 <GetButton 
                     to={props?.to}  
                     onClick={props?.onClick}

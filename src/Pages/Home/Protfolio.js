@@ -94,7 +94,7 @@ export const ProtfolioCard = (props) => {
     return(
         <SlideBottom>
 
-        <div className="bg-blue-light rounded-xl p-7 ">
+        <div className="bg-blue-light rounded-xl p-7  hover-border-outline-white border-2">
             <div 
                 style={{
                     backgroundImage : `url(${_imageURL})`,
@@ -113,7 +113,7 @@ export const ProtfolioCard = (props) => {
             <div className=" text-center text-xs 2xl:text-sm text-dark-blue h-28 overflow-hidden truncate-2">
                 { truncate(props?.item?.description) }
             </div>
-            <div className="text-center pt-5">
+            <div className="text-center py-5">
                 <a 
                     className='btn px-12 bg-dark-blue-grad py-3 text-center rounded-xl text-white font-semibold'
                     target="_blank"

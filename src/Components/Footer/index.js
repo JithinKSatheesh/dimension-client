@@ -38,7 +38,7 @@ export default function Index(props) {
                     </div>
                 </div>
                 <div className="mt-28 mb-32">
-                    <div className="grid grid-cols-1 xl:grid-cols-4 gap-16 text-center xl:text-left text-xs 2xl:text-base">
+                    <div className="grid grid-cols-1 xl:grid-cols-4 gap-16 text-center xl:text-left lg:text-xs 2xl:text-base">
                         <div className=' text-dark-blue '>
                             <div className="font-semibold mb-4"> About us </div>
                             <div className='mb-4'><Link to="/about#about" > About Dimension </Link></div>

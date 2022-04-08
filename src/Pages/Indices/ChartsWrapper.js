@@ -42,17 +42,17 @@ export const options = {
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-export const data = {
-  labels,
+
+const data = {
+  labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [
     {
       label: 'Dataset 2',
       data: [12, 19, 3, 5, 1, 3],
-      borderColor: 'rgb(53, 162, 235)',
-      backgroundColor: 'rgba(53, 162, 235)',
-      fill: true,
+      fill: 'start',
+        backgroundColor: "#003c5a25",
+        borderColor: "#003C5A"
     },
   ],
 };
@@ -70,11 +70,11 @@ const data2 = {
     ]
   };
 
-export default function App() {
+export default function App(props) {
 
-    const [cl, setcl] = useState(false)
+  const { data } = props
 
-  return (<div onClick={() => setcl(true)}>
-      <Line options={options} data={cl ? data2 : data}  />;
+  return (<div >
+    <Line options={options} data={data} />
   </div>)
 }

@@ -14,10 +14,9 @@ export default function Annualreport(props) {
     const { getAnnualReports } = useStoreItem()
     const { initAnnualReports } = initStoreItem()
 
-    const data = getAnnualReports?.annualReports ?? []
+    const reports = getAnnualReports?.annualReports ?? []
 
-
-    // console.log(getAnnualReports)
+    // console.log(reports)
 
     useEffect(() => initAnnualReports(), [])
     
@@ -34,15 +33,23 @@ export default function Annualreport(props) {
                         <JustAppear>
 
                         <div className="grid grid-cols-1 xl:grid-cols-3 gap-16">
+                            {reports.map(item => {
 
-                            <PdfDownloadButton 
-                                onClick={() => window.open('', '_blank', 'noopener,noreferrer')}
-                                title="2018" />
-                            <PdfDownloadButton title="2019" />
+                                const pdf_url = item?.attributes?.pdf?.data?.attributes?.url
+                                const url_ = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : ''
+
+                                return (<PdfDownloadButton 
+                                key={item?.id}
+                                onClick={() => window.open(url_, '_blank', 'noopener,noreferrer')}
+                                title={item?.attributes?.year} />)
+                            }
+                            )}
+                            
+                            {/* <PdfDownloadButton title="2019" />
                             <PdfDownloadButton title="2020" />
                             <PdfDownloadButton title="2018" />
                             <PdfDownloadButton title="2019" />
-                            <PdfDownloadButton title="2020" />
+                            <PdfDownloadButton title="2020" /> */}
 
                         </div>
                         </JustAppear>

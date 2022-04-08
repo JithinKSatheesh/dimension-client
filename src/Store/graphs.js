@@ -1,10 +1,10 @@
 import React, {createContext, useReducer} from 'react';
 
 const stateModal = {
-    annualReports : [],
-    financialStatementsAnnual : [],
-    financialStatementsQuaterly : [],
-    normatives : []
+    amdIndicesGraph : [],
+    usdIndicesGraph : [],
+    amdIndexData : {},
+    usdIndexData : {}
     
   }
   
@@ -19,17 +19,17 @@ const StateProvider = ( { children } ) => {
     const [state, dispatch] = useReducer((state, action) => {
       let newState = {}
       switch(action.type) {
-        case 'initAnnualReports':
-          newState = {...state, annualReports : [ ...action?.payload] }
+        case 'initAmdIndicesGraph':
+          newState = {...state, amdIndicesGraph : [ ...action?.payload] }
           return newState;
-        case 'initFinancialStatementAnnual':
-          newState = {...state, financialStatementsAnnual : [ ...action?.payload] }
+        case 'initUsdIndicesGraph':
+          newState = {...state, usdIndicesGraph : [ ...action?.payload] }
           return newState;
-        case 'initFinancialStatementQuaterly':
-          newState = {...state, financialStatementsQuaterly : [ ...action?.payload] }
+        case 'initAmdIndexData':
+          newState = {...state, amdIndexData : [ ...action?.payload] }
           return newState;
-        case 'initNormatives':
-          newState = {...state, normatives : [ ...action?.payload] }
+        case 'initUsdIndexData':
+          newState = {...state, usdIndexData : [ ...action?.payload] }
           return newState;
         case 'clearState' :
           return {  ...stateModal  }

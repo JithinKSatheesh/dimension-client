@@ -7,46 +7,84 @@ const BASE_URL = `${process.env.REACT_APP_API_URL || 'http://localhost:1337'}/ap
 //  User
 // ---------------------------------------
 
-export function fetchProtfolio  (query) {
-    return  axios.get(`${BASE_URL}portfolios?${query}`)
+const fetchFunctioModal = (url_end, query) => {
+    return  axios.get(`${BASE_URL}${url_end}?${query}`)
 }
 
-export function fetchMarketResearch  (query) {
-    return  axios.get(`${BASE_URL}market-researches?${query}`)
-}
+const GetFunctionsList = [
+    {
+        name : 'fetchProtfolio',
+        url_end : 'portfolios',  
+    },
+    {
+        name : 'fetchMarketResearch',
+        url_end : 'market-researches',  
+    },
+    {
+        name : 'fetchArticles',
+        url_end : 'articles',  
+    },
+    {
+        name : 'fetchServicesPage',
+        url_end : 'services-page',  
+    },
+    {
+        name : 'fetchClientRightsPage',
+        url_end : 'client-rights-page',  
+    },
+    {
+        name : 'fetchTeam',
+        url_end : 'teams',  
+    },
+    {
+        name : 'fetchFaq',
+        url_end : 'faq-pages',  
+    },
+    {
+        name : 'fetchCareers',
+        url_end : 'careers',  
+    },
+    {
+        name : 'fetchAboutPage',
+        url_end : 'about-page',  
+    },
+    {
+        name : 'fetchRegulations',
+        url_end : 'regulations-pdf',  
+    },
+    {
+        name : 'fetchAnnualReports',
+        url_end : 'annual-reports',  
+    },
+    {
+        name : 'fetchFinancialReportsAnnual',
+        url_end : 'financial-statments-annuals',  
+    },
+    {
+        name : 'fetchFinancialReportsQuaterly',
+        url_end : 'financial-statments',  
+    },
+    {
+        name : 'fetchNormatives',
+        url_end : 'normatives',  
+    },
+    {
+        name : 'fetchAmdBondIndexGraph',
+        url_end : 'amd-bond-index-graphs',  
+    },
+    {
+        name : 'fetchUsdBondIndexGraph',
+        url_end : 'usd-bond-index-graphs',  
+    },
+]
 
-export function fetchArticles  (query) {
-    return  axios.get(`${BASE_URL}articles?${query}`)
-}
+const GetFunctions = [...GetFunctionsList].reduce((obj, current) => ({
+    ...obj,
+    [current.name]: (query) => fetchFunctioModal(
+        current.url_end,
+        query,
+    )
+    })
+,{})
 
-export function fetchServicesPage  (query) {
-    return  axios.get(`${BASE_URL}services-page?${query}`)
-}
-
-export function fetchClientRightsPage  (query) {
-    return  axios.get(`${BASE_URL}client-rights-page?${query}`)
-}
-
-export function fetchTeam (query) {
-    return  axios.get(`${BASE_URL}teams?${query}`)
-}
-
-export function fetchFaq (query) {
-    return  axios.get(`${BASE_URL}faq-pages?${query}`)
-}
-
-export function fetchCareers (query) {
-    return  axios.get(`${BASE_URL}careers?${query}`)
-}
-
-export function fetchAboutPage (query) {
-    return  axios.get(`${BASE_URL}about-page?${query}`)
-}
-
-export function fetchRegulations (query) {
-    return  axios.get(`${BASE_URL}regulations-pdf?${query}`)
-}
-
-export function fetchAnnualReports (query) {
-    return  axios.get(`${BASE_URL}annual-reports?${query}`)
-}
+export { GetFunctions }

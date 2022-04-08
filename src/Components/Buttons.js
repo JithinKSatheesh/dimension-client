@@ -58,7 +58,7 @@ export const DownloadDocumentButton = (props) => {
     return (
         <div
             onClick={props.onClick}
-            className={`max-w-lg rounded-xl bg-blue-light p-4 ${props.className} cursor-pointer`}>
+            className={`max-w-lg rounded-xl bg-blue-light p-4 ${props.className} cursor-pointer hover-border-outline border-2`}>
             <div className='flex text-dark-blue cursor-pointer items-center'>
                 <div className='bg-dark-blue-grad mr-3 rounded'>
                     <IconDownload className='' />
@@ -74,9 +74,9 @@ export const PdfDownloadButton = (props) => {
     return (
         <div
             onClick={props?.onClick}
-            className="rounded-xl rounded-r-2xl bg-dark-blue-grad flex items-center cursor-pointer">
+            className="rounded-xl rounded-r-2xl btn-pdf flex items-center cursor-pointer">
             <div className='m-5 text-white'> <IconPdf /> </div>
-            <div className='flex-grow h-full rounded-xl   bg-blue-light text-sm 2xl:text-base  font-bold text-dark-blue flex items-center justify-end'>
+            <div className='flex-grow h-full rounded-xl   btn-pdf-content text-sm 2xl:text-base  font-bold text-dark-blue flex items-center justify-end'>
                 <div className=" px-5 text-right">
                     {props?.title}
                 </div>

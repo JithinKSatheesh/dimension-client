@@ -56,6 +56,62 @@
   border-color: #006191;
 }
 
+.hover-border-outline {
+  border-color: rgba(255, 255, 255, 0);
+}
+
+.hover-border-outline:hover {
+  border-color: #006191;
+}
+
+.hover-border-outline-white {
+  border-color: rgba(255, 255, 255, 0);
+}
+
+.hover-border-outline-white:hover {
+  border-color: #ffffff;
+}
+
+
+.btn-download-darkBlue  {
+  background-color: #003C5A;
+  color: white;
+  border-color: white;
+}
+
+.btn-download-darkBlue:hover  {
+  background-color: #E5EFF4;
+  border-color: #003C5A; 
+  color: #003C5A;
+}
+
+.btn-pdf {
+  background: linear-gradient(0deg, #013651 0%, #014F77 100%);
+  color: white;
+}
+
+.btn-pdf:hover {
+  background: #51859F;
+}
+
+.btn-pdf-content {
+  background: #E5EFF4;
+}
+
+.btn-pdf:hover .btn-pdf-content {
+  background: #003C5A;
+  color: white;
+}
+
+.btn-reportDownload:hover {
+  background: #E5EFF4;
+  color: #003C5A;
+}
+
+.btn-reportDownload:hover .btn-reportDownload-icon {
+  color: #003C5A;
+}
+
 .truncate-2 {
     display: -webkit-box;
     -webkit-line-clamp: 3;

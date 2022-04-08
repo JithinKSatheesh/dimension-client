@@ -29,13 +29,13 @@ export const FilterTab = (props) => {
                 className={`
                     py-3 text-center   
                     cursor-pointer text-base 2xl:text-lg
-                    ${active === item.value && 'bg-dark-blue-2 border-color-blue  text-white'} 
+                    ${active === item.value ? 'bg-dark-blue-2 border-color-blue  text-white' : 'text-dark-blue'} 
                     ${index === 0 && 'rounded-l-xl  border-color-blue  border-r-2'}
                     ${index === filters.length - 1 && 'rounded-r-xl border-color-blue  border-l-2'}
                     `}
                 onClick={() => changeActive(item.value)}
             >
-                {item.label}
+               <div className='w-16 xl:w-fit mx-auto  text-center'>{item.label}</div> 
             </div>
             )}
         </div>

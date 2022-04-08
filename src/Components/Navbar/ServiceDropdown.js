@@ -20,7 +20,7 @@ export const ServiceDropdown = (props) => {
         },
         exit: {
             opacity: 0,
-            y: -10,
+            y: 0,
             rotateX: -15,
             transition: {
                 duration: 0.5
@@ -35,7 +35,7 @@ export const ServiceDropdown = (props) => {
 
 
     return (
-        <div style={{top : '100px'}}  className="absolute left-0 w-full normal-case z-30">
+        <div style={{top : '99px'}}  className="absolute left-0 w-full normal-case z-30">
             <motion.div
                 className=" bg-dark-blue-grad"
                 initial="exit"

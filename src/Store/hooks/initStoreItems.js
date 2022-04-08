@@ -1,6 +1,7 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 
-import { fetchProtfolio, fetchMarketResearch, fetchArticles, fetchServicesPage, fetchClientRightsPage, fetchTeam, fetchAboutPage, fetchFaq, fetchCareers, fetchRegulations, fetchAnnualReports } from 'API/fetch'
+import { GetFunctions } from 'API/fetch'
+// import { fetchProtfolio, fetchMarketResearch, fetchArticles, fetchServicesPage, fetchClientRightsPage, fetchTeam, fetchAboutPage, fetchFaq, fetchCareers, fetchRegulations, fetchAnnualReports } from 'API/fetch'
 
 import { Store as StoreProtfolio } from 'Store/protfolio'
 import { Store as StoreMarketResearch } from 'Store/marketResearch'
@@ -13,6 +14,7 @@ import { Store as StoreFaq } from 'Store/faq'
 import { Store as StoreCareers } from 'Store/careers'
 import { Store as StoreRegulations } from 'Store/regulations'
 import { Store as StoreAnnualReports } from 'Store/annualReports'
+import { Store as StoreGraphs } from 'Store/graphs'
 
 const qs = require('qs');
 
@@ -29,281 +31,176 @@ export default function Initstore(props) {
     const _StoreCareers = useContext(StoreCareers)
     const _StoreRegulations = useContext(StoreRegulations)
     const _StoreAnnualReports = useContext(StoreAnnualReports)
+    const _StoreGraphs = useContext(StoreGraphs)
 
-    
-    const initProtfolio = async() => {
-
+    const CollectionTypeFunction = async (filter, fetchFunction, storeObj, storeInitString = 'initState', singleType = false) => {
         const query = qs.stringify({
-            populate : ["image"]
-            
-          }, {
+            ...filter
+        }, {
             encodeValuesOnly: true, // prettify url
-          });
-
+        });
         try {
 
-            const res = await fetchProtfolio(query)
-            const data = res?.data?.data || []
-            _StoreProtfolio.dispatch({
-                type : 'initState',
-                payload : [...data]
+            const res = await fetchFunction(query)
+            const data = res?.data?.data || (singleType ? {} : [])
+            storeObj.dispatch({
+                type: storeInitString,
+                payload: singleType ? { ...data } : [...data]
             })
 
 
         } catch (ex) {
             console.log(ex)
         }
-        
+
     }
 
-    const initMarketResearch = async() => {
 
-        const query = qs.stringify({
-            populate : ["image"]
-            ,
-          }, {
-            encodeValuesOnly: true, // prettify url
-          });
+    const FunctionsList = [
+       
+        {
+            name: 'initProtfolio',
+            filter: { populate: ["image"] },
+            fetchFunction: GetFunctions.fetchProtfolio,
+            storeObj: _StoreProtfolio,
+            storeInitString: 'initState',
+            singleType: false
+        },
+        {
+            name: 'initMarketResearch',
+            filter: { populate: ["image"] },
+            fetchFunction: GetFunctions.fetchMarketResearch,
+            storeObj: _StoreMarketResearch,
+            storeInitString: 'initState',
+            singleType: false
+        },
+        {
+            name: 'initArticles',
+            filter: { populate: ["image"] },
+            fetchFunction: GetFunctions.fetchArticles,
+            storeObj: _StoreArticles,
+            storeInitString: 'initState',
+            singleType: false
+        },
+        {
+            name: 'initServices',
+            filter: { populate: ["regilation_documents_capital_market_pdf"] },
+            fetchFunction: GetFunctions.fetchServicesPage,
+            storeObj: _StoreServices,
+            storeInitString: 'initState',
+            singleType: true
+        },
+        {
+            name: 'initClientRights',
+            filter: { populate: ["regilation_documents_pdf"] },
+            fetchFunction: GetFunctions.fetchClientRightsPage,
+            storeObj: _StoreClientRights,
+            storeInitString: 'initState',
+            singleType: true
+        },
+        {
+            name: 'initTeam',
+            filter: { populate: ["image"] },
+            fetchFunction: GetFunctions.fetchTeam,
+            storeObj: _StoreTeam,
+            storeInitString: 'initState',
+            singleType: false
+        },
+        {
+            name: 'initFaq',
+            filter: {},
+            fetchFunction: GetFunctions.fetchFaq,
+            storeObj: _StoreFaq,
+            storeInitString: 'initState',
+            singleType: false
+        },
+        {
+            name: 'initCareers',
+            filter: {},
+            fetchFunction: GetFunctions.fetchCareers,
+            storeObj: _StoreCareers,
+            storeInitString: 'initState',
+            singleType: false
+        },
+        {
+            name: 'initAboutpage',
+            filter: { populate: ["license_pdf", "charter_pdf", "regilation_pdf", "central_bank_regulation_pdf"] },
+            fetchFunction: GetFunctions.fetchAboutPage,
+            storeObj: _StoreAboutPage,
+            storeInitString: 'initState',
+            singleType: true
+        },
+        {
+            name: 'initRegulationsPage',
+            filter: {},
+            fetchFunction: GetFunctions.fetchRegulations,
+            storeObj: _StoreRegulations,
+            storeInitString: 'initState',
+            singleType: true
+        },
+        {
+            name: 'initAnnualReports',
+            filter: { populate: ["pdf"] },
+            fetchFunction: GetFunctions.fetchAnnualReports,
+            storeObj: _StoreAnnualReports,
+            storeInitString: 'initAnnualReports',
+            singleType: false
+        },
+        {
+            name: 'initFinancialStatementAnnual',
+            filter: { populate: ["pdf"] },
+            fetchFunction: GetFunctions.fetchFinancialReportsAnnual,
+            storeObj: _StoreAnnualReports,
+            storeInitString: 'initFinancialStatementAnnual',
+            singleType: false
+        },
+        {
+            name: 'initFinancialStatementQuaterly',
+            filter: { populate: ["q1_pdf", "q2_pdf", "q3_pdf", "q4_pdf"] },
+            fetchFunction: GetFunctions.fetchFinancialReportsQuaterly,
+            storeObj: _StoreAnnualReports,
+            storeInitString: 'initFinancialStatementQuaterly',
+            singleType: false
+        },
+        {
+            name: 'initNormatives',
+            filter: { populate: ["q1_pdf", "q2_pdf", "q3_pdf", "q4_pdf"] },
+            fetchFunction: GetFunctions.fetchNormatives,
+            storeObj: _StoreAnnualReports,
+            storeInitString: 'initNormatives',
+            singleType: false
+        },
+        {
+            name: 'initAmdIndicesGraph',
+            filter: { sort: ['date:asc'],  },
+            fetchFunction: GetFunctions.fetchAmdBondIndexGraph,
+            storeObj: _StoreGraphs,
+            storeInitString: 'initAmdIndicesGraph',
+            singleType: false
+        },
+        {
+            name: 'initUsdIndicesGraph',
+            filter: { sort: ['date:asc'],   },
+            fetchFunction: GetFunctions.fetchUsdBondIndexGraph,
+            storeObj: _StoreGraphs,
+            storeInitString: 'initUsdIndicesGraph',
+            singleType: false
+        },
 
-        try {
+    ]
 
-            const res = await fetchMarketResearch(query)
-            const data = res?.data?.data || []
-            // console.log(data)
-            _StoreMarketResearch.dispatch({
-                type : 'initState',
-                payload : [...data]
-            })
-
-
-        } catch (ex) {
-            console.log(ex)
-        }
-        
-    }
-    const initArticles = async() => {
-
-        const query = qs.stringify({
-            populate : ["image"],
-          }, {
-            encodeValuesOnly: true, // prettify url
-          });
-
-        try {
-
-            const res = await fetchArticles(query)
-            const data = res?.data?.data || []
-            // console.log(data)
-            _StoreArticles.dispatch({
-                type : 'initState',
-                payload : [...data]
-            })
-
-
-        } catch (ex) {
-            console.log(ex)
-        }
-        
-    }
-
-    const initServices = async() => {
-
-        const query = qs.stringify({
-            populate : ["regilation_documents_capital_market_pdf"],
-          }, {
-            encodeValuesOnly: true, // prettify url
-          });
-
-        try {
-
-            const res = await fetchServicesPage(query)
-            const data = res?.data?.data || {}
-            // console.log(data)
-            _StoreServices.dispatch({
-                type : 'initState',
-                payload : {...data}
-            })
-
-
-        } catch (ex) {
-            console.log(ex)
-        }
-        
-    }
-
-    const initClientRights = async() => {
-
-        const query = qs.stringify({
-            populate : ["regilation_documents_pdf"],
-          }, {
-            encodeValuesOnly: true, // prettify url
-          });
-
-        try {
-
-            const res = await fetchClientRightsPage(query)
-            const data = res?.data?.data || {}
-            // console.log(data)
-            _StoreClientRights.dispatch({
-                type : 'initState',
-                payload : {...data}
-            })
-
-
-        } catch (ex) {
-            console.log(ex)
-        }
-        
-    }
-    const initTeam = async() => {
-
-        const query = qs.stringify({
-            populate : ["image"],
-          }, {
-            encodeValuesOnly: true, // prettify url
-          });
-
-        try {
-
-            const res = await fetchTeam(query)
-            const data = res?.data?.data || []
-            // console.log(data)
-            _StoreTeam.dispatch({
-                type : 'initState',
-                payload : [...data]
-            })
-
-
-        } catch (ex) {
-            console.log(ex)
-        }
-        
-    }
-    const initFaq = async() => {
-
-        const query = qs.stringify({
-            // populate : ["image"],
-          }, {
-            encodeValuesOnly: true, // prettify url
-          });
-
-        try {
-
-            const res = await fetchFaq(query)
-            const data = res?.data?.data || []
-            // console.log(data)
-            _StoreFaq.dispatch({
-                type : 'initState',
-                payload : [...data]
-            })
-
-
-        } catch (ex) {
-            console.log(ex)
-        }
-        
-    }
-
-    const initCareers = async() => {
-
-        const query = qs.stringify({
-            // populate : ["image"],
-          }, {
-            encodeValuesOnly: true, // prettify url
-          });
-
-        try {
-
-            const res = await fetchCareers(query)
-            const data = res?.data?.data || []
-            // console.log(data)
-            _StoreCareers.dispatch({
-                type : 'initState',
-                payload : [...data]
-            })
+    const MappedFunctions = [...FunctionsList].reduce((obj, current) => ({
+        ...obj,
+        [current.name]: () => CollectionTypeFunction(
+            current.filter,
+            current.fetchFunction,
+            current.storeObj,
+            current.storeInitString,
+            current.singleType,
+        )
+        })
+    ,{})
 
 
-        } catch (ex) {
-            console.log(ex)
-        }
-        
-    }
-
-    const initAboutpage = async() => {
-
-        const query = qs.stringify({
-            populate : ["license_pdf", "charter_pdf", "regilation_pdf", "central_bank_regulation_pdf"]
-          }, {
-            encodeValuesOnly: true, // prettify url
-          });
-
-        try {
-
-            const res = await fetchAboutPage(query)
-            const data = res?.data?.data || {}
-            // console.log(data)
-            _StoreAboutPage.dispatch({
-                type : 'initState',
-                payload : {...data}
-            })
-
-
-        } catch (ex) {
-            console.log(ex)
-        }
-        
-    }
-
-    const initRegulationsPage = async() => {
-
-        const query = qs.stringify({
-            
-          }, {
-            encodeValuesOnly: true, // prettify url
-          });
-
-        try {
-
-            const res = await fetchRegulations(query)
-            const data = res?.data?.data || {}
-            // console.log(data)
-            _StoreRegulations.dispatch({
-                type : 'initState',
-                payload : {...data}
-            })
-
-
-        } catch (ex) {
-            console.log(ex)
-        }
-        
-    }
-    const initAnnualReports = async() => {
-
-        const query = qs.stringify({
-
-            populate : ["pdf"]
-            
-          }, {
-            encodeValuesOnly: true, // prettify url
-          });
-
-        try {
-
-            const res = await fetchAnnualReports(query)
-            const data = res?.data?.data || []
-            console.log(data, "here")
-            _StoreAnnualReports.dispatch({
-                type : 'initState',
-                payload : [...data]
-            })
-
-
-        } catch (ex) {
-            console.log(ex)
-        }
-        
-    }
-
-    return {initProtfolio, initMarketResearch, initArticles,  initServices, initClientRights, initTeam, initAboutpage, initFaq, initCareers, initRegulationsPage, initAnnualReports}
+    return { ...MappedFunctions }
 }

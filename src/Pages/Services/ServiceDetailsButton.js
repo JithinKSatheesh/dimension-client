@@ -5,7 +5,7 @@ import React from 'react';
 export const ServiceDetailsButton = (props) => {
 
     return (
-        <div className="rounded-xl bg-blue-light flex flex-wrap justify-between items-center p-7 cursor-pointer">
+        <div className="rounded-xl bg-blue-light flex flex-wrap justify-between items-center p-7 cursor-pointer hover-border-outline border-2">
             <div className='flex items-center  flex-wrap'>
                 <div className='w-full xl:w-fit mb-8 xl:mb-0' >
                     {props?.icon}

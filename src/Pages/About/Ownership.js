@@ -16,6 +16,24 @@ export default function Ownership(props) {
 
     console.log(_central_bank_regulation_pdf)
 
+    const Button1 = (props) => {
+
+        return (
+            <div
+                className={`
+                ${props?.className}
+                items-center btn-download-darkBlue
+                justify-center max-w-lg border-2  p-6  
+                text-white rounded-xl text-sm cursor-pointer`
+                }
+                onClick={() => window.open(props?.file, '_blank', 'noopener,noreferrer')}
+                >
+                <div className='mr-7'><IconDownload /></div>
+                {props?.label}
+            </div>
+        )
+    } 
+
     return (
         <>
              <div id="ownership" className=" about-wrapper-3">
@@ -34,12 +52,12 @@ export default function Ownership(props) {
                                 </SlideBottom>
                             </div>
                             <SlideTop>
-                            <div 
-                                onClick={() => window.open(_central_bank_regulation_pdf, '_blank', 'noopener,noreferrer')}
-                                className="hidden xl:flex items-center justify-center max-w-lg border-2 border-white p-6  text-white rounded-xl text-sm cursor-pointer bg-black/20">
-                                <div className='mr-7'><IconDownload /></div>
-                                 Հայտարարություն ՀՀ կենտրոնական բանկի կանոնակարգ 8/03 15-րդ հոդվածի պահանջների մասին
-                            </div>
+                                <Button1
+                                    className="hidden xl:flex"
+                                    file={_central_bank_regulation_pdf}
+                                    label={"Հայտարարություն ՀՀ կենտրոնական բանկի կանոնակարգ 8/03 15-րդ հոդվածի պահանջների մասին"}
+                                />
+                            
                             </SlideTop>
                         </div>
                         <div className="w-full xl:w-2/3 pl-0 xl:pl-44">
@@ -69,7 +87,7 @@ export default function Ownership(props) {
 
                             <div 
                                 onClick={() => window.open(_central_bank_regulation_pdf, '_blank', 'noopener,noreferrer')}
-                                className="flex mx-auto xl:hidden items-center justify-center max-w-lg border-2 border-white p-6  mt-16 text-white rounded-xl text-sm cursor-pointer bg-black/20">
+                                className="btn-download-darkBlue flex mx-auto xl:hidden items-center justify-center max-w-lg border-2  p-6  mt-16 rounded-xl text-sm cursor-pointer ">
                                 <div className='mr-7'><IconDownload /></div>
                                  Հայտարարություն ՀՀ կենտրոնական բանկի կանոնակարգ 8/03 15-րդ հոդվածի պահանջների մասին
                             </div>

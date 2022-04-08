@@ -11,7 +11,7 @@ import { Store as StoreFaq } from 'Store/faq'
 import { Store as StoreCareers } from 'Store/careers'
 import { Store as StoreRegulations } from 'Store/regulations'
 import { Store as StoreAnnualReports } from 'Store/annualReports'
-
+import { Store as StoreGraphs } from 'Store/graphs'
 
 
 export default function Getstoreitems(props) {
@@ -27,6 +27,7 @@ export default function Getstoreitems(props) {
     const _StoreCareers = useContext(StoreCareers)
     const _StoreRegulations = useContext(StoreRegulations)
     const _StoreAnnualReports = useContext(StoreAnnualReports)
+    const _StoreGraphs = useContext(StoreGraphs)
 
     const getProtfolio = _StoreProtfolio?.state
     const getMarketResearch = _StoreMarketResearch?.state
@@ -39,7 +40,9 @@ export default function Getstoreitems(props) {
     const getCareers = _StoreCareers?.state
     const getRegulations = _StoreRegulations?.state
     const getAnnualReports = _StoreAnnualReports?.state
+    const getGraphs = _StoreGraphs?.state
+    
     
 
-    return {getProtfolio, getMarketResearch, getArticles, getServices, getClientRights, getTeam, getAboutPage, getFaq, getCareers, getRegulations, getAnnualReports}
+    return {getProtfolio, getMarketResearch, getArticles, getServices, getClientRights, getTeam, getAboutPage, getFaq, getCareers, getRegulations, getAnnualReports, getGraphs}
 }
