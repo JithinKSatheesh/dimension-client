@@ -76,6 +76,10 @@ const GetFunctionsList = [
         name : 'fetchUsdBondIndexGraph',
         url_end : 'usd-bond-index-graphs',  
     },
+    {
+        name : 'fetchAmdBondIndexTable',
+        url_end : 'amd-bond-index-table',  
+    },
 ]
 
 const GetFunctions = [...GetFunctionsList].reduce((obj, current) => ({

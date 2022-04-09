@@ -14,7 +14,7 @@ import { Store as StoreFaq } from 'Store/faq'
 import { Store as StoreCareers } from 'Store/careers'
 import { Store as StoreRegulations } from 'Store/regulations'
 import { Store as StoreAnnualReports } from 'Store/annualReports'
-import { Store as StoreGraphs } from 'Store/graphs'
+import { Store as StoreIndicesData } from 'Store/Indices'
 
 const qs = require('qs');
 
@@ -31,7 +31,7 @@ export default function Initstore(props) {
     const _StoreCareers = useContext(StoreCareers)
     const _StoreRegulations = useContext(StoreRegulations)
     const _StoreAnnualReports = useContext(StoreAnnualReports)
-    const _StoreGraphs = useContext(StoreGraphs)
+    const _StoreIndicesData = useContext(StoreIndicesData)
 
     const CollectionTypeFunction = async (filter, fetchFunction, storeObj, storeInitString = 'initState', singleType = false) => {
         const query = qs.stringify({
@@ -170,11 +170,16 @@ export default function Initstore(props) {
             storeInitString: 'initNormatives',
             singleType: false
         },
+
+        // -----------------
+        // Indices page 
+        // -----------------
+
         {
             name: 'initAmdIndicesGraph',
             filter: { sort: ['date:asc'],  },
             fetchFunction: GetFunctions.fetchAmdBondIndexGraph,
-            storeObj: _StoreGraphs,
+            storeObj: _StoreIndicesData,
             storeInitString: 'initAmdIndicesGraph',
             singleType: false
         },
@@ -182,9 +187,17 @@ export default function Initstore(props) {
             name: 'initUsdIndicesGraph',
             filter: { sort: ['date:asc'],   },
             fetchFunction: GetFunctions.fetchUsdBondIndexGraph,
-            storeObj: _StoreGraphs,
+            storeObj: _StoreIndicesData,
             storeInitString: 'initUsdIndicesGraph',
             singleType: false
+        },
+        {
+            name: 'initAmdIndexTableData',
+            filter: {    },
+            fetchFunction: GetFunctions.fetchAmdBondIndexTable,
+            storeObj: _StoreIndicesData,
+            storeInitString: 'initAmdIndexTableData',
+            singleType: true
         },
 
     ]

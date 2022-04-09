@@ -46,7 +46,7 @@ export const TableLayout1 = (props) => {
         </div>);
 };
 
-export const TableLayout2 = (props) => {
+export const TableLayoutAMDIndex = (props) => {
 
     return (
         <div>

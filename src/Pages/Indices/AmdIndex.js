@@ -5,24 +5,29 @@ import { ChartLayout } from './ChartLayout'
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
-import { TableLayout1, TableLayout2 } from './TableLayout1'
+import { TableLayout1, TableLayoutAMDIndex } from './TableLayout1'
+import { isEmpty } from 'Utils/string'
 
 export default function Amdindex(props) {
 
-    const { getGraphs } = useStoreItem()
-    const { initAmdIndicesGraph } = initStoreItem()
+    const { getIndicesData } = useStoreItem()
+    const { initAmdIndicesGraph, initAmdIndexTableData } = initStoreItem()
 
-    const _graphData = getGraphs?.amdIndicesGraph || []
+    const _graphData = getIndicesData?.amdIndicesGraph || []
+    const _tableData = getIndicesData?.amdIndexTableData || {}
 
     const values = _graphData?.map(item => parseFloat(item?.attributes?.value))
     const labels = _graphData?.map(item => `${getMonth(item?.attributes?.date)} ${(new Date(item?.attributes?.date)).getFullYear()}`)
 
-    console.log(_graphData, values, labels)
+    console.log(_tableData)
 
 
     useEffect(() => {
         if (_graphData.length <= 0) {
             initAmdIndicesGraph()
+        }
+        if (isEmpty(_tableData)) {
+            initAmdIndexTableData()
         }
     }, [])
 
@@ -48,7 +53,7 @@ export default function Amdindex(props) {
                 description={"Dimension Armenia AMD Bond Index comprises bonds issued by the Armenian Government and Armenian corporations meeting the index’s eligibility criteria. The index is rebalanced monthly and is market value weighted, where the market value of Armenian Government bonds is capped at 60% of the aggregate index. "}
             
             />
-            <TableLayout2
+            <TableLayoutAMDIndex
                 
             />
 

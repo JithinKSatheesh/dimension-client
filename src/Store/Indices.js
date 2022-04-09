@@ -3,8 +3,8 @@ import React, {createContext, useReducer} from 'react';
 const stateModal = {
     amdIndicesGraph : [],
     usdIndicesGraph : [],
-    amdIndexData : {},
-    usdIndexData : {}
+    amdIndexTableData : {},
+    usdIndexTableData : {}
     
   }
   
@@ -25,11 +25,11 @@ const StateProvider = ( { children } ) => {
         case 'initUsdIndicesGraph':
           newState = {...state, usdIndicesGraph : [ ...action?.payload] }
           return newState;
-        case 'initAmdIndexData':
-          newState = {...state, amdIndexData : [ ...action?.payload] }
+        case 'initAmdIndexTableData':
+          newState = {...state, amdIndexTableData : {...action?.payload} }
           return newState;
-        case 'initUsdIndexData':
-          newState = {...state, usdIndexData : [ ...action?.payload] }
+        case 'initUsdIndexTableData':
+          newState = {...state, usdIndexTableData : { ...action?.payload } }
           return newState;
         case 'clearState' :
           return {  ...stateModal  }

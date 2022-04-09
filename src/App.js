@@ -39,7 +39,7 @@ import { StateProvider as ProviderFaq} from 'Store/faq'
 import { StateProvider as ProviderCareers } from 'Store/careers'
 import { StateProvider as ProviderRegulations } from 'Store/regulations'
 import { StateProvider as ProviderAnnualReports } from 'Store/annualReports'
-import { StateProvider as ProviderGraph } from 'Store/graphs'
+import { StateProvider as ProviderGraph } from 'Store/Indices'
 
 function App() {
   return (
