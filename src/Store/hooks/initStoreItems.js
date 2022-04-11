@@ -172,7 +172,7 @@ export default function Initstore(props) {
         },
 
         // -----------------
-        // Indices page 
+        // Indices page  AMD
         // -----------------
 
         {
@@ -184,6 +184,26 @@ export default function Initstore(props) {
             singleType: false
         },
         {
+            name: 'initAmdIndexTableData',
+            filter: {    },
+            fetchFunction: GetFunctions.fetchAmdBondIndexTable,
+            storeObj: _StoreIndicesData,
+            storeInitString: 'initAmdIndexTableData',
+            singleType: true
+        },
+        {
+            name: 'initAmdIndicesFactsheets',
+            filter: { populate : ["pdf"], sort : ["year:desc"]   },
+            fetchFunction: GetFunctions.fetchAmdBondIndexFactsheets,
+            storeObj: _StoreIndicesData,
+            storeInitString: 'initAmdIndicesFactsheets',
+            singleType: false
+        },
+
+        // -----------------
+        // Indices page  AMD
+        // -----------------
+        {
             name: 'initUsdIndicesGraph',
             filter: { sort: ['date:asc'],   },
             fetchFunction: GetFunctions.fetchUsdBondIndexGraph,
@@ -192,13 +212,22 @@ export default function Initstore(props) {
             singleType: false
         },
         {
-            name: 'initAmdIndexTableData',
+            name: 'initUsdIndexTableData',
             filter: {    },
-            fetchFunction: GetFunctions.fetchAmdBondIndexTable,
+            fetchFunction: GetFunctions.fetchUsdBondIndexTable,
             storeObj: _StoreIndicesData,
-            storeInitString: 'initAmdIndexTableData',
+            storeInitString: 'initUsdIndexTableData',
             singleType: true
         },
+        {
+            name: 'initUsdIndicesFactsheets',
+            filter: { populate : ["pdf"], sort : ["year:desc"]   },
+            fetchFunction: GetFunctions.fetchUsdBondIndexFactsheets,
+            storeObj: _StoreIndicesData,
+            storeInitString: 'initUsdIndicesFactsheets',
+            singleType: false
+        },
+
 
     ]
 

@@ -26,6 +26,7 @@ import MarketResearch from 'Pages/MarketResearch'
 import Careers from 'Pages/Careers'
 import Protfolio from 'Pages/Protfolio';
 import Indices from 'Pages/Indices'
+import Search from 'Pages/Search'
 
 // ** Store
 import { StateProvider as ProviderProtfolio } from 'Store/protfolio'
@@ -96,6 +97,7 @@ const RoutesConfig = () => {
         <Route path="careers" element={ <Careers/> } />
         <Route path="protfolio" element={ <Protfolio/> } />
         <Route path="indices" element={ <Indices/> } />
+        <Route path="search" element={ <Search/> } />
 
         <Route path="*" element={ <Notfound/> } />
       </Routes>

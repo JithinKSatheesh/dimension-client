@@ -68,17 +68,31 @@ const GetFunctionsList = [
         name : 'fetchNormatives',
         url_end : 'normatives',  
     },
+    // AMD bond index
     {
         name : 'fetchAmdBondIndexGraph',
         url_end : 'amd-bond-index-graphs',  
     },
     {
+        name : 'fetchAmdBondIndexTable',
+        url_end : 'amd-bond-index-table',  
+    },
+    {
+        name : 'fetchAmdBondIndexFactsheets',
+        url_end : 'amd-bond-index-factsheets',  
+    },
+    // USD corporate index
+    {
         name : 'fetchUsdBondIndexGraph',
         url_end : 'usd-bond-index-graphs',  
     },
     {
-        name : 'fetchAmdBondIndexTable',
-        url_end : 'amd-bond-index-table',  
+        name : 'fetchUsdBondIndexFactsheets',
+        url_end : 'usd-bond-index-factsheets',  
+    },
+    {
+        name : 'fetchUsdBondIndexTable',
+        url_end : 'usd-corporate-index-table',  
     },
 ]
 

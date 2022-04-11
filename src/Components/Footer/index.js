@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 // ** assets
 import { ReactComponent as Logo} from 'Assets/icons/logo.svg'
@@ -22,6 +22,38 @@ import Brand_5 from 'Assets/brands/exit.png'
 
 
 export default function Index(props) {
+
+    const navigate = useNavigate()
+
+    const SearchBox = (props) => {
+
+        const [val, setVal] = useState('')
+
+        const handleChange=(e) => {
+
+           setVal(e.target.value)
+
+        }
+
+        const onKeyPress = (e) => {
+            if(e.key === 'Enter'){
+                navigate(`/search?q=${val}`)
+            }
+        }
+
+        return (
+            <div className="input relative ">
+                <div className="absolute mt-3 ml-2"><Search /></div>
+                <input 
+                    style={{ width: '335px' }} type="text" name="" id="" className='h-14 pl-10 rounded-xl'
+                    value={val}
+                    onChange={handleChange}
+                    onKeyDown={onKeyPress}
+                    
+                    />
+            </div>
+        )
+    }
     
 
     return (
@@ -32,10 +64,7 @@ export default function Index(props) {
                     <div className='w-full xl:w-fit mb-12 xl:mb-0'>
                         <Logo className='mx-auto' />
                     </div>
-                    <div className="input relative ">
-                        <div className="absolute mt-3 ml-2"><Search /></div>
-                        <input style={{width : '335px'}} type="text" name="" id="" className='h-14 pl-10 rounded-xl' />
-                    </div>
+                    <SearchBox />    
                 </div>
                 <div className="mt-28 mb-32">
                     <div className="grid grid-cols-1 xl:grid-cols-4 gap-16 text-center xl:text-left lg:text-xs 2xl:text-base">
