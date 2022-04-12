@@ -5,6 +5,7 @@ import { TeamCard } from './TeamCard'
 
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop} from 'Components/SlideAnimation'
 
+import {ThreeDots} from 'react-loader-spinner'
 
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
@@ -15,47 +16,36 @@ export default function Team(props) {
     const { getTeam } = useStoreItem()
     const { initTeam } = initStoreItem()
 
-    const data = getTeam?.team ?? []
+    const _data = getTeam?.team ?? []
 
     useEffect(() => initTeam() ,[])
 
     const [active, setActive] = useState('board_member')
 
+    const data = [..._data].filter(val => val?.attributes?.filter_key === active)
+
+
     const changeActive = (value) => {
         setActive(value ? value : 'board_member')
     }
 
-    const _members = [
+    const filters = [
         {
-            id : 1,
-            full_name : "Davit Hakobyan",
-            position : 'Chairman of the Board',
-            type : 'board_member',
-            image : '/assets/team/Davit_Hakobyan.png'
+            id: 1,
+            value: 'board_member',
+            label: "Board member"
         },
         {
-            id : 2,
-            full_name : "Carel Chris Hofstra",
-            position : 'Board member',
-            type : 'board_member',
-            image : '/assets/team/Carel_Chris_Hofstra.png'
+            id: 2,
+            value: 'advisory_group',
+            label: "Advisory group"
         },
         {
-            id : 3,
-            full_name : "Edgar Hambaryan",
-            position : 'Board member',
-            type : 'board_member',
-            image : '/assets/team/Edgar_Hambaryan.png'
+            id: 3,
+            value: 'core_team',
+            label: "Core team"
         },
-        {
-            id : 4,
-            full_name : "Carel Chris Hofstra",
-            position : 'Board member',
-            type : 'board_member',
-            image : '/assets/team/Carel_Chris_Hofstra.png'
-        },
-    ]
-    
+    ];
 
 
     return (
@@ -75,6 +65,7 @@ export default function Team(props) {
                                 <SlideRight>
 
                                 <FilterTab 
+                                    filters={filters}
                                     active={active} 
                                     changeActive={changeActive} />
                                 </SlideRight>
@@ -82,10 +73,13 @@ export default function Team(props) {
                             
                         </div>
                         <div className="mt-24">
-                            <div className="grid grid-cols-1 xl:grid-cols-4 gap-12">
-                                {[...data].map(person => <TeamCard key={person.id} item={person?.attributes} />)}
-                            </div>
-
+                            {data?.length <= 0 ?
+                                <div className=' flex justify-center'> <ThreeDots color='#206291' />  </div>
+                                :
+                                <div className="grid grid-cols-1 xl:grid-cols-4 gap-12">
+                                    {[...data].map(person => <TeamCard key={person.id} item={person?.attributes} />)}
+                                </div>
+                            }
                         </div>
 
                     </div>

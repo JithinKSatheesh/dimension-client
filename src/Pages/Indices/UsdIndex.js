@@ -8,6 +8,8 @@ import initStoreItem from 'Store/hooks/initStoreItems'
 import { TableLayout1, TableLayoutAMDIndex } from './TableLayout1'
 import { isEmpty } from 'Utils/string'
 
+import { ThreeDots } from 'react-loader-spinner'
+
 import { FactSheetLayout } from './FactSheetLayout'
 
 export default function Amdindex(props) {
@@ -48,31 +50,46 @@ export default function Amdindex(props) {
 
     return (
         <>
-            <ChartLayout
-                index_current_date={index_current_date}
-                index_current_value={index_current_value}
-                since_inception_total_return={since_inception_total_return}
-                labels={labels}
-                values={values}
-            />
+            {_graphData?.length <= 0 ?
+                <div className='flex justify-center py-16'> <ThreeDots color='#206291' />  </div>
+                :
+                <>
+                    <ChartLayout
+                        index_current_date={index_current_date}
+                        index_current_value={index_current_value}
+                        since_inception_total_return={since_inception_total_return}
+                        labels={labels}
+                        values={values}
+                    />
+                </>}
             <div className="text-2xl text-dark-blue font-bold py-8">
                 Index Description
             </div>
             <div className=" text-dark-blue pb-8 text-sm">
                 Dimension Armenia USD Corporate Bond Index comprises bonds issued by Armenian corporations meeting the index’s eligibility criteria. The index is rebalanced monthly and is market value weighted.
             </div>
-            <div className="grid  grid-cols-1  xl:grid-cols-2 gap-12 pt-8">
-                <TableLayout1
-                    data={_tableData?.attributes}
+            {isEmpty(_tableData) ?
+                <div className='flex justify-center py-16'> <ThreeDots color='#206291' />  </div>
+                :
+                <>
+                    <div className="grid  grid-cols-1  xl:grid-cols-2 gap-12 pt-8">
+                        <TableLayout1
+                            data={_tableData?.attributes}
+                        />
+                        <TableLayoutAMDIndex
+                            showBond={false}
+                            data={_tableData?.attributes}
+                        />
+                    </div>
+                </>
+            }
+            {_pdfData?.length <= 0 ?
+                <div className='flex justify-center py-16'> <ThreeDots color='#206291' />  </div>
+                :
+                <FactSheetLayout
+                    data={_pdfData}
                 />
-                <TableLayoutAMDIndex
-                    showBond={false}
-                    data={_tableData?.attributes}
-                />
-            </div>
-            <FactSheetLayout
-                data={_pdfData}
-            />
+            }
 
         </>
     )

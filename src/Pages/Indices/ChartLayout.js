@@ -23,13 +23,13 @@ export const ChartLayout = (props) => {
     
 
     const graphData = {
-        labels :showfullData ? labels : getArrayWithLimit(labels, 3),
+        labels :showfullData ? labels : getArrayWithLimit(labels, 12),
         datasets: [
           {
             label: "",
-            data: showfullData ? values : getArrayWithLimit(values, 3),
+            data: showfullData ? values : getArrayWithLimit(values, 12),
             fill: 'start',
-            backgroundColor: "#003c5a25",
+            backgroundColor: "#e5eff4",
             borderColor: "#003C5A"
           }
         ],

@@ -14,7 +14,7 @@ import { NavLinks } from "./NavLinks";
 
 export function Navbar(props) {
 
-    const { variant = '', float = false } = props;
+    const { variant = '', float = false, _floatNav } = props;
 
     const [isHover, toggleHover] = useState(false);
     const [open, setOpen] = useState(false);
@@ -32,7 +32,14 @@ export function Navbar(props) {
     // }
     return (
         <>
-            <div className={`w-full px-4 pb-5 pt-8 xl:pb-0 xl:pt-0  ${float && 'fixed bg-white z-40 drop-shadow-md'} `}>
+            <div className={`
+                w-full px-4 pb-5 pt-8 xl:pb-0 xl:pt-0 
+                ${float ? 
+                    `fixed w-full  bg-white z-40 drop-shadow-md  ${_floatNav ? 'translate-y-0' : '-translate-y-28'}` 
+                        : ''
+                    } 
+                transition-transform duration-1000`}>
+
                 <div className="container mx-auto ">
                     <div className="flex items-center justify-between">
                         {/* desktop logo */}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop} from 'Components/SlideAnimation'
+import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
 
 //  ** Brands
@@ -13,6 +13,22 @@ import { ReactComponent as IconLocation } from 'Assets/icons/location.svg'
 
 export default function Partners(props) {
 
+    const RenderPartners = (props) => {
+
+        return (
+            <SlideBottom>
+                <div className="p-8 rounded-xl bg-blue-light text-dark-blue  hover-border-outline border-2">
+                    <div className="h-32 border-b-2 border-color-blue">
+                        <img src={props?.image} alt="" />
+                    </div>
+                    <div className="text-sm mt-10 flex items-center">
+                        <IconLocation className='mr-4' />{props?.location}
+                    </div>
+                </div>
+            </SlideBottom>
+        )
+    }
+
 
     return (
         <>
@@ -20,43 +36,26 @@ export default function Partners(props) {
                 <div className="container mx-auto px-4">
                     <div className="py-36">
                         <div className="mb-6 text-white font-bold text-2xl xl:text-3xl pb-16">
-                        <SlideLeft>
-                        Our partners
-                        </SlideLeft>
+                            <SlideLeft>
+                                Our partners
+                            </SlideLeft>
                         </div>
                         <div className="grid grid-cols-1 xl:grid-cols-3 gap-24">
-                            <SlideBottom>
-                            <div className="p-8 rounded-xl bg-blue-light text-dark-blue">
-                                <div className="h-32 border-b-2 border-color-blue">
-                                    <img src={LogoRvs} alt="" />
-                                </div>
-                                <div className="text-sm mt-10 flex items-center">
-                                   <IconLocation className='mr-4' /> Newport Beach, California
-                                </div>
-                            </div>
-                            </SlideBottom>
-                            <SlideTop>
-
-                            <div className="p-8 rounded-xl bg-blue-light">
-                                <div className="h-32 border-b-2 border-color-blue">
-                                    <img src={LogoDefoe} alt="" />
-                                </div>
-                                <div className="text-sm mt-10 flex items-center">
-                                <IconLocation className='mr-4' /> Zagreb, Croatia
-                                </div>
-                            </div>
-                            </SlideTop>
-                            <SlideBottom>
-
-                            <div className="p-8 rounded-xl bg-blue-light">
-                                <div className="h-32 border-b-2 border-color-blue">
-                                    <img src={LogoAdriatic} alt="" />
-                                </div>
-                                <div className="text-sm mt-10 flex items-center">
-                                <IconLocation className='mr-4' /> London, UK
-                                </div>
-                            </div>
-                            </SlideBottom>
+                            <RenderPartners
+                                image={LogoRvs}
+                                location={"Newport Beach, California"}
+                            
+                            />
+                            <RenderPartners
+                                image={LogoDefoe}
+                                location={"Zagreb, Croatia"}
+                            
+                            />
+                            <RenderPartners
+                                image={LogoAdriatic}
+                                location={" London, UK"}
+                            
+                            />
 
                         </div>
                     </div>

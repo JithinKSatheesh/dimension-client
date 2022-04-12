@@ -40,35 +40,49 @@ export const options = {
       text: 'Chart.js Line Chart',
     },
   },
-};
-
-
-
-const data = {
-  labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  datasets: [
-    {
-      label: 'Dataset 2',
-      data: [12, 19, 3, 5, 1, 3],
-      fill: 'start',
-        backgroundColor: "#003c5a25",
-        borderColor: "#003C5A"
+  scales: {
+    x: {
+      grid: {
+        display: false,
+      },
     },
-  ],
+
+    y: {
+      grid: {
+        // display: false,
+        // color: 'rgba(217,143,7,0.1)',
+      },
+    },
+  },
 };
 
-const data2 = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-    datasets: [
-      {
-        label: "First dataset",
-        data: [33, 53, 85, 41, 44, 65],
-        fill: 'start',
-        backgroundColor: "#003c5a25",
-        borderColor: "#003C5A"
-      }
-    ]
-  };
+
+
+// const data = {
+//   labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+//   datasets: [
+//     {
+//       label: 'Dataset 2',
+//       data: [12, 19, 3, 5, 1, 3],
+//       fill: 'start',
+//         backgroundColor: "#003c5a25",
+//         borderColor: "#003C5A"
+//     },
+//   ],
+// };
+
+// const data2 = {
+//     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+//     datasets: [
+//       {
+//         label: "First dataset",
+//         data: [33, 53, 85, 41, 44, 65],
+//         fill: 'start',
+//         backgroundColor: "#003c5a25",
+//         borderColor: "#003C5A"
+//       }
+//     ]
+//   };
 
 export default function App(props) {
 

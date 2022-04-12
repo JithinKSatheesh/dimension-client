@@ -7,16 +7,16 @@ import { Navbar } from './Navbar'
 
 export default function Index(props) {
 
-    const {variant = ''} = props
+    const { variant = '' } = props
 
-    const { isScrollBeyond} = usescrollpos()
+    const { isScrollBeyond, isScrollUp } = usescrollpos()
 
-    const _floatNav = isScrollBeyond(5)
+    const _floatNav = isScrollBeyond(5) && isScrollUp()
 
     return (
         <>
-        {_floatNav && <Navbar variant={''} float={true} />}
-        <Navbar variant={variant} float={false} />
+            <Navbar variant={''} float={true} _floatNav={_floatNav} />
+            <Navbar variant={variant} float={false} />
         </>
     )
 }

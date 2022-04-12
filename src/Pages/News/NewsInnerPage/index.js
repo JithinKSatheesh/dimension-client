@@ -20,9 +20,6 @@ export default function Index(props) {
 
     const { ScrollToTop } = useScrollBehaviours()
 
-    useEffect(() => {
-        ScrollToTop()
-    }, [])
 
     const fetchNews = async() => {
         try {
@@ -41,8 +38,9 @@ export default function Index(props) {
 
 
     useEffect(() => {
+        ScrollToTop()
         fetchNews()
-    }, [])
+    }, [id])
     
 
     return (

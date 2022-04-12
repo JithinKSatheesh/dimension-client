@@ -1,7 +1,8 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
+import { ThreeDots } from 'react-loader-spinner'
 
 import { ReactComponent as IconPdf } from 'Assets/icons/pdfIcon.svg'
 import { UpdateStatus } from '../../Components/UpdateStatus'
@@ -14,10 +15,10 @@ export default function Financialstatement(props) {
 
     const { getAnnualReports } = useStoreItem()
 
-    const { 
-        initFinancialStatementAnnual, 
-        initFinancialStatementQuaterly, 
-        initNormatives, 
+    const {
+        initFinancialStatementAnnual,
+        initFinancialStatementQuaterly,
+        initNormatives,
     } = initStoreItem()
 
 
@@ -49,9 +50,9 @@ export default function Financialstatement(props) {
         )
     }
 
-   
 
-    const ButtonWrapper = ({title, item, pdf_key = 'pdf'}) => {
+
+    const ButtonWrapper = ({ title, item, pdf_key = 'pdf' }) => {
 
         const pdf_url = item?.attributes?.[pdf_key]?.data?.attributes?.url
         const url_ = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : ''
@@ -60,7 +61,7 @@ export default function Financialstatement(props) {
         return (<ReportDownloadButton
             title={title ? title : item?.attributes?.year}
             onClick={() => window.open(url_, '_blank', 'noopener,noreferrer')}
-            />
+        />
         )
 
 
@@ -69,20 +70,20 @@ export default function Financialstatement(props) {
     const TableRow = (props) => {
 
         return (
-            <div className={`flex flex-wrap justify-end  p-5 ${props?.borderBlue ? 'border-color-blue' : 'border-blue-light' }  border-b items-center `}>
+            <div className={`flex flex-wrap justify-end  p-5 ${props?.borderBlue ? 'border-color-blue' : 'border-blue-light'}  border-b items-center `}>
                 <div className="w-full xl:w-1/2 py-5 xl:py-0">
                     <div className="font-bold">
                         <SlideLeft>
-                        {props?.title}
+                            {props?.title}
                         </SlideLeft>
                     </div>
                 </div>
                 <div className="w-full xl:w-1/2">
-                        <JustAppear>
-                    <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
+                    <JustAppear>
+                        <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
                             {props?.children}
-                    </div>
-                        </JustAppear>
+                        </div>
+                    </JustAppear>
                 </div>
             </div>
         )
@@ -95,14 +96,14 @@ export default function Financialstatement(props) {
                 <div className="py-36 text-white">
                     <div className="mb-24  font-bold text-2xl xl:text-3xl">
                         <SlideLeft>
-                        Financial statments & Normatives
+                            Financial statments & Normatives
                         </SlideLeft>
                     </div>
                     <div className="pb-5 border-blue-light border-b font-bold">
-                    <SlideLeft>
+                        <SlideLeft>
 
-                        Annual
-                    </SlideLeft>
+                            Annual
+                        </SlideLeft>
                     </div>
                     <TableRow title="">
                         {[..._financialStatementAnnual].map(item => <ButtonWrapper item={item} key={item?.id} />)}
@@ -110,31 +111,31 @@ export default function Financialstatement(props) {
                     <div className="mt-24 pb-5 border-color-blue border-b font-bold">
                         <SlideLeft>
 
-                        Quarterly
+                            Quarterly
                         </SlideLeft>
                     </div>
-                    {[..._financialStatementsQuaterly].map(item => 
+                    {[..._financialStatementsQuaterly].map(item =>
                         <TableRow title={item?.attributes?.year} borderBlue={true} key={item?.id}>
-                            <ButtonWrapper title="1 Quarter" item={item} pdf_key="q1_pdf"  />
-                            <ButtonWrapper title="2 Quarter"  item={item} pdf_key="q2_pdf"/>
-                            <ButtonWrapper title="3 Quarter"  item={item} pdf_key="q3_pdf"/>
-                            <ButtonWrapper title="4 Quarter" item={item} pdf_key="q4_pdf" />
-                        </TableRow>
-                    )}
-                   
-                    <div className="mt-24 pb-5 border-blue-light border-b font-bold">
-                        Normatives
-                    </div>
-                    {[..._normatives].map(item => 
-                        <TableRow title={item?.attributes?.year} borderBlue={true} key={item?.id}>
-                            <ButtonWrapper title="1 Quarter" item={item} pdf_key="q1_pdf"  />
-                            <ButtonWrapper title="2 Quarter"  item={item} pdf_key="q2_pdf"/>
-                            <ButtonWrapper title="3 Quarter"  item={item} pdf_key="q3_pdf"/>
+                            <ButtonWrapper title="1 Quarter" item={item} pdf_key="q1_pdf" />
+                            <ButtonWrapper title="2 Quarter" item={item} pdf_key="q2_pdf" />
+                            <ButtonWrapper title="3 Quarter" item={item} pdf_key="q3_pdf" />
                             <ButtonWrapper title="4 Quarter" item={item} pdf_key="q4_pdf" />
                         </TableRow>
                     )}
 
-                    <UpdateStatus className="pt-32 text-white"  type="dark" date="15.02.2022" />
+                    <div className="mt-24 pb-5 border-blue-light border-b font-bold">
+                        Normatives
+                    </div>
+                    {[..._normatives].map(item =>
+                        <TableRow title={item?.attributes?.year} borderBlue={false} key={item?.id} >
+                            <ButtonWrapper title="1 Quarter" item={item} pdf_key="q1_pdf" />
+                            <ButtonWrapper title="2 Quarter" item={item} pdf_key="q2_pdf" />
+                            <ButtonWrapper title="3 Quarter" item={item} pdf_key="q3_pdf" />
+                            <ButtonWrapper title="4 Quarter" item={item} pdf_key="q4_pdf" />
+                        </TableRow>
+                    )}
+
+                    <UpdateStatus className="pt-32 text-white" type="dark" date="15.02.2022" />
 
                 </div>
             </div>

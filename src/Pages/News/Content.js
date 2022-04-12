@@ -1,12 +1,13 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 
-import {SlideTop } from 'Components/SlideAnimation'
+import { SlideTop } from 'Components/SlideAnimation'
 
 
 import { NewsCard } from './NewsCard'
 
-import {UpdateStatus} from 'Components/UpdateStatus'
+import { UpdateStatus } from 'Components/UpdateStatus'
 
+import { ThreeDots } from 'react-loader-spinner'
 
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
@@ -25,24 +26,24 @@ export default function Content(props) {
     useEffect(() => initArticles(), [])
 
 
-    const _news = [
-        {
-            id:1,
-            date : '30.2.2022',
-            img : '/assets/photos/news_sample_2.png',
-            title : 'Article name',
-            content : `In the Armenian capital markets, Dimension is involved in managing its own investment portfolio of equity and debt instruments, as well as two open, non-public, leveraged fixed income funds. In international markets, Dimension offers private portfolio and wealth management solutions to institutional clients, high net worth individuals, and other investors based in Armenia and abroad.`,
+    // const _news = [
+    //     {
+    //         id:1,
+    //         date : '30.2.2022',
+    //         img : '/assets/photos/news_sample_2.png',
+    //         title : 'Article name',
+    //         content : `In the Armenian capital markets, Dimension is involved in managing its own investment portfolio of equity and debt instruments, as well as two open, non-public, leveraged fixed income funds. In international markets, Dimension offers private portfolio and wealth management solutions to institutional clients, high net worth individuals, and other investors based in Armenia and abroad.`,
 
-        },
-        {
-            id:2,
-            date : '30.2.2022',
-            img : '/assets/photos/news_sample_1.png',
-            title : 'Article name',
-            content : `In the Armenian capital markets, Dimension is involved in managing its own investment portfolio of equity and debt instruments, as well as two open, non-public, leveraged fixed income funds. In international markets, Dimension offers private portfolio and wealth management solutions to institutional clients, high net worth individuals, and other investors based in Armenia and abroad.`,
+    //     },
+    //     {
+    //         id:2,
+    //         date : '30.2.2022',
+    //         img : '/assets/photos/news_sample_1.png',
+    //         title : 'Article name',
+    //         content : `In the Armenian capital markets, Dimension is involved in managing its own investment portfolio of equity and debt instruments, as well as two open, non-public, leveraged fixed income funds. In international markets, Dimension offers private portfolio and wealth management solutions to institutional clients, high net worth individuals, and other investors based in Armenia and abroad.`,
 
-        },
-    ]
+    //     },
+    // ]
 
 
 
@@ -54,24 +55,29 @@ export default function Content(props) {
                         <div className="container mx-auto">
                             <div className="flex justify-between items-center">
                                 <div className="text-2xl xl:text-3xl font-bold flex items-center my-2">
-                                  <SlideTop>
-                                    News
-                                  </SlideTop>
+                                    <SlideTop>
+                                        News
+                                    </SlideTop>
                                 </div>
                                 <div className='flex '>
-                                    <div className="py-2 px-5 mr-3 rounded-xl bg-blue-light cursor-pointer hover:border border-dark-blue">
+                                    <div className="py-2 px-5 mr-3 rounded-xl bg-blue-light cursor-pointer hover-border-outline  border-2">
                                         Recent
                                     </div>
-                                    <div className="py-2 px-5 rounded-xl bg-blue-light cursor-pointer hover:border border-dark-blue">
+                                    <div className="py-2 px-5 rounded-xl bg-blue-light cursor-pointer hover-border-outline  border-2">
                                         Popular
                                     </div>
-                                    
+
                                 </div>
                             </div>
-                            <div className="py-16">
-                                {data.map((item, index) =>  <NewsCard key={item?.id} item={item?.attributes} id={item?.id} index={index} />)}
-                            </div>
-                            <UpdateStatus date={formatDate(_date)} />
+                            {data?.length <= 0 ?
+                                <div className='flex justify-center py-16'> <ThreeDots color='#206291' />  </div>
+                                :
+                                <>
+                                    <div className="py-16">
+                                        {data.map((item, index) => <NewsCard key={item?.id} item={item?.attributes} id={item?.id} index={index} />)}
+                                    </div>
+                                    <UpdateStatus date={formatDate(_date)} />
+                                </>}
                         </div>
                     </div>
                 </section>

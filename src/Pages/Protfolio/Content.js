@@ -3,6 +3,7 @@ import { PopUpcontainer } from 'Components/PopUpcontainer'
 // import { NewsCard } from './NewsCard'
 import { SlideTop} from 'Components/SlideAnimation'
 
+import {ThreeDots} from 'react-loader-spinner'
 
 import { UpdateStatus } from 'Components/UpdateStatus'
 import { ProtfolioCard } from 'Pages/Home/Protfolio'
@@ -26,32 +27,32 @@ export default function Content(props) {
 
     console.log(data)
 
-    const _data = [
-        {
-            img: '',
-            title: "Demo",
-            type: "Type",
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-        },
-        {
-            img: '',
-            title: "Demo",
-            type: "Type",
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-        },
-        {
-            img: '',
-            title: "Demo",
-            type: "Type",
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-        },
-        {
-            img: '',
-            title: "Demo",
-            type: "Type",
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-        },
-    ]
+    // const _data = [
+    //     {
+    //         img: '',
+    //         title: "Demo",
+    //         type: "Type",
+    //         desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
+    //     },
+    //     {
+    //         img: '',
+    //         title: "Demo",
+    //         type: "Type",
+    //         desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
+    //     },
+    //     {
+    //         img: '',
+    //         title: "Demo",
+    //         type: "Type",
+    //         desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
+    //     },
+    //     {
+    //         img: '',
+    //         title: "Demo",
+    //         type: "Type",
+    //         desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
+    //     },
+    // ]
 
 
 
@@ -70,11 +71,17 @@ export default function Content(props) {
 
                             </div>
                             <div className="py-16">
-                                <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
+                            {data?.length <= 0 ?
+                                <div className='flex justify-center '> <ThreeDots color='#206291' />  </div>
+                                :
+                                <>
+                                <div className="grid grid-cols-1 xl:grid-cols-4  gap-16 xl:gap-16">
                                     {[...data].map((item, index) =>
                                         <ProtfolioCard key={item?.id} item={item?.attributes} />)
                                     }
                                 </div>
+                                </>
+                            }
                             </div>
                             <UpdateStatus date={formatDate(_date)} />
                         </div>

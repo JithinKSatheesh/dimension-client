@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { truncate } from 'Utils/string'
 import {ReactComponent as IconRightArrow} from 'Assets/icons/ArrowRight.svg'
 import BrandImg from 'Assets/brands/brand1.png'
 
+import {ThreeDots} from 'react-loader-spinner'
+
 // components
 import { GetButton } from 'Components/Buttons'
 import { Link } from 'react-router-dom'
+import {MarketResearchPopup} from 'Pages/MarketResearch/MarketResearchPopup'
 
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
@@ -18,36 +21,14 @@ export default function Research(props) {
     const { getMarketResearch } = useStoreItem()
     const { initMarketResearch } = initStoreItem()
 
-    const data = getMarketResearch?.marketResearch ?? []
+    const _data = getMarketResearch?.marketResearch ?? []
+    const data = _data?.slice(0, 4)
+
+    const [popup, setPopup] = useState()
 
     useEffect(() => initMarketResearch(), [])
 
-    const _data = [
-        { 
-            img : '',
-            title : "Demo",
-            type : "Type",
-            desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-        },
-        { 
-            img : '',
-            title : "Demo",
-            type : "Type",
-            desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-        },
-        { 
-            img : '',
-            title : "Demo",
-            type : "Type",
-            desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-        },
-        { 
-            img : '',
-            title : "Demo",
-            type : "Type",
-            desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-        },
-    ]
+    
 
 
     return (
@@ -66,13 +47,18 @@ export default function Research(props) {
                         </div>
                     </div>
                     {/* --------------------------- */}
-                    <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
-                        {[...data].map((item, index) =>
-                            <ResearchCard to="/market-research" key={item?.id} item={item?.attributes} />)
-                        }
-                    </div>
+                    {data?.length <= 0 ?
+                        <div className='flex justify-center '> <ThreeDots color='#206291' />  </div>
+                        :
+                        <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
+                            {[...data].map((item, index) =>
+                                <ResearchCard onClick={() => setPopup(item?.id)} key={item?.id} item={item?.attributes} />)
+                            }
+                        </div>
+                    }
                 </div>
             </div>
+            <MarketResearchPopup popup={popup} setPopup={setPopup} />
         </>
     )
 }

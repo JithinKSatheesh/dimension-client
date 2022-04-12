@@ -5,6 +5,7 @@ import { truncate } from 'Utils/string'
 
 import {ReactComponent as IconRightArrow} from 'Assets/icons/ArrowRight.svg'
 
+import {ThreeDots} from 'react-loader-spinner'
 
 // components
 import { DetailsButton } from 'Components/Buttons'
@@ -22,33 +23,33 @@ export default function Protfolio(props) {
     const { getProtfolio } = useStoreItem()
     const { initProtfolio } = initStoreItem()
 
-    const data = getProtfolio?.protfolio ?? []
-
+    const _data = getProtfolio?.protfolio ?? []
+    const data = _data?.slice(0, 4)
 
     // console.log(getProtfolio)
 
-    const _data = [
-        { 
-            title : "Demo",
-            type : "Type",
-            desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-        },
-        { 
-            title : "Demo",
-            type : "Type",
-            desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-        },
-        { 
-            title : "Demo",
-            type : "Type",
-            desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-        },
-        { 
-            title : "Demo",
-            type : "Type",
-            desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-        },
-    ]
+    // const _data = [
+    //     { 
+    //         title : "Demo",
+    //         type : "Type",
+    //         desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
+    //     },
+    //     { 
+    //         title : "Demo",
+    //         type : "Type",
+    //         desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
+    //     },
+    //     { 
+    //         title : "Demo",
+    //         type : "Type",
+    //         desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
+    //     },
+    //     { 
+    //         title : "Demo",
+    //         type : "Type",
+    //         desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
+    //     },
+    // ]
 
 
 
@@ -73,11 +74,15 @@ export default function Protfolio(props) {
                     </div>
                 </div>
                 {/* --------------------------- */}
+                {data?.length <= 0 ?
+                    <div className='flex justify-center '> <ThreeDots  color='white' />  </div>
+                    :
                 <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
                     {[...data].map((item, index) => 
                         <ProtfolioCard key={item?.id} item={item?.attributes} />)
                     }
                 </div>
+                }
             </div>
         </div>
         </>

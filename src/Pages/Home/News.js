@@ -8,6 +8,7 @@ import {ReactComponent as Logo2} from 'Assets/icons/logo_2.svg'
 // **assets
 import NewsPlaceholder from 'Assets/img/news_sample_1.png'
 
+import {ThreeDots} from 'react-loader-spinner'
 
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
@@ -21,39 +22,11 @@ export default function News(props) {
     const { getArticles } = useStoreItem()
     const { initArticles } = initStoreItem()
 
-    const data = getArticles?.articles ?? []
+    const _data = getArticles?.articles ?? []
+    const data = _data?.slice(0, 4)
+    const _date = getArticles?.articles?.[0]?.attributes?.updatedAt
 
     useEffect(() => initArticles(), [])
-
-
-    const newsData = [
-        {
-            title : "Sample",
-            img : '',
-            date : '15.02.2022',
-            id : 1
-        },
-        {
-            title : "Sample",
-            img : '/assets/photos/news_sample_2.png',
-            date : '15.02.2022',
-            id : 2
-        },
-        {
-            title : "Sample",
-            img : '',
-            date : '15.02.2022',
-            id : 3
-        },
-        {
-            title : "Sample",
-            img : '/assets/photos/news_sample_4.png',
-            date : '15.02.2022',
-            id : 4
-        },
-    ]
-
-    // console.log(data)
     
 
     return (
@@ -72,23 +45,28 @@ export default function News(props) {
                         </Link>
                 </div>
                 {/* ---------------------------- */}
-                <div className="grid grid-cols-1 xl:grid-cols-3 gap-16 ">
-                    {[...data].map((item, index) => (
-                        <div key={item?.id} className={`  ${(index === 0 || index === 3 ) && 'col-span-1 xl:col-span-2'}`}>
-                            <Link to={`/news/${item?.id}`}>
-                                <NewsCard  item={item?.attributes} index={index} />
-                            </Link>
-                        </div>
-                    ))}
-                </div>
+                {data?.length <= 0 ?
+                    <div className='flex justify-center '> <ThreeDots color='white' />  </div>
+                    :
+                    <>
+                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-16 ">
+                        {[...data].map((item, index) => (
+                            <div key={item?.id} className={`  ${(index === 0 || index === 3) && 'col-span-1 xl:col-span-2'}`}>
+                                <Link to={`/news/${item?.id}#newstop`}>
+                                    <NewsCard item={item?.attributes} index={index} />
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
                 <div className="pt-32">
                     <div className="flex justify-end items-center">
                         <div className="text-sm text-white mr-4">
-                            updated: 15.02.2022
+                            {formatDate(_date)}
                         </div>
                         <Logo2 />
                     </div>
                 </div>
+                    </>}
             </div>
         </div>    
         </>
