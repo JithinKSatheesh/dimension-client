@@ -1,5 +1,6 @@
 import axios from "axios";
 
+const qs = require('qs');
 
 const BASE_URL = `${process.env.REACT_APP_API_URL || 'http://localhost:1337'}/api/`
 
@@ -7,9 +8,15 @@ const BASE_URL = `${process.env.REACT_APP_API_URL || 'http://localhost:1337'}/ap
 //  User
 // ---------------------------------------
 
-const fetchFunctioModal = (url_end, query) => {
-    return  axios.get(`${BASE_URL}${url_end}?${query}`)
+const fetchFunctioModal = (url_end, query, id) => {
+    const _query = qs.stringify({
+        ...query
+    }, {
+        encodeValuesOnly: true, // prettify url
+    });
+    return  axios.get(`${BASE_URL}${url_end}${id ? `/${id}` : ``}?${_query}`)
 }
+
 
 const GetFunctionsList = [
     {
@@ -98,9 +105,10 @@ const GetFunctionsList = [
 
 const GetFunctions = [...GetFunctionsList].reduce((obj, current) => ({
     ...obj,
-    [current.name]: (query) => fetchFunctioModal(
+    [current.name]: (query, id) => fetchFunctioModal(
         current.url_end,
         query,
+        id
     )
     })
 ,{})

@@ -27,6 +27,7 @@ import Careers from 'Pages/Careers'
 import Protfolio from 'Pages/Protfolio';
 import Indices from 'Pages/Indices'
 import Search from 'Pages/Search'
+import NewsInnerPage from 'Pages/News/NewsInnerPage'
 
 // ** Store
 import { StateProvider as ProviderProtfolio } from 'Store/protfolio'
@@ -92,6 +93,7 @@ const RoutesConfig = () => {
         <Route path="regulations" element={ <Regulations/> } />
         <Route path="faq" element={ <FAQ/> } />
         <Route path="news" element={ <News/> } />
+        <Route path="news/:id" element={ <NewsInnerPage/> } />
         <Route path="article" element={ <Article/> } />
         <Route path="market-research" element={ <MarketResearch/> } />
         <Route path="careers" element={ <Careers/> } />

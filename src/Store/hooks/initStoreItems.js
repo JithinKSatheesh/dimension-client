@@ -16,7 +16,6 @@ import { Store as StoreRegulations } from 'Store/regulations'
 import { Store as StoreAnnualReports } from 'Store/annualReports'
 import { Store as StoreIndicesData } from 'Store/Indices'
 
-const qs = require('qs');
 
 export default function Initstore(props) {
 
@@ -34,14 +33,10 @@ export default function Initstore(props) {
     const _StoreIndicesData = useContext(StoreIndicesData)
 
     const CollectionTypeFunction = async (filter, fetchFunction, storeObj, storeInitString = 'initState', singleType = false) => {
-        const query = qs.stringify({
-            ...filter
-        }, {
-            encodeValuesOnly: true, // prettify url
-        });
+        
         try {
 
-            const res = await fetchFunction(query)
+            const res = await fetchFunction(filter)
             const data = res?.data?.data || (singleType ? {} : [])
             storeObj.dispatch({
                 type: storeInitString,
