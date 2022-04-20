@@ -23,13 +23,19 @@ import initStoreItem from 'Store/hooks/initStoreItems'
 export default function About(props) {
 
     const { getAboutPage } = useStoreItem()
-    const { initAboutpage } = initStoreItem()
+    const { initAboutpage, initAboutPageOwnership, initAboutPagePartners } = initStoreItem()
 
     
     const { ScrollToTop } = useScrollBehaviours()
     const location = useLocation()
     
-    useEffect(() => initAboutpage(), [])
+    useEffect(() => {
+
+        initAboutpage()
+        initAboutPageOwnership()
+        initAboutPagePartners()
+
+    }, [])
 
     useEffect(() => {
         if (location.hash.slice(1)) {
@@ -55,7 +61,7 @@ export default function About(props) {
                 <Buisnessprinciples />
                 <Ownership getAboutPage={getAboutPage} />
                 <Team />
-                <Partners />
+                <Partners getAboutPage={getAboutPage} />
                 <Mission />
                 <Corporatestructure />
                 <Statuorydocuments getAboutPage={getAboutPage} />

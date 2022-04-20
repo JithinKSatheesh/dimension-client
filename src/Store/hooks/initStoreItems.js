@@ -79,7 +79,7 @@ export default function Initstore(props) {
         },
         {
             name: 'initServices',
-            filter: { populate: ["regilation_documents_capital_market_pdf"] },
+            filter: { populate: ["regilation_documents_capital_market_pdf", "regilation_documents_asset_management_pdf", "regilation_documents_investment_securities_pdf"] },
             fetchFunction: GetFunctions.fetchServicesPage,
             storeObj: _StoreServices,
             storeInitString: 'initState',
@@ -93,14 +93,7 @@ export default function Initstore(props) {
             storeInitString: 'initState',
             singleType: true
         },
-        {
-            name: 'initTeam',
-            filter: { populate: ["image"] },
-            fetchFunction: GetFunctions.fetchTeam,
-            storeObj: _StoreTeam,
-            storeInitString: 'initState',
-            singleType: false
-        },
+        
         {
             name: 'initFaq',
             filter: {},
@@ -117,6 +110,17 @@ export default function Initstore(props) {
             storeInitString: 'initState',
             singleType: false
         },
+        // ===================================
+        //  About page
+        // ===================================
+        {
+            name: 'initTeam',
+            filter: { populate: ["image"] },
+            fetchFunction: GetFunctions.fetchTeam,
+            storeObj: _StoreTeam,
+            storeInitString: 'initState',
+            singleType: false
+        },
         {
             name: 'initAboutpage',
             filter: { populate: ["license_pdf", "charter_pdf", "regilation_pdf", "central_bank_regulation_pdf"] },
@@ -126,6 +130,22 @@ export default function Initstore(props) {
             singleType: true
         },
         {
+            name: 'initAboutPageOwnership',
+            filter: { },
+            fetchFunction: GetFunctions.fetchOwnership,
+            storeObj: _StoreAboutPage,
+            storeInitString: 'initOwnerships',
+            singleType: false
+        },
+        {
+            name: 'initAboutPagePartners',
+            filter: { populate : ['logo'] },
+            fetchFunction: GetFunctions.fetchPartners,
+            storeObj: _StoreAboutPage,
+            storeInitString: 'initPartners',
+            singleType: false
+        },
+        {
             name: 'initRegulationsPage',
             filter: {},
             fetchFunction: GetFunctions.fetchRegulations,
@@ -133,6 +153,9 @@ export default function Initstore(props) {
             storeInitString: 'initState',
             singleType: true
         },
+        // ===================================
+        // Client relations
+        // ===================================
         {
             name: 'initAnnualReports',
             filter: { populate: ["pdf"] },

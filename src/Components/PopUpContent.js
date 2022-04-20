@@ -37,7 +37,7 @@ export const PopUpContent = (props) => {
 
     return (
         <div>
-            <div className="text-white w-96">
+            <div className="text-white w-full ">
                 {loading ?
                     <LoadingWatch color="#e5eff4" />
                     :

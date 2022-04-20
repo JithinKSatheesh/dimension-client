@@ -28,9 +28,9 @@ export const TeamCard = (props) => {
                 </div>
                 <div className="flex justify-between">
                     <div className="flex">
-                        <a href={item?.fb_link} className='mr-3'> <IconLinkedin /> </a>
-                        <a href={item?.twitter_link} className='mr-3'> <IconTwitter /> </a>
-                        <a href={item?.linkedin_link}> <IconFB /> </a>
+                        <a href={item?.fb_link} target="_blank" className='mr-3'> <IconLinkedin /> </a>
+                        <a href={item?.twitter_link} target="_blank" className='mr-3'> <IconTwitter /> </a>
+                        <a href={item?.linkedin_link} target="_blank" > <IconFB /> </a>
                     </div>
 
                 </div>

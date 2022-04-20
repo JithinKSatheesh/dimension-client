@@ -2,6 +2,8 @@ import React, {createContext, useReducer} from 'react';
 
 const stateModal = {
     about : {},
+    ownerships : [],
+    partners : []
     
   }
   
@@ -18,6 +20,12 @@ const StateProvider = ( { children } ) => {
       switch(action.type) {
         case 'initState':
           newState = {...state, about : { ...action?.payload} }
+          return newState;
+        case 'initOwnerships':
+          newState = {...state, ownerships : [...action?.payload] }
+          return newState;
+        case 'initPartners':
+          newState = {...state, partners : [...action?.payload] }
           return newState;
         case 'clearState' :
           return {  ...stateModal  }

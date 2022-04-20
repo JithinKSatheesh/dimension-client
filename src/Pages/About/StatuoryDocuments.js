@@ -19,10 +19,10 @@ export default function Statuorydocuments(props) {
     const license_pdf = data?.attributes?.license_pdf?.data?.attributes?.url ?? ''
     const _license_pdf = license_pdf ? `${process.env.REACT_APP_API_URL}${license_pdf}` : ''
 
-    const regilation_pdf = data?.attributes?.license_pdf?.data?.attributes?.url ?? ''
+    const regilation_pdf = data?.attributes?.regilation_pdf?.data?.attributes?.url ?? ''
     const _regilation_pdf = regilation_pdf ? `${process.env.REACT_APP_API_URL}${regilation_pdf}` : ''
 
-    const charter_pdf = data?.attributes?.license_pdf?.data?.attributes?.url ?? ''
+    const charter_pdf = data?.attributes?.charter_pdf?.data?.attributes?.url ?? ''
     const _charter_pdf = charter_pdf ? `${process.env.REACT_APP_API_URL}${charter_pdf}` : ''
 
 
@@ -50,12 +50,12 @@ export default function Statuorydocuments(props) {
                                         License
                                     </DownloadDocumentButton>
                                     <DownloadDocumentButton
-                                        onClick={() => window.open(_regilation_pdf, '_blank', 'noopener,noreferrer')}
+                                        onClick={() => window.open(_charter_pdf, '_blank', 'noopener,noreferrer')}
                                         className="xl:mr-10 w-full xl:w-1/4 mb-7">
                                         Charter
                                     </DownloadDocumentButton>
                                     <DownloadDocumentButton
-                                        onClick={() => window.open(_charter_pdf, '_blank', 'noopener,noreferrer')}
+                                        onClick={() => window.open(_regilation_pdf, '_blank', 'noopener,noreferrer')}
                                         className=" w-full xl:w-1/4 mb-7">
                                         Regilation documents
                                     </DownloadDocumentButton>

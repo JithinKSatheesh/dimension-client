@@ -40,16 +40,24 @@ const GetFunctionsList = [
         url_end : 'client-rights-page',  
     },
     {
-        name : 'fetchTeam',
-        url_end : 'teams',  
-    },
-    {
         name : 'fetchFaq',
         url_end : 'faq-pages',  
     },
     {
         name : 'fetchCareers',
         url_end : 'careers',  
+    },
+    {
+        name : 'fetchTeam',
+        url_end : 'teams',  
+    },
+    {
+        name : 'fetchOwnership',
+        url_end : 'ownerships',  
+    },
+    {
+        name : 'fetchPartners',
+        url_end : 'partners',  
     },
     {
         name : 'fetchAboutPage',

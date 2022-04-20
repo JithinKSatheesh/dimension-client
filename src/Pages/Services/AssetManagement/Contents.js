@@ -13,8 +13,8 @@ export default function Contents(props) {
 
     return (
         <>
-            <div className=" service-wrapper-2">
-                <div className="container mx-auto px-4">
+            <div className="service-wrapper-2 ">
+                <div className="container mx-auto px-4 ">
                     <div className="py-36">
                         <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-16">
                             {/* -------------------------- */}

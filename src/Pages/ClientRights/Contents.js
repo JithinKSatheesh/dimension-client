@@ -134,7 +134,7 @@ const AddressRow = (props) => {
                     {props?.icon}
                     {/* <IconPerson /> */}
                 </div>
-                <div className=''>
+                <div className='text-sm 2xl:text-base'>
                     <span className="mr-3">
                         {props?.title}
                     </span>

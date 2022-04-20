@@ -4,18 +4,19 @@ import { Link } from 'react-router-dom'
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
 
-import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
+import { ReactComponent as IconHome } from 'Assets/icons/service_home.svg'
 import { ReactComponent as IconShield } from 'Assets/icons/service_shield.svg'
 import { ReactComponent as IconManage } from 'Assets/icons/service_manage.svg'
-import {ReactComponent as Logo3} from 'Assets/icons/logo_3.svg'
+import { ReactComponent as Logo3 } from 'Assets/icons/logo_3.svg'
 import { formatDate } from 'Utils/time'
 
 import { ServiceDetailsButton } from '../ServiceDetailsButton'
+import { UpdateStatus } from 'Components/UpdateStatus'
 
 
 export default function Otherservices(props) {
 
-    const {getServices} = props
+    const { getServices } = props
 
     const _date = getServices?.services?.attributes?.updatedAt
 
@@ -25,32 +26,32 @@ export default function Otherservices(props) {
                 <div className="container mx-auto px-4">
                     <div className="pb-36">
                         <div className="mb-6 text-dark-blue font-bold text-2xl xl:text-3xl pb-24">
-                           <SlideLeft>
-                            Other services
-                           </SlideLeft>
+                            <SlideLeft>
+                                Other services
+                            </SlideLeft>
                         </div>
                         <div className="grid grid-cols-1 xl:grid-cols-2 gap-16">
-                                <Link to="/services/capital-market">
-                                    <SlideBottom>
+                            <Link to="/services/capital-market">
+                                <SlideBottom>
 
                                     <ServiceDetailsButton
                                         icon={<IconHome className='mr-4' />}
                                         title={"Capital Markets Advisory"}
-                                        onClick={() => {}}
-                                        />
-                                        </SlideBottom>
-                                </Link>
-                                <Link to="/services/investment-security">
-                                    <SlideBottom>
+                                        onClick={() => { }}
+                                    />
+                                </SlideBottom>
+                            </Link>
+                            <Link to="/services/investment-security">
+                                <SlideBottom>
 
                                     <ServiceDetailsButton
                                         icon={<IconShield className='mr-4' />}
                                         title={"Investment Securities Services"}
                                         onClick={() => { }}
-                                        />
-                                        </SlideBottom>
-                                </Link>
-                                {/* <Link to="/services/asset-management">
+                                    />
+                                </SlideBottom>
+                            </Link>
+                            {/* <Link to="/services/asset-management">
                                     <ServiceDetailsButton
                                         icon={<IconManage className='mr-4' />}
                                         title={"Asset Management"}
@@ -59,17 +60,10 @@ export default function Otherservices(props) {
                                 </Link> */}
                         </div>
                         <div className="pt-24">
-                            <div className="flex justify-end items-center">
-                                <div className="text-sm text-dark-blue mr-4">
-                                    <SlideLeft>
+                            <SlideLeft>
+                                <UpdateStatus date={formatDate(_date)} />
+                            </SlideLeft>
 
-                                    updated: {formatDate(_date)}
-                                    </SlideLeft>
-                                </div>
-                                <SlideRight>
-                                <Logo3  />
-                                </SlideRight>
-                            </div>
                         </div>
                     </div>
                 </div>

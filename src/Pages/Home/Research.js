@@ -9,6 +9,7 @@ import {ThreeDots} from 'react-loader-spinner'
 // components
 import { GetButton } from 'Components/Buttons'
 import { Link } from 'react-router-dom'
+import { PopUpcontainer } from 'Components/PopUpcontainer'
 import {MarketResearchPopup} from 'Pages/MarketResearch/MarketResearchPopup'
 
 // ** Store
@@ -52,13 +53,15 @@ export default function Research(props) {
                         :
                         <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
                             {[...data].map((item, index) =>
-                                <ResearchCard onClick={() => setPopup(item?.id)} key={item?.id} item={item?.attributes} />)
+                                <ResearchCard onClick={() => setPopup({item})} key={item?.id} item={item?.attributes} />)
                             }
                         </div>
                     }
                 </div>
             </div>
-            <MarketResearchPopup popup={popup} setPopup={setPopup} />
+            <PopUpcontainer heading="Research request" onClose={() => setPopup(false)} open={popup}>
+                <MarketResearchPopup popup={popup} />
+            </PopUpcontainer >
         </>
     )
 }

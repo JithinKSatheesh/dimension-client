@@ -13,8 +13,8 @@ export default function Hero(props) {
    
     const data = getServices?.services ?? []
 
-    const pdf_url = data?.attributes?.regilation_documents_capital_market_pdf?.data?.attributes?.url ?? ''
-    const _regilation_documents_capital_market_pdf = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : ''
+    const pdf_url = data?.attributes?.regilation_documents_investment_securities_pdf?.data?.attributes?.url ?? ''
+    const _regilation_documents_investment_securities_pdf = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : ''
     
 
     return (
@@ -46,7 +46,7 @@ export default function Hero(props) {
                                 <SlideBottom>
 
                                 <DownloadDocumentButton 
-                                    onClick={() => window.open(_regilation_documents_capital_market_pdf, '_blank', 'noopener,noreferrer')}
+                                    onClick={() => window.open(_regilation_documents_investment_securities_pdf, '_blank', 'noopener,noreferrer')}
                                     className="w-fit pl-5 pr-14">
                                     Regilation documents
                                 </DownloadDocumentButton>
