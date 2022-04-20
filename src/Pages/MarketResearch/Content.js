@@ -5,6 +5,7 @@ import { SlideTop } from 'Components/SlideAnimation'
 import { UpdateStatus } from 'Components/UpdateStatus'
 
 import { ResearchCard } from 'Pages/Home/Research'
+import { PopUpcontainer } from 'Components/PopUpcontainer';
 
 import { ThreeDots } from 'react-loader-spinner'
 
@@ -47,7 +48,7 @@ export default function Content(props) {
                                         <div className="grid grid-cols-1 xl:grid-cols-4  gap-16 xl:gap-16">
                                             {[...data].map((item, index) =>
                                                 <ResearchCard
-                                                    onClick={() => setPopup(true)}
+                                                    onClick={() => setPopup({item})}
                                                     key={index} item={item?.attributes} />)
                                             }
                                         </div>
@@ -59,8 +60,9 @@ export default function Content(props) {
                     </div>
                 </section>
             </div>
-            <MarketResearchPopup popup={popup} setPopup={setPopup} />
-
+        <PopUpcontainer heading="Research request" onClose={() => setPopup(false)} open={popup}>
+            <MarketResearchPopup popup={popup}  />
+        </PopUpcontainer >
         </>
     )
 }

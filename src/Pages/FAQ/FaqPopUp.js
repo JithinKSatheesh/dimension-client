@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import { GetFunctions } from 'API/fetch'
 
@@ -6,9 +6,9 @@ import { PopUpContent } from 'Components/PopUpContent';
 import { RenderMultipleTextFields } from 'Components/RenderMultipleTextFields';
 
 
-export const MarketResearchPopup = (props) => {
+export const FaqPopUp = (props) => {
 
-    const {  popup } = props;
+    // const { popup } = props;
 
 
     const [loading, setLoading] = useState(false)
@@ -18,7 +18,8 @@ export const MarketResearchPopup = (props) => {
     const [inputVal, setInuptVal] = useState({
         name: '',
         email: '',
-        phone: ''
+        title: '',
+        details: ''
     });
 
     const handleChange = (e) => {
@@ -39,19 +40,21 @@ export const MarketResearchPopup = (props) => {
             name: 'email',
             label: "Email Address",
         },
+        {
+            name: 'title',
+            label: "Subject",
+        },
     ]
 
-    const UploadFiles = async () => {
+    const sendRequest = async () => {
 
         setLoading(true)
         try {
 
             const payload = {
                 ...inputVal,
-                item_name : popup?.item?.attributes?.title,
-                item_description : popup?.item?.attributes?.description,
             }
-            const res = await GetFunctions?.postMailMarketResearch(null, null, payload)
+            const res = await GetFunctions?.postMailUserQuestion(null, null, payload)
             const data = res?.data?.data
             if (data) {
                 setSuccess(true)
@@ -65,16 +68,29 @@ export const MarketResearchPopup = (props) => {
 
     return (
         <>
-            <PopUpContent loading={loading} success={success} action={UploadFiles}>
+            <PopUpContent 
+                loading={loading} 
+                success={success} 
+                // buttonLabel={"Send"}
+                action={sendRequest} >
                 {/* {console.log(inputVal)} */}
                 <RenderMultipleTextFields
                     inputFields={_inputFields}
                     inputVal={inputVal}
                     handleChange={handleChange}
                     loading={loading}
-                    />
+                />
+                <div className="py-3 text-xs">
+                    What are you interested in?
+                </div>
+                <textarea
+                    name='details'
+                    value={inputVal?.details}
+                    onChange={handleChange}
+                    className='w-full h-20 text-white rounded-xl px-5 py-2 bg-white/30 backdrop-blur-xl  '
+                />
             </PopUpContent>
-                    </>
+        </>
 
     );
 };

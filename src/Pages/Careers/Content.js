@@ -14,8 +14,9 @@ import { ThreeDots } from 'react-loader-spinner'
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
 import { formatDate } from 'Utils/time';
+import { ApplyForJob } from './ApplyForJob';
 
-const IconDownload = () => <svg fill='white' width="24" height="24" viewBox="0 0 24 24"><path d="M8 10h-5l9-10 9 10h-5v10h-8v-10zm11 9v3h-14v-3h-2v5h18v-5h-2z" /></svg>
+export const IconDownload = () => <svg fill='white' width="24" height="24" viewBox="0 0 24 24"><path d="M8 10h-5l9-10 9 10h-5v10h-8v-10zm11 9v3h-14v-3h-2v5h18v-5h-2z" /></svg>
 
 export default function Content(props) {
 
@@ -61,7 +62,9 @@ export default function Content(props) {
                                     <div>
                                         {
                                             [...leftArray].map(item =>
-                                                <div className='pb-8'>
+                                                <div 
+                                                    key={item?.id}
+                                                    className='pb-8'>
                                                     <SlideBottom>
                                                         <Accordion
                                                             id={item?.id} expanded={expanded} setExpanded={setExpanded}
@@ -136,7 +139,7 @@ export default function Content(props) {
                                                             {item?.attributes?.description}
                                                             <div className="pt-10">
                                                                 <DetailsButton
-                                                                    onClick={() => setPopup(true)}
+                                                                    onClick={() => setPopup({item})}
                                                                 >Apply for a job</DetailsButton>
                                                             </div>
                                                         </Accordion>
@@ -155,25 +158,10 @@ export default function Content(props) {
             {/* _________________________________________ */}
             {/* _________________________________________ */}
             <PopUpcontainer heading="Apply for a job" onClose={() => setPopup(false)} open={popup}  >
-                <div className="text-white w-96">
-                    <div className="py-3 text-xs"> Full name </div>
-                    <input className='w-full h-12 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
-                    <div className="py-3 text-xs"> Email address </div>
-                    <input className='w-full h-12 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
-                    <div className="py-3 text-xs"> Phone number </div>
-                    <input className='w-full h-12 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
-                    <div className="py-3 text-xs"> Upload CV </div>
-                    <div className='w-full h-24 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  flex items-center justify-center' >
-                        <div className='text-center '><IconDownload /></div>
-                    </div>
-
-                    <div
-                        onClick={() => { }}
-                        className="mx-auto xl:ml-auto xl:mr-0 mt-10 border border-blue-light rounded-xl py-2 px-5 cursor-pointer text-center  font-bold text-white">
-                        Apply
-                    </div>
-                </div>
+                <ApplyForJob popup={popup} />
             </PopUpcontainer>
         </>
     )
 }
+
+

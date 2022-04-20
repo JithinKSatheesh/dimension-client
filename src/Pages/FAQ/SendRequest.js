@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { UpdateStatus } from 'Components/UpdateStatus'
 import { PopUpcontainer } from 'Components/PopUpcontainer'
+import { FaqPopUp} from './FaqPopUp'
 
 export default function Sendrequest(props) {
 
@@ -31,21 +32,9 @@ export default function Sendrequest(props) {
                 </div>
             </div>
             <PopUpcontainer heading="Send request" onClose={() => setPopup(false)} open={popup}  >
-                <div className="text-white w-96">
-                    <div className="py-3 text-xs"> First name </div>
-                    <input className='w-full h-12 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
-                    <div className="py-3 text-xs"> Email address </div>
-                    <input className='w-full h-12 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
-                    <div className="py-3 text-xs"> Subject </div>
-                    <input className='w-full h-12 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
-                    <div className="py-3 text-xs"> What are you interested in? </div>
-                    <textarea className='w-full h-32 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  ' />
-                    <div
-                        onClick={() => {}}
-                        className="mx-auto xl:ml-auto xl:mr-0 mt-5 border border-blue-light rounded-xl py-2 px-5 cursor-pointer text-center  font-bold text-white">
-                        Send request
-                    </div>
-                </div>
+        
+                <FaqPopUp popup={popup}  />
+        
             </PopUpcontainer>
 
 

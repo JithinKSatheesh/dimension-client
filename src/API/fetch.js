@@ -8,13 +8,13 @@ const BASE_URL = `${process.env.REACT_APP_API_URL || 'http://localhost:1337'}/ap
 //  User
 // ---------------------------------------
 
-const fetchFunctioModal = (url_end, query, id) => {
+const fetchFunctioModal = (url_end, query, id, data ,method = "get") => {
     const _query = qs.stringify({
         ...query
     }, {
         encodeValuesOnly: true, // prettify url
     });
-    return  axios.get(`${BASE_URL}${url_end}${id ? `/${id}` : ``}?${_query}`)
+    return  axios[method](`${BASE_URL}${url_end}${id ? `/${id}` : ``}${_query ? `?${_query}`: `` }`, data )
 }
 
 
@@ -101,14 +101,35 @@ const GetFunctionsList = [
         name : 'fetchUsdBondIndexTable',
         url_end : 'usd-corporate-index-table',  
     },
+    // =====================================
+    // POST
+    // =====================================
+    {
+        name : 'postMailCareer',
+        url_end : 'mail-request/jobRequest',  
+        method : 'post'
+    },
+    {
+        name : 'postMailMarketResearch',
+        url_end : 'mail-request/researchRequest',  
+        method : 'post'
+    },
+    {
+        name : 'postMailUserQuestion',
+        url_end : 'mail-request/userQuestion',  
+        method : 'post'
+    },
+
 ]
 
 const GetFunctions = [...GetFunctionsList].reduce((obj, current) => ({
     ...obj,
-    [current.name]: (query, id) => fetchFunctioModal(
+    [current.name]: (query, id, data) => fetchFunctioModal(
         current.url_end,
         query,
-        id
+        id,
+        data,
+        current?.method
     )
     })
 ,{})
