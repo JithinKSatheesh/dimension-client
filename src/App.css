@@ -327,6 +327,11 @@
 
 
 @media only screen and (max-width: 1280px) {
+  .mobile-menu-wrapper{
+    background-image:  url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
+    background-repeat: no-repeat;
+    background-position: right 100px, left 700px, right 1300px, center;
+  }
   .hero-wrapper {
     background-image: url('./Assets/img/bg_abs/bg_abstract_mob_1.png');
     background-repeat: no-repeat;

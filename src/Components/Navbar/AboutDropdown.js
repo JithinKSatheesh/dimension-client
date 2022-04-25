@@ -1,6 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
+import { AboutMenuList } from './AboutMenuList';
+
+export const RenderMenuLinks = ({ MenuList }) => {
+
+    return (<>
+        {MenuList.map(link =>
+            <Link key={link.id} to={link.to} className="lg:text-xs 2xl:text-base grow bg-menu-blue-light text-white py-7 text-center">
+                {link.label}
+            </Link >)}
+    </>)
+}
+
 
 export const AboutDropdown = (props) => {
 
@@ -27,6 +39,7 @@ export const AboutDropdown = (props) => {
         }
     };
 
+    
     return (
         <div style={{top : '99px'}} className="absolute left-0   w-full normal-case z-30">
             <motion.div
@@ -36,28 +49,9 @@ export const AboutDropdown = (props) => {
                 variants={subMenuAnimate}
             >
                 <div className="w-full">
-                    <div className="container px-4 mx-auto">
-                        <div className="grid grid-cols-6">
-                            <Link to="/about#about" className="bg-menu-blue-light text-white py-7 text-center">
-                                About Dimension
-                            </Link >
-                            <Link to="/about#corporate-structure" className="bg-menu-blue-light text-white py-7 text-center">
-                                Corporate structure
-                            </Link >
-                            <Link to="/about#ownership" className="bg-menu-blue-light text-white py-7 text-center">
-                            Significant Shareholders
-                            </Link >
-                            <Link to="/about#team" className="bg-menu-blue-light text-white py-7 text-center">
-                            Teammates
-                            </Link >
-                            <Link to="/about#mission" className="bg-menu-blue-light text-white py-7 text-center">
-                            Mission and vision
-                            </Link >
-                            <Link to="/about#statuory-documents" className="bg-menu-blue-light text-white py-7 text-center">
-                            Statuory documents
-                            </Link >
-
-
+                    <div className="container  mx-auto">
+                        <div className="flex justify-between">
+                            <RenderMenuLinks MenuList={AboutMenuList} />
                         </div>
                     </div>
                 </div>

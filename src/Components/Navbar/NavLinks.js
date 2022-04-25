@@ -11,7 +11,9 @@ export const NavLinks = ({ children, ...props }) => {
             className={`
                 nav-item  
                 uppercase 
-                text-sm  2xl:text-base
+                text-sm  
+                lg:text-xs
+                2xl:text-base
                 cursor-pointer self-center py-10 px-8 
                 ${props.isHover ? ' bg-menu-blue-light' : ''} 
                 ${props.variant === 'white' ? 'text-white' : ''}
