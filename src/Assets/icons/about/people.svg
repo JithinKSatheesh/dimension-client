@@ -1,8 +1,8 @@
 <svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect x="0.5" y="0.511719" width="70" height="70" rx="15" fill="url(#paint0_linear_318_346)"/>
-<rect x="11.5" y="13.5117" width="47" height="47" fill="url(#pattern0)"/>
+<rect x="11.5" y="13.5117" width="47" height="47" fill="url(#pattern6)"/>
 <defs>
-<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<pattern id="pattern6" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_318_346" transform="scale(0.01)"/>
 </pattern>
 <linearGradient id="paint0_linear_318_346" x1="35.5" y1="0.511719" x2="35.5" y2="70.5117" gradientUnits="userSpaceOnUse">

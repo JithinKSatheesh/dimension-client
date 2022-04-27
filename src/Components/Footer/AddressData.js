@@ -7,7 +7,7 @@ import { ReactComponent as LocationIcon } from 'Assets/icons/location.svg';
 
 export const AddressData = {
     time: "9:00-18:00",
-    phone: "+ 374 010 54 56 70",
+    phone: "+ 374 10 54 56 70",
     email: "info@dimension.am",
     address: "Baghramyan Street 2, 6th floor, 27/1"
 };

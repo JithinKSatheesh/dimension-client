@@ -7,11 +7,9 @@ export const UpdateStatus = (props) => {
 
     return (
         <div className={props?.className}>
-            <div className="flex justify-center xl:justify-end items-center">
-                <div className={`text-sm mr-4 ${props?.type === "dark" ? 'text-white' : 'text-dark-blue'}`}>
-                    updated: {props?.date}
-                </div>
-                {props?.type === "dark" ? <Logo2 /> : <Logo3 />}
+            <div className="text-center text-blue py-4 text-xs bg-blue-light">
+                    This page was last updated : {props?.date}
+                {/* {props?.type === "dark" ? <Logo2 /> : <Logo3 />} */}
             </div>
         </div>
 

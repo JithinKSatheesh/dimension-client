@@ -41,7 +41,7 @@ export const AboutDropdown = (props) => {
 
     
     return (
-        <div style={{top : '99px'}} className="absolute left-0   w-full normal-case z-30">
+        <div style={{top : '95px'}} className="absolute left-0   w-full normal-case z-30">
             <motion.div
                 className=" bg-dark-blue-grad"
                 initial="exit"

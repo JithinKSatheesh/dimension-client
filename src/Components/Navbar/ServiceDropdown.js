@@ -33,7 +33,7 @@ export const ServiceDropdown = (props) => {
 
 
     return (
-        <div style={{top : '99px'}}  className="absolute left-0 w-full normal-case z-30">
+        <div style={{top : '95px'}}  className="absolute left-0 w-full normal-case z-30">
             <motion.div
                 className=" bg-dark-blue-grad"
                 initial="exit"
@@ -51,34 +51,6 @@ export const ServiceDropdown = (props) => {
                                         item={item} />
                                     )
                             }
-                            {/* <div className="bg-menu-blue-light pt-7">
-                                <Link to={'/services/capital-market'}>
-                                    <MenuContent
-                                        className=" px-14"
-                                        icon={<IconHome />}
-                                        title={<>Capital Markets <br /> Advisory</>}
-                                        desc="Capital Markets Advisory is a key business area of Dimension and an integral part of its ability to achieve the Mission and Vision of the company." />
-                                </Link>
-                            </div>
-                            <div className="bg-menu-blue-light pt-7">
-                            <Link to={'/services/investment-security'}>
-                                <MenuContent
-                                    className=" px-14"
-                                    icon={<IconShield />}
-                                    title="Investment Securities Services"
-                                    desc="We have years of experience in executing large and complex corporate securities transactions in the Armenian capital market and beyond. By upholding our ." />
-                            </Link>
-                            </div>
-                            <div className="bg-menu-blue-light pt-7">
-                            <Link to={'/services/asset-management'}>
-                                <MenuContent
-                                    className=" px-14"
-                                    icon={<IconManage />}
-                                    title={<>Asset <br /> Management</>}
-                                    desc="In the Armenian capital markets, Dimension is involved in managing its own investment portfolio of equity and debt instruments, as well as two open, non-public, leveraged fixed income funds." />
-                                    </Link>
-                            </div> */}
-
 
                         </div>
                     </div>

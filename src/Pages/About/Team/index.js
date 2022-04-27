@@ -57,7 +57,7 @@ export default function Team(props) {
                             <div className=" w-full xl:w-1/3">
                                 <div className="text-2xl xl:text-3xl text-center xl:text-left mb-16 xl:mb-0 font-bold text-dark-blue">
                                     <SlideLeft>
-                                    Our team
+                                    Team
                                     </SlideLeft>
                                 </div>
                             </div>

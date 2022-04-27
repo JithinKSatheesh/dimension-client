@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 // ** assets
 import { ReactComponent as Logo} from 'Assets/icons/logo_white.svg'
-import { ReactComponent as Search} from 'Assets/icons/search.svg'
-import { ReactComponent as MailIcon} from 'Assets/icons/mail.svg'
-import { ReactComponent as PhoneIcon} from 'Assets/icons/phone.svg'
-import { ReactComponent as LocationIcon} from 'Assets/icons/location.svg'
+
 import { ReactComponent as FacebookIcon} from 'Assets/icons/facebook.svg'
 import { ReactComponent as Instagram} from 'Assets/icons/instagram.svg'
 import { ReactComponent as LinkedinIcon} from 'Assets/icons/linkedin.svg'
+
+// import  FacebookIcon from 'Assets/icons/facebook.svg'
+// import  Instagram from 'Assets/icons/instagram.svg'
+// import  LinkedinIcon from 'Assets/icons/linkedin.svg'
 
 // ** brands
 import Brand_1 from 'Assets/brands/abcfin.png'
@@ -20,6 +21,7 @@ import Brand_5 from 'Assets/brands/exit.png'
 import { AddressData, AdressIcons, RenderAddressData } from './AddressData'
 
 import { PdfDownloadButton } from 'Components/Buttons'
+import { SearchBox } from './SearchBox'
 
 
 export const socialMedia = [
@@ -40,39 +42,88 @@ export const socialMedia = [
     }
 ]
 
+const _aboutLinks = [
+    {
+        link : '/about#about',
+        label : 'About Dimension'
+    },
+    {
+        link : '/about#corporate-structure',
+        label : 'Corporate structure'
+    },
+    {
+        link : '/about#ownership',
+        label : 'Significant Shareholders'
+    },
+    {
+        link : '/about#team',
+        label : 'Team'
+    },
+    {
+        link : '/about#mission',
+        label : 'Mission and vision'
+    },
+    {
+        link : '/about#statuory-documents',
+        label : 'Statuory documents'
+    },
+]
+
+const _brands = [Brand_1, Brand_2, Brand_3, Brand_4]
+
+const _researchCoverageLinks = [
+    {
+        link : '/market-research',
+        label : 'Research coverage'
+    },
+    {
+        link : '/client-rights',
+        label : 'Client rights'
+    },
+    {
+        link : '/investor-relation',
+        label : 'Reports'
+    },
+    {
+        link : '/regulations',
+        label : 'Regultions'
+    },
+    
+    {
+        link : '/news',
+        label : 'News'
+    },
+    {
+        link : '/faq',
+        label : 'FAQ'
+    },
+    {
+        link : '/careers',
+        label : 'Careers'
+    },
+]
+
+const _serviceLinks = [
+    {
+        link : '/services/capital-market',
+        label : 'Capital Markets Advisory '
+    },
+    {
+        link : '/services/investment-security',
+        label : 'Investment Securities Services'
+    },
+    {
+        link : '/services/asset-management',
+        label : 'Asset Management'
+    },
+    
+]
+
+
 export default function Index(props) {
 
-    const navigate = useNavigate()
+    const tarrif_url = ''
 
-    const SearchBox = (props) => {
-
-        const [val, setVal] = useState('')
-
-        const handleChange=(e) => {
-
-           setVal(e.target.value)
-
-        }
-
-        const onKeyPress = (e) => {
-            if(e.key === 'Enter'){
-                navigate(`/search?q=${val}`)
-            }
-        }
-
-        return (
-            <div className="input relative ">
-                <div className="absolute mt-3 ml-2"><Search /></div>
-                <input 
-                    style={{ width: '335px' }} type="text" name="" id="" className='h-14 pl-10 rounded-xl'
-                    value={val}
-                    onChange={handleChange}
-                    onKeyDown={onKeyPress}
-                    
-                    />
-            </div>
-        )
-    }
     
 
     return (
@@ -89,60 +140,79 @@ export default function Index(props) {
                     <div className="grid grid-cols-1 xl:grid-cols-4 gap-16 text-center xl:text-left lg:text-xs 2xl:text-base">
                         <div className=' text-white '>
                             <div className="font-semibold mb-4"> About us </div>
-                            <div className='mb-4'><Link to="/about#about" > About Dimension </Link></div>
-                            <div className='mb-4'><Link to="/about#corporate-structure" > Corporate structure </Link></div>
-                            <div className='mb-4'><Link to="/about#ownership" > Significant Shareholders </Link></div>
-                            <div className='mb-4'><Link to="/about#team" > Team </Link></div>
-                            <div className='mb-4'><Link to="/about#mission" > Mission and vision </Link></div>
-                            <div className='mb-4'><Link to="/about#statuory-documents" > Statuory documents </Link></div>
+                            {_aboutLinks.map(item => 
+                                <div key={item.label} className='mb-4'>
+                                    <Link to={item.link} > {item.label} </Link>
+                                </div>
+                            )}
+                            
                         </div>
                         <div className=' text-white'>
                             <div className="font-semibold mb-4"> Services</div>
-                            <div className='mb-4'><Link to="/services/capital-market" >Capital Markets Advisory </Link></div>
-                            <div className='mb-4'><Link to="/services/investment-security" >Investment Securities Services </Link></div>
-                            <div className='mb-4'><Link to="/services/asset-management" > Asset Management </Link></div>
-                            <div className='mb-4 w-32'><PdfDownloadButton title="Tariffs" className="h-12" /></div>
+                            {_serviceLinks.map(item => 
+                                <div key={item.label} className='mb-4'>
+                                    <Link to={item.link} > {item.label} </Link>
+                                </div>
+                            )}
+                            
+                            <div className='mb-4 mt-4 w-32 mx-auto lg:mx-0'>
+                                <PdfDownloadButton 
+                                    iconWidth={20} 
+                                    iconHeight={20}  
+                                    title="Tariffs" 
+                                    onClick={() => window.open(tarrif_url, '_blank', 'noopener,noreferrer')}
+                                    className="h-10" />
+                            </div>
 
                         </div>
                         <div className=' text-white'>
-                            
-                            <div className='font-semibold mb-4'><Link to="/client-rights" > Client rights </Link></div>
-                            <div className='font-semibold mb-4'><Link to="/investor-relation" > Investor relations </Link></div>
-                            <div className='font-semibold mb-4'><Link to="/regulations" > Regultions </Link></div>
-                            <div className='font-semibold mb-4'><Link to="/market-research" > Market research </Link></div>
-                            <div className='font-semibold mb-4'><Link to="/news" > News </Link></div>
-                            <div className='font-semibold mb-4'><Link to="/faq" > FAQ </Link></div>
-                            <div className='font-semibold mb-4'><Link to="/careers" >  Careers </Link></div>
-                          
+                            {_researchCoverageLinks.map(item =>
+                                <div key={item.label} className='mb-4 font-bold uppercase'>
+                                    <Link to={item.link} > {item.label} </Link>
+                                </div>
+                            )}
                         </div>
                         <div className=' text-white'>
                             <div className="font-semibold mb-4"> Contact us </div>
                                 <RenderAddressData item={AddressData} />
                             <div className="mt-16 flex justify-center xl:justify-start">
-                                {socialMedia.map(link => <a href={link.link} className='mr-4'> <link.icon /> </a>)}
+                                {socialMedia.map(link => 
+                                    <a href={link.link} className='mr-4'> 
+                                        <div className="bg-dark-blue rounded-full hover:bg-white ">
+                                            <link.icon className='text-white-blue-hover' />
+                                        </div>
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="flex flex-wrap items-center justify-center xl:justify-between">
                     <div className="flex items-center order-2 xl:order-1 mb-10 ">
-                        <div className='grow mr-11'><img src={Brand_1} alt="" className=' w-full' /></div>
-                        <div className='grow mr-11'><img src={Brand_2} alt="" className=' w-full' /></div>
-                        <div className='grow mr-11'><img src={Brand_3} alt="" className=' w-full' /></div>
-                        <div className='grow '><img src={Brand_4} alt="" className=' w-full' /></div>
+                        {_brands.map((image, index) => 
+                            <div className={`'grow ${index !== (_brands.length - 1) && 'mr-11'}`}>
+                                <img src={image} alt="" 
+                                    className="w-full hover:brightness-0 hover:invert hover:translate-x-2" />
+                            </div>
+                        )}
                     </div>
                     <div style={{width : '600px'}} className="text-xs text-white text-center xl:text-right mb-10  order-1  xl:order-2">
                         Dimension is not responsible for the accuracy and reliability of the information and/or advertisements presented on the third party websites linked from this website and assumes no responsibility for the consequences arising from the use of the said 
                     </div>
                 </div>
                 <div className="pt-24">
-                    <div className="flex flex-wrap justify-center xl:justify-between items-center">
-                        <div className="w-full xl:w-1/2 text-sm text-white order-2 xl:order-1 text-center xl:text-left">
+                    <div className="flex flex-wrap xl:flex-nowrap justify-center xl:justify-between items-center">
+                        <div className="w-full text-sm text-white order-3 xl:order-1 text-center xl:text-left">
                             &#169; 2022 All Rights Reserved.
                         </div>
-                        <div className="text-sm text-white flex order-1  xl:order-2 mb-5 xl:mb-0">
-                           <div className="mr-3">Powered by</div>  
-                           <img src={Brand_5} alt="" />
+                        <div className="w-full text-sm text-white order-1  xl:order-2 mb-5 xl:mb-0 text-center ">
+                            Dimension CJSC is supervised by the CBA
+                        </div>
+                        <div className="w-full text-sm text-white  order-2  xl:order-3 mb-5 xl:mb-0 ">
+                            <div className='mx-auto xl:ml-auto xl:mr-0 flex justify-center xl:justify-end'>
+                                <div className="mr-3">Powered by</div>  
+                                <img src={Brand_5} alt="" className="brightness-0 invert" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -152,3 +222,5 @@ export default function Index(props) {
         </>
     )
 }
+
+

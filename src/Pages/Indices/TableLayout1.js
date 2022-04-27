@@ -6,27 +6,27 @@ export const TableLayout1 = (props) => {
     
 
     return (
-        <div className=''>
-            <div className=" text-dark-blue font-bold text-sm">
+        <div className='text-xs'>
+            <div className=" text-dark-blue font-bold ">
                 Index Performance
             </div>
             <div className="overflow-x-scroll py-4">
                 <table className="border-collapse border border-slate-400  table-auto">
                     <thead>
                         <tr>
-                            <th className="border px-2 py-2 text-dark-blue border-slate-300 text-sm "></th>
-                            <th className="border px-2 py-2 text-dark-blue border-slate-300 text-sm ">1&nbsp;Month</th>
-                            <th className="border px-2 py-2 text-dark-blue border-slate-300 text-sm ">3&nbsp;Month</th>
-                            <th className="border px-2 py-2 text-dark-blue border-slate-300 text-sm ">6&nbsp;Month</th>
-                            <th className="border px-2 py-2 text-dark-blue border-slate-300 text-sm ">1&nbsp;Year</th>
-                            <th className="border px-2 py-2 text-dark-blue border-slate-300 text-sm ">YTD</th>
-                            <th className="border px-2 py-2 text-dark-blue border-slate-300 text-sm ">{(new Date()).getFullYear() - 1}</th>
-                            <th className="border px-2 py-2 text-dark-blue border-slate-300 text-sm ">Since&nbsp;Inception</th>
+                            <th className="border px-2 py-2 text-dark-blue border-slate-300  "></th>
+                            <th className="border px-2 py-2 text-dark-blue border-slate-300  ">1&nbsp;Month</th>
+                            <th className="border px-2 py-2 text-dark-blue border-slate-300  ">3&nbsp;Month</th>
+                            <th className="border px-2 py-2 text-dark-blue border-slate-300  ">6&nbsp;Month</th>
+                            <th className="border px-2 py-2 text-dark-blue border-slate-300  ">1&nbsp;Year</th>
+                            <th className="border px-2 py-2 text-dark-blue border-slate-300  ">YTD</th>
+                            <th className="border px-2 py-2 text-dark-blue border-slate-300  ">{(new Date()).getFullYear() - 1}</th>
+                            <th className="border px-2 py-2 text-dark-blue border-slate-300  ">Since&nbsp;Inception</th>
                         </tr>
                     </thead>
-                    <tbody className='text-blue text-sm'>
+                    <tbody className='text-blue text-xs'>
                         <tr>
-                            <td className="border px-2 py-2  border-slate-300 font-bold">Total Return (%)</td>
+                            <td className="border px-2 py-2  border-slate-300 font-bold">Total&nbsp;Return&nbsp;(%)</td>
                             <td className="border px-2 py-2 text-right border-slate-300 "> {data?.index_performance_1_month} </td>
                             <td className="border px-2 py-2 text-right border-slate-300 "> {data?.index_performance_3_month} </td>
                             <td className="border px-2 py-2 text-right border-slate-300 "> {data?.index_performance_6_month} </td>
@@ -47,14 +47,14 @@ export const TableLayoutAMDIndex = (props) => {
     const { data, showBond = true} = props
 
     return (
-        <div className='ml-0 xl:ml-auto '>
-        <div className=" text-dark-blue font-bold text-sm">
+        <div className='ml-0 xl:ml-auto text-xs '>
+        <div className=" text-dark-blue font-bold ">
                 Index Statistics
             </div>
             <div className="overflow-x-scroll py-4">
 
                 <table className="border-collapse border border-slate-400  table-auto">
-                    <tbody className='text-blue text-sm'>
+                    <tbody className='text-blue '>
                         <tr>
                             <td className="border px-4 py-2  border-slate-300 font-bold">INDEX MARKET VALUE (AMD Million)</td>
                             <td className="border px-4 py-2 text-right border-slate-300 ">{data?.index_statistics_index_market_value}</td>

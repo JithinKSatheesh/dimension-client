@@ -11,6 +11,7 @@ import { GetButton } from 'Components/Buttons'
 import { Link } from 'react-router-dom'
 import { PopUpcontainer } from 'Components/PopUpcontainer'
 import {MarketResearchPopup} from 'Pages/MarketResearch/MarketResearchPopup'
+import { UpdateStatus } from 'Components/UpdateStatus'
 
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
@@ -34,13 +35,13 @@ export default function Research(props) {
 
     return (
         <>
-            <div className=" hero-wrapper-6">
+            <div className=" hero-wrapper-8">
                 <div className="container py-32 mx-auto px-4 ">
                     <div className="flex justify-between items-center pb-24 ">
-                        <div className="text-3xl  font-semibold text-dark-blue">
+                        <div className="text-3xl  font-semibold text-white">
                             Market researches
                         </div>
-                        <div className="text-base text-dark-blue flex items-center cursor-pointer">
+                        <div className="text-base text-white flex items-center cursor-pointer">
                             <Link to="/market-research">
                             <div className="mr-3 font-bold">All&nbsp;researches</div>
                             </Link>
@@ -58,6 +59,9 @@ export default function Research(props) {
                         </div>
                     }
                 </div>
+            </div>  
+            <div>
+                <UpdateStatus />
             </div>
             <PopUpcontainer heading="Research request" onClose={() => setPopup(false)} open={popup}>
                 <MarketResearchPopup popup={popup} />

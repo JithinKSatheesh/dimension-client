@@ -31,11 +31,11 @@ export default function News(props) {
 
     return (
         <>
-         <div className=" hero-wrapper-8">
+         <div className=" hero-wrapper-5">
             <div className="container py-32 mx-auto px-4 ">
                 <div className="flex justify-between items-center pb-24 ">
                     <div className="text-3xl  font-semibold text-white">
-                        Recent news
+                        News
                     </div>
                         <Link to="/news">
                     <div className="text-base text-white flex items-center cursor-pointer">
@@ -58,14 +58,7 @@ export default function News(props) {
                             </div>
                         ))}
                     </div>
-                <div className="pt-32">
-                    <div className="flex justify-end items-center">
-                        <div className="text-sm text-white mr-4">
-                            {formatDate(_date)}
-                        </div>
-                        <Logo2 />
-                    </div>
-                </div>
+                
                     </>}
             </div>
         </div>    

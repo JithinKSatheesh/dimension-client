@@ -12,11 +12,13 @@ export default function Container(props) {
         const tabList = [
             {
                 id : 1,
-                label : 'Dimension Armenia AMD Bond Index'
+                label : 'Dimension Armenia',
+                desc : "AMD Bond Index"
             },
             {
                 id : 2,
-                label : 'Dimension Armenia USD Corporate Bond Index'
+                label : 'Dimension Armenia',
+                desc : "USD Corporate Bond Index"
             },
         ]
 
@@ -24,17 +26,34 @@ export default function Container(props) {
 
             return (
                 <div 
-                    className={`text-base px-12 cursor-pointer py-5 border-dark-blue ${tab === props?.id ? 'border-b-2' : ''} `}
+                    className={`
+                        text-base px-5 w-fit lg:w-72 cursor-pointer py-3 border-dark-blue  
+                        ${tab === props?.id ? 'bg-dark-blue-grad text-white ' : ''} 
+                        ${props?.last ? 'rounded-r-2xl' : 'rounded-l-2xl'}
+                        text-center
+                        `}
                     onClick={() => setTab(props?.id)}
                     >
-                    {props?.label} 
+                        <div className="text-sm">
+                            {props?.label} 
+                        </div>
+                        <div className="font-bold">
+                            {props?.desc}
+                        </div>
                 </div>
             )
         }
 
         return (
-            <div className="flex justify-between text-dark-blue">
-                {tabList.map(item => <TabButton id={item?.id} label={item?.label} /> )}
+            <div className="w-fit mx-auto    text-dark-blue rounded-3xl border-2 border-dark-blue">
+                <div className="flex ">
+                {tabList.map((item, index) => <TabButton 
+                    id={item?.id} 
+                    label={item?.label} 
+                    desc={item?.desc} 
+                    last={tabList.length - 1 === index}
+                    /> )}
+                </div>
             </div>
         )
     }
@@ -42,11 +61,11 @@ export default function Container(props) {
 
     return (
         <>
-            <div className="container mx-auto py-16">
+            <div className="container mx-auto py-16 xl:px-16 ">
                 <div className="pb-16">
                     <TabBlock />
                 </div>
-                <div className='px-3'>
+                <div className='px-4 xl:px-16 shadow rounded-xl'>
 
                 {tab === 1 ? <Amdindex /> : <Usdindex />}
                 

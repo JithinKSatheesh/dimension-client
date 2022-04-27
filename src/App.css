@@ -6,12 +6,23 @@
   color: #006191;
 }
 
+.text-white-blue-hover {
+  color: white;
+}
+.text-white-blue-hover:hover {
+  color: #006191;
+}
+
 .bg-blue-light {
   background-color: #E5EFF4;
 }
 
 .bg-blue-lazur {
   background-color: #51859F;
+}
+
+.bg-blue-aqua-light {
+  background-color: #c2d9e5;
 }
 
 .bg-blue-aqua {
@@ -53,6 +64,14 @@
 }
 
 .border-color-blue {
+  border-color: #006191;
+}
+
+.border-color-blue-light {
+  border-color: #c2d9e5;
+}
+
+.border-color-blue-grad {
   border-color: #006191;
 }
 
@@ -140,7 +159,7 @@
 }
 
 .hero-wrapper-5 {
-  background: url('./Assets/img/bg_abstract_5.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
+  background: url('./Assets/img/bg_abstract_right.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
   background-repeat: no-repeat;
   background-position: right;
 
@@ -156,7 +175,7 @@
 .hero-wrapper-8 {
   background-image: url('./Assets/img/bg_abstract_left.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
   background-repeat: no-repeat;
-  background-position: left -300px, left;
+  background-position: left -383px, top;
 
 }
 
@@ -204,7 +223,7 @@
 }
 
 .about-wrapper-3 {
-  background-image: url('./Assets/img/bg_abstract_right.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
+  background-image: url('./Assets/img/bg_abstract_right.png'), linear-gradient(180deg, #013651 0%, #014F77 100%);
   background-position: right;
   background-repeat: no-repeat;
 }
@@ -217,7 +236,7 @@
 
 .about-wrapper-5 {
   background-image: url('./Assets/img/bg_abstract_left.png'), linear-gradient(0deg, #013651 0%, #014F77 100%);
-  background-position: left -600px, center;
+  background-position: left -550px, center;
   background-repeat: no-repeat;
 }
 
@@ -322,6 +341,13 @@
   background-repeat: no-repeat;
   background-position: right 30px, left;
   background-size: contain, auto;
+}
+
+.popup-wrapper-2 {
+  background-image: url('./Assets/img/bg_logo_popup.png'), linear-gradient(180deg, #013651 0%, #014F77 100%);
+  background-repeat: no-repeat;
+  background-position: right bottom, bottom;
+  /* background-size: contain, auto; */
 }
 
 

@@ -95,7 +95,13 @@ export const MobileMenu = (props) => {
                     }
                 </div>
                 <div className="py-8 flex text-blue-400">
-                    {socialMedia.map(link => <a href={link.link} className='mr-4'> <link.icon width={30} /> </a>)}
+                    {socialMedia.map(link =>
+                        <a href={link.link} className='mr-4'>
+                            <div className="bg-dark-blue rounded-full hover:bg-white ">
+                                <link.icon className='text-white-blue-hover' width={30} height={30} />
+                            </div>
+                        </a>
+                    )}
                 </div>
             </div>
 

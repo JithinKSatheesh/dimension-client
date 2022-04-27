@@ -9,6 +9,8 @@ import { DownloadDocumentButton } from 'Components/Buttons'
 import { formatDate } from 'Utils/time'
 import { isEmpty } from 'Utils/string'
 
+import { UpdateStatus } from 'Components/UpdateStatus'
+
 export default function Statuorydocuments(props) {
 
     const { getAboutPage } = props
@@ -62,17 +64,12 @@ export default function Statuorydocuments(props) {
                                 </div>
                             }
                         </SlideBottom>
-                        <div className="pt-32">
-                            <div className="flex justify-center xl:justify-end items-center">
-                                <div className="text-sm text-dark-blue mr-4">
-                                    {formatDate(_date)}
-                                </div>
-                                <Logo3 />
-                            </div>
-                        </div>
 
                     </div>
                 </div>
+            </div>
+            <div className="">
+                <UpdateStatus date={formatDate(_date)} />
             </div>
 
         </>

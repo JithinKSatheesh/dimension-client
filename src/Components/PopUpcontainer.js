@@ -37,3 +37,38 @@ export const PopUpcontainer = (props) => {
         </>
     );
 };
+
+export const PopUpcontainer2 = (props) => {
+
+    return (
+        <>
+            {props?.open ?
+                <div
+                    className="fixed left-0 top-0 w-full h-full bg-black/80 z-50 ">
+                    <div className="flex justify-center h-full items-center ">
+                        <div style={{height : '650px'}} className="absolute popup-wrapper-2  bg-dark-blue-grad rounded-xl w-fit overflow-auto ">
+                            <Outsideclick onOutsideClick={props.onClose}>
+                                <div className="font-bold p-5 text-white rounded-t-xl">
+                                    <div className="flex items-center justify-between">
+                                        <div>
+                                            
+                                        </div>
+                                        <div className='cursor-pointer' onClick={props.onClose}>
+                                            <IconClose />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className=" h-full w-full rounded-b-xl  p-5 ">
+                                    {props?.children}
+                                </div>
+                            </Outsideclick>
+                        </div>
+                    </div>
+
+                </div>
+                :
+                null}
+
+        </>
+    );
+};

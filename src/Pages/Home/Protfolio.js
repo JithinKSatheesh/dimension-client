@@ -11,6 +11,7 @@ import {ThreeDots} from 'react-loader-spinner'
 import { DetailsButton } from 'Components/Buttons'
 import { Link } from 'react-router-dom'
 
+
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
@@ -26,32 +27,6 @@ export default function Protfolio(props) {
     const _data = getProtfolio?.protfolio ?? []
     const data = _data?.slice(0, 4)
 
-    // console.log(getProtfolio)
-
-    // const _data = [
-    //     { 
-    //         title : "Demo",
-    //         type : "Type",
-    //         desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-    //     },
-    //     { 
-    //         title : "Demo",
-    //         type : "Type",
-    //         desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-    //     },
-    //     { 
-    //         title : "Demo",
-    //         type : "Type",
-    //         desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-    //     },
-    //     { 
-    //         title : "Demo",
-    //         type : "Type",
-    //         desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam tincidunt massa nisl.',
-    //     },
-    // ]
-
-
 
     useEffect(() => {
         initProtfolio()
@@ -60,13 +35,13 @@ export default function Protfolio(props) {
 
     return (
         <>
-        <div className=" hero-wrapper-5">
+        <div className=" hero-wrapper-6">
             <div className="container py-32 mx-auto px-4 ">
                 <div className="flex justify-between items-center pb-24 ">
-                    <div className="text-3xl  font-semibold text-white">
+                    <div className="text-3xl  font-semibold text-blue">
                         Portfolio
                     </div>
-                    <div className="text-base text-white flex items-center cursor-pointer">
+                    <div className="text-base text-blue flex items-center cursor-pointer">
                         <Link to='/protfolio'>
                             <div className="mr-3 font-bold">All&nbsp;projects</div>
                         </Link>
@@ -75,7 +50,7 @@ export default function Protfolio(props) {
                 </div>
                 {/* --------------------------- */}
                 {data?.length <= 0 ?
-                    <div className='flex justify-center '> <ThreeDots  color='white' />  </div>
+                    <div className='flex justify-center '> <ThreeDots  color='#206291' />  </div>
                     :
                 <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
                     {[...data].map((item, index) => 
@@ -85,6 +60,7 @@ export default function Protfolio(props) {
                 }
             </div>
         </div>
+      
         </>
     )
 }
@@ -113,7 +89,7 @@ export const ProtfolioCard = (props) => {
                 {props?.item?.title}
             </div>
             <div className="text-center text-blue h-12">
-                {props?.item?.type}
+                {props?.item?.type_of_project}
             </div>
             <div className=" text-center text-xs 2xl:text-sm text-dark-blue h-28 overflow-hidden truncate-2">
                 { truncate(props?.item?.description) }

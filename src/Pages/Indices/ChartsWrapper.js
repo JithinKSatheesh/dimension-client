@@ -88,7 +88,7 @@ export default function App(props) {
 
   const { data } = props
 
-  return (<div >
+  return (<div className='w-full' >
     <Line options={options} data={data} />
   </div>)
 }

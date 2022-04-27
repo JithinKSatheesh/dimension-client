@@ -29,9 +29,9 @@ export default function Home(props) {
            <Hero />
            <Mission />
            <Service />
+           <News />
            <Protfolio />
            <Research />
-           <News />
            <Footer />
 
         </div>
