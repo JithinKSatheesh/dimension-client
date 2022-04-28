@@ -127,7 +127,7 @@ export default function Index(props) {
     const _tarrif_url = footerData?.tarrif?.url
     const tarrif_url =  _tarrif_url ? `${process.env.REACT_APP_API_URL}${_tarrif_url}` : '';
 
-    console.log(footerData?.tarrif?.url)
+    // console.log(tarrif_url)
 
     const AddressData = {
         time: footerData?.contact_time,

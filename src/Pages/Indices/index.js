@@ -19,7 +19,7 @@ const { ScrollToTop } = useScrollBehaviours()
         <>
             <Hero />
             <Container />
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }

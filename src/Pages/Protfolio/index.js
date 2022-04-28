@@ -21,7 +21,7 @@ export default function Index(props) {
         <>
         <Navbar />
         <Content />
-        <Footer />
+        {/* <Footer /> */}
             
         </>
     )

@@ -22,7 +22,7 @@ export default function Index(props) {
         <Hero />
         <Questions />
         <Sendrequest />
-        <Footer />
+        {/* <Footer /> */}
         </>
     )
 }

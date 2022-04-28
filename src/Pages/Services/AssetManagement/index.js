@@ -7,6 +7,7 @@ import Hero from './Hero'
 import Contents from './Contents'
 // import Otherservices from './OtherServices'
 import Footer from 'Components/Footer'
+import { formatDate } from 'Utils/time'
 
 
 // ** Store
@@ -35,9 +36,9 @@ export default function Capitalmarket(props) {
         <>
         <Hero  servicePageData={servicePageData} />
         <Contents  servicePageData={servicePageData} />
-        <UpdateStatus />
+        <UpdateStatus date={formatDate(servicePageData?.updatedAt)} />
         {/* <Otherservices /> */}
-        <Footer />
+        {/* <Footer /> */}
             
         </>
     )

@@ -33,7 +33,7 @@ export default function Index(props) {
         <Hero />
         <Contents getClientRights={getClientRights} />
 
-        <Footer />
+        {/* <Footer /> */}
             
         </>
     )

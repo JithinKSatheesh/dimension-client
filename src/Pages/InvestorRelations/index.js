@@ -21,7 +21,7 @@ export default function Capitalmarket(props) {
         <Hero />
         <Annualreport />
         <Financialstatement />
-        <Footer />
+        {/* <Footer /> */}
             
         </>
     )

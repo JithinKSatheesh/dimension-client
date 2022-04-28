@@ -21,7 +21,7 @@ export default function Index(props) {
         <>
         <Hero />
         <Content />
-        <Footer />
+        {/* <Footer /> */}
             
         </>
     )

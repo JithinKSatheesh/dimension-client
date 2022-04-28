@@ -28,11 +28,9 @@ export default function Contents(props) {
                                     <Accordion
                                         id={1} expanded={expanded} setExpanded={setExpanded}
                                         className="accrodion-wrapper-1"
-                                        title={servicePageData?.service_heading_1}
+                                        title={<MarkdownView markdown={servicePageData?.service_heading_1} />}
                                     >
-                                        <MarkdownView
-                                            markdown={servicePageData?.service_description_1}
-                                        />
+                                        <MarkdownView markdown={servicePageData?.service_description_1} />
                                             
                                         {/* Dimension provides creative solutions to the most specific needs regarding mergers and acquisitions, disposition of a part or restructuring, privatization and globalization of businesses.
                                         <br /><br />
@@ -72,9 +70,10 @@ export default function Contents(props) {
                                     <Accordion
                                         id={2} expanded={expanded} setExpanded={setExpanded}
                                         className="accrodion-wrapper-2"
-                                        title="Private Placements"
+                                        title={<MarkdownView markdown={servicePageData?.service_heading_2} />}
                                     >
-                                        Private placements are an alternative to public offerings for those companies that seek to raise capital for expansion, refinancing, or other purposes. Through a broad network of partners, investors, and correspondents, Dimension sells shares, bonds, or other securities to pre-selected investors and institutions. These investors are usually high net worth individuals, financial institutions, pension funds, insurance companies, and other funds. Before the placement, we also act as an advisor to structure the process in a manner that advances company’s strategic and financial objectives.
+                                        <MarkdownView markdown={servicePageData?.service_description_2} />
+                                        
                                     </Accordion>
                                 </div>
                             </div>
@@ -85,26 +84,20 @@ export default function Contents(props) {
                                     <Accordion
                                         id={3} expanded={expanded} setExpanded={setExpanded}
                                         className="accrodion-wrapper-1"
-                                        title="Balance Sheet Advisory & Capital Restructuring"
+                                        title={<MarkdownView markdown={servicePageData?.service_heading_3} />}
+                                        
                                     >
-                                        Dimension offers a toolbox of balance sheet solutions in a fully integrated manner. The financial and legal teams have experience assisting clients with different organizational (LLCs, CJSCs, OJSCs) and capital structures at different growth stages.
-                                        <br /><br />
-                                        We evaluate the asset and liability structures in detail, identifying gaps and offering solutions such as improved liquidity positions, efficient working capital management, tax optimization, debt advisory, interest and currency risk management, and other key areas and business units. Based on the analyses and conclusions thereof, Dimension offers alternative debt and/or equity financing methods, risk management planning and execution, investment opportunities, and capital restructuring strategy. These solutions have the goal of optimizing the capital structure and securing the optimal weighted average cost of capital (WACC) for the client firm. As a licensed investment advisor, Dimension makes investment recommendations in real sector or capital markets, ensuring that the client’s assets generate the best risk-adjusted returns.
-
+                                       
+                                            <MarkdownView markdown={servicePageData?.service_description_3} />
                                     </Accordion>
                                 </div>
                                 <div className='mb-12'>
                                     <Accordion
                                         id={5} expanded={expanded} setExpanded={setExpanded}
                                         className="accrodion-wrapper-2"
-                                        title="Research & Analyses"
+                                        title={<MarkdownView markdown={servicePageData?.service_heading_4} />}
                                     >
-                                        Our analysts create custom, spreadsheet-based financial models to assist capital budgeting or investment decision making. The team has an extensive experience in developing Discounted Cash Flow (DCF), comparable & multiple-based, M&A, three-statement, consolidation, restructuring, budgeting, ad other models. The preparation of models is incorporated with feasibility studies and financial projections to give the most practical and relevant financial advice that is applicable to the observed scenario.
-                                        <br /><br />
-                                        Dimension’s team of analysts conducts independent research and makes corresponding recommendations to empower our clients to make value maximizing financial decisions. Research services include sell-side/buy-side reports, market overviews, white papers, articles, specialized research. We are specialized in analyzing local and international equity and fixed income products, the coverage of which is distributed to prospective retail or institutional investors.
-                                        <br /><br />
-                                        When providing research services, our objective is to be the most reliable and insightful financial partner and fuel the growth of client’s business.
-
+                                             <MarkdownView markdown={servicePageData?.service_description_4} />
                                     </Accordion>
                                 </div>
                             </div>

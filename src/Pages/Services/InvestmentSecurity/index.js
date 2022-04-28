@@ -36,7 +36,7 @@ export default function Capitalmarket(props) {
         <Contents  servicePageData={servicePageData} />
         <UpdateStatus date={formatDate(servicePageData?.updatedAt)} />
         {/* <Otherservices /> */}
-        <Footer />
+        {/* <Footer /> */}
             
         </>
     )
