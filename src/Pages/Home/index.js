@@ -25,7 +25,7 @@ export default function Home(props) {
     const { getConfigs } = useStoreItem()
     const { initAllConfigs } = initStoreItem()
 
-    console.log(getConfigs)
+    // console.log(getConfigs)
 
     const homepageData = getConfigs?.configs?.home_page
 

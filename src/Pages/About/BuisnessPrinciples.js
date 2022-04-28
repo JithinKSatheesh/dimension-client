@@ -10,30 +10,33 @@ import { ReactComponent as Integrity } from 'Assets/icons/about/Integrity.svg'
 import { ReactComponent as Confidentality } from 'Assets/icons/about/confidentality.svg'
 // import { ReactComponent as IconPeople } from 'Assets/icons/about/people.svg'
 
+export default function Buisnessprinciples(props) {
+
+    const { aboutPageData } = props
+
+
 const _BuisnessPrinciples = [
     {
         icon : <QualityAndProfessionalism />,
-        title : ' Quality and High professionalism',
-        description : 'We offer wide-range of financial and investment services, ensuring the high quality of services provided, while putting our clients first. We take an individual approach to each partner and customer by building stable and long-term relationships. The company is guided by internationally recognized corporate governance norms and principles of collegial decision making.'
+        title : aboutPageData?.buisness_principle_1,
+        description : aboutPageData?.buisness_principle_description_1
     },
     {
         icon :  <TeamApproach />,
-        title : "Team Approach",
-        description :  "Our team members share common values and are committed to the company's strategy. The employees of Dimension Investments are dedicated and united, who spare no effort and energy to properly carry out every project. We share our experience with each other, thereby creating effective working relationships.",
+        title : aboutPageData?.buisness_principle_2,
+        description : aboutPageData?.buisness_principle_description_2
     },
     {
         icon :  <Confidentality />,
-        title : "Confidentiality",
-        description :  "The confidentiality of personal information of our customers is of utmost importance. Guided by the legislation of the Republic of Armenia, we guarantee the security of information about our customers and partners.",
+        title : aboutPageData?.buisness_principle_3,
+        description : aboutPageData?.buisness_principle_description_3
     },
     {
         icon :  <Integrity />,
-        title : "Integrity and Honesty",
-        description :  "Building on our reputation, we highly value trust, honesty, and business ethics. Our vision is to become a stable, reliable financial institution in the financial market of the Republic of Armenia that acts within the framework of fiduciary responsibilities when providing services to investors.",
+        title : aboutPageData?.buisness_principle_4,
+        description : aboutPageData?.buisness_principle_description_4
     },
 ]
-
-export default function Buisnessprinciples(props) {
 
 
     const DataCard = (props) => {

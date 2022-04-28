@@ -8,14 +8,15 @@ import { SlideLeft, SlideRight, JustAppear, SlideTop, SlideBottom} from 'Compone
 // ** assets
 // import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
 import { ReactComponent as IconManage } from 'Assets/icons/service_manage_blue.svg'
+import MarkdownView from 'react-showdown'
 
 export default function Hero(props) {
     
-    const { getServices } = props
+    const { getServices, servicePageData } = props
    
     const data = getServices?.services ?? []
 
-    const pdf_url = data?.attributes?.regilation_documents_asset_management_pdf?.data?.attributes?.url ?? ''
+    const pdf_url = servicePageData?.regilation_documents?.url ?? ''
     const _regilation_documents_asset_management_pdf = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : ''
 
     console.log(data?.attributes)
@@ -39,10 +40,8 @@ export default function Hero(props) {
                         <div className="flex flex-wrap pt-16 items-end">
                             <div className="w-full xl:w-1/2 text-sm mb-16">
                                 <SlideBottom>
-
-                                In the Armenian capital markets, Dimension is involved in managing its own investment portfolio of equity and debt instruments, as well as two open, non-public, leveraged fixed income funds.
-                                <br /><br />
-                                In international markets, Dimension offers private portfolio and wealth management solutions to institutional clients, high net worth individuals, and other investors based in Armenia and abroad.
+                                    <MarkdownView markdown={servicePageData?.asset_management} />
+                               
                                 </SlideBottom>
                             </div>
                             <div className="w-full h-full xl:w-1/2 mb-16 flex  justify-end">

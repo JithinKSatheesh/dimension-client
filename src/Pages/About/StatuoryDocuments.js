@@ -13,10 +13,10 @@ import { UpdateStatus } from 'Components/UpdateStatus'
 
 export default function Statuorydocuments(props) {
 
-    const { getAboutPage } = props
+    const { getAboutPage, aboutPageData } = props
 
     const data = getAboutPage?.about ?? {}
-    const _date = getAboutPage?.about?.attributes?.updatedAt
+    const _date = aboutPageData?.updatedAt
 
     const license_pdf = data?.attributes?.license_pdf?.data?.attributes?.url ?? ''
     const _license_pdf = license_pdf ? `${process.env.REACT_APP_API_URL}${license_pdf}` : ''

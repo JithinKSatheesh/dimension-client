@@ -44,9 +44,9 @@ export const PopUpcontainer2 = (props) => {
         <>
             {props?.open ?
                 <div
-                    className="fixed left-0 top-0 w-full h-full bg-black/80 z-50 ">
-                    <div className="flex justify-center h-full items-center ">
-                        <div style={{height : '650px'}} className="absolute popup-wrapper-2  bg-dark-blue-grad rounded-xl w-fit overflow-auto ">
+                    className="fixed left-0 top-0 w-full h-full bg-black/80 z-50 overflow-scroll">
+                    <div className="flex justify-center h-screen  mt-32">
+                        <div  className=" popup-wrapper-2  bg-dark-blue-grad rounded-xl w-fit h-fit ">
                             <Outsideclick onOutsideClick={props.onClose}>
                                 <div className="font-bold p-5 text-white rounded-t-xl">
                                     <div className="flex items-center justify-between">
@@ -59,6 +59,31 @@ export const PopUpcontainer2 = (props) => {
                                     </div>
                                 </div>
                                 <div className=" h-full w-full rounded-b-xl  p-5 ">
+                                    {props?.children}
+                                </div>
+                            </Outsideclick>
+                        </div>
+                    </div>
+
+                </div>
+                :
+                null}
+
+        </>
+    );
+};
+
+export const PopUpcontainerBareBone = (props) => {
+
+    return (
+        <>
+            {props?.open ?
+                <div
+                    className="fixed left-0 top-0 w-full h-full bg-black/80 z-50 overflow-scroll ">
+                    <div className="flex justify-center h-screen items-center">
+                        <div style={{height : '550px'}} className="absolute  rounded-xl w-fit overflow-auto ">
+                            <Outsideclick onOutsideClick={props.onClose}>
+                                <div>
                                     {props?.children}
                                 </div>
                             </Outsideclick>

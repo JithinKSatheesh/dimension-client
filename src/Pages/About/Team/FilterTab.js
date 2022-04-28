@@ -7,7 +7,7 @@ export const FilterTab = (props) => {
     
 
     return (
-        <div className="grid grid-cols-3 gap-0 border-color-blue-grad border-2 rounded-2xl">
+        <div className="grid grid-cols-3 gap-0 border-color-blue-grad border rounded-2xl">
             {filters.map((item, index) => <div
                 key={item.id}
                 className={`

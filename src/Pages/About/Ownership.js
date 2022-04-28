@@ -8,13 +8,14 @@ import { ReactComponent as IconDownload } from 'Assets/icons/download.svg'
 
 export default function Ownership(props) {
 
-    const { getAboutPage } = props
+    const { getAboutPage, aboutPageData } = props
 
-    const data = getAboutPage?.about ?? []
+    // const data = getAboutPage?.about ?? []
     const ownership = getAboutPage?.ownerships || []
 
-    const central_bank_regulation_pdf = data?.attributes?.central_bank_regulation_pdf?.data?.attributes?.url ?? ''
+    const central_bank_regulation_pdf = aboutPageData?.central_bank_regulation_pdf?.url ?? ''
     const _central_bank_regulation_pdf = central_bank_regulation_pdf ? `${process.env.REACT_APP_API_URL}${central_bank_regulation_pdf}` : ''
+    // console.log(_central_bank_regulation_pdf)
 
     // console.log(getAboutPage)
 
@@ -62,7 +63,8 @@ export default function Ownership(props) {
                             <div className="w-full xl:w-1/3">
                                 <div className="max-w-lg text-white leading-8 mb-28">
                                     <SlideBottom>
-                                        Ընկերությունը առաջնորդվելով ՀՀ կենտրոնական բանկի ԿԱՆՈՆԱԿԱՐԳ 8/03 «Ֆինանսական կազմակերպությունների և ֆինանսական խմբերի կողմից տեղեկությունների հրապարակումը» 15-րդ հոդվածի պահանջները, սույն բաժնում առկա է «Դայմենշն» ՓԲԸ-ի քաղաքականությունը արտահայտող հայտարարություն այն մասին, որ չի հրապարակում ֆինանսական կազմակերպության վերաբերյալ նշված տեղեկատվությունը և չհրապարակման պատճառները։
+                                        {aboutPageData?.ownership_description}
+                                        {/* Ընկերությունը առաջնորդվելով ՀՀ կենտրոնական բանկի ԿԱՆՈՆԱԿԱՐԳ 8/03 «Ֆինանսական կազմակերպությունների և ֆինանսական խմբերի կողմից տեղեկությունների հրապարակումը» 15-րդ հոդվածի պահանջները, սույն բաժնում առկա է «Դայմենշն» ՓԲԸ-ի քաղաքականությունը արտահայտող հայտարարություն այն մասին, որ չի հրապարակում ֆինանսական կազմակերպության վերաբերյալ նշված տեղեկատվությունը և չհրապարակման պատճառները։ */}
                                     </SlideBottom>
                                 </div>
                                 <SlideTop>

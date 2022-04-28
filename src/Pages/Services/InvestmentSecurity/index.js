@@ -12,26 +12,29 @@ import Footer from 'Components/Footer'
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
 import { UpdateStatus } from 'Components/UpdateStatus'
+import { formatDate } from 'Utils/time'
 
 export default function Capitalmarket(props) {
     
-    const { getServices } = useStoreItem()
-    const { initServices } = initStoreItem()
+    const { getConfigs } = useStoreItem()
+    const { initAllConfigs } = initStoreItem()
     
-    useEffect(() => initServices(), [])
+    useEffect(() => initAllConfigs(), [])
 
     const { ScrollToTop } = useScrollBehaviours()
 
     useEffect(() => {
         ScrollToTop()
     }, [])
+
+    const servicePageData = getConfigs?.configs?.service_page_investment_service
     
 
     return (
         <>
-        <Hero getServices={getServices} />
-        <Contents getServices={getServices} />
-        <UpdateStatus date="" />
+        <Hero  servicePageData={servicePageData} />
+        <Contents  servicePageData={servicePageData} />
+        <UpdateStatus date={formatDate(servicePageData?.updatedAt)} />
         {/* <Otherservices /> */}
         <Footer />
             

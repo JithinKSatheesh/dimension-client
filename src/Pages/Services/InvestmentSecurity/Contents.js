@@ -5,10 +5,11 @@ import { motion } from "framer-motion";
 // ** assets
 import { Accordion } from 'Components/Accordion';
 import Otherservices from './OtherServices';
+import { Markdown } from 'react-showdown';
 
 export default function Contents(props) {
     
-    const {getServices} = props
+    const {getServices,  servicePageData} = props
 
     const [expanded, setExpanded] = useState(false)
 
@@ -27,16 +28,17 @@ export default function Contents(props) {
                                     <Accordion
                                         id={1} expanded={expanded} setExpanded={setExpanded}
                                         className="accrodion-wrapper-1"
-                                        title={<>Securities <br /> Underwriting</>}
+                                        title={<Markdown markdown={servicePageData?.service_heading_1} />}
                                     >
-                                        Dimension offers underwriting services to clients that raise capital through an Initial Public Offering (IPO) or secondary offering. As the underwriter, Dimension assesses risk and the appropriate price of particular securities and ensures that the client’s offering will raise the capital needed. Upon agreement with the issuer, the underwriting can either be done on guaranteed or on best-effort basis.
+                                        <Markdown markdown={servicePageData?.service_description_1} />
+                                        {/* Dimension offers underwriting services to clients that raise capital through an Initial Public Offering (IPO) or secondary offering. As the underwriter, Dimension assesses risk and the appropriate price of particular securities and ensures that the client’s offering will raise the capital needed. Upon agreement with the issuer, the underwriting can either be done on guaranteed or on best-effort basis.
 
                                         <br /><br />
                                         We are specialized in the underwriting of securities in the Armenian market, guiding medium and large size local companies through the entire capital raise process. We act as an advisor for our clients, file the prospectus and submit the application to the Central Bank of Armenia on behalf of the issuer. To secure investments, Dimension organizes financial roadshows to market the securities through series of presentations and meetings. Dimension gathers initial non-binding subscriptions and gauges the demand for the securities. When the securities are registered, Dimension closes the offering and sells the securities to investors through an exchange (IPOs, secondary public offerings).
 
                                         <br /><br />
                                         In some cases, Dimension may involve co-underwriters for the capital raise process, forming an underwriting syndicate.
-
+ */}
 
                                     </Accordion>
                                 </div>
@@ -44,9 +46,10 @@ export default function Contents(props) {
                                     <Accordion
                                         id={2} expanded={expanded} setExpanded={setExpanded}
                                         className="accrodion-wrapper-2"
-                                        title={<>Market <br /> Making</>}
+                                        title={<Markdown markdown={servicePageData?.service_heading_2} />}
+                                        
                                     >
-                                        We provide market making services to improve trading liquidity and general marketability of exchange-traded financial securities. Based on the agreement with the issuer, Dimension buys and holds predetermined volume of security inventory with the aim of quoting a set quantity on the exchange where the security is listed. With sufficient liquidity and continuous bid-ask quotations, trading costs and margins are decreased, while the demand in the capital market is increased and met.
+                                        <Markdown markdown={servicePageData?.service_description_2} />
                                     </Accordion>
                                 </div>
                             </div>
@@ -57,21 +60,21 @@ export default function Contents(props) {
                                     <Accordion
                                         id={3} expanded={expanded} setExpanded={setExpanded}
                                         className="accrodion-wrapper-1"
-                                        title={<>Exchange <br /> Listing</>}
+                                        title={<Markdown markdown={servicePageData?.service_heading_3} />}
                                     >
-                                        Another key business direction in our advisory business is the professional advisory for the SMEs and corporation that seek to list a security on an exchange (both local and international). Specifically, we prepare and submit applications and prospectus to regulators and make sure that the issuer complies with the regulatory requirements before and after the listing. At all stages, Dimension acts as the issuer’s principal channel of communication with the exchange, responding on behalf of the issuer to all enquiries made by the exchange.
-                                        <br /><br />
-                                        Through our network of investment banks and advisors we can help companies to list on international exchanges, such as Vienna Stock Exchange and London Stock Exchange.
-
+                                        <Markdown markdown={servicePageData?.service_description_3} />
                                     </Accordion>
                                 </div>
                                 <div className='mb-12'>
                                     <Accordion
                                         id={5} expanded={expanded} setExpanded={setExpanded}
                                         className="accrodion-wrapper-2"
-                                        title={<>Corporate Registry <br/> & Securities Custody</>}
+                                        title={
+                                            <Markdown markdown={servicePageData?.service_heading_4} />
+                                        }
                                     >
-                                        Dimension is a licensed Account Operator of the Central Depository of Armenia. We employ a team of licensed, award-winning specialists who with the assistance of the in-house lawyers provide high quality depository services. Our positioning and expertise in the field puts us at the forefronts of the Armenian market, where we are proud to serve more than 100 corporate clients.
+                                        <Markdown markdown={servicePageData?.service_description_4} />
+                                        {/* Dimension is a licensed Account Operator of the Central Depository of Armenia. We employ a team of licensed, award-winning specialists who with the assistance of the in-house lawyers provide high quality depository services. Our positioning and expertise in the field puts us at the forefronts of the Armenian market, where we are proud to serve more than 100 corporate clients.
                                         <br /><br />
                                         <div className="font-bold">
                                             We act as the intermediary for the following depository services:
@@ -119,7 +122,7 @@ export default function Contents(props) {
                                                 Registration of rights for the pledge of securities
 
                                             </li>
-                                        </ul>
+                                        </ul> */}
 
                                     </Accordion>
                                 </div>

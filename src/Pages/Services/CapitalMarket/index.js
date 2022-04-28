@@ -17,22 +17,24 @@ import { UpdateStatus } from 'Components/UpdateStatus'
 
 export default function Capitalmarket(props) {
 
-    const { getServices } = useStoreItem()
-    const { initServices } = initStoreItem()
+    const { getConfigs } = useStoreItem()
+    const { initAllConfigs } = initStoreItem()
     
-    useEffect(() => initServices(), [])
+    
+    useEffect(() => initAllConfigs(), [])
 
     const { ScrollToTop } = useScrollBehaviours()
     
     useEffect(() => {
         ScrollToTop()
     }, [])
-    
 
+    const servicePageData = getConfigs?.configs?.service_page_capital_market
+    
     return (
         <>
-        <Hero getServices={getServices} />
-        <Contents getServices={getServices} />
+        <Hero  servicePageData={servicePageData}   />
+        <Contents servicePageData={servicePageData}  />
         <UpdateStatus date="2" />
         {/* <Otherservices /> */}
         <Footer />

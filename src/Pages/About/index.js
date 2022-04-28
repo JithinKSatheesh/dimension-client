@@ -22,8 +22,8 @@ import initStoreItem from 'Store/hooks/initStoreItems'
 
 export default function About(props) {
 
-    const { getAboutPage } = useStoreItem()
-    const { initAboutpage, initAboutPageOwnership, initAboutPagePartners } = initStoreItem()
+    const { getAboutPage, getConfigs } = useStoreItem()
+    const { initAboutpage, initAboutPageOwnership, initAboutPagePartners, initAllConfigs } = initStoreItem()
 
     
     const { ScrollToTop } = useScrollBehaviours()
@@ -34,6 +34,8 @@ export default function About(props) {
         initAboutpage()
         initAboutPageOwnership()
         initAboutPagePartners()
+        // ------------
+        initAllConfigs()
 
     }, [])
 
@@ -52,20 +54,23 @@ export default function About(props) {
 
     // console.log(getAboutPage)
 
+    const aboutPageData = getConfigs?.configs?.about_page
+
+
 
     return (
         <>
             <div>
                 {/* <Navbar /> */}
-                <Hero />
-                <Buisnessprinciples />
-                <Ownership getAboutPage={getAboutPage} />
+                <Hero aboutPageData={aboutPageData} />
+                <Buisnessprinciples aboutPageData={aboutPageData} />
+                <Ownership getAboutPage={getAboutPage} aboutPageData={aboutPageData}  />
                 <Team />
                 <Partners getAboutPage={getAboutPage} />
                 <Mission />
                 <Corporatestructure />
-                <Statuorydocuments getAboutPage={getAboutPage} />
-                <Footer />
+                <Statuorydocuments getAboutPage={getAboutPage} aboutPageData={aboutPageData}  />
+                {/* <Footer /> */}
             </div>
         </>
     )

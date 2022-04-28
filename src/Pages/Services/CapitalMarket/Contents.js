@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { motion } from "framer-motion";
+import MarkdownView from 'react-showdown';
 
 // ** assets
 import { Accordion } from 'Components/Accordion';
@@ -8,8 +9,8 @@ import Otherservices from './OtherServices';
 
 export default function Contents(props) {
 
-    const { getServices } = props
-    
+    const { getServices, servicePageData } = props
+
     const [expanded, setExpanded] = useState(false)
 
 
@@ -27,9 +28,13 @@ export default function Contents(props) {
                                     <Accordion
                                         id={1} expanded={expanded} setExpanded={setExpanded}
                                         className="accrodion-wrapper-1"
-                                        title="Mergers & Acquisitions (M&A) Advisory"
+                                        title={servicePageData?.service_heading_1}
                                     >
-                                        Dimension provides creative solutions to the most specific needs regarding mergers and acquisitions, disposition of a part or restructuring, privatization and globalization of businesses.
+                                        <MarkdownView
+                                            markdown={servicePageData?.service_description_1}
+                                        />
+                                            
+                                        {/* Dimension provides creative solutions to the most specific needs regarding mergers and acquisitions, disposition of a part or restructuring, privatization and globalization of businesses.
                                         <br /><br />
                                         We advise on transactions in both strategic and distressed situations. We may also advise on financial and strategic alternatives to a sale, such as recapitalizations, spin-offs, carve-outs, split-offs or tracking stocks.
                                         <br /><br />
@@ -59,9 +64,7 @@ export default function Contents(props) {
                                                 act as a dealer-manager in tender or exchange offers.
 
                                             </li>
-
-
-                                        </ul>
+                                        </ul> */}
 
                                     </Accordion>
                                 </div>

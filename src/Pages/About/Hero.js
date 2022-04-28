@@ -13,6 +13,7 @@ import { SlideLeft, SlideRight, JustAppear, SlideBottom} from 'Components/SlideA
 
 export default function Hero(props) {
 
+    const {aboutPageData} = props
 
     return (
         <>
@@ -29,13 +30,16 @@ export default function Hero(props) {
                             <div className="flex flex-wrap pt-24">
                                 <div className="w-full xl:w-1/2 text-sm mb-16 xl:pr-8">
                                     <SlideBottom>
+                                    <div dangerouslySetInnerHTML={{__html : aboutPageData?.hero_description_1}}></div>
+                                    
 
-                                    Dimension CJSC was founded in 2018. Dimension Investment Company was registered and licensed by the Central Bank of Armenia on September 28, 2018.
+                                    {/* Dimension CJSC was founded in 2018. Dimension Investment Company was registered and licensed by the Central Bank of Armenia on September 28, 2018.
                                     <br /><br />
                                     The company carries out financial operations permitted to investment companies by laws and other legal acts. The company is guided by internationally recognized standards of corporate governance and principles of collegial decision-making.
                                     Armenia’s financial market has great unrealized potentials and Dimension is here to help you. As such, the idea of an Armenian-based investment company which pursues to offer high-quality service in the Armenian market was born.
                                     <br /><br />
                                     Dimension provides a number of consulting, research and analysis services related to securities transactions.
+                                     */}
                                     </SlideBottom>
 
                                 </div>
@@ -51,19 +55,19 @@ export default function Hero(props) {
                             <div className="flex flex-wrap">
                                 <div className="w-full xl:w-1/2 text-sm mb-16 order-1 xl:order-2 xl:pl-8">
                                     <SlideBottom>
-
-                                    Founded in 2018 and with capabilities spanning in Investment Securities Services, Capital Markets Advisory, and Investment Management & Research, Dimension strives to put clients first by being their most reliable, insightful, and effective investment services partner in Armenia, while maintaining the firm's high integrity. Dimension’s capabilities are fortified by its independence and conflicts of interest-free status, multi-perspective and client-centric culture, professional team, diverse & highly engaged shareholders, and global network, capabilities, and mindset.
+                                    <div dangerouslySetInnerHTML={{__html : aboutPageData?.hero_description_2}}></div>
+                                    {/* Founded in 2018 and with capabilities spanning in Investment Securities Services, Capital Markets Advisory, and Investment Management & Research, Dimension strives to put clients first by being their most reliable, insightful, and effective investment services partner in Armenia, while maintaining the firm's high integrity. Dimension’s capabilities are fortified by its independence and conflicts of interest-free status, multi-perspective and client-centric culture, professional team, diverse & highly engaged shareholders, and global network, capabilities, and mindset.
                                     <br /><br />
                                     The principle of the company is to provide high quality of services and to show an individual approach to each partner and customer.
-                                    <br /><br />
+                                    <br /><br /> */}
                                     <div className="font-bold">
-                                        Dimension Investment Company received the award of best account operator by the Armenia Securities Exchange and the Central Depository within the framework of the annual AMX Awards:
-                                        <div>
+                                    <div dangerouslySetInnerHTML={{__html : aboutPageData?.hero_description_awards}}></div>
+                                        {/* Dimension Investment Company received the award of best account operator by the Armenia Securities Exchange and the Central Depository within the framework of the annual AMX Awards:
+                                        <br/>
                                             - In the category of best account operator in 2020
-                                        </div>
-                                        <div>
+                                            <br/>
                                             - In the category of best account operator in 2021.
-                                        </div>
+                                            <br/> */}
                                     </div>
                                     </SlideBottom>
 
