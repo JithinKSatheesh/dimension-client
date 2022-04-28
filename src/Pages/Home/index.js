@@ -13,26 +13,39 @@ import Research from './Research'
 import News from './News'
 import Footer from 'Components/Footer'
 
+// ** Store
+import useStoreItem from 'Store/hooks/getStoreItems'
+import initStoreItem from 'Store/hooks/initStoreItems'
+
 
 export default function Home(props) {
 
     const { ScrollToTop } = useScrollBehaviours()
 
+    const { getConfigs } = useStoreItem()
+    const { initAllConfigs } = initStoreItem()
+
+    console.log(getConfigs)
+
+    const homepageData = getConfigs?.configs?.home_page
+
+
     useEffect(() => {
         ScrollToTop()
+        initAllConfigs()
     }, [])
     
 
     return (
         <div >
            <Navbar  /> 
-           <Hero />
-           <Mission />
+           <Hero homepageData={homepageData} />
+           <Mission homepageData={homepageData} />
            <Service />
            <News />
            <Protfolio />
            <Research />
-           <Footer />
+           {/* <Footer homepageData={homepageData} /> */}
 
         </div>
     )

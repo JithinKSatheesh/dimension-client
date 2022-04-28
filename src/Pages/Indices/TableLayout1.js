@@ -2,8 +2,8 @@ import React from 'react';
 
 export const TableLayout1 = (props) => {
 
-    const {description, data} = props
-    
+    const { description, data } = props
+
 
     return (
         <div className='text-xs'>
@@ -34,7 +34,7 @@ export const TableLayout1 = (props) => {
                             <td className="border px-2 py-2 text-right border-slate-300 "> {data?.index_performance_YTD} </td>
                             <td className="border px-2 py-2 text-right border-slate-300 "> {data?.index_performance_last_year} </td>
                             <td className="border px-2 py-2 text-right border-slate-300 "> {data?.index_performance_since_inception} </td>
-                            
+
                         </tr>
                     </tbody>
                 </table>
@@ -44,11 +44,11 @@ export const TableLayout1 = (props) => {
 
 export const TableLayoutAMDIndex = (props) => {
 
-    const { data, showBond = true} = props
+    const { data, showBond = true } = props
 
     return (
         <div className='ml-0 xl:ml-auto text-xs '>
-        <div className=" text-dark-blue font-bold ">
+            <div className=" text-dark-blue font-bold ">
                 Index Statistics
             </div>
             <div className="overflow-x-scroll py-4">
@@ -63,15 +63,15 @@ export const TableLayoutAMDIndex = (props) => {
                             <td className="border px-4 py-2  border-slate-300 font-bold">NUMBER OF CONSTITUENT BONDS</td>
                             <td className="border px-4 py-2 text-right border-slate-300 ">{data?.index_statistics_number_of_constituent_bonds} </td>
                         </tr>
-                        {showBond &&<>
-                        <tr>
-                            <td className="border px-4 py-2  border-slate-300 ">Government Bonds</td>
-                            <td className="border px-4 py-2 text-right border-slate-300 ">{data?.index_statistics_government_bonds} </td>
-                        </tr>
-                        <tr>
-                            <td className="border px-4 py-2  border-slate-300 ">Corporate Bonds</td>
-                            <td className="border px-4 py-2 text-right border-slate-300 ">{data?.index_statistics_corporate_bonds}</td>
-                        </tr>
+                        {showBond && <>
+                            <tr>
+                                <td className="border px-4 py-2  border-slate-300 ">Government Bonds</td>
+                                <td className="border px-4 py-2 text-right border-slate-300 ">{data?.index_statistics_government_bonds} </td>
+                            </tr>
+                            <tr>
+                                <td className="border px-4 py-2  border-slate-300 ">Corporate Bonds</td>
+                                <td className="border px-4 py-2 text-right border-slate-300 ">{data?.index_statistics_corporate_bonds}</td>
+                            </tr>
                         </>}
                         <tr>
                             <td className="border px-4 py-2  border-slate-300 font-bold">TOTAL NOMINAL VALUE OUTSTANDING (AMD Million)</td>
@@ -99,7 +99,7 @@ export const TableLayoutAMDIndex = (props) => {
             <div className='text-blue text-xs py-2'>
                 For more details, refer to the index factsheet.
             </div>
-            </div>
+        </div>
     )
 
 }

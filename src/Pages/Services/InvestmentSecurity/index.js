@@ -11,6 +11,7 @@ import Footer from 'Components/Footer'
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
+import { UpdateStatus } from 'Components/UpdateStatus'
 
 export default function Capitalmarket(props) {
     
@@ -30,6 +31,7 @@ export default function Capitalmarket(props) {
         <>
         <Hero getServices={getServices} />
         <Contents getServices={getServices} />
+        <UpdateStatus date="" />
         {/* <Otherservices /> */}
         <Footer />
             

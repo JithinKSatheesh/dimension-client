@@ -29,6 +29,8 @@ import Indices from 'Pages/Indices'
 import Search from 'Pages/Search'
 import NewsInnerPage from 'Pages/News/NewsInnerPage'
 
+import Mainlayout from 'Layout./MainLayout';
+
 // ** Store
 import { StateProvider as ProviderProtfolio } from 'Store/protfolio'
 import { StateProvider as ProviderMarketResearch } from 'Store/marketResearch'
@@ -42,10 +44,12 @@ import { StateProvider as ProviderCareers } from 'Store/careers'
 import { StateProvider as ProviderRegulations } from 'Store/regulations'
 import { StateProvider as ProviderAnnualReports } from 'Store/annualReports'
 import { StateProvider as ProviderGraph } from 'Store/Indices'
+import { StateProvider as ProviderConfig } from 'Store/configs'
 
 function App() {
   return (
     <div className="App">
+      <ProviderConfig>
       <ProviderProtfolio>
         <ProviderMarketResearch>
           <ProviderArticles>
@@ -58,10 +62,12 @@ function App() {
                       <ProviderRegulations>
                         <ProviderAnnualReports>
                         <ProviderGraph >
+                        <Mainlayout>
 
 
                         <RoutesConfig />
 
+                        </Mainlayout>
                         </ProviderGraph>
                         </ProviderAnnualReports>
                       </ProviderRegulations>
@@ -74,6 +80,7 @@ function App() {
           </ProviderArticles>
         </ProviderMarketResearch>
       </ProviderProtfolio>
+      </ProviderConfig>
     </div>
   );
 }

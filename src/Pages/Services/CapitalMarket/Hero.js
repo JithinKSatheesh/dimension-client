@@ -5,7 +5,7 @@ import { DownloadDocumentButton } from 'Components/Buttons'
 import { SlideLeft, SlideRight, JustAppear, SlideTop, SlideBottom} from 'Components/SlideAnimation'
 
 // ** assets
-import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
+import { ReactComponent as IconHome  } from 'Assets/icons/service_home_blue.svg'
 
 
 

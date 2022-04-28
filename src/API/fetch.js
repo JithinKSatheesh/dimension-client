@@ -109,6 +109,12 @@ const GetFunctionsList = [
         name : 'fetchUsdBondIndexTable',
         url_end : 'usd-corporate-index-table',  
     },
+    // -------------------------------------
+    {
+        name : 'fetchAllConfigs',
+        url_end : 'home-page/getAllconfigs',  
+    },
+    // -------------------------------------
     // =====================================
     // POST
     // =====================================

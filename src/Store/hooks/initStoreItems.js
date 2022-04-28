@@ -15,6 +15,7 @@ import { Store as StoreCareers } from 'Store/careers'
 import { Store as StoreRegulations } from 'Store/regulations'
 import { Store as StoreAnnualReports } from 'Store/annualReports'
 import { Store as StoreIndicesData } from 'Store/Indices'
+import { Store as StoreConfigs } from 'Store/configs'
 
 
 export default function Initstore(props) {
@@ -31,6 +32,7 @@ export default function Initstore(props) {
     const _StoreRegulations = useContext(StoreRegulations)
     const _StoreAnnualReports = useContext(StoreAnnualReports)
     const _StoreIndicesData = useContext(StoreIndicesData)
+    const _StoreConfigs = useContext(StoreConfigs)
 
     const CollectionTypeFunction = async (filter, fetchFunction, storeObj, storeInitString = 'initState', singleType = false) => {
         
@@ -244,6 +246,15 @@ export default function Initstore(props) {
             storeObj: _StoreIndicesData,
             storeInitString: 'initUsdIndicesFactsheets',
             singleType: false
+        },
+        // =================================================
+        {
+            name: 'initAllConfigs',
+            filter: {  },
+            fetchFunction: GetFunctions.fetchAllConfigs,
+            storeObj: _StoreConfigs,
+            storeInitString: 'initState',
+            singleType: true,
         },
 
 

@@ -30,13 +30,13 @@ export const AddressDataArray = (item) => {
 export const RenderAddressData = ({ item }) => {
 
     return (<>
-        {Object.keys(AddressData).map(key => {
+        {Object.keys(item).map(key => {
             const IconComp = AdressIcons[key];
             return (<div className='mb-5 flex flex-wrap xl:flex-nowrap justify-center xl:justify-start'>
                 <div className="w-full xl:w-fit mr-0 xl:mr-3">
                     <IconComp className='mb-5 xl:mb-0 xl:mx-0 mx-auto' />
                 </div>
-                {AddressData?.[key]}
+                {item?.[key]}
             </div>);
         })}
     </>);

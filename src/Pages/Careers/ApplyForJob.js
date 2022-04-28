@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { IconDownload } from './Content';
 import { useDropzone } from 'react-dropzone';
 
@@ -9,6 +9,15 @@ import { GetFunctions } from 'API/fetch'
 import { PopUpContent } from 'Components/PopUpContent';
 import { RenderMultipleTextFields } from 'Components/RenderMultipleTextFields';
 
+// import PhoneInput from 'react-phone-number-input'
+// import 'react-phone-number-input/style.css'
+// import CustomInput  from './CustomInput';
+
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+
+
+
 export const ApplyForJob = (props) => {
 
     const {popup} = props
@@ -17,6 +26,9 @@ export const ApplyForJob = (props) => {
 
     const [loading, setLoading] = useState(false)
     const [success, setSuccess] = useState(false)
+
+    const [phone, setPhone] = useState('333')
+    const ref = useRef('');
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -41,10 +53,10 @@ export const ApplyForJob = (props) => {
             name: 'email',
             label: "Email Address",
         },
-        {
-            name: 'phone',
-            label: "Phone Number",
-        },
+        // {
+        //     name: 'phone',
+        //     label: "Phone Number",
+        // },
     ]
 
     const fileLengthValidator = (file) => {
@@ -124,6 +136,7 @@ export const ApplyForJob = (props) => {
         setLoading(false)
     }
 
+    
 
 
 
@@ -136,11 +149,28 @@ export const ApplyForJob = (props) => {
             loading={loading}
         />
 
+        <div className="relative ">
+        <div className="py-3 text-xs"> Phone </div>
+        <PhoneInput
+            country={'am'}
+            value={phone}
+            onChange={e => setPhone(e)}
+            placeholder=""
+            inputClass={"h-12 bg-red-300 text-black w-full"}
+            searchClass={""}
+            inputStyle={{width : '100%', backgroundColor : 'transparent', border : 'none', height : '48px', color:'white'}}
+            buttonStyle={{backgroundColor : 'transparent', border : 'none'}}
+            containerClass={"bg-white/30 backdrop-blur-xl w-full  rounded-xl h-12 absolute z-30"}
+            dropdownStyle={{zIndex : 50, backgroundColor : '', color : 'black'}}
+            />
+        </div>
+
+
         <div className="py-3 text-xs"> Upload CV </div>
         {/* <FileUploadContainer /> */}
         {/* ============================================== */}
         <div
-            {...getRootProps({ className: 'dropzone' })}
+            {...getRootProps({ className: 'dropzone ' })}
             className='w-full h-24 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  '
 
         >

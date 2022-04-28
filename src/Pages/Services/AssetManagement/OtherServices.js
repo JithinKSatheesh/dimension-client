@@ -59,12 +59,12 @@ export default function Otherservices(props) {
                                     />
                                 </Link> */}
                         </div>
-                        <div className="pt-24">
+                        {/* <div className="pt-24">
                             <SlideLeft>
                                 <UpdateStatus date={formatDate(_date)} />
                             </SlideLeft>
 
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

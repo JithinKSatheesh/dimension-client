@@ -18,7 +18,7 @@ import Brand_2 from 'Assets/brands/brand2.png'
 import Brand_3 from 'Assets/brands/fininfo.png'
 import Brand_4 from 'Assets/brands/brand3.png'
 import Brand_5 from 'Assets/brands/exit.png'
-import { AddressData, AdressIcons, RenderAddressData } from './AddressData'
+import {  RenderAddressData } from './AddressData'
 
 import { PdfDownloadButton } from 'Components/Buttons'
 import { SearchBox } from './SearchBox'
@@ -122,8 +122,37 @@ const _serviceLinks = [
 
 export default function Index(props) {
 
-    const tarrif_url = ''
+    const {footerData} = props
 
+    const _tarrif_url = footerData?.tarrif?.url
+    const tarrif_url =  _tarrif_url ? `${process.env.REACT_APP_API_URL}${_tarrif_url}` : '';
+
+    console.log(footerData?.tarrif?.url)
+
+    const AddressData = {
+        time: footerData?.contact_time,
+        phone:footerData?.contact_phone,
+        email: footerData?.contact_email,
+        address: footerData?.contact_address
+    };
+
+    const socialMedia = [
+        {
+            id:1,
+            icon : FacebookIcon ,
+            link : footerData?.fb_link
+        },
+        {
+            id:2,
+            icon : Instagram ,
+            link : footerData?.insta_link
+        },
+        {
+            id:4,
+            icon : LinkedinIcon ,
+            link : footerData?.linkedIn_link
+        }
+    ]
     
 
     return (
@@ -197,16 +226,17 @@ export default function Index(props) {
                         )}
                     </div>
                     <div style={{width : '600px'}} className="text-xs text-white text-center xl:text-right mb-10  order-1  xl:order-2">
-                        Dimension is not responsible for the accuracy and reliability of the information and/or advertisements presented on the third party websites linked from this website and assumes no responsibility for the consequences arising from the use of the said 
+                        {footerData?.desclaimer_text}
+                        {/* Dimension is not responsible for the accuracy and reliability of the information and/or advertisements presented on the third party websites linked from this website and assumes no responsibility for the consequences arising from the use of the said  */}
                     </div>
                 </div>
                 <div className="pt-24">
                     <div className="flex flex-wrap xl:flex-nowrap justify-center xl:justify-between items-center">
                         <div className="w-full text-sm text-white order-3 xl:order-1 text-center xl:text-left">
-                            &#169; 2022 All Rights Reserved.
+                            &#169; {footerData?.copyright}
                         </div>
                         <div className="w-full text-sm text-white order-1  xl:order-2 mb-5 xl:mb-0 text-center ">
-                            Dimension CJSC is supervised by the CBA
+                           {footerData?.footer_note}
                         </div>
                         <div className="w-full text-sm text-white  order-2  xl:order-3 mb-5 xl:mb-0 ">
                             <div className='mx-auto xl:ml-auto xl:mr-0 flex justify-center xl:justify-end'>

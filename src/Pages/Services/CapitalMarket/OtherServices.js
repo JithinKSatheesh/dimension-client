@@ -58,17 +58,6 @@ export default function Otherservices(props) {
                                     />
                                 </Link> */}
                         </div>
-                        <div className="pt-24">
-                                <SlideLeft>
-                            <div className="flex justify-center xl:justify-end items-center">
-
-                                <div className="text-sm text-dark-blue mr-4">
-                                    updated: {formatDate(_date)}
-                                </div>
-                                <Logo3  />
-                            </div>
-                                </SlideLeft>
-                        </div>
                     </div>
                 </div>
             </div>

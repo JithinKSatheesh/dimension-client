@@ -5,6 +5,7 @@ import { SlideLeft, SlideRight, JustAppear} from 'Components/SlideAnimation'
 
 export default function Hero(props) {
     
+    const {homepageData} = props
 
     return (
         <>
@@ -14,19 +15,21 @@ export default function Hero(props) {
                         <div>
                             <div className="hero-h1 text-3xl xl:text-5xl text-dark-blue font-semibold">
                                 <SlideLeft>
-                                    Better way
+                                    {homepageData?.hero_heading_1}
+                                    {/* Better way */}
                                 </SlideLeft>
                                 <SlideRight>
-                                    to invest
+                                    {homepageData?.hero_heading_2}
+                                    {/* to invest */}
                                 </SlideRight>
                             </div>
                             <div className="py-7 text-dark-blue max-w-xl">
                                 <JustAppear>
-
-                                Dimension was founded with the understanding that the dynamic 
+                                {homepageData?.hero_description}
+                                {/* Dimension was founded with the understanding that the dynamic 
                                 investment markets of Armenia require an objective and professional 
                                 approach from highly specialized experts who believe in the integrity 
-                                of the financial markets.
+                                of the financial markets. */}
                                 </JustAppear>
                             </div>
                         </div>

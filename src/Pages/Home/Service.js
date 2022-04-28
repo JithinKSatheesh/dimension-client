@@ -1,8 +1,12 @@
 import React from 'react'
 
-import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
-import { ReactComponent as IconShield  } from 'Assets/icons/service_shield.svg'
-import { ReactComponent as IconManage } from 'Assets/icons/service_manage.svg'
+// import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
+// import { ReactComponent as IconShield  } from 'Assets/icons/service_shield.svg'
+// import { ReactComponent as IconManage } from 'Assets/icons/service_manage.svg'
+
+import { ReactComponent as IconHome } from 'Assets/icons/service_home_blue.svg';
+import { ReactComponent as IconShield } from 'Assets/icons/service_shield_blue.svg';
+import { ReactComponent as IconManage } from 'Assets/icons/service_manage_blue.svg';
 
 import { DetailsButton } from 'Components/Buttons'
 

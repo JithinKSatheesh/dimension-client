@@ -7,7 +7,7 @@ import { SlideLeft, SlideRight, JustAppear, SlideTop, SlideBottom} from 'Compone
 
 // ** assets
 // import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
-import { ReactComponent as IconManage } from 'Assets/icons/service_manage.svg'
+import { ReactComponent as IconManage } from 'Assets/icons/service_manage_blue.svg'
 
 export default function Hero(props) {
     

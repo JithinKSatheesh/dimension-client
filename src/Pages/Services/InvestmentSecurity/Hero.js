@@ -5,7 +5,7 @@ import { DownloadDocumentButton } from 'Components/Buttons'
 import { SlideLeft, SlideRight, JustAppear, SlideTop, SlideBottom} from 'Components/SlideAnimation'
 
 // ** assets
-import { ReactComponent as IconShield } from 'Assets/icons/service_shield.svg'
+import { ReactComponent as IconShield } from 'Assets/icons/service_shield_blue.svg'
 
 export default function Hero(props) {
 
