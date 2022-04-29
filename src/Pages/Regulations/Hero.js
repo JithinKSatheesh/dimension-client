@@ -12,6 +12,8 @@ import { DownloadDocumentButton } from 'Components/Buttons'
 
 export default function Hero(props) {
     
+    const {config} = props
+    console.log(config)
 
     return (
         <>
@@ -28,7 +30,8 @@ export default function Hero(props) {
                         <div className="flex flex-wrap pt-8 items-end">
                             <div className="w-full xl:w-1/2 text-sm mb-16 max-w-lg">
                                 <SlideBottom>
-                            Dimension’s vision is to become the leading Armenian independent investment bank with world-class capital intermediation and investment capabilities offered to the best clients in Armenia. 
+                                    {config?.regulation?.heading_description}
+                            {/* Dimension’s vision is to become the leading Armenian independent investment bank with world-class capital intermediation and investment capabilities offered to the best clients in Armenia.  */}
                                 </SlideBottom>
                             </div>
                             <div className="w-full h-full xl:w-1/2 mb-16 flex  justify-end">

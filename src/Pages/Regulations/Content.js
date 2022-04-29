@@ -10,22 +10,27 @@ import { UpdateStatus } from 'Components/UpdateStatus'
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
+import { Markdown } from 'react-showdown'
+import { formatDate } from 'Utils/time'
 
 export default function Content(props) {
 
     const { getRegulations } = useStoreItem()
     const { initRegulationsPage } = initStoreItem()
 
-    const data = getRegulations?.regulations ?? []
+    const {  getConfigs} = useStoreItem()
+    const config = getConfigs?.configs?.regulations
 
-    const civil_code_of_armenia = data?.attributes?.civil_code_of_armenia ?? ''
-    const law_on_securities_market = data?.attributes?.law_on_securities_market ?? ''
-    const law_on_the_central_bank_of_armenia = data?.attributes?.law_on_the_central_bank_of_armenia ?? ''
-    const law_on_currency_regulation = data?.attributes?.law_on_currency_regulation ?? ''
-    const anti_money_laundering_law = data?.attributes?.anti_money_laundering_law ?? ''
-    const law_on_financial_system_mediator = data?.attributes?.law_on_financial_system_mediator ?? ''
-    const rules_of_amx_armenia = data?.attributes?.rules_of_amx_armenia ?? ''
-    const rules_of_central_depository = data?.attributes?.rules_of_central_depository ?? ''
+    const _laws = config?.regulation_laws ?? []
+    const _page = config?.regulation
+
+    console.log(_laws)
+
+    const rules_of_amx_armenia = _page?.rules_of_amx_armenia?.url 
+    const _rules_of_amx_armenia = rules_of_amx_armenia ? `${process.env.REACT_APP_API_URL}${rules_of_amx_armenia}` : ''
+    
+    const rules_of_central_depository = _page?.rules_of_central_depository?.url ?? ''
+    const _rules_of_central_depository = rules_of_central_depository ? `${process.env.REACT_APP_API_URL}${rules_of_central_depository}` : ''
 
 
     
@@ -48,7 +53,17 @@ export default function Content(props) {
                         <JustAppear>
 
                         <div className="grid grid-cols-1 xl:grid-cols-3 gap-16">
-                            <PdfDownloadButton 
+                            {_laws.map(item =>
+                               { 
+                                const pdfUrl = item?.pdf?.url 
+                                const _url =  pdfUrl? `${process.env.REACT_APP_API_URL}${pdfUrl}` : ''
+                                return (<PdfDownloadButton
+                                    key={item?.id}
+                                    onClick={() => window.open(_url, '_blank', 'noopener,noreferrer')}
+                                    title={<Markdown markdown={item?.title} />} />)
+                                }
+                            )}
+                            {/* <PdfDownloadButton 
                                 onClick={() => window.open(civil_code_of_armenia, '_blank', 'noopener,noreferrer')}
                                 title={<>Civil Code of Armenia</>} />
                             <PdfDownloadButton 
@@ -65,7 +80,7 @@ export default function Content(props) {
                                 title={<>Anti-Money Laundering <br /> & Terrorism Financing Law</>} />
                             <PdfDownloadButton 
                                 onClick={() => window.open(law_on_financial_system_mediator, '_blank', 'noopener,noreferrer')}
-                                title={<>Law on Financial <br /> System Mediator</>} />
+                                title={<>Law on Financial <br /> System Mediator</>} /> */}
                         </div>
                         </JustAppear>
                         <div className="pt-36">
@@ -78,8 +93,8 @@ export default function Content(props) {
                                     </div>
                                     <div className='max-w-2xl text-sm 2xl:text-base'>
                                         <SlideTop>
-
-                                        Central Bank's regulations governing the activities of investment companies have been translated into English and can be downloaded by accessing the relevant section of the Central Bank's official website.
+                                        {_page?.legal_acts_description}
+                                        {/* Central Bank's regulations governing the activities of investment companies have been translated into English and can be downloaded by accessing the relevant section of the Central Bank's official website. */}
                                         </SlideTop>
                                     </div>
 
@@ -95,14 +110,14 @@ export default function Content(props) {
                                         <div className="pb-3">
                                             Rules of AMX Armenia stock exchange can be viewed and
                                             <span 
-                                                onClick={() => window.open(rules_of_amx_armenia, '_blank', 'noopener,noreferrer')}
+                                                onClick={() => window.open(_rules_of_amx_armenia, '_blank', 'noopener,noreferrer')}
                                                 className='font-bold cursor-pointer'> downloaded here.</span>
                                         </div>
                                         <div>
 
                                             Rules of Central Depository of Armenia can be viewed and
                                             <span 
-                                                onClick={() => window.open(rules_of_central_depository, '_blank', 'noopener,noreferrer')}
+                                                onClick={() => window.open(_rules_of_central_depository, '_blank', 'noopener,noreferrer')}
                                                 className='font-bold cursor-pointer'> downloaded here.</span>
                                         </div>
                                         </SlideTop>
@@ -110,11 +125,11 @@ export default function Content(props) {
 
                                 </div>
                             </div>
-                            <UpdateStatus className="pt-32 "   date="15.02.2022" />
                         </div>
                     </div>
                 </div>
             </div>
+            <UpdateStatus    date={formatDate(_page?.updatedAt)} />
         </>
     )
 }

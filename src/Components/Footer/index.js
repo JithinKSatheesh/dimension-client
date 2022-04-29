@@ -81,7 +81,7 @@ const _researchCoverageLinks = [
         label : 'Client rights'
     },
     {
-        link : '/investor-relation',
+        link : '/reports',
         label : 'Reports'
     },
     {

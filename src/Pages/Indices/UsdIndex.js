@@ -14,11 +14,13 @@ import { FactSheetLayout } from './FactSheetLayout'
 
 export default function Amdindex(props) {
 
-    const { getIndicesData } = useStoreItem()
-    const { initUsdIndicesGraph, initUsdIndexTableData, initUsdIndicesFactsheets } = initStoreItem()
+    const { getIndicesData, getConfigs } = useStoreItem()
+    const { initUsdIndicesGraph, initUsdIndexTableData, initUsdIndicesFactsheets, initAllConfigs} = initStoreItem()
 
+    const configs = getConfigs?.configs?.indices?.usd
+
+    const _tableData = configs?.indices_usd_table || {}
     const _graphData = getIndicesData?.usdIndicesGraph || []
-    const _tableData = getIndicesData?.usdIndexTableData || {}
     const _pdfData = getIndicesData?.usdIndicesFactsheets || []
 
     const values = _graphData?.map(item => parseFloat(item?.attributes?.value))
@@ -46,7 +48,7 @@ export default function Amdindex(props) {
 
     const index_current_date = labels?.[labels?.length - 1]
     const index_current_value = values?.[values?.length - 1]
-    const since_inception_total_return = _tableData?.attributes?.index_performance_since_inception
+    const since_inception_total_return = _tableData?.index_performance_since_inception
 
     return (
         <>
@@ -60,6 +62,7 @@ export default function Amdindex(props) {
                         since_inception_total_return={since_inception_total_return}
                         labels={labels}
                         values={values}
+                        disclaimer={_tableData?.desclaimer}
                     />
                 </>}
             <div className="flex flex-wrap">
@@ -68,7 +71,8 @@ export default function Amdindex(props) {
                         Index Description
                     </div>
                     <div className=" text-dark-blue pb-8 text-sm">
-                        Dimension Armenia USD Corporate Bond Index comprises bonds issued by Armenian corporations meeting the index’s eligibility criteria. The index is rebalanced monthly and is market value weighted.
+                        {_tableData?.index_description}
+                        {/* Dimension Armenia USD Corporate Bond Index comprises bonds issued by Armenian corporations meeting the index’s eligibility criteria. The index is rebalanced monthly and is market value weighted. */}
                     </div>
                     <div>
                         {_pdfData?.length <= 0 ?
@@ -89,13 +93,13 @@ export default function Amdindex(props) {
                             <>
                                 <div className="mt-16">
                                     <TableLayout1
-                                        data={_tableData?.attributes}
+                                        data={_tableData}
                                         />
                                 </div>
                                 <div className="pt-8">
                                     <TableLayoutAMDIndex
                                         showBond={false}
-                                        data={_tableData?.attributes}
+                                        data={_tableData}
                                     />
                                 </div>
                             </>

@@ -74,8 +74,9 @@ export default function Research(props) {
 export const ResearchCard = (props) => {
 
     // const _imageURL =  `${process.env.REACT_APP_API_URL}${props?.item?.image?.data?.attributes?.url}`
-    const _APIimage = props?.item?.image?.data?.attributes?.url
-    const _imageURL =  _APIimage ? `${process.env.REACT_APP_API_URL}${props?.item?.image?.data?.attributes?.url}` : '/assets/photos/sample-icon-2.png'
+    const _APIimage = props?.item?.image?.url
+    // console.log(_APIimage)
+    const _imageURL =  _APIimage ? `${process.env.REACT_APP_API_URL}${_APIimage}` : '/assets/photos/sample-icon-2.png'
 
 
     return(

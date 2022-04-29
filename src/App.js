@@ -16,7 +16,7 @@ import AssetManagement from 'Pages/Services/AssetManagement';
 import Capitalmarket from 'Pages/Services/CapitalMarket';
 
 // **
-import InvestorRelations from 'Pages/InvestorRelations'
+import InvestorRelations from 'Pages/Reports'
 import ClientRights from  'Pages/ClientRights'
 import Regulations from 'Pages/Regulations'
 import FAQ from 'Pages/FAQ'
@@ -95,7 +95,7 @@ const RoutesConfig = () => {
         <Route path="services/investment-security" element={ <Investmentsecurity/> } />
         <Route path="services/asset-management" element={ <AssetManagement/> } />
         <Route path="services/capital-market" element={ <Capitalmarket/> } />
-        <Route path="investor-relation" element={ <InvestorRelations/> } />
+        <Route path="reports" element={ <InvestorRelations/> } />
         <Route path="client-rights" element={ <ClientRights/> } />
         <Route path="regulations" element={ <Regulations/> } />
         <Route path="faq" element={ <FAQ/> } />

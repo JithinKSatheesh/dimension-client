@@ -13,17 +13,22 @@ import { ThreeDots } from 'react-loader-spinner'
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
 import { MarketResearchPopup } from './MarketResearchPopup'
+import { formatDate } from 'Utils/time';
 
 export default function Content(props) {
 
     const [popup, setPopup] = useState(false)
 
-    const { getMarketResearch } = useStoreItem()
-    const { initMarketResearch } = initStoreItem()
+    const {  getConfigs} = useStoreItem()
+    const {  initAllConfigs} = initStoreItem()
 
-    const data = getMarketResearch?.marketResearch ?? []
-
-    useEffect(() => initMarketResearch(), [])
+    
+    useEffect(() => initAllConfigs(), [])
+    
+    const data = getConfigs?.configs?.market_research ?? []
+    
+    console.log(data)
+    // const data = getMarketResearch?.marketResearch ?? []
 
 
     return (
@@ -49,11 +54,10 @@ export default function Content(props) {
                                             {[...data].map((item, index) =>
                                                 <ResearchCard
                                                     onClick={() => setPopup({item})}
-                                                    key={index} item={item?.attributes} />)
+                                                    key={index} item={item} />)
                                             }
                                         </div>
                                     </div>
-                                    <UpdateStatus date="30.3.2022" />
                                     </>
                                 }
                         </div>
@@ -63,6 +67,7 @@ export default function Content(props) {
         <PopUpcontainer heading="Research request" onClose={() => setPopup(false)} open={popup}>
             <MarketResearchPopup popup={popup}  />
         </PopUpcontainer >
+        <UpdateStatus date={formatDate(getConfigs?.configs?.market_research?.[0]?.updatedAt)} />
         </>
     )
 }

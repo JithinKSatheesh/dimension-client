@@ -10,28 +10,31 @@ import { UpdateStatus } from '../../Components/UpdateStatus'
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
+import { formatDate } from 'Utils/time'
 
 export default function Financialstatement(props) {
 
-    const { getAnnualReports } = useStoreItem()
+    const { getConfigs } = useStoreItem()
 
     const {
-        initFinancialStatementAnnual,
-        initFinancialStatementQuaterly,
-        initNormatives,
+        // initFinancialStatementAnnual,
+        // initFinancialStatementQuaterly,
+        // initNormatives,
     } = initStoreItem()
 
+    const reports = getConfigs?.configs?.reports
 
-    const _financialStatementAnnual = getAnnualReports?.financialStatementsAnnual ?? []
-    const _financialStatementsQuaterly = getAnnualReports?.financialStatementsQuaterly ?? []
-    const _normatives = getAnnualReports?.normatives ?? []
 
-    // console.log(_financialStatementsQuaterly , "@@")
+    const _financialStatementAnnual = reports?.annual_financial_statement ?? []
+    const _financialStatementsQuaterly = reports?.quaterly_financial_statement ?? []
+    const _normatives = reports?.normatives ?? []
+
+    // console.log(_financialStatementAnnual , "@@")
 
     useEffect(() => {
-        initFinancialStatementAnnual()
-        initFinancialStatementQuaterly()
-        initNormatives()
+        // initFinancialStatementAnnual()
+        // initFinancialStatementQuaterly()
+        // initNormatives()
     }, [])
 
     const ReportDownloadButton = (props) => {
@@ -54,12 +57,12 @@ export default function Financialstatement(props) {
 
     const ButtonWrapper = ({ title, item, pdf_key = 'pdf' }) => {
 
-        const pdf_url = item?.attributes?.[pdf_key]?.data?.attributes?.url
+        const pdf_url = item?.[pdf_key]?.url
         const url_ = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : ''
 
 
         return (<ReportDownloadButton
-            title={title ? title : item?.attributes?.year}
+            title={title ? title : item?.year}
             onClick={() => window.open(url_, '_blank', 'noopener,noreferrer')}
         />
         )
@@ -135,11 +138,11 @@ export default function Financialstatement(props) {
                         </TableRow>
                     )}
 
-                    <UpdateStatus className="pt-32 text-white" type="dark" date="15.02.2022" />
 
                 </div>
             </div>
         </div>
+        <UpdateStatus  date={formatDate(getConfigs?.configs?.reports?.investor_relation?.update_date)} />
         </>
     )
 }

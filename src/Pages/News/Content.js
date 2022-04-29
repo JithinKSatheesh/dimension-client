@@ -76,13 +76,12 @@ export default function Content(props) {
                                     <div className="py-16">
                                         {data.map((item, index) => <NewsCard key={item?.id} item={item?.attributes} id={item?.id} index={index} />)}
                                     </div>
-                                    <UpdateStatus date={formatDate(_date)} />
                                 </>}
                         </div>
                     </div>
                 </section>
             </div>
-
+            <UpdateStatus date={formatDate(_date)} />
         </>
     )
 }

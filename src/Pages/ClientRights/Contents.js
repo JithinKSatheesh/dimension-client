@@ -17,18 +17,19 @@ import {ReactComponent as Logo3} from 'Assets/icons/logo_3.svg'
 import { DownloadDocumentButton } from 'Components/Buttons'
 import { UpdateStatus } from 'Components/UpdateStatus';
 import { formatDate } from 'Utils/time';
+import MarkdownView from 'react-showdown';
 
 export default function Contents(props) {
 
     const { getClientRights } = props
    
-    const data = getClientRights?.clientRights ?? {}
+    // const data = getClientRights ?? {}
 
-    const _date = getClientRights?.clientRights?.attributes?.updatedAt
+    const _date = getClientRights?.updatedAt
     
-    const pdf_url = data?.attributes?.regilation_documents_pdf?.data?.attributes?.url ?? ''
+    const pdf_url = getClientRights?.regilation_documents_pdf?.url ?? ''
     const _regilation_documents_pdf = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : ''
-    // console.log(_regilation_documents_pdf)
+    // console.log(getClientRights)
 
     
 
@@ -39,7 +40,8 @@ export default function Contents(props) {
                     <div className="py-36">
                         <div className="text-dark-blue font-bold text-2xl xl:text-3xl pb-24">
                             <SlideLeft>
-                            Դուք կարող եք
+                                <MarkdownView markdown={getClientRights?.client_rights_heading_2} />
+                            {/* Դուք կարող եք */}
                             </SlideLeft>
                         </div>
                         <div className="flex flex-wrap">
@@ -47,8 +49,9 @@ export default function Contents(props) {
                                 <div className="flex h-full  flex-col justify-between ">
                                     <div className="text-sm text-dark-blue max-w-2xl ">
                                         <SlideBottom>
-
-                                        ներկայացնելու ձեր հետ կնքվող պայմանագրից բխող պահանջները ֆինանսական համակարգի հաշտարարին, որպես «Դայմենշն» ՓԲԸ-ի ֆիզիկական անձ Հաճախորդ:
+                                        <MarkdownView markdown={getClientRights?.client_rights_description_2} />
+                                        
+                                        {/* ներկայացնելու ձեր հետ կնքվող պայմանագրից բխող պահանջները ֆինանսական համակարգի հաշտարարին, որպես «Դայմենշն» ՓԲԸ-ի ֆիզիկական անձ Հաճախորդ: */}
                                         </SlideBottom>
                                     </div>
                                     <div className='hidden xl:block'>
@@ -72,32 +75,32 @@ export default function Contents(props) {
                                     <SlideBottom>
                                     <AddressRow
                                         title="Հաշտարար:"
-                                        value="Փիրուզ Սարգսյան"
+                                        value={getClientRights?.mediator_name}
                                         icon={<IconPerson />}
                                     />
                                     <AddressRow
                                         title="Հասցե:"
-                                        value={<>ք. Երևան, Մովսես Խորենացու փողոց 15, <br /> «Էլիտ Պլազա» բիզնես կենտրոն, 7-րդ հարկ</>}
+                                        value={<span dangerouslySetInnerHTML={{__html : getClientRights?.mediator_address}}  />}
                                         icon={<IconLocation />}
                                     />
                                     <AddressRow
                                         title="Հեռախոս:"
-                                        value={<>+374 10 58 23 22, +374 10 58 23 21</>}
+                                        value={<span dangerouslySetInnerHTML={{__html : getClientRights?.mediator_phone}}  />}
                                         icon={<PhoneIcon />}
                                     />
                                     <AddressRow
                                         title="Ֆաքս:"
-                                        value={<>+374 10 58 24 21</>}
+                                        value={<span dangerouslySetInnerHTML={{__html : getClientRights?.mediator_fax}}  />}
                                         icon={<IconPrinter />}
                                     />
                                     <AddressRow
                                         title="Էլ.Փոստ:"
-                                        value={<> info@fsm.am</>}
+                                        value={<span dangerouslySetInnerHTML={{__html : getClientRights?.mediator_email}}  />}
                                         icon={<MailIcon />}
                                     />
                                     <AddressRow
                                         title="Կայք: "
-                                        value={<> www.fsm.am </>}
+                                        value={<span dangerouslySetInnerHTML={{__html : getClientRights?.mediator_website}}  />}
                                         icon={<IconGlobe />}
                                     />
                                     </SlideBottom>
@@ -116,10 +119,10 @@ export default function Contents(props) {
                             </div>
                            
                         </div>
-                        <UpdateStatus className="pt-32 "   date={formatDate(_date)} />
                     </div>
                 </div>
             </div>
+            <UpdateStatus   date={formatDate(_date)} />
 
         </>
     )

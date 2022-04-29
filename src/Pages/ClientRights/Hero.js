@@ -4,12 +4,15 @@ import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Compon
 
 import Navbar from 'Components/Navbar'
 import { DownloadDocumentButton } from 'Components/Buttons'
+import MarkdownView from 'react-showdown'
 
 // ** assets
 // import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
 
 export default function Hero(props) {
 
+    const { getClientRights } = props
+   
  
     return (
         <>
@@ -26,7 +29,9 @@ export default function Hero(props) {
                         <div className="flex flex-wrap pt-8 items-end">
                             <div className="w-full xl:w-1/2 text-sm mb-16 max-w-lg">
                                 <SlideBottom>
-                                Ի կատարումն «Ֆինանսական համակարգի հաշտարարի մասին» Հայաստանի Հանրապետության օրենքի պահանջների ընկերությունը հաստատել է «Հաճախորդների բողոք-պահանջների քննության կանոնակարգ», որը սահմանում է Հաճախորդների բողոք-պահանջների ներկայացման, քննության և դրանց վերաբերյալ որոշումների կայացման կանոնները, ինչպես նաև բողոք-պահանջները քննող աշխատակցի իրավուքներն ու պարտականությունները:  
+                                    <MarkdownView markdown={getClientRights?.client_rights_description} />
+                                    
+                                {/* Ի կատարումն «Ֆինանսական համակարգի հաշտարարի մասին» Հայաստանի Հանրապետության օրենքի պահանջների ընկերությունը հաստատել է «Հաճախորդների բողոք-պահանջների քննության կանոնակարգ», որը սահմանում է Հաճախորդների բողոք-պահանջների ներկայացման, քննության և դրանց վերաբերյալ որոշումների կայացման կանոնները, ինչպես նաև բողոք-պահանջները քննող աշխատակցի իրավուքներն ու պարտականությունները:   */}
                                 </SlideBottom>
                             </div>
                             <div className="w-full h-full xl:w-1/2 mb-16 flex  justify-end">

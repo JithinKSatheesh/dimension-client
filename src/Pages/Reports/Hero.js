@@ -5,11 +5,12 @@ import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Compon
 import Navbar from 'Components/Navbar'
 import { DownloadDocumentButton } from 'Components/Buttons'
 
+import useStoreItem from 'Store/hooks/getStoreItems'
 // ** assets
 // import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
-
 export default function Hero(props) {
     
+    const { getConfigs } = useStoreItem()
 
     return (
         <>
@@ -27,7 +28,8 @@ export default function Hero(props) {
                         <div className="flex flex-wrap pt-8 items-end">
                             <div className="w-full xl:w-1/2 text-sm mb-16 max-w-lg">
                                 <SlideBottom>
-                                Based on our stated mission and vision, one of our core beliefs regarding company’s success is establishing proper investor relations with our shareholders. Therefore, in order to achieve effectiveness and good reputation we follow our corporate governance standards. 
+                                    {getConfigs?.configs?.reports?.investor_relation?.description}
+                                {/* Based on our stated mission and vision, one of our core beliefs regarding company’s success is establishing proper investor relations with our shareholders. Therefore, in order to achieve effectiveness and good reputation we follow our corporate governance standards.  */}
                                 </SlideBottom>
                             </div>
                             <div className="w-full h-full xl:w-1/2 mb-16 flex  justify-end">

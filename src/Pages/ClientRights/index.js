@@ -15,10 +15,11 @@ import initStoreItem from 'Store/hooks/initStoreItems'
 export default function Index(props) {
 
      
-    const { getClientRights } = useStoreItem()
-    const { initClientRights } = initStoreItem()
+    const { getConfigs } = useStoreItem()
+    // const { initAllConfigs } = initStoreItem()
+    // useEffect(() => initAllConfigs(), [])
 
-    useEffect(() => initClientRights(), [])
+    const config = getConfigs?.configs?.client_rights
 
     const { ScrollToTop } = useScrollBehaviours()
 
@@ -30,8 +31,8 @@ export default function Index(props) {
 
     return (
         <>
-        <Hero />
-        <Contents getClientRights={getClientRights} />
+        <Hero getClientRights={config}  />
+        <Contents getClientRights={config} />
 
         {/* <Footer /> */}
             

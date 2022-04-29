@@ -9,6 +9,7 @@ export const ChartLayout = (props) => {
         since_inception_total_return,
         labels,
         values,
+        disclaimer
 
     } = props;
 
@@ -93,7 +94,8 @@ export const ChartLayout = (props) => {
                     <ChartsWrapper data={graphData} />
                 </div>
                 <div className="py-7 text-xs text-blue leading-4">
-                    The index launch date is May 31, 2021.  Prior to this, data are hypothetical and based on the index methodology applied retroactively. When back-testing data, Dimension uses actual historical constituent-level data (e.g., historical price, market capitalization, and corporate action data) in its calculations. Dimension maintains the index and calculates the index levels and performance shown but does not manage all constituent assets.  Past performance of any index is not an indication or guarantee of future results.
+                    {disclaimer}
+                    {/* The index launch date is May 31, 2021.  Prior to this, data are hypothetical and based on the index methodology applied retroactively. When back-testing data, Dimension uses actual historical constituent-level data (e.g., historical price, market capitalization, and corporate action data) in its calculations. Dimension maintains the index and calculates the index levels and performance shown but does not manage all constituent assets.  Past performance of any index is not an indication or guarantee of future results. */}
                 </div>
             </div>
         </div>

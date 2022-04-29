@@ -8,7 +8,7 @@ export default function Notfound(props) {
 
     return (
         <>
-          <div className="fixed h-full w-full bg-dark-blue-grad text-white ">
+          <div className="fixed h-full w-full bg-dark-blue-grad text-white z-30">
             <Navbar variant="white" />
             <div className="flex h-full justify-center items-center">
               <div className='text-center'>

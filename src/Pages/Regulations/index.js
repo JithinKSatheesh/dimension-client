@@ -7,10 +7,14 @@ import Hero from './Hero'
 import Content from './Content'
 import Footer from 'Components/Footer'
 
+import useStoreItem from 'Store/hooks/getStoreItems'
 
 export default function Index(props) {
     
     const { ScrollToTop } = useScrollBehaviours()
+
+    const {  getConfigs} = useStoreItem()
+    const config = getConfigs?.configs?.regulations
 
     useEffect(() => {
         ScrollToTop()
@@ -19,8 +23,8 @@ export default function Index(props) {
 
     return (
         <>
-        <Hero />
-        <Content />
+        <Hero config={config} />
+        <Content config={config} />
         {/* <Footer /> */}
             
         </>
