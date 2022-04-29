@@ -20,14 +20,14 @@ import 'react-phone-input-2/lib/style.css'
 
 export const ApplyForJob = (props) => {
 
-    const {popup} = props
+    const { popup } = props
 
     const fileMaxLength = 4000000
 
     const [loading, setLoading] = useState(false)
     const [success, setSuccess] = useState(false)
 
-    const [phone, setPhone] = useState('333')
+    const [phone, setPhone] = useState('374')
     const ref = useRef('');
 
     const handleChange = (e) => {
@@ -41,7 +41,7 @@ export const ApplyForJob = (props) => {
     const [inputVal, setInuptVal] = useState({
         name: '',
         email: '',
-        phone: ''
+        // phone: ''
     });
 
     const _inputFields = [
@@ -80,11 +80,12 @@ export const ApplyForJob = (props) => {
         const fileSize = file.size
         const sizeDisplay = fileSize < 10000000 ? `${(fileSize / 1000).toFixed(0)} KB` : `${(fileSize / 1000000).toFixed(1)} MB`
 
-        return (<div key={file.path} className="flex text-xs bg-blue-400/40 backdrop-blur-xl  rounded-xl mt-2 p-2">
+        return (<div key={file.path} className=" text-xs bg-white-400/40 backdrop-blur-xl mx-auto  rounded-xl p-4 pt-1 w-fit">
+            <div className="text-right  text-white">x</div>
             <div> <IconPdf className='mr-4' /> </div>
-            <div className='pr-2 truncate'>
+            <div className='pr-2 pt-2 truncate'>
                 {file.path}
-                <br />
+                {/* <br /> */}
                 ( {sizeDisplay} )
             </div>
         </div>
@@ -109,10 +110,11 @@ export const ApplyForJob = (props) => {
         setLoading(true)
         try {
 
-            const {position, job_type} = popup?.item?.attributes
+            const { position, job_type } = popup?.item?.attributes
 
             const payload = {
                 ...inputVal,
+                phone,
                 position,
                 job_type
             }
@@ -136,7 +138,7 @@ export const ApplyForJob = (props) => {
         setLoading(false)
     }
 
-    
+
 
 
 
@@ -150,18 +152,20 @@ export const ApplyForJob = (props) => {
         />
 
         <div className="relative ">
-        <div className="py-3 text-xs"> Phone </div>
-        <PhoneInput
-            country={'am'}
-            value={phone}
-            onChange={e => setPhone(e)}
-            placeholder=""
-            inputClass={"h-12 bg-red-300 text-black w-full"}
-            searchClass={""}
-            inputStyle={{width : '100%', backgroundColor : 'transparent', border : 'none', height : '48px', color:'white'}}
-            buttonStyle={{backgroundColor : 'transparent', border : 'none'}}
-            containerClass={"bg-white/30 backdrop-blur-xl w-full  rounded-xl h-12 absolute z-30"}
-            dropdownStyle={{zIndex : 50, backgroundColor : '', color : 'black'}}
+            <div className="py-3 text-xs"> Phone </div>
+            <PhoneInput
+                country={'am'}
+                value={phone}
+                onChange={e => setPhone(e)}
+                placeholder=""
+                inputClass={"h-12 bg-red-300 text-black w-full"}
+                searchClass={""}
+                inputStyle={{ width: '100%', backgroundColor: 'transparent', border: 'none', height: '48px', color: 'white' }}
+                // buttonStyle={{backgroundColor : 'transparent', border : 'none', }}
+                containerClass={"bg-white/30 backdrop-blur-xl w-full  rounded-xl h-12 absolute z-30"}
+                dropdownStyle={{ zIndex: 50, color: 'black', backdropFilter: 'blur(90%)' }}
+                buttonClass={"blured-btn"}
+                dropdownClass={"blured-bg"}
             />
         </div>
 
@@ -171,22 +175,28 @@ export const ApplyForJob = (props) => {
         {/* ============================================== */}
         <div
             {...getRootProps({ className: 'dropzone ' })}
-            className='w-full h-24 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  '
+            className='w-full p-3 text-white rounded-xl px-5 bg-white/30 backdrop-blur-xl  '
 
         >
+
             <input
                 {...getInputProps()}
             />
-            <div className="p-4">
-
-                <div className='text-center flex justify-center pb-4'><IconDownload /></div>
-                <div className='text-center text-xs'>
-                    Drag 'n' drop some files here, or click to select files
-                </div>
+            <div className="">
+                {files.length > 0 ?
+                    files : <>
+                        <div className="border-2 rounded-xl border-dashed p-3">
+                            <div className='text-center flex justify-center pb-4'><IconDownload /></div>
+                            <div className='text-center text-xs'>
+                                Upload files
+                            </div>
+                        </div>
+                    </>
+                }
             </div>
+
         </div>
         {/* ============================================== */}
-        {files}
         {fileRejectionItems}
 
     </PopUpContent>

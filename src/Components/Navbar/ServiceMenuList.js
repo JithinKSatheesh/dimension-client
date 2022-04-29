@@ -21,7 +21,7 @@ export const ServiceMenuList = [
         to: '/services/investment-security',
         icon: <IconShield height={50} width={50} />,
         title: <>Investment Securities Services</>,
-        desc: "We have years of experience in executing large and complex corporate securities transactions in the Armenian capital market and beyond. By upholding our .",
+        desc: "We have years of experience in executing large and complex corporate securities transactions in the Armenian capital market and beyond.",
         list: [
             "Securities Underwriting",
             "Exchange Listing",

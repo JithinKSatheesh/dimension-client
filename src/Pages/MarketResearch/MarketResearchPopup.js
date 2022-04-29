@@ -48,8 +48,8 @@ export const MarketResearchPopup = (props) => {
 
             const payload = {
                 ...inputVal,
-                item_name : popup?.item?.attributes?.title,
-                item_description : popup?.item?.attributes?.description,
+                item_name : popup?.item?.title,
+                item_description : popup?.item?.description,
             }
             const res = await GetFunctions?.postMailMarketResearch(null, null, payload)
             const data = res?.data?.data

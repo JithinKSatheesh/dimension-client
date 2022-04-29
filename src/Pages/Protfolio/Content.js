@@ -15,27 +15,28 @@ import { formatDate } from 'Utils/time'
 
 export default function Content(props) {
 
-    const [popup, setPopup] = useState(false)
+    // const [popup, setPopup] = useState(false)
 
-    const { getProtfolio } = useStoreItem()
-    const { initProtfolio } = initStoreItem()
+    const { getConfigs } = useStoreItem()
+    // const { initProtfolio } = initStoreItem()
 
-    const data = getProtfolio?.protfolio ?? []
-    const _date = getProtfolio?.protfolio?.[0]?.attributes?.updatedAt
+    const data = getConfigs?.configs?.protfolios ?? []
+    
+    const _date = data?.[0]?.updatedAt
 
     const _filters = ["All","Equity Placement", "Bond Placement", "Market Making", "IPO & Listing Advisory", "M&A Advisory"]
 
     const [currentFilter, setCurrentFilter] = useState('All')
 
-    useEffect(() => initProtfolio(), [])
+    // useEffect(() => initProtfolio(), [])
 
     const filteredDataAsObject = (data = []) => {
         let _a = {}
         data.forEach(item => {
-            if (_a[item?.attributes?.type_of_project]) {
-                _a[item?.attributes?.type_of_project].push(item)
+            if (_a[item?.type_of_project]) {
+                _a[item?.type_of_project].push(item)
             } else {
-                _a[item?.attributes?.type_of_project] = [item]
+                _a[item?.type_of_project] = [item]
             }
 
         })
@@ -105,7 +106,7 @@ export default function Content(props) {
                                                     <div className="h-1 w-full bg-dark-blue mb-16"></div>
                                                     <div className="grid grid-cols-1 xl:grid-cols-4  gap-16 xl:gap-16">
                                                         {[...ProtfolioList].map((item, index) =>
-                                                            <ProtfolioCard key={item?.id} item={item?.attributes} />)
+                                                            <ProtfolioCard key={item?.id} item={item} />)
                                                         }
                                                     </div>
                                                 </div>)

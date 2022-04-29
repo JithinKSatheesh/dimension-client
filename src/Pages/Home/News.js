@@ -19,12 +19,12 @@ import { formatDate } from 'Utils/time'
 
 export default function News(props) {
 
-    const { getArticles } = useStoreItem()
+    const { getConfigs } = useStoreItem()
     const { initArticles } = initStoreItem()
 
-    const _data = getArticles?.articles ?? []
+    const _data = getConfigs?.configs?.home_page?.news ?? []
     const data = _data?.slice(0, 4)
-    const _date = getArticles?.articles?.[0]?.attributes?.updatedAt
+    // const _date = getConfigs?.configs?.home_page?.news?.[0]?.updatedAt
 
     useEffect(() => initArticles(), [])
     
@@ -53,7 +53,7 @@ export default function News(props) {
                         {[...data].map((item, index) => (
                             <div key={item?.id} className={`  ${(index === 0 || index === 3) && 'col-span-1 xl:col-span-2'}`}>
                                 <Link to={`/news/${item?.id}#newstop`}>
-                                    <NewsCard item={item?.attributes} index={index} />
+                                    <NewsCard item={item} index={index} />
                                 </Link>
                             </div>
                         ))}
@@ -69,7 +69,7 @@ export default function News(props) {
 
 export const NewsCard = (props) => {
 
-    const _imageURL =  props?.item?.image?.data ? `${process.env.REACT_APP_API_URL}${props?.item?.image?.data?.attributes?.url}` : NewsPlaceholder
+    const _imageURL =  props?.item?.image?.url ? `${process.env.REACT_APP_API_URL}${props?.item?.image?.url}` : NewsPlaceholder
 
 
     return(<div className={`news-card`}>

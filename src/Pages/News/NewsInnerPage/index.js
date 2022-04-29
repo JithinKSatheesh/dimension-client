@@ -12,6 +12,8 @@ import {GetFunctions} from 'API/fetch'
 import { isEmpty } from 'Utils/string'
 
 import { useScrollBehaviours } from 'Components/Hooks/useScrollBehaviours'
+import { UpdateStatus } from 'Components/UpdateStatus'
+import { formatDate } from 'Utils/time'
 
 export default function Index(props) {
 
@@ -52,7 +54,8 @@ export default function Index(props) {
             <Innercontent item={data?.attributes} />
         }
         <News />
-        <Footer />
+        <UpdateStatus date={formatDate(data?.attributes?.updatedAt)} />
+        {/* <Footer /> */}
         
         </>
     )

@@ -15,53 +15,12 @@ export default function Questions(props) {
 
     const [expanded, setExpanded] = useState(false)
 
-    const { getFaq } = useStoreItem()
-    const { initFaq } = initStoreItem()
+    const { getConfigs } = useStoreItem()
+    // const { initFaq } = initStoreItem()
 
-    const _questions = getFaq?.faq ?? []
+    const _questions = getConfigs?.configs?.faq ?? []
     const leftHalf = [..._questions]
     const rightHalf = leftHalf.splice(0, Math.floor(_questions.length / 2));
-
-
-    useEffect(() => { initFaq() }, [])
-
-
-    // const questions = [
-    //     {
-    //         id: 1,
-    //         _q: 'Do you provide customer support?',
-    //         _a: " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
-    //     },
-    //     {
-    //         id: 2,
-    //         _q: 'Do you provide customer support?',
-    //         _a: " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
-    //     },
-    //     {
-    //         id: 3,
-    //         _q: 'Do you provide customer support?',
-    //         _a: " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
-    //     },
-    //     {
-    //         id: 4,
-    //         _q: 'Do you provide customer support?',
-    //         _a: " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
-    //     },
-    //     {
-    //         id: 5,
-    //         _q: 'Do you provide customer support?',
-    //         _a: " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
-    //     },
-    //     {
-    //         id: 6,
-    //         _q: 'Do you provide customer support?',
-    //         _a: " Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem . Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. "
-    //     },
-
-    // ]
-
-    // const leftArray = _questions.splice(0, Math.floor(_questions.length / 2));
-
 
 
     return (
@@ -85,9 +44,9 @@ export default function Questions(props) {
                                                         <Accordion
                                                             id={item?.id} expanded={expanded} setExpanded={setExpanded}
                                                             className={`${expanded === item?.id ? "bg-dark-blue-grad" : 'bg-blue-light text-dark-blue'}`}
-                                                            title={item?.attributes?.question}
+                                                            title={item?.question}
                                                         >
-                                                            {item?.attributes?.answer}
+                                                            {item?.answer}
                                                         </Accordion>
                                                     </SlideBottom>
                                                 </div>
@@ -108,9 +67,9 @@ export default function Questions(props) {
                                                         <Accordion
                                                             id={item?.id} expanded={expanded} setExpanded={setExpanded}
                                                             className={`${expanded === item?.id ? "bg-dark-blue-grad" : 'bg-blue-light text-dark-blue'}`}
-                                                            title={item?.attributes?.question}
+                                                            title={item?.question}
                                                         >
-                                                            {item?.attributes?.answer}
+                                                            {item?.answer}
                                                         </Accordion>
                                                     </SlideBottom>
                                                 </div>

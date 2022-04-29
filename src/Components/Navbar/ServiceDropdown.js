@@ -34,13 +34,14 @@ export const ServiceDropdown = (props) => {
 
     return (
         <div style={{top : '95px'}}  className="absolute left-0 w-full normal-case z-30">
-            <motion.div
+            {/* <motion.div
                 className=" bg-dark-blue-grad"
                 initial="exit"
                 animate={props?.isHover ? "enter" : "exit"}
                 variants={subMenuAnimate}
-            >
-                <div className="w-full">
+            > */}
+            {props?.isHover && 
+                <div className="w-full bg-dark-blue-grad">
                     <div className="container  mx-auto">
                         <div className="grid grid-cols-1 xl:grid-cols-3">
                             {
@@ -55,7 +56,8 @@ export const ServiceDropdown = (props) => {
                         </div>
                     </div>
                 </div>
-            </motion.div>
+                }
+            {/* </motion.div> */}
         </div>
     );
 };

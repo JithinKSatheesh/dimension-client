@@ -16,6 +16,8 @@ import Footer from 'Components/Footer'
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
+import { UpdateStatus } from 'Components/UpdateStatus'
+import { formatDate } from 'Utils/time'
 
 
 export default function Home(props) {
@@ -23,7 +25,7 @@ export default function Home(props) {
     const { ScrollToTop } = useScrollBehaviours()
 
     const { getConfigs } = useStoreItem()
-    const { initAllConfigs } = initStoreItem()
+    // const { initAllConfigs } = initStoreItem()
 
     // console.log(getConfigs)
 
@@ -32,7 +34,7 @@ export default function Home(props) {
 
     useEffect(() => {
         ScrollToTop()
-        initAllConfigs()
+        // initAllConfigs()
     }, [])
     
 
@@ -45,6 +47,7 @@ export default function Home(props) {
            <News />
            <Protfolio />
            <Research />
+           <UpdateStatus date={formatDate(homepageData?.updatedAt)} />
            {/* <Footer homepageData={homepageData} /> */}
 
         </div>

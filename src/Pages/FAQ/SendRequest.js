@@ -3,9 +3,13 @@ import { UpdateStatus } from 'Components/UpdateStatus'
 import { PopUpcontainer } from 'Components/PopUpcontainer'
 import { FaqPopUp} from './FaqPopUp'
 
+import useStoreItem from 'Store/hooks/getStoreItems'
+import { formatDate } from 'Utils/time'
+
 export default function Sendrequest(props) {
 
     const [popup, setPopup] = useState(false)
+    const { getConfigs } = useStoreItem()
 
     return (
         <>
@@ -27,10 +31,10 @@ export default function Sendrequest(props) {
                                 </div>
                             </div>
                         </div>
-                        <UpdateStatus className="pt-24 text-white" type="dark" date="30.3.2022" />
                     </div>
                 </div>
             </div>
+            <UpdateStatus  date={ formatDate(getConfigs?.configs?.faq?.[0]?.updatedAt)} />
             <PopUpcontainer heading="Send request" onClose={() => setPopup(false)} open={popup}  >
         
                 <FaqPopUp popup={popup}  />

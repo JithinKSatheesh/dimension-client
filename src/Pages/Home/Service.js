@@ -9,9 +9,13 @@ import { ReactComponent as IconShield } from 'Assets/icons/service_shield_blue.s
 import { ReactComponent as IconManage } from 'Assets/icons/service_manage_blue.svg';
 
 import { DetailsButton } from 'Components/Buttons'
+import useStoreItem from 'Store/hooks/getStoreItems'
+import MarkdownView from 'react-showdown';
+
 
 export default function Service(props) {
 
+    const { getConfigs } = useStoreItem()
 
     const ServiceCard = (props) => {
 
@@ -44,21 +48,22 @@ export default function Service(props) {
                     <ServiceCard
                         icon={<IconHome  />}
                         title={<>  Capital Markets <br/> Advisory </>}
-                        descritpion={<>Capital Markets Advisory is a key business area of Dimension and an integral part of its ability to achieve the Mission and Vision of the company.</>}
+                        descritpion={<MarkdownView markdown={getConfigs?.configs?.service_page_capital_market?.short_desc} />}
                         to="/services/capital-market"
 
                     />
                     <ServiceCard
                         icon={<IconShield id="112" />}
                         title={<>  Investment <br/> Securities Services </>}
-                        descritpion={<> We have years of experience in executing large and complex corporate securities transactions in the Armenian capital market and beyond. By upholding our </>}
+                        descritpion={<MarkdownView markdown={getConfigs?.configs?.service_page_investment_service?.short_desc} />}
+                       
                         to="/services/investment-security"
 
                     />
                     <ServiceCard
                         icon={<IconManage />}
                         title={<> Asset <br/> Management </>}
-                        descritpion={<>In the Armenian capital markets, Dimension is involved in managing its own investment portfolio of equity and debt instruments, as well as two open, non-public, leveraged fixed income funds. </>}
+                        descritpion={<MarkdownView markdown={getConfigs?.configs?.service_page_asset_management?.short_desc} />}
                         to="/services/asset-management"
 
                     />

@@ -20,15 +20,15 @@ import initStoreItem from 'Store/hooks/initStoreItems'
 
 export default function Research(props) {
 
-    const { getMarketResearch } = useStoreItem()
-    const { initMarketResearch } = initStoreItem()
+    const { getConfigs } = useStoreItem()
+    // const { initMarketResearch } = initStoreItem()
 
-    const _data = getMarketResearch?.marketResearch ?? []
+    const _data = getConfigs?.configs?.home_page?.market_researches ?? []
     const data = _data?.slice(0, 4)
 
     const [popup, setPopup] = useState()
 
-    useEffect(() => initMarketResearch(), [])
+    // useEffect(() => initMarketResearch(), [])
 
     
 
@@ -54,15 +54,13 @@ export default function Research(props) {
                         :
                         <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
                             {[...data].map((item, index) =>
-                                <ResearchCard onClick={() => setPopup({item})} key={item?.id} item={item?.attributes} />)
+                                <ResearchCard onClick={() => setPopup({item})} key={item?.id} item={item} />)
                             }
                         </div>
                     }
                 </div>
             </div>  
-            <div>
-                <UpdateStatus />
-            </div>
+           
             <PopUpcontainer heading="Research request" onClose={() => setPopup(false)} open={popup}>
                 <MarketResearchPopup popup={popup} />
             </PopUpcontainer >

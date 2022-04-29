@@ -21,16 +21,16 @@ export default function Protfolio(props) {
 
     // const [protfolioData, setProtfolioData] = useState([])
 
-    const { getProtfolio } = useStoreItem()
-    const { initProtfolio } = initStoreItem()
+    const { getConfigs } = useStoreItem()
+    // const { initProtfolio } = initStoreItem()
 
-    const _data = getProtfolio?.protfolio ?? []
+    const _data = getConfigs?.configs?.home_page?.portfolios ?? []
     const data = _data?.slice(0, 4)
 
 
-    useEffect(() => {
-        initProtfolio()
-    }, [])
+    // useEffect(() => {
+    //     initProtfolio()
+    // }, [])
     
 
     return (
@@ -54,7 +54,7 @@ export default function Protfolio(props) {
                     :
                 <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
                     {[...data].map((item, index) => 
-                        <ProtfolioCard key={item?.id} item={item?.attributes} />)
+                        <ProtfolioCard key={item?.id} item={item} />)
                     }
                 </div>
                 }
@@ -67,8 +67,8 @@ export default function Protfolio(props) {
 
 export const ProtfolioCard = (props) => {
 
-    const _APIimage = props?.item?.image?.data?.attributes?.url
-    const _imageURL =  _APIimage ? `${process.env.REACT_APP_API_URL}${props?.item?.image?.data?.attributes?.url}` : '/assets/photos/sample-icon.jpg'
+    const _APIimage = props?.item?.image?.url
+    const _imageURL =  _APIimage ? `${process.env.REACT_APP_API_URL}${_APIimage}` : ''
 
     // console.log(props?.item)
 

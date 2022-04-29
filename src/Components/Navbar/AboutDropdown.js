@@ -42,20 +42,22 @@ export const AboutDropdown = (props) => {
     
     return (
         <div style={{top : '95px'}} className="absolute left-0   w-full normal-case z-30">
-            <motion.div
+            {/* <motion.div
                 className=" bg-dark-blue-grad"
                 initial="exit"
                 animate={props?.isHover ? "enter" : "exit"}
                 variants={subMenuAnimate}
-            >
-                <div className="w-full">
+            > */}
+                {props?.isHover &&
+                <div className="w-full bg-dark-blue-grad">
                     <div className="container  mx-auto">
                         <div className="flex justify-between">
                             <RenderMenuLinks MenuList={AboutMenuList} />
                         </div>
                     </div>
                 </div>
-            </motion.div>
+                }
+             {/* </motion.div> */}
         </div>
     );
 };

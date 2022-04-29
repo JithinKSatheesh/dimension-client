@@ -51,8 +51,22 @@
   color: white;
 }
 
+.blured-bg {
+  backdrop-filter: blur(5px) !important;
+  /* background-color: #013651ee !important; */
+  /* color: white !important; */
+  border-radius: 10px;
+}
+.blured-btn {
+  background-color: transparent !important;
+  border: none !important;
+}
+.blured-btn:hover {
+  background-color: transparent !important;
+}
+
 .border-blue {
-  border: 2px solid #006191;
+  border: 2px solid #657c88;
 }
 
 .border-blue-light {
@@ -80,7 +94,8 @@
 }
 
 .hover-border-outline:hover {
-  border-color: #006191;
+  border-color: #ffffff;
+  /* border-color: #fffffff9; */
 }
 
 .hover-border-outline-white {

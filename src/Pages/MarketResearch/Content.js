@@ -12,6 +12,7 @@ import { ThreeDots } from 'react-loader-spinner'
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
+
 import { MarketResearchPopup } from './MarketResearchPopup'
 import { formatDate } from 'Utils/time';
 
@@ -20,10 +21,10 @@ export default function Content(props) {
     const [popup, setPopup] = useState(false)
 
     const {  getConfigs} = useStoreItem()
-    const {  initAllConfigs} = initStoreItem()
+    const {  } = initStoreItem()
 
     
-    useEffect(() => initAllConfigs(), [])
+    // useEffect(() => initAllConfigs(), [])
     
     const data = getConfigs?.configs?.market_research ?? []
     

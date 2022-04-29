@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { SlideTop } from 'Components/SlideAnimation'
-
+import { useScrollBehaviours } from 'Components/Hooks/useScrollBehaviours'
 
 import { NewsCard } from './NewsCard'
 
@@ -15,37 +15,89 @@ import initStoreItem from 'Store/hooks/initStoreItems'
 
 import { formatDate } from 'Utils/time'
 
+import { GetFunctions } from "API/fetch"
+
 export default function Content(props) {
 
-    const { getArticles } = useStoreItem()
-    const { initArticles } = initStoreItem()
+    // const { getArticles } = useStoreItem()
 
-    const data = getArticles?.articles ?? []
-    const _date = getArticles?.articles?.[0]?.attributes?.updatedAt
+    const [data, setData] = useState([])
+    const [page, setPage] = useState(1)
+    const [pageCount, setPageCount] = useState(1)
+    const [filter, setFilter] = useState("Recent")
+    const [loading, setLoading] = useState(false)
 
-    useEffect(() => initArticles(), [])
+    const { ScrollToTop } = useScrollBehaviours()
+    
+
+    const _date =data?.[0]?.attributes?.updatedAt
+
+    // const { initArticles } = initStoreItem()
+    // const data = getArticles?.articles ?? []
+    // useEffect(() => initArticles(), [])
+
+    const fetchNewsData = async () => {
+        try {
+            setLoading(true)
+            const res = await GetFunctions.fetchArticles({ 
+                sort :  filter === 'Recent' ?  ["publishedAt"] :  ["publishedAt:desc"] ,
+                populate : ["image"], pagination : 
+                { pageSize : 4, pageCount, page } })
+            const _data = res?.data?.data
+            setData(_data)
+            const  _pageCount  = res?.data?.meta?.pagination?.pageCount
+            // setPage(_page)
+            setPageCount(_pageCount)
+            
+        } catch (ex) {
+            console.log(ex)
+        }
+        setLoading(false)
+    }
+
+    const Pagnation = (props) => {
+
+        const {pageCount, callback} = props
+
+        console.log(pageCount)
+
+        return (<>
+            <div className='flex  justify-center'>
+                { Array(pageCount).fill(0).map((item, index) => 
+                    <div 
+                        onClick={() =>callback(index + 1)}
+                        className={` p-3 cursor-pointer $ ${page === index + 1 && 'text-dark-blur font-bold'}`}>
+                        {index + 1}
+                    </div> )}
+            </div>
+        </>)
+    }
+
+    const RenderFilter = () => {
+        const _filters = ["Recent", "Popular"]
+
+        return (
+            <>
+            {_filters.map(item =>  
+                <div 
+                    key={item}
+                    onClick={() => {
+                        setPage(1)
+                        setFilter(item)
+                    }}
+                    className={`${filter === item ? ' bg-blue-light' : ''} border  border-color-blue-light text-xs py-2 px-5 mr-3 rounded-xl cursor-pointer`}>
+                    {item}
+                </div>)}
+            </>
+        )
+    }
 
 
-    // const _news = [
-    //     {
-    //         id:1,
-    //         date : '30.2.2022',
-    //         img : '/assets/photos/news_sample_2.png',
-    //         title : 'Article name',
-    //         content : `In the Armenian capital markets, Dimension is involved in managing its own investment portfolio of equity and debt instruments, as well as two open, non-public, leveraged fixed income funds. In international markets, Dimension offers private portfolio and wealth management solutions to institutional clients, high net worth individuals, and other investors based in Armenia and abroad.`,
+    useEffect(() =>{ 
+        fetchNewsData()
+        ScrollToTop()
 
-    //     },
-    //     {
-    //         id:2,
-    //         date : '30.2.2022',
-    //         img : '/assets/photos/news_sample_1.png',
-    //         title : 'Article name',
-    //         content : `In the Armenian capital markets, Dimension is involved in managing its own investment portfolio of equity and debt instruments, as well as two open, non-public, leveraged fixed income funds. In international markets, Dimension offers private portfolio and wealth management solutions to institutional clients, high net worth individuals, and other investors based in Armenia and abroad.`,
-
-    //     },
-    // ]
-
-
+    }, [page, filter])
 
     return (
         <>
@@ -60,21 +112,23 @@ export default function Content(props) {
                                     </SlideTop>
                                 </div>
                                 <div className='flex '>
-                                    <div className="py-2 px-5 mr-3 rounded-xl bg-blue-light cursor-pointer hover-border-outline  border-2">
-                                        Recent
-                                    </div>
-                                    <div className="py-2 px-5 rounded-xl bg-blue-light cursor-pointer hover-border-outline  border-2">
-                                        Popular
-                                    </div>
+                                   <RenderFilter />
 
                                 </div>
                             </div>
-                            {data?.length <= 0 ?
+                            {(data?.length <= 0 || loading) ?
                                 <div className='flex justify-center py-16'> <ThreeDots color='#206291' />  </div>
                                 :
                                 <>
                                     <div className="py-16">
+                                        <div>
+
                                         {data.map((item, index) => <NewsCard key={item?.id} item={item?.attributes} id={item?.id} index={index} />)}
+                                        </div>
+                                        <div className="py-5">
+                                            {console.log(pageCount)}
+                                            <Pagnation pageCount={pageCount} callback={setPage} />
+                                        </div>
                                     </div>
                                 </>}
                         </div>

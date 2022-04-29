@@ -46,7 +46,7 @@ export const TeamCard = (props) => {
                     {item?.position}
                 </div>
                 <div className="flex justify-between">
-                   
+                   <SocialLinks /> 
                 </div>
             </div>
 
