@@ -11,7 +11,7 @@ export default function Index(props) {
 
     const { isScrollBeyond, isScrollUp } = usescrollpos()
 
-    const _floatNav = isScrollBeyond(5) && isScrollUp()
+    const _floatNav = isScrollBeyond(500) && isScrollUp()
 
     return (
         <>

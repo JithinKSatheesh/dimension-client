@@ -32,7 +32,7 @@ export default function News(props) {
     return (
         <>
          <div className=" hero-wrapper-5">
-            <div className="container py-32 mx-auto px-4 ">
+            <div className="container py-32 mx-auto  ">
                 <div className="flex justify-between items-center pb-24 ">
                     <div className="text-3xl  font-semibold text-white">
                         News
@@ -49,7 +49,7 @@ export default function News(props) {
                     <div className='flex justify-center '> <ThreeDots color='white' />  </div>
                     :
                     <>
-                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-16 ">
+                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 2xl:gap-16 ">
                         {[...data].map((item, index) => (
                             <div key={item?.id} className={`  ${(index === 0 || index === 3) && 'col-span-1 xl:col-span-2'}`}>
                                 <Link to={`/news/${item?.id}#newstop`}>

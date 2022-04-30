@@ -36,7 +36,7 @@ export default function Protfolio(props) {
     return (
         <>
         <div className=" hero-wrapper-6">
-            <div className="container py-32 mx-auto px-4 ">
+            <div className="container py-32 mx-auto ">
                 <div className="flex justify-between items-center pb-24 ">
                     <div className="text-3xl  font-semibold text-blue">
                         Portfolio
@@ -52,7 +52,7 @@ export default function Protfolio(props) {
                 {data?.length <= 0 ?
                     <div className='flex justify-center '> <ThreeDots  color='#206291' />  </div>
                     :
-                <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
+                <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-8 2xl:gap-16">
                     {[...data].map((item, index) => 
                         <ProtfolioCard key={item?.id} item={item} />)
                     }

@@ -156,6 +156,7 @@
   background-image: url('./Assets/img/bg_abstract_left.png');
   background-position: left -40px;
   background-repeat: no-repeat;
+  /* background-size: 50%; */
 
 }
 
@@ -519,5 +520,24 @@
     background-size: auto, auto, cover, cover;
 
   }
+
+}
+
+
+@media only screen and (min-width: 1280px) and (max-width: 1535px) { 
+
+  .hero-wrapper{
+    background-size: 50%, 100%;
+  
+  }
+  .hero-wrapper-2 {
+    background-size: 50%, 100%;
+    background-position: left -630px, left;
+  }
+  .hero-wrapper-3 {
+    background-size: 50%, 100%;
+    /* background-position: left -650px, left; */
+  }
+  
 
 }

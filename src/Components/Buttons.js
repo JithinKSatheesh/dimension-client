@@ -34,17 +34,22 @@ export const GetButton = ({ children, ...props }) => {
             props.to ?
                 <Link
                     to={props.to ? props.to : '/'}
-                    className={`btn  border-blue py-3 text-center rounded-xl text-dark-blue font-semibold ${props?.className}`}
                 >
+                    <div
+                    className={`btn  border-blue py-3 text-center rounded-xl text-dark-blue font-semibold ${props?.className}`}
+                    
+                    >
+
                     {children}
+                    </div>
                 </Link>
                 :
-                <span
+                <div
                     onClick={props?.onClick}
                     className={`btn  border-blue py-3 text-center rounded-xl text-dark-blue font-semibold ${props?.className}`}
                 >
                     {children}
-                </span>
+                </div>
 
         }
     </>

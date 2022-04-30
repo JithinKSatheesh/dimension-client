@@ -36,7 +36,7 @@ export default function Research(props) {
     return (
         <>
             <div className=" hero-wrapper-8">
-                <div className="container py-32 mx-auto px-4 ">
+                <div className="container py-32 mx-auto  ">
                     <div className="flex justify-between items-center pb-24 ">
                         <div className="text-3xl  font-semibold text-white">
                             Market researches
@@ -52,7 +52,7 @@ export default function Research(props) {
                     {data?.length <= 0 ?
                         <div className='flex justify-center '> <ThreeDots color='#206291' />  </div>
                         :
-                        <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-16 xl:gap-16">
+                        <div className="grid grid-cols-1 xl:grid-cols-4 xl:grid-flow-col gap-8 2xl:gap-16">
                             {[...data].map((item, index) =>
                                 <ResearchCard onClick={() => setPopup({item})} key={item?.id} item={item} />)
                             }
@@ -101,7 +101,7 @@ export const ResearchCard = (props) => {
                 <GetButton 
                     to={props?.to}  
                     onClick={props?.onClick}
-                    className="px-20 py-2 bg-dark-blue-grad-hover cursor-pointer"> Get&nbsp;it </GetButton>
+                    className="w-full mx-auto py-2 bg-dark-blue-grad-hover cursor-pointer"> Get&nbsp;it </GetButton>
             </div>
         </div>
     )

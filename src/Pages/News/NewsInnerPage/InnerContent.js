@@ -17,7 +17,7 @@ export default function Innercontent(props) {
 
     return (
         <>
-            <div id="newstop" className="container mx-auto text-dark-blue px-4">
+            <div id="newstop" className="container mx-auto text-dark-blue ">
                 <div className="mt-12">
                     <div className="py-12 text-sm font-bold">
                         <Link to="/news" className='flex items-center'> <IconRightArrow className='rotate-180 mr-3' /> Back to News</Link>

@@ -4,9 +4,17 @@ import React, { useState } from 'react'
 import Amdindex from './AmdIndex'
 import Usdindex from './UsdIndex'
 
+import useStoreItem from 'Store/hooks/getStoreItems'
+import { formatDate } from 'Utils/time'
+
 export default function Container(props) {
 
     const [tab, setTab] = useState(1)
+
+    const { getConfigs} = useStoreItem()
+
+    const _date_amd = getConfigs?.configs?.indices?.amd?.indices_amd_table?.updatedAt
+    const _date_usd = getConfigs?.configs?.indices?.usd?.indices_usd_table?.updatedAt
 
     const TabBlock = (props) => {
 
@@ -64,7 +72,7 @@ export default function Container(props) {
         <>
             <div className='news-wrapper-1'>
 
-                <div className="container mx-auto py-16 xl:px-16 ">
+                <div className="container mx-auto py-16  ">
                     <div className="pb-16">
                         <TabBlock />
                     </div>
@@ -75,7 +83,7 @@ export default function Container(props) {
                     </div>
                 </div>
             </div>
-            <UpdateStatus date={""} />
+            <UpdateStatus date={formatDate(tab === 1 ? _date_amd : _date_usd)} />
         </>
     )
 }

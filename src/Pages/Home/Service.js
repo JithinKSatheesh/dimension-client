@@ -26,7 +26,7 @@ export default function Service(props) {
                     {props?.title}
                     
                 </div>
-                <div className="xl:h-36 pb-10 text-sm 2xl:text-base text-dark-blue">
+                <div className="xl:h-40 pb-10 text-sm 2xl:text-base text-dark-blue">
                     {props?.descritpion}
                 </div>
                 <DetailsButton to={props?.to}> Details </DetailsButton>
@@ -40,7 +40,7 @@ export default function Service(props) {
     return (
         <>
          <div className="hero-wrapper-3">
-            <div className="container py-32 mx-auto px-4 ">
+            <div className="container py-32 mx-auto ">
                 <div className="pb-24 text-3xl text-dark-blue font-semibold ">
                 Our services
                 </div>

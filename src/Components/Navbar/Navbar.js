@@ -40,7 +40,7 @@ export function Navbar(props) {
                     } 
                 transition-transform duration-1000`}>
 
-                <div className="container mx-auto ">
+                <div className="container mx-auto">
                     <div className="flex items-center justify-between">
                         {/* desktop logo */}
                         <div className="logo mr-5 hidden xl:block">

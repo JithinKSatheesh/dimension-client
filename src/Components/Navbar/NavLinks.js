@@ -13,7 +13,8 @@ export const NavLinks = ({ children, ...props }) => {
                 uppercase 
                 text-sm  
                 lg:text-xs
-                2xl:text-base
+                2xl:text-sm
+                3xl:text-base
                 cursor-pointer self-center py-10 px-8 
                 ${props.isHover ? ' bg-menu-blue-light' : ''} 
                 ${props.variant === 'white' ? 'text-white' : ''}

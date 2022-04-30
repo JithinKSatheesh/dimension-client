@@ -9,7 +9,7 @@ export default function Hero(props) {
 
     return (
         <>
-            <div className="w-full px-4 py-12 xl:py-36 hero-wrapper">
+            <div className="w-full px-4 py-12 xl:py-24 2xl:py-36 hero-wrapper">
                 <div className="container mx-auto">
                     <div className="flex flex-wrap items-center justify-between">
                         <div>
@@ -33,10 +33,9 @@ export default function Hero(props) {
                                 </JustAppear>
                             </div>
                         </div>
-                        <div className='max-w-lg 3xl:max-w-2xl relative rounded-xl'>
+                        <div className='max-w-lg xl:max-w-lg 3xl:max-w-2xl relative rounded-xl'>
                             <JustAppear>
                             <div className="absolute w-full h-full hero-img-overlay rounded-xl"></div>
-
                             <img src={HeroImg} alt="" className='w-full rounded-xl' />
                             </JustAppear>
                         </div>

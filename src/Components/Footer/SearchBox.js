@@ -21,10 +21,10 @@ export const SearchBox = (props) => {
     };
 
     return (
-        <div className="input relative ">
-            <div className="absolute mt-3 ml-2"><Search /></div>
+        <div className={`input relative ${props?.className}`}>
+            <div className="absolute mt-2 ml-2"><Search /></div>
             <input
-                style={{ width: '335px' }} type="text" name="" id="" className='h-14 pl-10 rounded-xl'
+                style={{ width: '100%' }} type="text" name="" id="" className='h-12 pl-10 rounded-xl'
                 value={val}
                 onChange={handleChange}
                 onKeyDown={onKeyPress} />

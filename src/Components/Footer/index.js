@@ -158,12 +158,12 @@ export default function Index(props) {
     return (
         <>
         <div className="bg-dark-blue-grad">
-            <div className="container py-16 mx-auto px-4 ">
+            <div className="container py-16 mx-auto ">
                 <div className="flex flex-wrap items-center justify-center xl:justify-between">
                     <div className='w-full xl:w-fit mb-12 xl:mb-0'>
                         <Logo className='mx-auto' />
                     </div>
-                    <SearchBox />    
+                    <SearchBox className="w-full lg:w-1/4" />    
                 </div>
                 <div className="mt-28 mb-32">
                     <div className="grid grid-cols-1 xl:grid-cols-4 gap-16 text-center xl:text-left lg:text-xs 2xl:text-base">
@@ -217,7 +217,7 @@ export default function Index(props) {
                     </div>
                 </div>
                 <div className="flex flex-wrap items-center justify-center xl:justify-between">
-                    <div className="flex items-center order-2 xl:order-1 mb-10 ">
+                    <div className="flex items-center order-2 xl:order-1 mb-10  lg:w-5/12">
                         {_brands.map((image, index) => 
                             <div className={`'grow ${index !== (_brands.length - 1) && 'mr-11'}`}>
                                 <img src={image} alt="" 

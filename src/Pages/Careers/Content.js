@@ -39,7 +39,7 @@ export default function Content(props) {
     return (
         <>
             <div className=" faq-wrapper-2">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto ">
                     <div className="py-32">
                         <div className="flex justify-between items-center pb-16">
                             <div className="text-2xl xl:text-3xl font-bold flex items-center my-2 text-dark-blue">

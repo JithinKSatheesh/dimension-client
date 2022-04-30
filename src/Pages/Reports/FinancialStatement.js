@@ -95,7 +95,7 @@ export default function Financialstatement(props) {
 
     return (
         <>  <div className=" investor-relations-wrapper-2 ">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto ">
                 <div className="py-36 text-white">
                     <div className="mb-24  font-bold text-2xl xl:text-3xl">
                         <SlideLeft>
