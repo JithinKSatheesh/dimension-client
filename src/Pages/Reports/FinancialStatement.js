@@ -118,7 +118,7 @@ export default function Financialstatement(props) {
                         </SlideLeft>
                     </div>
                     {[..._financialStatementsQuaterly].map(item =>
-                        <TableRow title={item?.attributes?.year} borderBlue={true} key={item?.id}>
+                        <TableRow title={item?.year} borderBlue={true} key={item?.id}>
                             <ButtonWrapper title="1 Quarter" item={item} pdf_key="q1_pdf" />
                             <ButtonWrapper title="2 Quarter" item={item} pdf_key="q2_pdf" />
                             <ButtonWrapper title="3 Quarter" item={item} pdf_key="q3_pdf" />
@@ -130,7 +130,7 @@ export default function Financialstatement(props) {
                         Normatives
                     </div>
                     {[..._normatives].map(item =>
-                        <TableRow title={item?.attributes?.year} borderBlue={false} key={item?.id} >
+                        <TableRow title={item?.year} borderBlue={false} key={item?.id} >
                             <ButtonWrapper title="1 Quarter" item={item} pdf_key="q1_pdf" />
                             <ButtonWrapper title="2 Quarter" item={item} pdf_key="q2_pdf" />
                             <ButtonWrapper title="3 Quarter" item={item} pdf_key="q3_pdf" />

@@ -15,7 +15,7 @@ export const TeamCard = (props) => {
     const [popup, setPopup] = useState(false)
 
     // console.log(item)
-    const _imageURL =  item?.image?.data ? `${process.env.REACT_APP_API_URL}${item?.image?.data?.attributes?.url}` : '/assets/photos/profile.png'
+    const _imageURL =  item?.image?.url ? `${process.env.REACT_APP_API_URL}${item?.image?.url}` : '/assets/photos/profile.png'
 
     const ImageCard = ({ img_url, className }) => (
         <div className={`h-72  bg-blue-light rounded-t-xl relative overflow-none ${className}`}>
@@ -32,13 +32,13 @@ export const TeamCard = (props) => {
     )
 
     return (<>
-        <div className="max-w-xs mx-auto cursor-pointer w-full" onClick={() => setPopup(true)}>
             <SlideBottom>
+        <div className="max-w-xs mx-auto cursor-pointer bg-dark-blue-grad  rounded-xl rounded-t-2xl w-full" onClick={() => setPopup(true)}>
             <ImageCard img_url={_imageURL}  />
             {/* <div className="h-72  bg-blue-light rounded-t-xl relative overflow-none">
                 <img src={_imageURL} alt="" className='mx-auto   w-full absolute bottom-0' />
             </div> */}
-            <div className="p-7 bg-dark-blue-grad rounded-b-xl text-white">
+            <div className="p-7  bg-dark-blue-grad rounded-b-xl text-white">
                 <div className="text-xl font-bold pb-3">
                     {item?.full_name}
                 </div>
@@ -50,8 +50,8 @@ export const TeamCard = (props) => {
                 </div>
             </div>
 
-            </SlideBottom>
         </div>
+            </SlideBottom>
         <PopUpcontainer2 heading="Send request" onClose={() => setPopup(false)} open={popup}  >
             <div className="flex flex-wrap">
                 <div className="w-full lg:w-80 px-3 text-white">

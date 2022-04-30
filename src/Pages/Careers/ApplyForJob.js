@@ -1,4 +1,6 @@
 import React, { useState, useRef } from 'react';
+import * as yup from 'yup';
+
 import { IconDownload } from './Content';
 import { useDropzone } from 'react-dropzone';
 
@@ -26,6 +28,7 @@ export const ApplyForJob = (props) => {
 
     const [loading, setLoading] = useState(false)
     const [success, setSuccess] = useState(false)
+    const [error, setError] = useState({})
 
     const [phone, setPhone] = useState('374')
     const ref = useRef('');
@@ -43,6 +46,18 @@ export const ApplyForJob = (props) => {
         email: '',
         // phone: ''
     });
+
+    const Schema = yup.object({
+        phone: yup.string().required("Phone number is required field")
+            .matches(/^[0-9]+$/, "Invalid phone number")
+            .min(7, 'Invalid phone number')
+            .max(15, 'Invalid phone number'),
+        email: yup.string().required("Email is a required field").email("Invalid email"),
+        name: yup.string().required("Name is a required field"),
+        file: yup.mixed().required('File is required'),
+
+    });
+
 
     const _inputFields = [
         {
@@ -110,7 +125,7 @@ export const ApplyForJob = (props) => {
         setLoading(true)
         try {
 
-            const { position, job_type } = popup?.item?.attributes
+            const { position, job_type } = popup?.item
 
             const payload = {
                 ...inputVal,
@@ -119,12 +134,15 @@ export const ApplyForJob = (props) => {
                 job_type
             }
 
+            
             const formData = new FormData()
             Object.keys(payload).map(key => formData.append(key, payload[key]))
-
+            
             for (const file of acceptedFiles) {
                 formData.append('files', file, file.name);
             }
+            
+            await Schema.validate({...payload, file : acceptedFiles[0]})
 
             const res = await GetFunctions?.postMailCareer(null, null, formData)
             const data = res?.data?.data
@@ -134,6 +152,7 @@ export const ApplyForJob = (props) => {
 
         } catch (ex) {
             console.log(ex)
+            setError({ message: ex?.errors ?? 'Something went wrong' })
         }
         setLoading(false)
     }
@@ -198,6 +217,9 @@ export const ApplyForJob = (props) => {
         </div>
         {/* ============================================== */}
         {fileRejectionItems}
+        <div className="text-xs text-red-500 pt-2 text-center">
+            {error?.message}
+        </div>
 
     </PopUpContent>
     </>);

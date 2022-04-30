@@ -23,7 +23,7 @@ import initStoreItem from 'Store/hooks/initStoreItems'
 export default function About(props) {
 
     const { getAboutPage, getConfigs } = useStoreItem()
-    const { initAboutpage, initAboutPageOwnership, initAboutPagePartners, initAllConfigs } = initStoreItem()
+    // const { initAboutpage, initAboutPageOwnership, initAboutPagePartners, initAllConfigs } = initStoreItem()
 
     
     const { ScrollToTop } = useScrollBehaviours()
@@ -31,11 +31,11 @@ export default function About(props) {
     
     useEffect(() => {
 
-        initAboutpage()
-        initAboutPageOwnership()
-        initAboutPagePartners()
+        // initAboutpage()
+        // initAboutPageOwnership()
+        // initAboutPagePartners()
         // ------------
-        initAllConfigs()
+        // initAllConfigs()
 
     }, [])
 
@@ -55,6 +55,11 @@ export default function About(props) {
     // console.log(getAboutPage)
 
     const aboutPageData = getConfigs?.configs?.about_page
+    const teamData = getConfigs?.configs?.team
+    const partnersData = getConfigs?.configs?.partners
+    const ownershipData = getConfigs?.configs?.ownership
+    
+    // console.log(partnersData)
 
 
 
@@ -64,9 +69,9 @@ export default function About(props) {
                 {/* <Navbar /> */}
                 <Hero aboutPageData={aboutPageData} />
                 <Buisnessprinciples aboutPageData={aboutPageData} />
-                <Ownership getAboutPage={getAboutPage} aboutPageData={aboutPageData}  />
-                <Team />
-                <Partners getAboutPage={getAboutPage} />
+                <Ownership ownershipData={ownershipData} aboutPageData={aboutPageData}  />
+                <Team teamData={teamData} />
+                <Partners getAboutPage={getAboutPage} partnersData={partnersData} />
                 <Mission getHomePageData={getConfigs?.configs?.home_page} />
                 <Corporatestructure />
                 <Statuorydocuments getAboutPage={getAboutPage} aboutPageData={aboutPageData}  />

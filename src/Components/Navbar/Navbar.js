@@ -108,10 +108,10 @@ export function Navbar(props) {
                             </NavLinks>
                         </div>
                         <div className="lang  hidden xl:flex text-dark-blue">
-                            <NavLinks
+                            {/* <NavLinks
                                 variant={variant} to="/contacts">
                                 Contacts
-                            </NavLinks>
+                            </NavLinks> */}
                             <div className={`lang py-3 self-center cursor-pointer ${variant === 'white' && 'text-white'}`}>
                                 <Lang className='h-5 2xl:w-fit' />
                             </div>

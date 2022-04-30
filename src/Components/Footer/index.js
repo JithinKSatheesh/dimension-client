@@ -166,7 +166,7 @@ export default function Index(props) {
                     <SearchBox className="w-full lg:w-1/4" />    
                 </div>
                 <div className="mt-28 mb-32">
-                    <div className="grid grid-cols-1 xl:grid-cols-4 gap-16 text-center xl:text-left lg:text-xs 2xl:text-base">
+                    <div className="grid grid-cols-1 xl:grid-cols-4 gap-8 text-center xl:text-left lg:text-xs 2xl:text-base">
                         <div className=' text-white '>
                             <div className="font-semibold mb-4"> About us </div>
                             {_aboutLinks.map(item => 

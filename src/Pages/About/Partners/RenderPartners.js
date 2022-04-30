@@ -1,12 +1,13 @@
 import React from 'react';
 import { SlideBottom } from 'Components/SlideAnimation';
-import { ReactComponent as IconLocation } from 'Assets/icons/location.svg';
 
+import { ReactComponent as IconLocation } from 'Assets/icons/location.svg';
+import { ReactComponent as Arrow } from 'Assets/icons/right_arrow.svg';
 
 export const RenderPartners = (props) => {
 
     const { item, onClick } = props;
-    const _image = item?.logo?.data ? `${process.env.REACT_APP_API_URL}${item?.logo?.data?.attributes?.url}` : '';
+    const _image = item?.logo?.url ? `${process.env.REACT_APP_API_URL}${item?.logo?.url}` : '';
 
     // console.log(item)
     return (
@@ -15,7 +16,8 @@ export const RenderPartners = (props) => {
                 <ImageSection _image={_image} />
                 <AddressSection item={item} onClick={onClick} btnLabel={<> 
                     More&nbsp;&nbsp;
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill='white'><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z" /></svg>
+                    <Arrow />
+                    {/* <svg width="14" height="14" viewBox="0 0 24 24" fill='white'><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z" /></svg> */}
                  </>}  />
             </div>
         </SlideBottom>
@@ -26,17 +28,17 @@ export const RenderPartners = (props) => {
 export const RenderPartnerExpanded = (props) => {
 
     const { item, onClick } = props;
-    const _image = item?.logo?.data ? `${process.env.REACT_APP_API_URL}${item?.logo?.data?.attributes?.url}` : '';
+    const _image = item?.logo?.url ? `${process.env.REACT_APP_API_URL}${item?.logo?.url}` : '';
 
     // console.log(item)
     return (
-        // <SlideBottom>
-            <div className="p-8 rounded-xl bg-blue-light text-blue  hover-border-outline border-2 max-w-xl  w-full">
+        <SlideBottom>
+            <div className="p-8 rounded-xl bg-blue-light text-blue  hover-border-outline border-2 max-w-xl h-full  w-full">
                 <ImageSection _image={_image} />
                 <DescriptionSection item={item} />
                 <AddressSection item={item} onClick={onClick} btnLabel={<>&nbsp;Close&nbsp;</>}  />
             </div>
-        // </SlideBottom>
+        </SlideBottom>
     );
 };
 
@@ -59,7 +61,7 @@ const AddressSection = ({ item, onClick, btnLabel }) => {
             {/* <a href={item?.website} target="_blank"> */}
             <div
                 onClick={onClick}
-                className="text-xs rounded-lg bg-dark-blue-grad p-2 text-white cursor-pointer flex">
+                className="text-xs ml-3 rounded-lg bg-dark-blue-grad p-2 text-white cursor-pointer flex">
                 {/* &nbsp;&nbsp;About&nbsp;us */}
                 {btnLabel}
             </div>

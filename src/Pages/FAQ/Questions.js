@@ -26,7 +26,7 @@ export default function Questions(props) {
     return (
         <>
             <div className=" faq-wrapper-2">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto ">
                     {_questions?.length <= 0 ?
                         <div className='flex justify-center py-32'> <ThreeDots color='#206291' />  </div>
                         :

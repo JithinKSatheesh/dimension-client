@@ -20,25 +20,31 @@ export default function Amdindex(props) {
     const configs = getConfigs?.configs?.indices?.usd
 
     const _tableData = configs?.indices_usd_table || {}
-    const _graphData = getIndicesData?.usdIndicesGraph || []
-    const _pdfData = getIndicesData?.usdIndicesFactsheets || []
+    const _pdfData = configs?.indices_usd_factsheet|| []
+    // const _graphData = getIndicesData?.usdIndicesGraph || []
+    // const _pdfData = getIndicesData?.usdIndicesFactsheets || []
 
-    const values = _graphData?.map(item => parseFloat(item?.attributes?.value))
-    const labels = _graphData?.map(item => `${getMonth(item?.attributes?.date)} ${(new Date(item?.attributes?.date)).getFullYear()}`)
+    const graphData = _tableData?.graph_JSON_format || {}
+    const _graphData = JSON.parse(graphData)
+    const values = Object.keys(_graphData)?.map(key => parseFloat(_graphData[key]))
+    const labels = Object.keys(_graphData)?.map(key => key)
+
+    // const values = _graphData?.map(item => parseFloat(item?.attributes?.value))
+    // const labels = _graphData?.map(item => `${getMonth(item?.attributes?.date)} ${(new Date(item?.attributes?.date)).getFullYear()}`)
 
     console.log(_pdfData)
 
 
     useEffect(() => {
-        if (_graphData.length <= 0) {
-            initUsdIndicesGraph()
-        }
-        if (_pdfData.length <= 0) {
-            initUsdIndicesFactsheets()
-        }
-        if (isEmpty(_tableData)) {
-            initUsdIndexTableData()
-        }
+        // if (_graphData.length <= 0) {
+        //     initUsdIndicesGraph()
+        // }
+        // if (_pdfData.length <= 0) {
+        //     initUsdIndicesFactsheets()
+        // }
+        // if (isEmpty(_tableData)) {
+        //     initUsdIndexTableData()
+        // }
     }, [])
 
 

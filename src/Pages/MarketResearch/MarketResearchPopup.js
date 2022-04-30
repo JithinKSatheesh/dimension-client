@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import * as yup from 'yup';
 
 import { GetFunctions } from 'API/fetch'
 
@@ -13,12 +14,19 @@ export const MarketResearchPopup = (props) => {
 
     const [loading, setLoading] = useState(false)
     const [success, setSuccess] = useState(false)
+    const [error, setError] = useState({})
 
 
     const [inputVal, setInuptVal] = useState({
         name: '',
         email: '',
         phone: ''
+    });
+
+    const Schema = yup.object({
+        name: yup.string().required("Name is a required field"),
+        email: yup.string().required("Email is a required field").email("Invalid email"),
+
     });
 
     const handleChange = (e) => {
@@ -51,6 +59,7 @@ export const MarketResearchPopup = (props) => {
                 item_name : popup?.item?.title,
                 item_description : popup?.item?.description,
             }
+            await Schema.validate(inputVal)
             const res = await GetFunctions?.postMailMarketResearch(null, null, payload)
             const data = res?.data?.data
             if (data) {
@@ -58,7 +67,7 @@ export const MarketResearchPopup = (props) => {
             }
 
         } catch (ex) {
-
+            setError({ message: ex?.errors ?? 'Something went wrong' })
         }
         setLoading(false)
     }
@@ -73,6 +82,9 @@ export const MarketResearchPopup = (props) => {
                     handleChange={handleChange}
                     loading={loading}
                     />
+                <div className="text-xs text-red-500 pt-2 text-center">
+                    {error?.message}
+                </div>
             </PopUpContent>
                     </>
 

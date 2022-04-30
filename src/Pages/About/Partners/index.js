@@ -15,16 +15,16 @@ import { RenderPartners, RenderPartnerExpanded } from './RenderPartners'
 
 export default function Partners(props) {
 
-    const { getAboutPage } = props
+    const { getAboutPage, partnersData } = props
 
-    const partners = getAboutPage?.partners || []
+    const partners = partnersData || []
     
     const [popup, setPopup] = useState(false)
 
     return (
         <>
             <div id="partners" className=" about-wrapper-5">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto ">
                     <div className="py-36">
                         <div className="mb-6 text-white font-bold text-2xl xl:text-3xl pb-16">
                             <SlideLeft>
@@ -35,13 +35,13 @@ export default function Partners(props) {
                             <div className='flex justify-center py-16'> <ThreeDots color='#206291' />  </div>
                             :
                             <>
-                                <div className="grid grid-cols-1 xl:grid-cols-3 gap-24">
+                                <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 2xl:gap-16">
                                     {
                                         partners.map(item =>
                                             <RenderPartners
                                                 key={item?.id}
-                                                item={item?.attributes}
-                                                onClick={() => setPopup(item?.attributes)}
+                                                item={item}
+                                                onClick={() => setPopup(item)}
                                             />)
                                     }
                                 </div>

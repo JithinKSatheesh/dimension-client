@@ -21,10 +21,12 @@ export default function Content(props) {
     const [expanded, setExpanded] = useState(false)
     const [popup, setPopup] = useState(false)
 
-    const { getCareers } = useStoreItem()
-    const { initCareers } = initStoreItem()
-
-    const data = getCareers?.careers ?? []
+    // const { getCareers } = useStoreItem()
+    // const { initCareers } = initStoreItem()
+    
+    // const data = getCareers?.careers ?? []
+    const { getConfigs } = useStoreItem()
+    const data = getConfigs?.configs?.careers ?? []
 
 
     // console.log(getCareers)
@@ -33,7 +35,7 @@ export default function Content(props) {
     const rightArray = leftArray.splice(0, Math.floor(leftArray.length / 2));
 
 
-    useEffect(() => { initCareers() }, [])
+    // useEffect(() => { initCareers() }, [])
 
 
     return (

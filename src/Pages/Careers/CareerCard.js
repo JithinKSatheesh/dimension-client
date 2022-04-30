@@ -20,16 +20,16 @@ export const CareerCard = (props) => {
                         <div className={`flex flex-wrap text-sm 2xl:text-base ${expanded === item?.id ? 'text-white' : 'text-dark-blue'}  `}>
                             <div className="w-full xl:w-6/12 mb-5 xl:mb-0">
                                 <div className="text-xs"> Position </div>
-                                <div className="text- font-bold"> {item?.attributes?.position} </div>
+                                <div className="text- font-bold"> {item?.position} </div>
                             </div>
                             <div className="w-full xl:w-6/12 flex xl:justify-between justify-left">
                                 <div>
                                     <div className="text-xs"> Job type </div>
-                                    <div className="text- font-bold"> {item?.attributes?.job_type} </div>
+                                    <div className="text- font-bold"> {item?.job_type} </div>
                                 </div>
                                 <div className='px-5'>
                                     <div className="text-xs"> Due date </div>
-                                    <div className="text- font-bold"> {formatDate(item?.attributes?.due_date)} </div>
+                                    <div className="text- font-bold"> {formatDate(item?.due_date)} </div>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@ export const CareerCard = (props) => {
                     <div className="font-xs pb-3">
                         Requirments
                     </div>
-                    {item?.attributes?.description}
+                    {item?.description}
                     <div className="pt-10">
                         <DetailsButton
                             onClick={() => setPopup({ item })}

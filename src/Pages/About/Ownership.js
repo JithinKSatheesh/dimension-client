@@ -8,10 +8,10 @@ import { ReactComponent as IconDownload } from 'Assets/icons/download.svg'
 
 export default function Ownership(props) {
 
-    const { getAboutPage, aboutPageData } = props
+    const { getAboutPage, aboutPageData, ownershipData } = props
 
     // const data = getAboutPage?.about ?? []
-    const ownership = getAboutPage?.ownerships || []
+    const ownership = ownershipData || []
 
     const central_bank_regulation_pdf = aboutPageData?.central_bank_regulation_pdf?.url ?? ''
     const _central_bank_regulation_pdf = central_bank_regulation_pdf ? `${process.env.REACT_APP_API_URL}${central_bank_regulation_pdf}` : ''
@@ -52,7 +52,7 @@ export default function Ownership(props) {
     return (
         <>
             <div id="ownership" className=" about-wrapper-3">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto ">
                     <div className="py-36">
                         <div className="mb-6 text-white font-bold text-2xl xl:text-3xl pb-24">
                             <SlideLeft>
@@ -91,7 +91,7 @@ export default function Ownership(props) {
                                                 <>
                                                     {
                                                         ownership.map(owner => (
-                                                            <OwnerCard item={owner?.attributes} key={owner?.id} />
+                                                            <OwnerCard item={owner} key={owner?.id} />
                                                         ))
                                                     }
                                                 </>

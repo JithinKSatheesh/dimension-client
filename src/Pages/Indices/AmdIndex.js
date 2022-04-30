@@ -15,35 +15,50 @@ import { FactSheetLayout } from './FactSheetLayout'
 export default function Amdindex(props) {
 
     const { getIndicesData ,getConfigs} = useStoreItem()
-    const { initAmdIndicesGraph, initAmdIndexTableData, initAmdIndicesFactsheets ,initAllConfigs} = initStoreItem()
+    const { 
+        // initAmdIndicesGraph, 
+        // initAmdIndexTableData, 
+        initAmdIndicesFactsheets ,
+        initAllConfigs
+    } = initStoreItem()
 
     const configs = getConfigs?.configs?.indices?.amd
-
     const _tableData = configs?.indices_amd_table || {}
+    const _pdfData = configs?.indices_amd_factsheet|| []
 
-    const _graphData = getIndicesData?.amdIndicesGraph || []
-    const _pdfData = getIndicesData?.amdIndicesFactsheets || []
 
-    const values = _graphData?.map(item => parseFloat(item?.attributes?.value))
-    const labels = _graphData?.map(item => `${getMonth(item?.attributes?.date)} ${(new Date(item?.attributes?.date)).getFullYear()}`)
+    // const _graphData2 = JSON.parse(graphData)
+    // console.log(_graphData)
+    // console.log(JSON.parse(graphData))
+    const graphData = _tableData?.graph_JSON_format || {}
+    const _graphData = JSON.parse(graphData)
+    const values = Object.keys(_graphData)?.map(key => parseFloat(_graphData[key]))
+    const labels = Object.keys(_graphData)?.map(key => key)
+    
+    
+    
+    // const _graphData = getIndicesData?.amdIndicesGraph || []
+    // const values = _graphData?.map(item => parseFloat(item?.attributes?.value))
+    // const labels = _graphData?.map(item => `${getMonth(item?.attributes?.date)} ${(new Date(item?.attributes?.date)).getFullYear()}`)
+    
 
-    console.log(_pdfData)
+    // console.log(_pdfData)
 
 
 
     useEffect(() => {
-        if (_graphData.length <= 0) {
-            initAmdIndicesGraph()
-        }
-        if (_pdfData.length <= 0) {
-            initAmdIndicesFactsheets()
-        }
-        if (isEmpty(_tableData)) {
-            initAmdIndexTableData()
-        }
-        if (isEmpty(getConfigs?.configs)) {
-            initAllConfigs()
-        }
+        // if (_graphData.length <= 0) {
+        //     initAmdIndicesGraph()
+        // }
+        // if (_pdfData.length <= 0) {
+        //     initAmdIndicesFactsheets()
+        // }
+        // if (isEmpty(_tableData)) {
+        //     initAmdIndexTableData()
+        // }
+        // if (isEmpty(getConfigs?.configs)) {
+        //     initAllConfigs()
+        // }
     }, [])
 
 

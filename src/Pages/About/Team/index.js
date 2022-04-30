@@ -13,16 +13,20 @@ import initStoreItem from 'Store/hooks/initStoreItems'
 
 export default function Team(props) {
 
-    const { getTeam } = useStoreItem()
-    const { initTeam } = initStoreItem()
+    const {teamData} = props
+    // const { teamData } = useStoreItem()
+    // const { initTeam } = initStoreItem()
 
-    const _data = getTeam?.team ?? []
+    // const _data = getTeam?.team ?? []
+    const _data = teamData ?? []
 
-    useEffect(() => initTeam() ,[])
+    // console.log(teamData)
+
+    // useEffect(() => initTeam() ,[])
 
     const [active, setActive] = useState('board_member')
 
-    const data = [..._data].filter(val => val?.attributes?.filter_key === active)
+    const data = [..._data].filter(val => val?.filter_key === active)
 
 
     const changeActive = (value) => {
@@ -51,7 +55,7 @@ export default function Team(props) {
     return (
         <>
             <div id="team" className=" about-wrapper-4">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto ">
                     <div className="py-36">
                         <div className="flex flex-wrap">
                             <div className=" w-full xl:w-1/3">
@@ -77,7 +81,7 @@ export default function Team(props) {
                                 <div className=' flex justify-center'> <ThreeDots color='#206291' />  </div>
                                 :
                                 <div className="grid grid-cols-1 xl:grid-cols-4 gap-12">
-                                    {[...data].map(person => <TeamCard key={person.id} item={person?.attributes} />)}
+                                    {[...data].map(person => <TeamCard key={person.id} item={person} />)}
                                 </div>
                             }
                         </div>

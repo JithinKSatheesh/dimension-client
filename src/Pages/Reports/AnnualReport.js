@@ -9,18 +9,20 @@ import { ThreeDots } from 'react-loader-spinner'
 
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
-import initStoreItem from 'Store/hooks/initStoreItems'
+// import initStoreItem from 'Store/hooks/initStoreItems'
 
 export default function Annualreport(props) {
 
-    const { getAnnualReports } = useStoreItem()
-    const { initAnnualReports } = initStoreItem()
+    // const { getAnnualReports } = useStoreItem()
+    const { getConfigs } = useStoreItem()
+    // const { initAnnualReports } = initStoreItem()
 
-    const reports = getAnnualReports?.annualReports ?? []
+    const reports = getConfigs?.configs?.reports?.annual_report || []
+    // const reports = getAnnualReports?.annualReports ?? []
 
     // console.log(reports)
 
-    useEffect(() => initAnnualReports(), [])
+    // useEffect(() => initAnnualReports(), [])
 
     return (
         <>
@@ -42,13 +44,13 @@ export default function Annualreport(props) {
                                     <div className="grid grid-cols-1 xl:grid-cols-3 gap-16">
                                         {reports.map(item => {
 
-                                            const pdf_url = item?.attributes?.pdf?.data?.attributes?.url
+                                            const pdf_url = item?.pdf?.url
                                             const url_ = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : ''
 
                                             return (<PdfDownloadButton
                                                 key={item?.id}
                                                 onClick={() => window.open(url_, '_blank', 'noopener,noreferrer')}
-                                                title={item?.attributes?.year} />)
+                                                title={item?.year} />)
                                         }
                                         )}
 

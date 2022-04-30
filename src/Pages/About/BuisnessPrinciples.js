@@ -67,7 +67,7 @@ const _BuisnessPrinciples = [
     return (
         <>
             <div id="buisness-principles" className=" about-wrapper-2">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto ">
                     <div className="py-36">
                         <div className="mb-6 font-bold text-2xl xl:text-3xl pb-24 text-dark-blue">
                             <SlideLeft>

@@ -15,16 +15,16 @@ export default function Statuorydocuments(props) {
 
     const { getAboutPage, aboutPageData } = props
 
-    const data = getAboutPage?.about ?? {}
+    const data = aboutPageData ?? {}
     const _date = aboutPageData?.updatedAt
 
-    const license_pdf = data?.attributes?.license_pdf?.data?.attributes?.url ?? ''
+    const license_pdf = data?.license_pdf?.url ?? ''
     const _license_pdf = license_pdf ? `${process.env.REACT_APP_API_URL}${license_pdf}` : ''
 
-    const regilation_pdf = data?.attributes?.regilation_pdf?.data?.attributes?.url ?? ''
+    const regilation_pdf = data?.regilation_pdf?.url ?? ''
     const _regilation_pdf = regilation_pdf ? `${process.env.REACT_APP_API_URL}${regilation_pdf}` : ''
 
-    const charter_pdf = data?.attributes?.charter_pdf?.data?.attributes?.url ?? ''
+    const charter_pdf = data?.charter_pdf?.url ?? ''
     const _charter_pdf = charter_pdf ? `${process.env.REACT_APP_API_URL}${charter_pdf}` : ''
 
 

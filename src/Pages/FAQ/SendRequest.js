@@ -14,7 +14,7 @@ export default function Sendrequest(props) {
     return (
         <>
             <div className=" faq-wrapper-3 bg-dark-blue-grad">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto ">
                     <div className="py-36">
 
                         <div className="flex flex-wrap justify-end  p-5 border-blue-light border-b border-t items-center ">

@@ -6,6 +6,8 @@ export const FactSheetLayout = (props) => {
 
     const { data } = props;
 
+    // const _dataSorted = [...data].sort()
+
     const archives = [...data].slice(1)
     const [show, setShow] = useState(false)
 
@@ -55,14 +57,14 @@ const GridButtonLayout = ({ data }) => {
 
 const FactsheetButton = ({ item }) => {
 
-    const pdf_url = item?.attributes?.pdf?.data?.attributes?.url;
+    const pdf_url = item?.pdf?.url;
     const url_ = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : '';
 
     return (<PdfDownloadButton
         key={item?.id}
         onClick={() => window.open(url_, '_blank', 'noopener,noreferrer')}
         className="text-xs xl:text-xs 2xl:text-xs"
-        title={`Factsheet (${getMonth(item?.attributes?.year)} ${(new Date(item?.attributes?.year).getFullYear())})`} />
+        title={`Factsheet (${getMonth(item?.year)} ${(new Date(item?.year).getFullYear())})`} />
 
     );
 
