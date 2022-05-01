@@ -12,7 +12,8 @@ export const FilterTab = (props) => {
                 key={item.id}
                 className={`
                     py-3 text-center   
-                    cursor-pointer text-base 2xl:text-lg
+                    cursor-pointer 
+                    text-base xl:text-sm 2xl:text-lg
                     ${active === item.value ? 'bg-dark-blue-grad border-color-blue-grad  text-white' : 'text-dark-blue'} 
                     ${index === 0 && 'rounded-l-xl  border-color-blue-grad  border-r-2'}
                     ${index === filters.length - 1 && 'rounded-r-xl border-color-blue-grad  border-l-2'}

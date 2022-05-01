@@ -69,13 +69,13 @@ export const MenuContent = (props) => {
                 {props.icon}
             </div>
             <div>
-                <div className="text-lg lg:text-base 2xl:text-xl font-semibold text-white mb-3">
+                <div className="text-lg lg:text-base 3xl:text-xl font-semibold text-white mb-3">
                     {props.title}
                 </div>
-                <div className=" text-xs text-white mb-7">
+                <div className=" text-xs xl:text-[11px] 2xl:text-xs text-white mb-7">
                     {props.desc}
                 </div>
-                <div className="flex text-xs items-center  text-white mb-5">
+                <div className="flex text-xs xl:text-[11px] 2xl:text-xs items-center  text-white mb-5">
                     {/* <Link to="/"> Read more </Link>
                     <div className="ml-4">
                         <IconRightArrow height={"12px"} />

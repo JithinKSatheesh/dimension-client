@@ -51,10 +51,10 @@ const _BuisnessPrinciples = [
                         <div className="pb-6 ">
                             {item?.icon}
                         </div>
-                        <div className="pb-4 text-lg 2xl:text-xl text-dark-blue font-bold">
+                        <div className="pb-4 text-lg xl:text-sm 2xl:text-xl text-dark-blue font-bold">
                             {item?.title}
                         </div>
-                        <div className='text-dark-blue  leading-6 2xl:leading-6 text-xs 2xl:text-sm  '>
+                        <div className='text-dark-blue  text-xs xl:text-xs 2xl:text-sm   leading-6 xl:leading-6 2xl:leading-6 '>
                             {item?.description}
                         </div>
                     </SlideRight>
@@ -69,7 +69,7 @@ const _BuisnessPrinciples = [
             <div id="buisness-principles" className=" about-wrapper-2">
                 <div className="container mx-auto ">
                     <div className="py-36">
-                        <div className="mb-6 font-bold text-2xl xl:text-3xl pb-24 text-dark-blue">
+                        <div className="mb-6 font-bold text-2xl xl:text-2xl 2xl:text-3xl pb-24 text-dark-blue">
                             <SlideLeft>
                             Our Business Principles
                             </SlideLeft>

@@ -45,7 +45,7 @@ export function Navbar(props) {
                         {/* desktop logo */}
                         <div className="logo mr-5 hidden xl:block">
                             <Link to="/">
-                                {variant === 'white' ? <LogoWhite  className='w-32 2xl:w-fit' /> : <Logo className='w-32 2xl:w-fit' />}
+                                {variant === 'white' ? <LogoWhite  className='w-32 3xl:w-fit' /> : <Logo className='w-32 3xl:w-fit' />}
                             </Link>
                         </div>
                         {/* Mobile logo */}

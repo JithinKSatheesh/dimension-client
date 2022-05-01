@@ -166,7 +166,7 @@ export default function Index(props) {
                     <SearchBox className="w-full lg:w-1/4" />    
                 </div>
                 <div className="mt-28 mb-32">
-                    <div className="grid grid-cols-1 xl:grid-cols-4 gap-8 text-center xl:text-left lg:text-xs 2xl:text-base">
+                    <div className="grid grid-cols-1 xl:grid-cols-4 gap-8 text-center xl:text-left lg:text-xs xl:text-[11px] 2xl:text-xs 3xl:text-base">
                         <div className=' text-white '>
                             <div className="font-semibold mb-4"> About us </div>
                             {_aboutLinks.map(item => 
@@ -184,13 +184,13 @@ export default function Index(props) {
                                 </div>
                             )}
                             
-                            <div className='mb-4 mt-4 w-32 mx-auto lg:mx-0'>
+                            <div className='mb-4 mt-4 w-32 mx-auto xl:mx-0'>
                                 <PdfDownloadButton 
                                     iconWidth={20} 
                                     iconHeight={20}  
                                     title="Tariffs" 
                                     onClick={() => window.open(tarrif_url, '_blank', 'noopener,noreferrer')}
-                                    className="h-10" />
+                                    className="h-10 mx-auto" />
                             </div>
 
                         </div>
@@ -225,20 +225,20 @@ export default function Index(props) {
                             </div>
                         )}
                     </div>
-                    <div style={{width : '600px'}} className="text-xs text-white text-center xl:text-right mb-10  order-1  xl:order-2">
+                    <div  className="text-xs max-w-lg xl:max-w-[450px] 3xl:max-w-[600px] xl:text-[10px] 3xl:text-xs  text-white text-center xl:text-right mb-10  order-1  xl:order-2">
                         {footerData?.desclaimer_text}
                         {/* Dimension is not responsible for the accuracy and reliability of the information and/or advertisements presented on the third party websites linked from this website and assumes no responsibility for the consequences arising from the use of the said  */}
                     </div>
                 </div>
                 <div className="pt-24">
                     <div className="flex flex-wrap xl:flex-nowrap justify-center xl:justify-between items-center">
-                        <div className="w-full text-sm text-white order-3 xl:order-1 text-center xl:text-left">
+                        <div className="w-full text-sm xl:text-xs text-white order-3 xl:order-1 text-center xl:text-left">
                             &#169; {footerData?.copyright}
                         </div>
-                        <div className="w-full text-sm text-white order-1  xl:order-2 mb-5 xl:mb-0 text-center ">
+                        <div className="w-full text-sm xl:text-xs text-white order-1  xl:order-2 mb-5 xl:mb-0 text-center ">
                            {footerData?.footer_note}
                         </div>
-                        <div className="w-full text-sm text-white  order-2  xl:order-3 mb-5 xl:mb-0 ">
+                        <div className="w-full text-sm xl:text-xs text-white  order-2  xl:order-3 mb-5 xl:mb-0 ">
                             <div className='mx-auto xl:ml-auto xl:mr-0 flex justify-center xl:justify-end'>
                                 <div className="mr-3">Powered by</div>  
                                 <img src={Brand_5} alt="" className="brightness-0 invert" />

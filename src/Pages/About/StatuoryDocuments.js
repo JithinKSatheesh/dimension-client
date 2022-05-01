@@ -33,7 +33,7 @@ export default function Statuorydocuments(props) {
     return (
         <>
             <div id="statuory-documents" className="about-wrapper-8">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto ">
                     <div className="pt-36 pb-32">
                         <div className="mb-6 text-dark-blue font-bold text-2xl xl:text-3xl pb-16">
                             <SlideLeft>

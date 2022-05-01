@@ -26,7 +26,7 @@ export default function Partners(props) {
             <div id="partners" className=" about-wrapper-5">
                 <div className="container mx-auto ">
                     <div className="py-36">
-                        <div className="mb-6 text-white font-bold text-2xl xl:text-3xl pb-16">
+                        <div className="mb-6 text-white font-bold text-2xl xl:text-2xl 2xl:text-3xl pb-16">
                             <SlideLeft>
                                 Our partners
                             </SlideLeft>

@@ -11,6 +11,7 @@ import { ReactComponent as IconManage } from 'Assets/icons/service_manage_blue.s
 import { DetailsButton } from 'Components/Buttons'
 import useStoreItem from 'Store/hooks/getStoreItems'
 import MarkdownView from 'react-showdown';
+import { truncate } from 'Utils/string';
 
 
 export default function Service(props) {
@@ -22,12 +23,12 @@ export default function Service(props) {
         return (
             <div className='bg-blue-light rounded-xl p-7 pb-12 hover-border-outline border-2'>
                 {props?.icon}
-                <div className="py-7 font-semibold text-xl 2xl:text-2xl text-dark-blue">
+                <div className="py-7 font-semibold text-xl xl:text-lg  2xl:text-xl 3xl:text-2xl text-dark-blue">
                     {props?.title}
                     
                 </div>
-                <div className="xl:h-40 pb-10 text-sm 2xl:text-base text-dark-blue">
-                    {props?.descritpion}
+                <div className="xl:h-44 pb-10 text-sm xl:text-xs 2xl:text-sm 3xl:text-base xl:leading-5 2xl:leading-5 text-dark-blue">
+                    { props?.descritpion}
                 </div>
                 <DetailsButton to={props?.to}> Details </DetailsButton>
 
@@ -40,8 +41,8 @@ export default function Service(props) {
     return (
         <>
          <div className="hero-wrapper-3">
-            <div className="container py-32 mx-auto ">
-                <div className="pb-24 text-3xl text-dark-blue font-semibold ">
+            <div className="container py-32 xl:py-24 mx-auto ">
+                <div className="pb-24 xl:pb-16  text-3xl  xl:text-xl 2xl:text-2xl  3xl:text-3xl text-dark-blue font-semibold ">
                 Our services
                 </div>
                 <div className="grid grid-cols-1 xl:grid-cols-3 xl:grid-flow-col gap-24">

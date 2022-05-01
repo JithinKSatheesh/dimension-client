@@ -16,6 +16,7 @@ import initStoreItem from 'Store/hooks/initStoreItems'
 
 // ** utils
 import { formatDate } from 'Utils/time'
+import { truncate } from 'Utils/string'
 
 export default function News(props) {
 
@@ -32,14 +33,14 @@ export default function News(props) {
     return (
         <>
          <div className=" hero-wrapper-5">
-            <div className="container py-32 mx-auto  ">
-                <div className="flex justify-between items-center pb-24 ">
-                    <div className="text-3xl  font-semibold text-white">
+            <div className="container py-32  xl:py-24 2xl:py-32 mx-auto  ">
+                <div className="flex justify-between items-center pb-24 xl:pb-16 2xl:pb-24">
+                    <div className="text-3xl xl:text-xl 2xl:text-2xl  3xl:text-3xl  font-semibold text-white">
                         News
                     </div>
                         <Link to="/news">
                     <div className="text-base text-white flex items-center cursor-pointer">
-                        <div className="mr-3 font-bold">All&nbsp;news</div>
+                        <div className="mr-3 font-bold xl:text-sm 2xl:text-base">All&nbsp;news</div>
                         <IconRightArrow />
                     </div>
                         </Link>
@@ -78,17 +79,17 @@ export const NewsCard = (props) => {
             backgroundImage : `url(${_imageURL})`,
             backgroundSize : 'cover',
         }} 
-        className="relative h-80 rounded-xl" >
+        className="relative h-80 xl:h-56 2xl:h-80 rounded-xl" >
          <div className="absolute w-full h-full news-img-overlay ">
              <div className="flex h-full items-end">
                  <div className='p-7 text-white'>
                     <div className="text-sm py-2.5 font-bold">
                         {formatDate(props.item?.publishedAt)}
                     </div>
-                    <div className="text-2xl  font-bold ">
-                        {props.item?.title}
+                    <div className="text-2xl xl:text-xl  font-bold ">
+                        {truncate(props.item?.title, 50)}
                     </div>
-                    <div className="py-2 5 flex items-center font-bold">
+                    <div className="py-2 xl:text-sm flex items-center font-bold">
                         <Link to="/" > Read more </Link>
                         <div className="ml-4">
                             <IconRightArrow  />

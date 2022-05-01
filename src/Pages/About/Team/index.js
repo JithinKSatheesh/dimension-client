@@ -57,9 +57,9 @@ export default function Team(props) {
             <div id="team" className=" about-wrapper-4">
                 <div className="container mx-auto ">
                     <div className="py-36">
-                        <div className="flex flex-wrap">
+                        <div className="flex flex-wrap items-center">
                             <div className=" w-full xl:w-1/3">
-                                <div className="text-2xl xl:text-3xl text-center xl:text-left mb-16 xl:mb-0 font-bold text-dark-blue">
+                                <div className="text-2xl xl:text-2xl 2l:text-3xl text-center xl:text-left mb-16 xl:mb-0 font-bold text-dark-blue">
                                     <SlideLeft>
                                     Team
                                     </SlideLeft>

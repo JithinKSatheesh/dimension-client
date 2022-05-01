@@ -7,7 +7,7 @@ export const RenderMenuLinks = ({ MenuList }) => {
 
     return (<>
         {MenuList.map(link =>
-            <Link key={link.id} to={link.to} className="lg:text-xs 2xl:text-base grow bg-menu-blue-light text-white py-7 text-center">
+            <Link key={link.id} to={link.to} className="lg:text-xs  3xl:text-base grow bg-menu-blue-light text-white py-7 text-center">
                 {link.label}
             </Link >)}
     </>)

@@ -13,7 +13,7 @@ export default function Hero(props) {
                 <div className="container mx-auto">
                     <div className="flex flex-wrap items-center justify-between">
                         <div>
-                            <div className="hero-h1 text-3xl xl:text-5xl text-dark-blue font-semibold">
+                            <div className="hero-h1 text-3xl xl:text-3xl 2xl:text-4xl  3xl:text-5xl  text-dark-blue font-semibold">
                                 <SlideLeft>
                                     {homepageData?.hero_heading_1}
                                     {/* Better way */}
@@ -23,7 +23,7 @@ export default function Hero(props) {
                                     {/* to invest */}
                                 </SlideRight>
                             </div>
-                            <div className="py-7 text-dark-blue max-w-xl">
+                            <div className="py-7 xl:text-sm 2xl:text-sm 3xl:text-base  xl:leading-7 2xl:leading-7  3xl:leading-8 text-dark-blue max-w-xl xl:max-w-lg 3xl:max-w-xl">
                                 <JustAppear>
                                 {homepageData?.hero_description}
                                 {/* Dimension was founded with the understanding that the dynamic 
@@ -33,7 +33,7 @@ export default function Hero(props) {
                                 </JustAppear>
                             </div>
                         </div>
-                        <div className='max-w-lg xl:max-w-lg 3xl:max-w-2xl relative rounded-xl'>
+                        <div className='max-w-lg xl:max-w-xs 2xl:max-w-lg 3xl:max-w-2xl relative rounded-xl'>
                             <JustAppear>
                             <div className="absolute w-full h-full hero-img-overlay rounded-xl"></div>
                             <img src={HeroImg} alt="" className='w-full rounded-xl' />

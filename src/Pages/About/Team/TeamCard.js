@@ -33,16 +33,16 @@ export const TeamCard = (props) => {
 
     return (<>
             <SlideBottom>
-        <div className="max-w-xs mx-auto cursor-pointer bg-dark-blue-grad  rounded-xl rounded-t-2xl w-full" onClick={() => setPopup(true)}>
+        <div className="max-w-xs mx-auto cursor-pointer bg-dark-blue-grad  rounded-xl rounded-t-2xl w-full h-full " onClick={() => setPopup(true)}>
             <ImageCard img_url={_imageURL}  />
             {/* <div className="h-72  bg-blue-light rounded-t-xl relative overflow-none">
                 <img src={_imageURL} alt="" className='mx-auto   w-full absolute bottom-0' />
             </div> */}
             <div className="p-7  bg-dark-blue-grad rounded-b-xl text-white">
-                <div className="text-xl font-bold pb-3">
+                <div className="text-xl xl:text-lg 2xl:text-xl font-bold pb-3">
                     {item?.full_name}
                 </div>
-                <div className="text-sm pb-10">
+                <div className="text-sm xl:text-xs 2xl:text-sm pb-10">
                     {item?.position}
                 </div>
                 <div className="flex justify-between">

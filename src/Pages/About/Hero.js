@@ -22,13 +22,13 @@ export default function Hero(props) {
                 <section>
                     <div className="py-28  text-white">
                         <div className="container mx-auto">
-                            <div className="text-2xl xl:text-3xl font-bold">
+                            <div className="text-2xl xl:text-2xl 2xl:text-3xl font-bold">
                                 <SlideLeft>
                                 About Dimension
                                 </SlideLeft>
                             </div>
                             <div className="flex flex-wrap pt-24">
-                                <div className="w-full xl:w-1/2 text-sm mb-16 xl:pr-8">
+                                <div className="w-full xl:w-1/2 text-sm xl:text-xs 2xl:text-sm xl:leading-6 2xl:leading-7 mb-16 xl:pr-8">
                                     <SlideBottom>
                                     <div dangerouslySetInnerHTML={{__html : aboutPageData?.hero_description_1}}></div>
                                     
@@ -43,7 +43,7 @@ export default function Hero(props) {
                                     </SlideBottom>
 
                                 </div>
-                                <div className="w-full xl:w-1/2 mb-16 xl:pl-8">
+                                <div className="w-full xl:w-1/2   mb-16 xl:pl-8">
                                     <div className='w-full h-full relative rounded-xl mx-auto xl:mx-0   xl:ml-auto'>
                                         <JustAppear>
                                         <div className="absolute w-full h-full  hero-img-overlay rounded-xl"></div>
@@ -53,7 +53,7 @@ export default function Hero(props) {
                                 </div>
                             </div>
                             <div className="flex flex-wrap">
-                                <div className="w-full xl:w-1/2 text-sm mb-16 order-1 xl:order-2 xl:pl-8">
+                                <div className="w-full xl:w-1/2 text-sm xl:text-xs 2xl:text-sm xl:leading-6 2xl:leading-7 mb-16 order-1 xl:order-2 xl:pl-8">
                                     <SlideBottom>
                                     <div dangerouslySetInnerHTML={{__html : aboutPageData?.hero_description_2}}></div>
                                     {/* Founded in 2018 and with capabilities spanning in Investment Securities Services, Capital Markets Advisory, and Investment Management & Research, Dimension strives to put clients first by being their most reliable, insightful, and effective investment services partner in Armenia, while maintaining the firm's high integrity. Dimension’s capabilities are fortified by its independence and conflicts of interest-free status, multi-perspective and client-centric culture, professional team, diverse & highly engaged shareholders, and global network, capabilities, and mindset.
