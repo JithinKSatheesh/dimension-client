@@ -158,7 +158,12 @@ export const ApplyForJob = (props) => {
     }
 
 
-
+   const borderClass = {
+        "&.react-tel-input .form-control:focus": {
+           borderColor: "#69e781",
+           boxShadow: "0px 0px 0px 1px #69e781",  
+        }
+    }    
 
 
 
@@ -182,6 +187,7 @@ export const ApplyForJob = (props) => {
                 inputStyle={{ width: '100%', backgroundColor: 'transparent', border: 'none', height: '48px', color: 'white' }}
                 // buttonStyle={{backgroundColor : 'transparent', border : 'none', }}
                 containerClass={"bg-white/30 backdrop-blur-xl w-full  rounded-xl h-12 absolute z-30"}
+                // containerClass={borderClass}
                 dropdownStyle={{ zIndex: 50, color: 'black', backdropFilter: 'blur(90%)' }}
                 buttonClass={"blured-btn"}
                 dropdownClass={"blured-bg"}

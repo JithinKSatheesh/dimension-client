@@ -541,3 +541,21 @@
   
 
 }
+
+
+/* ===================== */
+/* ===================== */
+
+.flag-dropdown>.selected-flag {
+  background-color: #5a000000 !important;
+}
+.flag-dropdown>.open {
+  background-color: #003c5a00 !important;
+}
+.react-tel-input .country-list {
+  width: 350px !important;
+  background-color: #ffffffe6 !important;
+  
+}
+
+/* ===================== */
