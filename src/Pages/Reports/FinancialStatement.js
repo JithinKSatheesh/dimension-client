@@ -42,10 +42,10 @@ export default function Financialstatement(props) {
         return (
             <div
                 onClick={props?.onClick}
-                className="btn-reportDownload border border-blue-light rounded-xl p-2 cursor-pointer">
+                className="btn-reportDownload border  border-blue-light rounded-xl p-2 cursor-pointer">
                 <div className="flex items-center ">
                     <div className='btn-reportDownload-icon text-blue-300'><IconPdf width={"16px"} /></div>
-                    <div className='flex-grow text-center '>
+                    <div className='flex-grow text-center xl:text-sm 2xl:text-sm 3xl:text-base'>
                         {props?.title}
                     </div>
                 </div>
@@ -64,6 +64,7 @@ export default function Financialstatement(props) {
         return (<ReportDownloadButton
             title={title ? title : item?.year}
             onClick={() => window.open(url_, '_blank', 'noopener,noreferrer')}
+            className=""
         />
         )
 
@@ -97,7 +98,7 @@ export default function Financialstatement(props) {
         <>  <div className=" investor-relations-wrapper-2 ">
             <div className="container mx-auto ">
                 <div className="py-36 text-white">
-                    <div className="mb-24  font-bold text-2xl xl:text-3xl">
+                    <div className="mb-24  font-bold text-2xl  xl:text-2xl 2xl:text-3xl">
                         <SlideLeft>
                             Financial statments & Normatives
                         </SlideLeft>
@@ -119,10 +120,11 @@ export default function Financialstatement(props) {
                     </div>
                     {[..._financialStatementsQuaterly].map(item =>
                         <TableRow title={item?.year} borderBlue={true} key={item?.id}>
-                            <ButtonWrapper title="1 Quarter" item={item} pdf_key="q1_pdf" />
-                            <ButtonWrapper title="2 Quarter" item={item} pdf_key="q2_pdf" />
-                            <ButtonWrapper title="3 Quarter" item={item} pdf_key="q3_pdf" />
-                            <ButtonWrapper title="4 Quarter" item={item} pdf_key="q4_pdf" />
+                            {console.log(item)}
+                            <ButtonWrapper title={item?.["q1_pdf_text"]} item={item} pdf_key="q1_pdf" />
+                            <ButtonWrapper title={item?.["q2_pdf_text"]} item={item} pdf_key="q2_pdf" />
+                            <ButtonWrapper title={item?.["q3_pdf_text"]} item={item} pdf_key="q3_pdf" />
+                            <ButtonWrapper title={item?.["q4_pdf_text"]} item={item} pdf_key="q4_pdf" />
                         </TableRow>
                     )}
 
@@ -131,10 +133,10 @@ export default function Financialstatement(props) {
                     </div>
                     {[..._normatives].map(item =>
                         <TableRow title={item?.year} borderBlue={false} key={item?.id} >
-                            <ButtonWrapper title="1 Quarter" item={item} pdf_key="q1_pdf" />
-                            <ButtonWrapper title="2 Quarter" item={item} pdf_key="q2_pdf" />
-                            <ButtonWrapper title="3 Quarter" item={item} pdf_key="q3_pdf" />
-                            <ButtonWrapper title="4 Quarter" item={item} pdf_key="q4_pdf" />
+                            <ButtonWrapper title={item?.["q1_pdf_text"]} item={item} pdf_key="q1_pdf" />
+                            <ButtonWrapper title={item?.["q2_pdf_text"]} item={item} pdf_key="q2_pdf" />
+                            <ButtonWrapper title={item?.["q3_pdf_text"]} item={item} pdf_key="q3_pdf" />
+                            <ButtonWrapper title={item?.["q4_pdf_text"]} item={item} pdf_key="q4_pdf" />
                         </TableRow>
                     )}
 

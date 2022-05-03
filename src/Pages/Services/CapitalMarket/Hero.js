@@ -27,7 +27,7 @@ export default function Hero(props) {
             <section>
                 <div className="py-28  px-4 text-white">
                     <div className="container mx-auto">
-                        <div className="text-2xl xl:text-3xl font-bold flex items-center">
+                        <div className="text-2xl xl:text-xl 2xl:text-2xl 3xl:text-3xl font-bold flex items-center">
                             <SlideLeft>
                                 <IconHome className='mr-6' />  
                             </SlideLeft>
@@ -36,7 +36,7 @@ export default function Hero(props) {
                             </SlideRight>
                         </div>
                         <div className="flex flex-wrap pt-16 items-end">
-                            <div className="w-full xl:w-1/2 text-sm mb-16">
+                            <div className="w-full xl:w-1/2 text-sm xl:text-xs 2xl:text-sm 3xl:text-base xl:leading-6 2xl:leading-6 3xl:leading-7  mb-16">
                                 <JustAppear>
                                     <MarkdownView markdown={servicePageData?.capital_market_advisory} />
                                 {/* Capital Markets Advisory is a key business area of Dimension and an integral part of its ability to achieve the Mission and Vision of the company. It consists of mergers & acquisitions (M&A) advisory, balance sheet advisory & capital restructuring, private placement, and research & analysis services.

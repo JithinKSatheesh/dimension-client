@@ -44,7 +44,7 @@ export default function Content(props) {
             <div className="client-rights-wrapper-2">
                 <div className="container mx-auto ">
                     <div className="py-36">
-                        <div className="text-dark-blue font-bold text-2xl xl:text-3xl pb-24">
+                        <div className="text-dark-blue font-bold text-2xl xl:text-2xl  3xl:text-3xl pb-24">
                            <SlideLeft>
 
                             Laws
@@ -60,7 +60,9 @@ export default function Content(props) {
                                 return (<PdfDownloadButton
                                     key={item?.id}
                                     onClick={() => window.open(_url, '_blank', 'noopener,noreferrer')}
-                                    title={<Markdown markdown={item?.title} />} />)
+                                    title={<Markdown markdown={item?.title} />}
+                                    className="xl:text-xs 2xl:text-sm"
+                                    />)
                                 }
                             )}
                             {/* <PdfDownloadButton 
@@ -84,14 +86,14 @@ export default function Content(props) {
                         </div>
                         </JustAppear>
                         <div className="pt-36">
-                            <div className="grid grid-cols-1 xl:grid-cols-2  text-dark-blue gap-16">
+                            <div className="grid grid-cols-1 xl:grid-cols-2  text-dark-blue gap-12 3xl:gap-16">
                                 <div className="">
-                                    <div className="text-2xl xl:text-3xl font-bold h-16 xl:h-32">
+                                    <div className="text-2xl text-2xl xl:text-2xl  3xl:text-3xl  font-bold h-16 xl:h-24 2xl:h-32">
                                         <SlideBottom>
                                         Legal acts
                                         </SlideBottom>
                                     </div>
-                                    <div className='max-w-2xl text-sm 2xl:text-base'>
+                                    <div className='max-w-2xl text-sm xl:text-xs 2xl:text-sm 3xl:text-base'>
                                         <SlideTop>
                                         {_page?.legal_acts_description}
                                         {/* Central Bank's regulations governing the activities of investment companies have been translated into English and can be downloaded by accessing the relevant section of the Central Bank's official website. */}
@@ -100,12 +102,12 @@ export default function Content(props) {
 
                                 </div>
                                 <div className="">
-                                    <div className="text-2xl xl:text-3xl font-bold h-24 xl:h-32">
+                                    <div className="text-2xl text-2xl xl:text-2xl  3xl:text-3xl  font-bold h-24 xl:h-24 2xl:h-32">
                                        <SlideBottom>
                                         Stock exchange & <br /> Central depository rules
                                        </SlideBottom>
                                     </div>
-                                    <div className='text-sm 2xl:text-base'>
+                                    <div className='text-sm xl:text-xs 2xl:text-sm 3xl:text-base'>
                                         <SlideTop>
                                         <div className="pb-3">
                                             Rules of AMX Armenia stock exchange can be viewed and

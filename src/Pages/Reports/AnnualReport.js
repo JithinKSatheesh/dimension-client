@@ -29,7 +29,7 @@ export default function Annualreport(props) {
             <div className=" misc-wrapper-2">
                 <div className="container mx-auto">
                     <div className="py-36">
-                        <div className="text-dark-blue font-bold text-2xl xl:text-3xl pb-24">
+                        <div className="text-dark-blue font-bold text-2xl xl:text-2xl 2xl:text-3xl pb-24">
                             <SlideLeft>
                                 Annual reports
                             </SlideLeft>

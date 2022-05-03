@@ -36,9 +36,8 @@ export default function Container(props) {
             return (
                 <div
                     className={`
-                        text-base px-5 w-fit lg:w-72 cursor-pointer py-3 border-dark-blue  
+                        text-base px-5 w-fit lg:w-72 cursor-pointer py-3 
                         ${tab === props?.id ? 'bg-dark-blue-grad text-white ' : ''} 
-                        ${props?.last ? 'rounded-r-2xl' : 'rounded-l-2xl'}
                         text-center
                         `}
                     onClick={() => setTab(props?.id)}
@@ -54,8 +53,8 @@ export default function Container(props) {
         }
 
         return (
-            <div className="w-fit mx-auto    text-dark-blue rounded-3xl border-2 border-dark-blue">
-                <div className="flex ">
+            <div className="w-fit mx-auto    text-dark-blue rounded-2xl border-2 border-dark-blue overflow-hidden">
+                <div className="flex overflow-hidden">
                     {tabList.map((item, index) => <TabButton
                         id={item?.id}
                         label={item?.label}

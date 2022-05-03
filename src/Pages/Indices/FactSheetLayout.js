@@ -63,7 +63,7 @@ const FactsheetButton = ({ item }) => {
     return (<PdfDownloadButton
         key={item?.id}
         onClick={() => window.open(url_, '_blank', 'noopener,noreferrer')}
-        className="text-xs xl:text-xs 2xl:text-xs"
+        className="text-xs xl:text-xs 2xl:text-xs h-16"
         title={`Factsheet (${getMonth(item?.year)} ${(new Date(item?.year).getFullYear())})`} />
 
     );

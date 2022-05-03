@@ -25,7 +25,7 @@ export default function Otherservices(props) {
             <div className=" service-wrapper-3">
                 <div className="container mx-auto ">
                     <div className="pb-36">
-                        <div className="mb-6 text-dark-blue font-bold text-2xl xl:text-3xl pb-24">
+                        <div className="mb-6 text-dark-blue font-bold text-2xl  xl:text-2xl 2xl:text-3xl pb-24">
                             <SlideLeft>
                                 Other services
                             </SlideLeft>

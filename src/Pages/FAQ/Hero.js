@@ -18,7 +18,7 @@ export default function Hero(props) {
             <section>
                 <div className="py-28  px-4 text-white">
                     <div className="container mx-auto">
-                        <div className="text-2xl xl:text-3xl font-bold flex items-center">
+                        <div className="text-2xl xl:text-2xl 2xl:text-3xl  font-bold flex items-center">
                         <SlideLeft>
                             FAQ
                         </SlideLeft>

@@ -19,7 +19,7 @@ export default function Sendrequest(props) {
 
                         <div className="flex flex-wrap justify-end  p-5 border-blue-light border-b border-t items-center ">
                             <div className="w-full xl:w-1/2 py-5 xl:py-0">
-                                <div className="font-bold text-3xl text-white text-center xl:text-left">
+                                <div className="font-bold  text-3xl xl:text-xl 2xl:text-2xl 3xl:text-3xl text-white text-center xl:text-left">
                                     Have another questions?
                                 </div>
                             </div>

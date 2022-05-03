@@ -13,7 +13,7 @@ export const AboutMenuList = [
     {
         id: 3,
         to: '/about#ownership',
-        label: 'ownership'
+        label: 'Ownership'
     },
     {
         id: 4,

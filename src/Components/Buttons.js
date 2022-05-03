@@ -76,15 +76,15 @@ export const DownloadDocumentButton = (props) => {
 
 export const PdfDownloadButton = (props) => {
 
-    const {iconWidth = 25, iconHeight= 23, className = 'text-sm 2xl:text-base '} = props
+    const {iconWidth = 25, iconHeight= 23, className = 'text-sm 2xl:text-base h-16'} = props
 
     return (
         <div
             onClick={props?.onClick}
-            className={`rounded-xl rounded-r-2xl btn-pdf flex items-center cursor-pointer flex ${className} `}>
+            className={`rounded-xl rounded-r-2xl btn-pdf  flex items-center cursor-pointer flex ${className} `}>
             <div className='p-5 text-white'> <IconPdf width={iconWidth} height={iconHeight} /> </div>
             <div className='flex-grow rounded-xl h-full  btn-pdf-content  font-bold text-dark-blue flex items-center justify-end'>
-                <div className=" px-5 text-right">
+                <div className=" px-5 text-right h-fit">
                     {props?.title}
                 </div>
             </div>

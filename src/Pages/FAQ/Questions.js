@@ -31,7 +31,7 @@ export default function Questions(props) {
                         <div className='flex justify-center py-32'> <ThreeDots color='#206291' />  </div>
                         :
                         <>
-                            <div className="py-32">
+                            <div className="py-32 ">
                                 <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-8">
                                     {/* -------------------------- */}
                                     {/* --------- Col left ---------- */}

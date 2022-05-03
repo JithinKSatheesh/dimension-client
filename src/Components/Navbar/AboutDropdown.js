@@ -42,12 +42,12 @@ export const AboutDropdown = (props) => {
     
     return (
         <div style={{top : '95px'}} className="absolute left-0   w-full normal-case z-30">
-            {/* <motion.div
+            <motion.div
                 className=" bg-dark-blue-grad"
                 initial="exit"
                 animate={props?.isHover ? "enter" : "exit"}
                 variants={subMenuAnimate}
-            > */}
+            >
                 {props?.isHover &&
                 <div className="w-full bg-dark-blue-grad">
                     <div className="container  mx-auto">
@@ -57,7 +57,7 @@ export const AboutDropdown = (props) => {
                     </div>
                 </div>
                 }
-             {/* </motion.div> */}
+             </motion.div>
         </div>
     );
 };

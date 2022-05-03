@@ -185,12 +185,15 @@ export default function Index(props) {
                             )}
                             
                             <div className='mb-4 mt-4 w-32 mx-auto xl:mx-0'>
-                                <PdfDownloadButton 
-                                    iconWidth={20} 
-                                    iconHeight={20}  
-                                    title="Tariffs" 
-                                    onClick={() => window.open(tarrif_url, '_blank', 'noopener,noreferrer')}
-                                    className="h-10 mx-auto" />
+                                <Link to="tariffs">
+                                    <PdfDownloadButton 
+                                        iconWidth={20} 
+                                        iconHeight={20}  
+                                        title="Tariffs" 
+                                        // onClick={() => window.open(tarrif_url, '_blank', 'noopener,noreferrer')}
+                                        onClick={() => {}}
+                                        className="h-10 mx-auto" />
+                                </Link>
                             </div>
 
                         </div>

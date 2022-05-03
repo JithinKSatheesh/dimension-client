@@ -60,8 +60,10 @@ export default function Content(props) {
 
     const FilterTabs = (props) => {
 
+        const _activeFilter = Object.keys(mappeddData)
+
         return (<div className='flex flex-wrap '>
-            {_filters.map(item => 
+            {["All", ..._activeFilter].map(item => 
                 <div 
                     key={item} 
                     onClick={() => setCurrentFilter(item)}
@@ -80,7 +82,7 @@ export default function Content(props) {
                     <div className="py-28  px-4 text-dark-blue">
                         <div className="container mx-auto">
                             <div className="flex justify-between items-center flex-wrap">
-                                <div className="text-2xl xl:text-3xl font-bold flex items-center my-2">
+                                <div className="text-2xl xl:text-2xl 2xl:text-3xl font-bold flex items-center my-2">
                                     <SlideTop>
                                         Portfolio
                                     </SlideTop>
@@ -100,11 +102,11 @@ export default function Content(props) {
                                                 const ProtfolioList = finalFilteredDataObject[key]
 
                                                 return (<div key={key}>
-                                                    <div className="text-dark-blue text-xl font-bold pb-6 pt-16">
+                                                    <div className="text-dark-blue text-xl xl:text-lg 2xl:text-xl font-bold pb-6 pt-16">
                                                             {key}
                                                     </div>
                                                     <div className="h-1 w-full bg-dark-blue mb-16"></div>
-                                                    <div className="grid grid-cols-1 xl:grid-cols-4  gap-16 xl:gap-16">
+                                                    <div className="grid grid-cols-1 xl:grid-cols-4  gap-16 xl:gap-4 2xl:gap-16">
                                                         {[...ProtfolioList].map((item, index) =>
                                                             <ProtfolioCard key={item?.id} item={item} />)
                                                         }

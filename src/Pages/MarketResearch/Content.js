@@ -39,7 +39,7 @@ export default function Content(props) {
                     <div className="py-28  px-4 text-dark-blue">
                         <div className="container mx-auto">
                             <div className="flex justify-between items-center">
-                                <div className="text-2xl xl:text-3xl font-bold flex items-center my-2">
+                                <div className="text-2xl xl:text-2xl   2xl:text-3xl  font-bold flex items-center my-2">
                                    <SlideTop>
                                     Market researches
                                    </SlideTop>
@@ -51,7 +51,7 @@ export default function Content(props) {
                                     :
                                     <>
                                     <div className="py-16">
-                                        <div className="grid grid-cols-1 xl:grid-cols-4  gap-16 xl:gap-16">
+                                        <div className="grid grid-cols-1 xl:grid-cols-4  gap-16 xl:gap-4 2xl:gap-16">
                                             {[...data].map((item, index) =>
                                                 <ResearchCard
                                                     onClick={() => setPopup({item})}

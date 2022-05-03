@@ -37,7 +37,7 @@ export default function Statuorydocuments(props) {
                     <div className="pt-36 pb-32">
                         <div className="mb-6 text-dark-blue font-bold text-2xl xl:text-3xl pb-16">
                             <SlideLeft>
-                                Statuory Documents
+                                Statuary  Documents
                             </SlideLeft>
                         </div>
                         <SlideBottom>
@@ -59,7 +59,7 @@ export default function Statuorydocuments(props) {
                                     <DownloadDocumentButton
                                         onClick={() => window.open(_regilation_pdf, '_blank', 'noopener,noreferrer')}
                                         className=" w-full xl:w-1/4 mb-7">
-                                        Regilation documents
+                                        Regulation documents
                                     </DownloadDocumentButton>
                                 </div>
                             }

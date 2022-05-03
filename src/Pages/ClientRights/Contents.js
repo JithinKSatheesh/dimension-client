@@ -38,23 +38,23 @@ export default function Contents(props) {
             <div className="client-rights-wrapper-2">
                 <div className="container mx-auto ">
                     <div className="py-36">
-                        <div className="text-dark-blue font-bold text-2xl xl:text-3xl pb-24">
+                        <div className="text-dark-blue font-bold text-2xl xl:text-2xl 2xl:text-3xl  pb-24">
                             <SlideLeft>
                                 <MarkdownView markdown={getClientRights?.client_rights_heading_2} />
                             {/* Դուք կարող եք */}
                             </SlideLeft>
                         </div>
-                        <div className="flex flex-wrap">
-                            <div className="w-full  xl:w-2/3 pb-7 ">
+                        <div className="flex flex-wrap justify-between">
+                            <div className="w-full  xl:w-7/12 pb-7 ">
                                 <div className="flex h-full  flex-col justify-between ">
-                                    <div className="text-sm text-dark-blue max-w-2xl ">
+                                    <div className="text-sm text-dark-blue max-w-2xl xl:max-w-[600px] ">
                                         <SlideBottom>
                                         <MarkdownView markdown={getClientRights?.client_rights_description_2} />
                                         
                                         {/* ներկայացնելու ձեր հետ կնքվող պայմանագրից բխող պահանջները ֆինանսական համակարգի հաշտարարին, որպես «Դայմենշն» ՓԲԸ-ի ֆիզիկական անձ Հաճախորդ: */}
                                         </SlideBottom>
                                     </div>
-                                    <div className='hidden xl:block'>
+                                    <div className='hidden xl:block text-sm '>
                                         <SlideTop>
 
                                         <DownloadDocumentButton 
@@ -64,7 +64,7 @@ export default function Contents(props) {
                                     </div>
                                 </div>
                             </div>
-                            <div className="w-full xl:w-1/3 pb-7">
+                            <div className="w-full xl:w-[400px] 3xl:w-[500px] pb-7">
                                 <div className="text-sm text-dark-blue ">
                                     <SlideBottom>
 
@@ -106,7 +106,7 @@ export default function Contents(props) {
                                     </SlideBottom>
                                 </div>
                               
-                                <div className='block xl:hidden'>
+                                <div className='block xl:hidden text-sm'>
                                     <SlideTop>
 
                                     <DownloadDocumentButton 
@@ -137,7 +137,7 @@ const AddressRow = (props) => {
                     {props?.icon}
                     {/* <IconPerson /> */}
                 </div>
-                <div className='text-sm 2xl:text-base'>
+                <div className='text-sm xl:text-sm 2xl:text-sm 3xl:text-base'>
                     <span className="mr-3">
                         {props?.title}
                     </span>

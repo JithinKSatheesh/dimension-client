@@ -6,6 +6,7 @@ import MarkdownView from 'react-showdown';
 
 // **assets
 import NewsPlaceholder from 'Assets/img/news_sample_1.png'
+import { truncate } from 'Utils/string';
 
 
 export const NewsCard = (props) => {
@@ -36,17 +37,17 @@ export const NewsCard = (props) => {
                         <div className="text-sm pb-5 font-bold">
                             {item?.date}
                         </div>
-                        <div className="text-2xl xl:text-3xl pb-5 font-bold">
+                        <div className="text-2xl xl:text-2xl 2xl:text-3xl pb-5 font-bold">
                             {item?.title}
                         </div>
-                        <p className='h-32 overflow-hidden  text-ellipsis text-sm 2xl:text-base'>
-                            
-                                <MarkdownView
+                        <p className='h-40 xl:h-32 overflow-hidden  text-ellipsis text-sm 2xl:text-sm 3xl:text-base'>
+                                {truncate(item?.description, 150)}
+                                {/* <MarkdownView
                                     markdown={item?.description}
                                     options={{ tables: false, emoji: true }}
-                                />
+                                /> */}
                         </p>
-                        <div className=" text-left xl:text-right text-sm 2xl:text-base">
+                        <div className=" text-left xl:text-right text-sm 2xl:text-sm 3xl:text-base">
                             <DetailsButton to={`/news/${id}`}> Read more </DetailsButton>
                         </div>
                     </div>

@@ -34,12 +34,12 @@ export const ServiceDropdown = (props) => {
 
     return (
         <div style={{top : '95px'}}  className="absolute left-0 w-full normal-case z-30">
-            {/* <motion.div
+            <motion.div
                 className=" bg-dark-blue-grad"
                 initial="exit"
                 animate={props?.isHover ? "enter" : "exit"}
                 variants={subMenuAnimate}
-            > */}
+            >
             {props?.isHover && 
                 <div className="w-full bg-dark-blue-grad">
                     <div className="container  mx-auto">
@@ -48,7 +48,7 @@ export const ServiceDropdown = (props) => {
                                 ServiceMenuList.map(item => 
                                     <ServiceRenderMenuList 
                                         key={item.title} 
-                                        innerClassName="px-14"
+                                        innerClassName="px-14 xl:px-8 2xl:px-14"
                                         item={item} />
                                     )
                             }
@@ -57,7 +57,7 @@ export const ServiceDropdown = (props) => {
                     </div>
                 </div>
                 }
-            {/* </motion.div> */}
+            </motion.div>
         </div>
     );
 };

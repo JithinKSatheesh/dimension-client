@@ -22,7 +22,7 @@ export const Accordion = (props) => {
                         {props?.headerElement}
                     </div>
                     :
-                    <div className=" font-bold text-sm 2xl:text-base">
+                    <div className=" font-bold text-sm xl:text-xs 2xl:text-sm 3xl:text-base">
                         {props?.title}
                     </div>
                 }
@@ -42,7 +42,9 @@ export const Accordion = (props) => {
                         transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
                     >
                         <AccordionContent>
+                            <div className="xl:text-xs 2xl:text-sm 3xl:text-base xl:leading-6 2xl:leading-6">
                             {props.children}
+                            </div>
                         </AccordionContent>
                     </motion.section>
                 )}

@@ -29,7 +29,7 @@ export default function Corporatestructure(props) {
                             {/* Second graph */}
                             {/* --------------------------------------------- */}
                             <div className="mt-20"></div>
-                                <Struct2  className='mx-auto translate-x-12' />
+                            <Struct2  className='mx-auto translate-x-12' />
 
 
                         {/* ------------------------------------- */}
@@ -43,7 +43,7 @@ export default function Corporatestructure(props) {
                         {/* <Struct1Mob /> */}
                         <img src={Struct1Mob} className="max-w-xs" />
                         <div className="mt-20"></div>
-                        <Struct2Mob />
+                        <Struct2Mob className='w-full' />
                     </div>
                 </div>
             </div>

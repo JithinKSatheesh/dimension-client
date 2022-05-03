@@ -27,6 +27,7 @@ import Careers from 'Pages/Careers'
 import Protfolio from 'Pages/Protfolio';
 import Indices from 'Pages/Indices'
 import Search from 'Pages/Search'
+import Tariffs from 'Pages/Tarrifs'
 import NewsInnerPage from 'Pages/News/NewsInnerPage'
 
 import Mainlayout from 'Layout./MainLayout';
@@ -106,6 +107,7 @@ const RoutesConfig = () => {
         <Route path="careers" element={ <Careers/> } />
         <Route path="protfolio" element={ <Protfolio/> } />
         <Route path="indices" element={ <Indices/> } />
+        <Route path="tariffs" element={ <Tariffs/> } />
         <Route path="search" element={ <Search/> } />
 
         <Route path="*" element={ <Notfound/> } />

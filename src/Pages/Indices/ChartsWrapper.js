@@ -34,6 +34,7 @@ export const options = {
   plugins: {
     legend: {
       position: 'top',
+      display : false,
     },
     title: {
       display: false,

@@ -105,8 +105,8 @@ export default function Content(props) {
                 <section>
                     <div className="py-28  px-4 text-dark-blue">
                         <div className="container mx-auto">
-                            <div className="flex justify-between items-center">
-                                <div className="text-2xl xl:text-3xl font-bold flex items-center my-2">
+                            <div className="flex flex-wrap justify-between items-center">
+                                <div className=" text-2xl  xl:text-2xl   2xl:text-3xl  font-bold flex items-center my-2">
                                     <SlideTop>
                                         News
                                     </SlideTop>

@@ -22,13 +22,13 @@ export default function Hero(props) {
             <section>
                 <div className="py-28  px-4 text-white">
                     <div className="container mx-auto">
-                        <div className="text-2xl xl:text-3xl font-bold flex items-center">
+                        <div className="text-2xl xl:text-2xl 2xl:text-3xl font-bold flex items-center">
                        <SlideLeft>
                         Regulations
                        </SlideLeft>
                         </div>
                         <div className="flex flex-wrap pt-8 items-end">
-                            <div className="w-full xl:w-1/2 text-sm mb-16 max-w-lg">
+                            <div className="w-full xl:w-1/2 text-sm xl:text-xs 2xl:text-sm xl:leading-6 2xl:leading-6 mb-16 max-w-lg">
                                 <SlideBottom>
                                     {config?.regulation?.heading_description}
                             {/* Dimension’s vision is to become the leading Armenian independent investment bank with world-class capital intermediation and investment capabilities offered to the best clients in Armenia.  */}

@@ -101,7 +101,7 @@ export const ResearchCard = (props) => {
                 <GetButton 
                     to={props?.to}  
                     onClick={props?.onClick}
-                    className="w-full mx-auto py-2 bg-dark-blue-grad-hover cursor-pointer"> Get&nbsp;it </GetButton>
+                    className="w-full xl:text-sm 3xl:text-base mx-auto py-2 bg-dark-blue-grad-hover cursor-pointer"> Get&nbsp;it </GetButton>
             </div>
         </div>
     )
