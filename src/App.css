@@ -559,3 +559,15 @@
 }
 
 /* ===================== */
+
+.balloon::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 15px;
+  height: 15px;
+  width: 15px;
+  background: inherit;
+  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+
+}

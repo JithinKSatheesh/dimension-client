@@ -47,6 +47,8 @@ import { StateProvider as ProviderAnnualReports } from 'Store/annualReports'
 import { StateProvider as ProviderGraph } from 'Store/Indices'
 import { StateProvider as ProviderConfig } from 'Store/configs'
 
+import './i18n'
+
 function App() {
   return (
     <div className="App">

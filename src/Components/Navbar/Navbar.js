@@ -10,11 +10,17 @@ import { AboutDropdown } from './AboutDropdown';
 import { MobileMenu } from './MobileMenu';
 import { NavLinks } from "./NavLinks";
 
+// **language
+import Changelanguage from 'Components/Hooks/changeLanguage';
+import Outsideclick from 'Components/Hooks/OutsideClick';
+
 
 
 export function Navbar(props) {
 
     const { variant = '', float = false, _floatNav } = props;
+
+   
 
     const [isHover, toggleHover] = useState(false);
     const [open, setOpen] = useState(false);
@@ -35,7 +41,7 @@ export function Navbar(props) {
             <div className={`
                 w-full px-4 pb-5 pt-8 xl:pb-0 xl:pt-0 
                 ${float ? 
-                    `fixed w-full  bg-white z-40 drop-shadow-md  ${_floatNav ? 'translate-y-0' : '-translate-y-28'}` 
+                    `fixed w-full  bg-white z-40 drop-shadow-md  ${_floatNav ? 'translate-y-0' : '-translate-y-44'}` 
                         : ''
                     } 
                 transition-transform duration-1000`}>
@@ -112,8 +118,8 @@ export function Navbar(props) {
                                 variant={variant} to="/contacts">
                                 Contacts
                             </NavLinks> */}
-                            <div className={`lang py-3 self-center cursor-pointer ${variant === 'white' && 'text-white'}`}>
-                                <Lang className='h-5 2xl:w-fit' />
+                            <div  className={`lang py-3 self-center cursor-pointer ${variant === 'white' && 'text-white'}`}>
+                                <LangDropDown />
                             </div>
                         </div>
 
@@ -135,4 +141,36 @@ export function Navbar(props) {
 
         </>
     );
+}
+
+
+const LangDropDown = () => {
+
+    const {changeToArm, changeToEnglish} = Changelanguage()
+    const [open, setOpen] = useState(false)
+
+    const changeLang = (lang) => {
+        if (lang === 'Eng') {
+            changeToEnglish()
+        } else {
+            changeToArm()
+        }
+        setOpen(false)
+    }
+
+    return (
+        <div className="relative">
+            <div className="div" onClick={() => setOpen(!open)}>
+                <Lang className='h-5 2xl:w-fit' />
+            </div>
+            {open &&
+            <Outsideclick onOutsideClick={() => setOpen(false)}>
+            <div className="absolute top-12 -left-3 balloon w-fit backdrop-blur-xl bg-[#006191] text-white font-bold text-xs py-1  rounded-xl">
+                <div onClick={() =>changeLang('Eng')} className=" p-2 bg-menu-blue-light"> English </div>
+                <div onClick={() =>changeLang('Arm') } className=" p-2 bg-menu-blue-light"> Armenian </div>
+            </div>
+            </Outsideclick>
+            }
+        </div>
+    )
 }

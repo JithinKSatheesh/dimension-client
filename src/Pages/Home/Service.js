@@ -18,16 +18,18 @@ export default function Service(props) {
 
     const { getConfigs } = useStoreItem()
 
+    const homePage = getConfigs?.configs?.home_page
+
     const ServiceCard = (props) => {
 
         return (
-            <div className='bg-blue-light rounded-xl p-7 pb-12 hover-border-outline border-2'>
+            <div className='bg-blue-light rounded-xl p-7 pb-12 hover-border-outline border-2 h-full flex flex-col justify-between'>
                 {props?.icon}
                 <div className="py-7 font-semibold text-xl xl:text-lg  2xl:text-xl 3xl:text-2xl text-dark-blue">
                     {props?.title}
                     
                 </div>
-                <div className="xl:h-44 pb-10 text-sm xl:text-xs 2xl:text-sm 3xl:text-base xl:leading-5 2xl:leading-5 text-dark-blue">
+                <div className=" pb-10 text-sm xl:text-xs 2xl:text-sm 3xl:text-base xl:leading-5 2xl:leading-5 text-dark-blue">
                     { props?.descritpion}
                 </div>
                 <DetailsButton to={props?.to}> Details </DetailsButton>
@@ -43,28 +45,29 @@ export default function Service(props) {
          <div className="hero-wrapper-3">
             <div className="container py-32 xl:py-24 mx-auto ">
                 <div className="pb-24 xl:pb-16  text-3xl  xl:text-xl 2xl:text-2xl  3xl:text-3xl text-dark-blue font-semibold ">
-                Our services
+                {/* Our services */}
+                {homePage?.service_title}
                 </div>
                 <div className="grid grid-cols-1 xl:grid-cols-3 xl:grid-flow-col gap-24">
                     <ServiceCard
                         icon={<IconHome  />}
-                        title={<>  Capital Markets <br/> Advisory </>}
-                        descritpion={<MarkdownView markdown={getConfigs?.configs?.service_page_capital_market?.short_desc} />}
+                        title={<MarkdownView markdown={homePage?.service_1_heading} />}
+                        descritpion={<MarkdownView markdown={homePage?.service_1_description} />}
                         to="/services/capital-market"
 
                     />
                     <ServiceCard
                         icon={<IconShield id="112" />}
-                        title={<>  Investment <br/> Securities Services </>}
-                        descritpion={<MarkdownView markdown={getConfigs?.configs?.service_page_investment_service?.short_desc} />}
+                        title={<MarkdownView markdown={homePage?.service_2_heading} />}
+                        descritpion={<MarkdownView markdown={homePage?.service_2_description} />}
                        
                         to="/services/investment-security"
 
                     />
                     <ServiceCard
                         icon={<IconManage />}
-                        title={<> Asset <br/> Management </>}
-                        descritpion={<MarkdownView markdown={getConfigs?.configs?.service_page_asset_management?.short_desc} />}
+                        title={<MarkdownView markdown={homePage?.service_3_heading} />}
+                        descritpion={<MarkdownView markdown={homePage?.service_3_description} />}
                         to="/services/asset-management"
 
                     />
