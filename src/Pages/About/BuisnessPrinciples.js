@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { SlideLeft, SlideRight, JustAppear, SlideBottom} from 'Components/SlideAnimation'
+import { SlideLeft, SlideRight, JustAppear, SlideBottom } from 'Components/SlideAnimation'
 
 
 // ** icons
@@ -8,6 +8,7 @@ import { ReactComponent as QualityAndProfessionalism } from 'Assets/icons/about/
 import { ReactComponent as TeamApproach } from 'Assets/icons/about/team_approach.svg'
 import { ReactComponent as Integrity } from 'Assets/icons/about/Integrity.svg'
 import { ReactComponent as Confidentality } from 'Assets/icons/about/confidentality.svg'
+import { Markdown } from 'react-showdown'
 // import { ReactComponent as IconPeople } from 'Assets/icons/about/people.svg'
 
 export default function Buisnessprinciples(props) {
@@ -15,33 +16,33 @@ export default function Buisnessprinciples(props) {
     const { aboutPageData } = props
 
 
-const _BuisnessPrinciples = [
-    {
-        icon : <QualityAndProfessionalism />,
-        title : aboutPageData?.buisness_principle_1,
-        description : aboutPageData?.buisness_principle_description_1
-    },
-    {
-        icon :  <TeamApproach />,
-        title : aboutPageData?.buisness_principle_2,
-        description : aboutPageData?.buisness_principle_description_2
-    },
-    {
-        icon :  <Confidentality />,
-        title : aboutPageData?.buisness_principle_3,
-        description : aboutPageData?.buisness_principle_description_3
-    },
-    {
-        icon :  <Integrity />,
-        title : aboutPageData?.buisness_principle_4,
-        description : aboutPageData?.buisness_principle_description_4
-    },
-]
+    const _BuisnessPrinciples = [
+        {
+            icon: <QualityAndProfessionalism />,
+            title: aboutPageData?.buisness_principle_1,
+            description: aboutPageData?.buisness_principle_description_1
+        },
+        {
+            icon: <TeamApproach />,
+            title: aboutPageData?.buisness_principle_2,
+            description: aboutPageData?.buisness_principle_description_2
+        },
+        {
+            icon: <Confidentality />,
+            title: aboutPageData?.buisness_principle_3,
+            description: aboutPageData?.buisness_principle_description_3
+        },
+        {
+            icon: <Integrity />,
+            title: aboutPageData?.buisness_principle_4,
+            description: aboutPageData?.buisness_principle_description_4
+        },
+    ]
 
 
     const DataCard = (props) => {
 
-        const {item} = props
+        const { item } = props
 
         return (
             <div >
@@ -55,7 +56,7 @@ const _BuisnessPrinciples = [
                             {item?.title}
                         </div>
                         <div className='text-dark-blue  text-xs xl:text-xs 2xl:text-sm   leading-6 xl:leading-6 2xl:leading-6 '>
-                            {item?.description}
+                           <Markdown markdown={item?.description} />
                         </div>
                     </SlideRight>
                 </div>
@@ -71,7 +72,8 @@ const _BuisnessPrinciples = [
                     <div className="py-36">
                         <div className="mb-6 font-bold text-2xl xl:text-2xl 2xl:text-3xl pb-24 text-dark-blue">
                             <SlideLeft>
-                            Our Business Principles
+                                {/* Our Business Principles */}
+                                {aboutPageData?.buisness_principle_title}
                             </SlideLeft>
                         </div>
                         <div className="flex flex-wrap">

@@ -7,11 +7,15 @@ import Usdindex from './UsdIndex'
 import useStoreItem from 'Store/hooks/getStoreItems'
 import { formatDate } from 'Utils/time'
 
+import { useTranslation } from 'react-i18next';
+
 export default function Container(props) {
 
     const [tab, setTab] = useState(1)
 
     const { getConfigs} = useStoreItem()
+
+    const {t} = useTranslation()
 
     const _date_amd = getConfigs?.configs?.indices?.amd?.indices_amd_table?.updatedAt
     const _date_usd = getConfigs?.configs?.indices?.usd?.indices_usd_table?.updatedAt
@@ -43,10 +47,10 @@ export default function Container(props) {
                     onClick={() => setTab(props?.id)}
                 >
                     <div className="text-sm">
-                        {props?.label}
+                        {t(props?.label)}
                     </div>
                     <div className="font-bold">
-                        {props?.desc}
+                        {t(props?.desc)}
                     </div>
                 </div>
             )

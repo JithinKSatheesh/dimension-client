@@ -11,6 +11,8 @@ export default function Contents(props) {
     const {getServices, servicePageData} = props
     const [expanded, setExpanded] = useState(false)
 
+    {console.log(servicePageData)}
+
 
     return (
         <>
@@ -55,7 +57,7 @@ export default function Contents(props) {
 
                     </div>
                 </div>
-                <Otherservices getServices={getServices} />
+                <Otherservices servicePageData={servicePageData} />
             </div>
         </>
     )

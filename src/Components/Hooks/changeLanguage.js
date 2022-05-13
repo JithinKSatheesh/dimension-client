@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import { useTranslation } from 'react-i18next';
 
 // **store
@@ -25,6 +25,10 @@ export default function Changelanguage(props) {
         })
 
     }
+
+    useEffect(() => {
+        changeToArm()
+    }, [])
 
     return {changeToEnglish, changeToArm}
 }

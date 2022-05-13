@@ -132,7 +132,7 @@ export default function Contents(props) {
 
                     </div>
                 </div>
-                <Otherservices getServices={getServices} />
+                <Otherservices servicePageData={servicePageData} />
             </div>
         </>
     )

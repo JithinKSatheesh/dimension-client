@@ -24,6 +24,7 @@ export default function Protfolio(props) {
     const { getConfigs } = useStoreItem()
     // const { initProtfolio } = initStoreItem()
 
+    const homePage = getConfigs?.configs?.home_page
     const _data = getConfigs?.configs?.home_page?.portfolios ?? []
     const data = _data?.slice(0, 4)
 
@@ -39,7 +40,7 @@ export default function Protfolio(props) {
                 <div className="container py-32 mx-auto ">
                     <div className="flex justify-between items-center items-center pb-24 ">
                         <div className="text-3xl xl:text-xl 2xl:text-2xl  3xl:text-3xl   font-semibold text-blue">
-                            Portfolio
+                            {homePage?.protfolio_title}
                         </div>
                         <div className="text-base xl:text-sm text-blue flex items-center cursor-pointer">
                             <Link to='/protfolio'>

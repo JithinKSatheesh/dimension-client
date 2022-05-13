@@ -3,7 +3,7 @@ import React from 'react'
 import Navbar from 'Components/Navbar'
 import { DownloadDocumentButton } from 'Components/Buttons'
 import { SlideLeft, SlideRight, JustAppear, SlideTop, SlideBottom} from 'Components/SlideAnimation'
-
+import { useTranslation } from 'react-i18next';
 
 // ** assets
 // import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
@@ -13,7 +13,7 @@ import MarkdownView from 'react-showdown'
 export default function Hero(props) {
     
     const { getServices, servicePageData } = props
-   
+    const { t } = useTranslation()
     const data = getServices?.services ?? []
 
     const pdf_url = servicePageData?.regilation_documents?.url ?? ''
@@ -34,7 +34,7 @@ export default function Hero(props) {
                         <IconManage className='mr-6' /> 
                             </SlideLeft>
                             <SlideRight>
-                         Asset Management
+                                <MarkdownView markdown={servicePageData?.page_heading} />
                             </SlideRight>
                         </div>
                         <div className="flex flex-wrap pt-16 items-end">
@@ -50,7 +50,7 @@ export default function Hero(props) {
                                 <DownloadDocumentButton 
                                     onClick={() => window.open(_regilation_documents_asset_management_pdf, '_blank', 'noopener,noreferrer')}
                                     className="w-fit pl-5 pr-14">
-                                    Regilation documents
+                                    {t("Regulation documents")}
                                 </DownloadDocumentButton>
                                 </SlideTop>
                             </div>

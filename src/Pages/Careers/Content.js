@@ -27,6 +27,7 @@ export default function Content(props) {
     // const data = getCareers?.careers ?? []
     const { getConfigs } = useStoreItem()
     const data = getConfigs?.configs?.careers ?? []
+    const careerPage = getConfigs?.configs?.careersPage ?? {}
 
 
     // console.log(getCareers)
@@ -42,14 +43,19 @@ export default function Content(props) {
         <>
             <div className=" faq-wrapper-2">
                 <div className="container mx-auto ">
-                    <div className="py-32">
-                        <div className="flex justify-between items-center pb-16">
-                            <div className="text-2xl xl:text-3xl font-bold flex items-center my-2 text-dark-blue">
-                                <SlideLeft>
-                                    Careers
-                                </SlideLeft>
+                    <div className="py-24">
+                        <div className="flex justify-between items-center ">
+                            <div className="text-2xl xl:text-3xl font-bold flex items-center my-2 text-dark-blue pb-5">
+                                <SlideTop>
+                                    {careerPage?.heading}
+                                </SlideTop>
                             </div>
 
+                        </div>
+                        <div className="pb-16 text-dark-blue text-sm xl:text-xs 2xl:text-sm xl:leading-6 2xl:leading-7">
+                            <JustAppear>
+                                {careerPage?.description}
+                            </JustAppear>
                         </div>
                         {data?.length <= 0 ?
                             <div className='flex justify-center py-16'> <ThreeDots color='#206291' />  </div>

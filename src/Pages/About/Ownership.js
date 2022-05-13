@@ -5,6 +5,7 @@ import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Compon
 import { ThreeDots } from 'react-loader-spinner'
 
 import { ReactComponent as IconDownload } from 'Assets/icons/download.svg'
+import { Markdown } from 'react-showdown'
 
 export default function Ownership(props) {
 
@@ -56,14 +57,15 @@ export default function Ownership(props) {
                     <div className="py-36">
                         <div className="mb-6 text-white font-bold text-2xl xl:text-2xl 2xl:text-3xl pb-24">
                             <SlideLeft>
-                                Ownership
+                                {aboutPageData?.ownership_title}
                             </SlideLeft>
                         </div>
                         <div className="flex flex-wrap">
                             <div className="w-full xl:w-1/3">
                                 <div className="max-w-lg text-white xl:text-sm 2xl:text-base leading-8 xl:leading-7 2xl:leading-8 mb-28">
                                     <SlideBottom>
-                                        {aboutPageData?.ownership_description}
+                                        <Markdown markdown={aboutPageData?.ownership_description} />
+                                        
                                         {/* Ընկերությունը առաջնորդվելով ՀՀ կենտրոնական բանկի ԿԱՆՈՆԱԿԱՐԳ 8/03 «Ֆինանսական կազմակերպությունների և ֆինանսական խմբերի կողմից տեղեկությունների հրապարակումը» 15-րդ հոդվածի պահանջները, սույն բաժնում առկա է «Դայմենշն» ՓԲԸ-ի քաղաքականությունը արտահայտող հայտարարություն այն մասին, որ չի հրապարակում ֆինանսական կազմակերպության վերաբերյալ նշված տեղեկատվությունը և չհրապարակման պատճառները։ */}
                                     </SlideBottom>
                                 </div>
@@ -71,7 +73,8 @@ export default function Ownership(props) {
                                     <Button1
                                         className="hidden xl:flex"
                                         file={_central_bank_regulation_pdf}
-                                        label={"Հայտարարություն ՀՀ կենտրոնական բանկի կանոնակարգ 8/03 15-րդ հոդվածի պահանջների մասին"}
+                                        label={aboutPageData?.ownership_central_bank_regulation_pdf_title}
+                                        // label={"Հայտարարություն ՀՀ կենտրոնական բանկի կանոնակարգ 8/03 15-րդ հոդվածի պահանջների մասին"}
                                     />
 
                                 </SlideTop>
@@ -104,7 +107,8 @@ export default function Ownership(props) {
                                     onClick={() => window.open(_central_bank_regulation_pdf, '_blank', 'noopener,noreferrer')}
                                     className="btn-download-darkBlue  flex mx-auto xl:hidden items-center justify-center max-w-lg border-2  p-6  mt-16 rounded-xl text-sm cursor-pointer ">
                                     <div className='mr-7'><IconDownload /></div>
-                                    Հայտարարություն ՀՀ կենտրոնական բանկի կանոնակարգ 8/03 15-րդ հոդվածի պահանջների մասին
+                                    {aboutPageData?.ownership_central_bank_regulation_pdf_title}
+                                    {/* Հայտարարություն ՀՀ կենտրոնական բանկի կանոնակարգ 8/03 15-րդ հոդվածի պահանջների մասին */}
                                 </div>
                             </div>
                         </div>

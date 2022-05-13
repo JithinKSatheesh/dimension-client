@@ -15,7 +15,7 @@ import { RenderPartners, RenderPartnerExpanded } from './RenderPartners'
 
 export default function Partners(props) {
 
-    const { getAboutPage, partnersData } = props
+    const { aboutPageData, partnersData } = props
 
     const partners = partnersData || []
     
@@ -28,7 +28,7 @@ export default function Partners(props) {
                     <div className="py-36">
                         <div className="mb-6 text-white font-bold text-2xl xl:text-2xl 2xl:text-3xl pb-16">
                             <SlideLeft>
-                                Our partners
+                                {aboutPageData?.partner_title}
                             </SlideLeft>
                         </div>
                         {partners?.length <= 0 ?

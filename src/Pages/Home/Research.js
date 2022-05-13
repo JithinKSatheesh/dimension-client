@@ -23,6 +23,7 @@ export default function Research(props) {
     const { getConfigs } = useStoreItem()
     // const { initMarketResearch } = initStoreItem()
 
+    const homePage = getConfigs?.configs?.home_page
     const _data = getConfigs?.configs?.home_page?.market_researches ?? []
     const data = _data?.slice(0, 4)
 
@@ -38,8 +39,8 @@ export default function Research(props) {
             <div className=" hero-wrapper-8">
                 <div className="container py-32 mx-auto  ">
                     <div className="flex justify-between items-center pb-24 ">
-                        <div className="text-3xl  font-semibold text-white">
-                            Market researches
+                        <div className="text-3xl  xl:text-xl 2xl:text-2xl  3xl:text-3xl   font-semibold text-white">
+                            {homePage?.market_research_title}
                         </div>
                         <div className="text-base text-white flex items-center cursor-pointer">
                             <Link to="/market-research">

@@ -58,6 +58,7 @@ export default function About(props) {
     const teamData = getConfigs?.configs?.team
     const partnersData = getConfigs?.configs?.partners
     const ownershipData = getConfigs?.configs?.ownership
+    const statuatoryDocs = getConfigs?.configs?.statuatoryDocs
     
     // console.log(partnersData)
 
@@ -70,11 +71,11 @@ export default function About(props) {
                 <Hero aboutPageData={aboutPageData} />
                 <Buisnessprinciples aboutPageData={aboutPageData} />
                 <Ownership ownershipData={ownershipData} aboutPageData={aboutPageData}  />
-                <Team teamData={teamData} />
-                <Partners getAboutPage={getAboutPage} partnersData={partnersData} />
+                <Team teamData={teamData} aboutPageData={aboutPageData} />
+                <Partners aboutPageData={aboutPageData} partnersData={partnersData} />
                 <Mission getHomePageData={getConfigs?.configs?.home_page} />
                 <Corporatestructure />
-                <Statuorydocuments getAboutPage={getAboutPage} aboutPageData={aboutPageData}  />
+                <Statuorydocuments statuatoryDocs={statuatoryDocs} aboutPageData={aboutPageData}  />
                 {/* <Footer /> */}
             </div>
         </>

@@ -27,6 +27,7 @@ export default function Content(props) {
     // useEffect(() => initAllConfigs(), [])
     
     const data = getConfigs?.configs?.market_research ?? []
+    const homePage = getConfigs?.configs?.home_page
     
     console.log(data)
     // const data = getMarketResearch?.marketResearch ?? []
@@ -41,7 +42,7 @@ export default function Content(props) {
                             <div className="flex justify-between items-center">
                                 <div className="text-2xl xl:text-2xl   2xl:text-3xl  font-bold flex items-center my-2">
                                    <SlideTop>
-                                    Market researches
+                                    {homePage?.market_research_title}
                                    </SlideTop>
                                 </div>
 

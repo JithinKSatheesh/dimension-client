@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ChartsWrapper from './ChartsWrapper';
 
+import { useTranslation } from 'react-i18next';
+
 export const ChartLayout = (props) => {
 
     const {
@@ -12,6 +14,8 @@ export const ChartLayout = (props) => {
         disclaimer
 
     } = props;
+
+    const {t} = useTranslation()
 
     const [showfullData, setShowfullData] = useState(true)
 
@@ -70,7 +74,7 @@ export const ChartLayout = (props) => {
                     </div>
                     <div>
                         <div className="text-sm py-5">
-                            Since Inception Total Return
+                            {t("Since Inception Total Return")}
                         </div>
                         <div className="text-4xl text-blue font-bold">
                             {since_inception_total_return}
@@ -81,10 +85,12 @@ export const ChartLayout = (props) => {
                     <div className='flex cursor-pointer mt-5'>
                         <SmallButton
                             onClick={() => setShowfullData(true)}
-                            label="All" active={showfullData} />
+                            label={t("All")} 
+                            active={showfullData} />
                         <SmallButton
                             onClick={() => setShowfullData(false)}
-                            label="1 Year" active={!showfullData} />
+                            label={t("1 Year")}
+                            active={!showfullData} />
                     </div>
 
                 </div>

@@ -80,8 +80,8 @@ export const PopUpcontainerBareBone = (props) => {
             {props?.open ?
                 <div
                     className="fixed left-0 top-0 w-full h-full bg-black/80 z-50 overflow-scroll ">
-                    <div className="flex justify-center h-screen items-center">
-                        <div style={{height : '550px'}} className="absolute  rounded-xl w-fit overflow-auto ">
+                    <div className="flex justify-center h-screen py-14">
+                        <div style={{height : '550px'}} className="mb-24  rounded-xl w-fit  pb-16">
                             <Outsideclick onOutsideClick={props.onClose}>
                                 <div>
                                     {props?.children}

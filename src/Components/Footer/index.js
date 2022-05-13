@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
 
 // ** assets
 import { ReactComponent as Logo} from 'Assets/icons/logo_white.svg'
@@ -22,6 +23,7 @@ import {  RenderAddressData } from './AddressData'
 
 import { PdfDownloadButton } from 'Components/Buttons'
 import { SearchBox } from './SearchBox'
+
 
 
 export const socialMedia = [
@@ -65,7 +67,7 @@ const _aboutLinks = [
     },
     {
         link : '/about#statuory-documents',
-        label : 'Statuory documents'
+        label : 'Statutory documents'
     },
 ]
 
@@ -74,24 +76,24 @@ const _brands = [Brand_1, Brand_2, Brand_3, Brand_4]
 const _researchCoverageLinks = [
     {
         link : '/market-research',
-        label : 'Research coverage'
+        label : 'RESEARCH COVERAGE'
     },
     {
         link : '/client-rights',
-        label : 'Client rights'
+        label : 'CLIENT RIGHTS'
     },
     {
         link : '/reports',
-        label : 'Reports'
+        label : 'REPORTS'
     },
     {
         link : '/regulations',
-        label : 'Regultions'
+        label : 'REGULATIONS'
     },
     
     {
         link : '/news',
-        label : 'News'
+        label : 'NEWS'
     },
     {
         link : '/faq',
@@ -99,14 +101,14 @@ const _researchCoverageLinks = [
     },
     {
         link : '/careers',
-        label : 'Careers'
+        label : 'CAREERS'
     },
 ]
 
 const _serviceLinks = [
     {
         link : '/services/capital-market',
-        label : 'Capital Markets Advisory '
+        label : 'Capital Markets Advisory'
     },
     {
         link : '/services/investment-security',
@@ -116,6 +118,10 @@ const _serviceLinks = [
         link : '/services/asset-management',
         label : 'Asset Management'
     },
+    {
+        link : 'tariffs',
+        label : 'Tarrifs'
+    },
     
 ]
 
@@ -123,6 +129,8 @@ const _serviceLinks = [
 export default function Index(props) {
 
     const {footerData} = props
+
+    const {t} = useTranslation()
 
     const _tarrif_url = footerData?.tarrif?.url
     const tarrif_url =  _tarrif_url ? `${process.env.REACT_APP_API_URL}${_tarrif_url}` : '';
@@ -168,23 +176,23 @@ export default function Index(props) {
                 <div className="mt-28 mb-32">
                     <div className="grid grid-cols-1 xl:grid-cols-4 gap-8 text-center xl:text-left lg:text-xs xl:text-[11px] 2xl:text-xs 3xl:text-base">
                         <div className=' text-white '>
-                            <div className="font-semibold mb-4"> About us </div>
+                            <div className="font-semibold mb-4"> {t("About us")} </div>
                             {_aboutLinks.map(item => 
                                 <div key={item.label} className='mb-4'>
-                                    <Link to={item.link} > {item.label} </Link>
+                                    <Link to={item.link} > {t(item.label)} </Link>
                                 </div>
                             )}
                             
                         </div>
                         <div className=' text-white'>
-                            <div className="font-semibold mb-4"> Services</div>
+                            <div className="font-semibold mb-4"> {t("Services")}</div>
                             {_serviceLinks.map(item => 
                                 <div key={item.label} className='mb-4'>
-                                    <Link to={item.link} > {item.label} </Link>
+                                    <Link to={item.link} > {t(item.label)} </Link>
                                 </div>
                             )}
                             
-                            <div className='mb-4 mt-4 w-32 mx-auto xl:mx-0'>
+                            {/* <div className='mb-4 mt-4 w-32 mx-auto xl:mx-0'>
                                 <Link to="tariffs">
                                     <PdfDownloadButton 
                                         iconWidth={20} 
@@ -194,18 +202,18 @@ export default function Index(props) {
                                         onClick={() => {}}
                                         className="h-10 mx-auto" />
                                 </Link>
-                            </div>
+                            </div> */}
 
                         </div>
                         <div className=' text-white'>
                             {_researchCoverageLinks.map(item =>
                                 <div key={item.label} className='mb-4 font-bold uppercase'>
-                                    <Link to={item.link} > {item.label} </Link>
+                                    <Link to={item.link} > {t(item.label)} </Link>
                                 </div>
                             )}
                         </div>
                         <div className=' text-white'>
-                            <div className="font-semibold mb-4"> Contact us </div>
+                            <div className="font-semibold mb-4"> {t("Contact us")} </div>
                                 <RenderAddressData item={AddressData} />
                             <div className="mt-16 flex justify-center xl:justify-start">
                                 {socialMedia.map(link => 

@@ -5,6 +5,7 @@ import AboutImage1 from 'Assets/img/about_hero_1.png'
 import AboutImage2 from 'Assets/img/about_hero_2.png'
 
 import { SlideLeft, SlideRight, JustAppear, SlideBottom} from 'Components/SlideAnimation'
+import { Markdown } from 'react-showdown'
 
 
 // ** Store
@@ -24,13 +25,15 @@ export default function Hero(props) {
                         <div className="container mx-auto">
                             <div className="text-2xl xl:text-2xl 2xl:text-3xl font-bold">
                                 <SlideLeft>
-                                About Dimension
+                                {/* About Dimension */}
+                                {aboutPageData?.about_page_title}
                                 </SlideLeft>
                             </div>
                             <div className="flex flex-wrap pt-24">
                                 <div className="w-full xl:w-1/2 text-sm xl:text-xs 2xl:text-sm xl:leading-6 2xl:leading-7 mb-16 xl:pr-8">
                                     <SlideBottom>
-                                    <div dangerouslySetInnerHTML={{__html : aboutPageData?.hero_description_1}}></div>
+                                    <Markdown markdown={ aboutPageData?.hero_description_1} />
+                                    {/* <div dangerouslySetInnerHTML={{__html : aboutPageData?.hero_description_1}}></div> */}
                                     
 
                                     {/* Dimension CJSC was founded in 2018. Dimension Investment Company was registered and licensed by the Central Bank of Armenia on September 28, 2018.
@@ -55,13 +58,15 @@ export default function Hero(props) {
                             <div className="flex flex-wrap">
                                 <div className="w-full xl:w-1/2 text-sm xl:text-xs 2xl:text-sm xl:leading-6 2xl:leading-7 mb-16 order-1 xl:order-2 xl:pl-8">
                                     <SlideBottom>
-                                    <div dangerouslySetInnerHTML={{__html : aboutPageData?.hero_description_2}}></div>
+                                    <Markdown markdown={ aboutPageData?.hero_description_2} />
+                                    {/* <div dangerouslySetInnerHTML={{__html : aboutPageData?.hero_description_2}}></div> */}
                                     {/* Founded in 2018 and with capabilities spanning in Investment Securities Services, Capital Markets Advisory, and Investment Management & Research, Dimension strives to put clients first by being their most reliable, insightful, and effective investment services partner in Armenia, while maintaining the firm's high integrity. Dimension’s capabilities are fortified by its independence and conflicts of interest-free status, multi-perspective and client-centric culture, professional team, diverse & highly engaged shareholders, and global network, capabilities, and mindset.
                                     <br /><br />
                                     The principle of the company is to provide high quality of services and to show an individual approach to each partner and customer.
                                     <br /><br /> */}
                                     <div className="font-bold">
-                                    <div dangerouslySetInnerHTML={{__html : aboutPageData?.hero_description_awards}}></div>
+                                    <Markdown markdown={ aboutPageData?.hero_description_awards} />
+                                    {/* <div dangerouslySetInnerHTML={{__html : aboutPageData?.hero_description_awards}}></div> */}
                                         {/* Dimension Investment Company received the award of best account operator by the Armenia Securities Exchange and the Central Depository within the framework of the annual AMX Awards:
                                         <br/>
                                             - In the category of best account operator in 2020

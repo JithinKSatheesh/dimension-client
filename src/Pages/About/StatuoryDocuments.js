@@ -11,21 +11,26 @@ import { isEmpty } from 'Utils/string'
 
 import { UpdateStatus } from 'Components/UpdateStatus'
 
+import { useTranslation } from 'react-i18next';
+
 export default function Statuorydocuments(props) {
 
-    const { getAboutPage, aboutPageData } = props
+    const {  aboutPageData, statuatoryDocs } = props
+    
+    const { t } = useTranslation()
 
-    const data = aboutPageData ?? {}
+    // const data = aboutPageData ?? {}
+    const data = statuatoryDocs ?? {}
     const _date = aboutPageData?.updatedAt
 
-    const license_pdf = data?.license_pdf?.url ?? ''
-    const _license_pdf = license_pdf ? `${process.env.REACT_APP_API_URL}${license_pdf}` : ''
+    // const license_pdf = data?.license_pdf?.url ?? ''
+    // const _license_pdf = license_pdf ? `${process.env.REACT_APP_API_URL}${license_pdf}` : ''
 
-    const regilation_pdf = data?.regilation_pdf?.url ?? ''
-    const _regilation_pdf = regilation_pdf ? `${process.env.REACT_APP_API_URL}${regilation_pdf}` : ''
+    // const regilation_pdf = data?.regilation_pdf?.url ?? ''
+    // const _regilation_pdf = regilation_pdf ? `${process.env.REACT_APP_API_URL}${regilation_pdf}` : ''
 
-    const charter_pdf = data?.charter_pdf?.url ?? ''
-    const _charter_pdf = charter_pdf ? `${process.env.REACT_APP_API_URL}${charter_pdf}` : ''
+    // const charter_pdf = data?.charter_pdf?.url ?? ''
+    // const _charter_pdf = charter_pdf ? `${process.env.REACT_APP_API_URL}${charter_pdf}` : ''
 
 
 
@@ -37,30 +42,45 @@ export default function Statuorydocuments(props) {
                     <div className="pt-36 pb-32">
                         <div className="mb-6 text-dark-blue font-bold text-2xl xl:text-3xl pb-16">
                             <SlideLeft>
-                                Statuary  Documents
+                                {aboutPageData?.statutory_documents_title}
                             </SlideLeft>
                         </div>
                         <SlideBottom>
-                            {isEmpty(data) ?
+                            {data?.length <= 0 ?
                                 <div className=' flex justify-center'> <ThreeDots color='#206291' />  </div>
                                 :
-                                <div className="flex flex-wrap">
+                                <div className="flex flex-wrap xl:text-xs 2xl:text-sm 3xl:text-base">
+                                    {
+                                        data.map(item => {
 
-                                    <DownloadDocumentButton
+                                            const pdf = item?.pdf?.url ?? ''
+                                            const _pdf = pdf ? `${process.env.REACT_APP_API_URL}${pdf}` : ''
+
+                                            return (
+                                                <DownloadDocumentButton
+                                                    onClick={() => window.open(_pdf, '_blank', 'noopener,noreferrer')}
+                                                    className="xl:mr-10 w-full xl:w-1/4 mb-7">
+                                                    {item?.label}
+                                                </DownloadDocumentButton>
+                                            )
+                                        })
+                                    }
+
+                                    {/* <DownloadDocumentButton
                                         onClick={() => window.open(_license_pdf, '_blank', 'noopener,noreferrer')}
                                         className="xl:mr-10 w-full xl:w-1/4 mb-7">
-                                        License
+                                         {t("License")}
                                     </DownloadDocumentButton>
                                     <DownloadDocumentButton
                                         onClick={() => window.open(_charter_pdf, '_blank', 'noopener,noreferrer')}
                                         className="xl:mr-10 w-full xl:w-1/4 mb-7">
-                                        Charter
+                                         {t("Charter")}
                                     </DownloadDocumentButton>
                                     <DownloadDocumentButton
                                         onClick={() => window.open(_regilation_pdf, '_blank', 'noopener,noreferrer')}
                                         className=" w-full xl:w-1/4 mb-7">
-                                        Regulation documents
-                                    </DownloadDocumentButton>
+                                        {t("Regulation documents")}
+                                    </DownloadDocumentButton> */}
                                 </div>
                             }
                         </SlideBottom>

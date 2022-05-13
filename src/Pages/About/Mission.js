@@ -16,7 +16,7 @@ export default function Mission(props) {
                         <div className="w-full xl:w-1/2 mb-14">
                             <div className="pb-7 text-2xl 2xl:text-3xl text-dark-blue font-semibold">
                                 <SlideTop>
-                                    Mission
+                                    {getHomePageData?.mission_title}
                                 </SlideTop>
                             </div>
                             <div className="max-w-lg  xl:max-w-sm  3xl:max-w-lg text-dark-blue text-sm xl:text-xs 2xl:text-sm 3xl:text-base leading-7 xl:leading-7 2xl:leading-7 3xl:leading-8">
@@ -29,7 +29,7 @@ export default function Mission(props) {
                         <div className="w-full  xl:w-1/2 mb-14">
                             <div className="pb-7 text-2xl 2xl:text-3xl text-dark-blue font-semibold">
                                 <SlideTop>
-                                    Vision
+                                {getHomePageData?.vision_title}
                                 </SlideTop>
 
                             </div>

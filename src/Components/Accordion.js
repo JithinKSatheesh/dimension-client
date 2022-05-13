@@ -26,7 +26,9 @@ export const Accordion = (props) => {
                         {props?.title}
                     </div>
                 }
-                <IconDown className={`${isOpen && 'rotate-180'}`} />
+                <div>
+                    <IconDown className={`${isOpen && 'rotate-180'}`} />
+                </div>
             </div>
             <AnimatePresence initial={false}>
                 {isOpen && (

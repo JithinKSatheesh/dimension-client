@@ -13,11 +13,12 @@ import initStoreItem from 'Store/hooks/initStoreItems'
 
 export default function Team(props) {
 
-    const {teamData} = props
+    const {teamData, aboutPageData} = props
     // const { teamData } = useStoreItem()
     // const { initTeam } = initStoreItem()
 
     // const _data = getTeam?.team ?? []
+    
     const _data = teamData ?? []
 
     // console.log(teamData)
@@ -61,7 +62,7 @@ export default function Team(props) {
                             <div className=" w-full xl:w-1/3">
                                 <div className="text-2xl xl:text-2xl 2l:text-3xl text-center xl:text-left mb-16 xl:mb-0 font-bold text-dark-blue">
                                     <SlideLeft>
-                                    Team
+                                    {aboutPageData?.team_title}
                                     </SlideLeft>
                                 </div>
                             </div>

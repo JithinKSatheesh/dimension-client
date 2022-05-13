@@ -3,6 +3,7 @@ import { SlideBottom } from 'Components/SlideAnimation';
 
 import { ReactComponent as IconLocation } from 'Assets/icons/location.svg';
 import { ReactComponent as Arrow } from 'Assets/icons/right_arrow.svg';
+import { Markdown } from 'react-showdown';
 
 export const RenderPartners = (props) => {
 
@@ -54,8 +55,9 @@ const ImageSection = ({ _image }) => {
 const AddressSection = ({ item, onClick, btnLabel }) => {
     return (
         <div className="flex justify-between items-center mt-10">
-            <div className="text-sm flex items-center">
-                <IconLocation className='mr-4' />{item?.address}
+            <div className="text-sm xl:text-xs 3xl:text-sm flex items-center">
+                <IconLocation className='mr-4' />
+                {item?.address}
             </div>
             {/* {item?.website} */}
             {/* <a href={item?.website} target="_blank"> */}
@@ -72,8 +74,9 @@ const AddressSection = ({ item, onClick, btnLabel }) => {
 
 const DescriptionSection = ({ item }) => {
     return (
-        <div className="text-dark-blue mt-10">
-            {item?.description}
+        <div className="text-dark-blue mt-10 text-sm overflow-scroll">
+            <Markdown markdown={item?.description} />
+            
             {/* </a> */}
         </div>
     )

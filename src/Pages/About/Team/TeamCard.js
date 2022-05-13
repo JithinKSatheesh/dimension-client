@@ -6,6 +6,7 @@ import { ReactComponent as IconLinkedin } from 'Assets/icons/linkedin_small.svg'
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop} from 'Components/SlideAnimation'
 
 import { PopUpcontainer2 } from 'Components/PopUpcontainer'
+import { Markdown } from 'react-showdown';
 
 
 export const TeamCard = (props) => {
@@ -38,7 +39,7 @@ export const TeamCard = (props) => {
             {/* <div className="h-72  bg-blue-light rounded-t-xl relative overflow-none">
                 <img src={_imageURL} alt="" className='mx-auto   w-full absolute bottom-0' />
             </div> */}
-            <div className="p-7  bg-dark-blue-grad rounded-b-xl text-white">
+            <div className="p-7 flex flex-col justify-between xl:h-full bg-dark-blue-grad rounded-b-xl text-white bg-red-500 xl:max-h-56">
                 <div className="text-xl xl:text-lg 2xl:text-xl font-bold pb-3">
                     {item?.full_name}
                 </div>
@@ -76,13 +77,14 @@ export const TeamCard = (props) => {
                                 Type of Qualification
                             </div>
                             <div className="text-xs pb-2">
-                                {item?.type_of_qualification}
+                                <Markdown markdown={item?.type_of_qualification} />
+                                
                             </div>
                             <div className=" text-sm font-bold ">
                                 Qualification details
                             </div>
                             <div className="text-xs pb-2">
-                                {item?.qualification_details}
+                            <Markdown markdown={item?.qualification_details} />
                             </div>
                         </div>
                     </div>
@@ -96,7 +98,8 @@ export const TeamCard = (props) => {
                 </div>
                 <div className="w-full lg:w-80 text-white text-xs leading-5 pl-3">
                     <div>
-                        {item?.description}
+                        <Markdown markdown={item?.description} />
+                        
                     </div>
                 </div>
             </div>

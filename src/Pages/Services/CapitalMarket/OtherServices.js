@@ -14,10 +14,10 @@ import { ServiceDetailsButton } from '../ServiceDetailsButton'
 
 export default function Otherservices(props) {
 
-    const {getServices} = props
+    const {servicePageData} = props
 
-    const _date = getServices?.services?.attributes?.updatedAt
-    
+    // const _date = getServices?.services?.attributes?.updatedAt
+    // console.log(servicePageData)
 
     return (
         <>
@@ -26,7 +26,8 @@ export default function Otherservices(props) {
                     <div className="pb-36">
                         <div className="mb-6 text-dark-blue font-bold text-2xl xl:text-3xl pb-24">
                            <SlideLeft>
-                            Other services
+                            {servicePageData?.other_service_heading}
+                            {/* Other services */}
                            </SlideLeft>
                         </div>
                         <div className="grid grid-cols-1 xl:grid-cols-2 gap-16">
@@ -35,7 +36,7 @@ export default function Otherservices(props) {
 
                                     <ServiceDetailsButton
                                         icon={<IconShield className='mr-4' />}
-                                        title={"Investment Securities Services"}
+                                        title={servicePageData?.other_service_investment_security_service}
                                         onClick={() => { }}
                                         />
                                     </SlideBottom>
@@ -45,7 +46,7 @@ export default function Otherservices(props) {
 
                                     <ServiceDetailsButton
                                         icon={<IconManage className='mr-4' />}
-                                        title={"Asset Management"}
+                                        title={servicePageData?.other_service_asset_management}
                                         onClick={() => {}}
                                         />
                                     </SlideBottom>

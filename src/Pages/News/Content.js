@@ -112,7 +112,7 @@ export default function Content(props) {
                                     </SlideTop>
                                 </div>
                                 <div className='flex '>
-                                   <RenderFilter />
+                                   {/* <RenderFilter /> */}
 
                                 </div>
                             </div>

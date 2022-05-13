@@ -23,6 +23,7 @@ export default function News(props) {
     const { getConfigs } = useStoreItem()
     const { initArticles } = initStoreItem()
 
+    const homePage = getConfigs?.configs?.home_page
     const _data = getConfigs?.configs?.home_page?.news ?? []
     const data = _data?.slice(0, 4)
     // const _date = getConfigs?.configs?.home_page?.news?.[0]?.updatedAt
@@ -36,7 +37,7 @@ export default function News(props) {
             <div className="container py-32  xl:py-24 2xl:py-32 mx-auto  ">
                 <div className="flex justify-between items-center pb-24 xl:pb-16 2xl:pb-24">
                     <div className="text-3xl xl:text-xl 2xl:text-2xl  3xl:text-3xl  font-semibold text-white">
-                        News
+                        {homePage?.news_title}
                     </div>
                         <Link to="/news">
                     <div className="text-base text-white flex items-center cursor-pointer">
