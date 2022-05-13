@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-
+import { useTranslation } from 'react-i18next'
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
 
@@ -14,6 +14,7 @@ import useStoreItem from 'Store/hooks/getStoreItems'
 export default function Annualreport(props) {
 
     // const { getAnnualReports } = useStoreItem()
+    const {t} = useTranslation()
     const { getConfigs } = useStoreItem()
     // const { initAnnualReports } = initStoreItem()
 
@@ -31,7 +32,7 @@ export default function Annualreport(props) {
                     <div className="py-36">
                         <div className="text-dark-blue font-bold text-2xl xl:text-2xl 2xl:text-3xl pb-24">
                             <SlideLeft>
-                                Annual reports
+                                {t("Annual reports")}
                             </SlideLeft>
                         </div>
                         {reports?.length <= 0 ?

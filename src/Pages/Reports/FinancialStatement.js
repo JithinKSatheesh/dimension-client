@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-
+import { useTranslation } from 'react-i18next'
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
 import { ThreeDots } from 'react-loader-spinner'
@@ -15,6 +15,7 @@ import { formatDate } from 'Utils/time'
 export default function Financialstatement(props) {
 
     const { getConfigs } = useStoreItem()
+    const {t} = useTranslation()
 
     const {
         // initFinancialStatementAnnual,
@@ -100,13 +101,13 @@ export default function Financialstatement(props) {
                 <div className="py-36 text-white">
                     <div className="mb-24  font-bold text-2xl  xl:text-2xl 2xl:text-3xl">
                         <SlideLeft>
-                            Financial statments & Normatives
+                            {t("Financial statments & Normatives")}
                         </SlideLeft>
                     </div>
                     <div className="pb-5 border-blue-light border-b font-bold">
                         <SlideLeft>
 
-                            Annual
+                            {t("Annual")}
                         </SlideLeft>
                     </div>
                     <TableRow title="">
@@ -115,7 +116,7 @@ export default function Financialstatement(props) {
                     <div className="mt-24 pb-5 border-color-blue border-b font-bold">
                         <SlideLeft>
 
-                            Quarterly
+                            {t("Quarterly")}
                         </SlideLeft>
                     </div>
                     {[..._financialStatementsQuaterly].map(item =>
@@ -129,7 +130,7 @@ export default function Financialstatement(props) {
                     )}
 
                     <div className="mt-24 pb-5 border-blue-light border-b font-bold">
-                        Normatives
+                        {t("Normatives")}
                     </div>
                     {[..._normatives].map(item =>
                         <TableRow title={item?.year} borderBlue={false} key={item?.id} >

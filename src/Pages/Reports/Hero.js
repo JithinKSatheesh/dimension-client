@@ -1,4 +1,6 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
 
@@ -10,6 +12,7 @@ import useStoreItem from 'Store/hooks/getStoreItems'
 // import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
 export default function Hero(props) {
     
+    const {t} = useTranslation()
     const { getConfigs } = useStoreItem()
 
     return (
@@ -21,8 +24,7 @@ export default function Hero(props) {
                     <div className="container mx-auto">
                         <div className="text-2xl  xl:text-2xl 2xl:text-3xl  font-bold flex items-center">
                           <SlideLeft>
-
-                          Investor relations
+                            {getConfigs?.configs?.reports?.investor_relation?.heading}
                           </SlideLeft>
                         </div>
                         <div className="flex flex-wrap pt-8 items-end">

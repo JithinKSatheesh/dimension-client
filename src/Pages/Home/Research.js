@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { truncate } from 'Utils/string'
 import {ReactComponent as IconRightArrow} from 'Assets/icons/ArrowRight.svg'
@@ -21,6 +22,7 @@ import initStoreItem from 'Store/hooks/initStoreItems'
 export default function Research(props) {
 
     const { getConfigs } = useStoreItem()
+    const {t} = useTranslation()
     // const { initMarketResearch } = initStoreItem()
 
     const homePage = getConfigs?.configs?.home_page
@@ -72,6 +74,7 @@ export default function Research(props) {
 
 export const ResearchCard = (props) => {
 
+    const {t} = useTranslation()
     // const _imageURL =  `${process.env.REACT_APP_API_URL}${props?.item?.image?.data?.attributes?.url}`
     const _APIimage = props?.item?.image?.url
     // console.log(_APIimage)
@@ -79,7 +82,7 @@ export const ResearchCard = (props) => {
 
 
     return(
-        <div className="bg-blue-light rounded-xl p-7 hover-border-outline border-2">
+        <div className="bg-blue-light rounded-xl p-7 hover-border-outline border-2 flex flex-col h-full justify-between">
             {/* <div className="text-center py-16">
                 <img src={_imageURL} alt="" className='mx-auto' />
             </div> */}
@@ -95,14 +98,14 @@ export const ResearchCard = (props) => {
             <div className="py-5 text-center font-semibold text-xl text-dark-blue">
                 {props?.item?.title}
             </div>
-            <div className=" text-center text-xs 2xl:text-sm text-dark-blue h-24">
+            <div className=" text-center text-xs 2xl:text-xs text-dark-blue ">
                 { truncate(props?.item?.description) }
             </div>
             <div className="text-center py-5">
                 <GetButton 
                     to={props?.to}  
                     onClick={props?.onClick}
-                    className="w-full xl:text-sm 3xl:text-base mx-auto py-2 bg-dark-blue-grad-hover cursor-pointer"> Get&nbsp;it </GetButton>
+                    className="w-full xl:text-xs 3xl:text-xs mx-auto py-2 bg-dark-blue-grad-hover cursor-pointer">  {t("Get it")} </GetButton>
             </div>
         </div>
     )

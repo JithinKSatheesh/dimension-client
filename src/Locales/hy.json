@@ -69,8 +69,13 @@
         "IPO & Listing Advisory" : "Արժեթղթերի հրապարակային առաջարկի և ցուցակման հետ կապված ծառայություններ",
         "M&A Advisory" : "Միաձուլումներ և ձեռքբերումներ (M&A)",
         "Read more" : "Կարդալ ավելին",
+
         "Annual reports" : "Տարեկան հաշվետվություններ",
         "Financial statments & Normatives" : "Ֆինանսական հաշվետվություններ և նորմատիվներ",
+        "Annual" : "ՏԱՐԵԿԱՆ",
+        "Quarterly" : "ԵՌԱՄՍՅԱԿԱՅԻՆ",
+        "Normatives" : "ՆՈՐՄԱՏԻՎՆԵՐ",
+
         "Rules of AMX Armenia stock exchange can be viewed and downloaded here." : "Հայաստանի ֆոնդային բորսայի կանոններին կարող եք ծանոթանալ այստեղ",
         "Rules of Central Depository of Armenia can be viewed and downloaded here." : "Հայաստանի Կենտրոնական Դեպոզիտարիայի կանոններին կարող եք ծանոթանալ այստեղ",
         "Have another questions?" : "",
@@ -85,11 +90,19 @@
         "Phone" : "Հեռախոս",
         "Upload CV" : "Ուղարկել CV",
         "Submit" : "Հաստատել ",
-        "Get it" : " ",
+        "Get it" : "Get it",
         "Details" : "Մանրամասներ",
+
+        
 
         "Tarrifs" : "Սակագներ ",
         "Search" : "Փնտրել",
-        "Search result for" : ""
+        "Search result for" : "",
+
+        "Mediator" : "Հաշտարար",
+        "Address" : "Հասցե",
+        "Fax" : "Ֆաքս",
+        "Էլ.Փոստ" : "Ֆաքս",
+        "Web" : "Կայք"
     }
 }

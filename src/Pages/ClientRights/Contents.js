@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
@@ -21,6 +22,7 @@ import MarkdownView from 'react-showdown';
 
 export default function Contents(props) {
 
+    const {t} = useTranslation()
     const { getClientRights } = props
    
     // const data = getClientRights ?? {}
@@ -59,7 +61,7 @@ export default function Contents(props) {
 
                                         <DownloadDocumentButton 
                                             onClick={() => window.open(_regilation_documents_pdf, '_blank', 'noopener,noreferrer')}
-                                            className="w-fit pr-14" > Regilation documents </DownloadDocumentButton>
+                                            className="w-fit pr-14" > {t("Regulation documents")} </DownloadDocumentButton>
                                             </SlideTop>
                                     </div>
                                 </div>
@@ -74,32 +76,32 @@ export default function Contents(props) {
                                 <div className="py-5 text-dark-blue">
                                     <SlideBottom>
                                     <AddressRow
-                                        title="Հաշտարար:"
+                                        title={`${t("Mediator")}:`}
                                         value={getClientRights?.mediator_name}
                                         icon={<IconPerson />}
                                     />
                                     <AddressRow
-                                        title="Հասցե:"
+                                        title={`${t("Address")}:`}
                                         value={<span dangerouslySetInnerHTML={{__html : getClientRights?.mediator_address}}  />}
                                         icon={<IconLocation />}
                                     />
                                     <AddressRow
-                                        title="Հեռախոս:"
+                                        title={`${t("Phone")}:`}
                                         value={<span dangerouslySetInnerHTML={{__html : getClientRights?.mediator_phone}}  />}
                                         icon={<PhoneIcon />}
                                     />
                                     <AddressRow
-                                        title="Ֆաքս:"
+                                        title={`${t("Fax")}:`}
                                         value={<span dangerouslySetInnerHTML={{__html : getClientRights?.mediator_fax}}  />}
                                         icon={<IconPrinter />}
                                     />
                                     <AddressRow
-                                        title="Էլ.Փոստ:"
+                                        title={`${t("E-mail")}:`}
                                         value={<span dangerouslySetInnerHTML={{__html : getClientRights?.mediator_email}}  />}
                                         icon={<MailIcon />}
                                     />
                                     <AddressRow
-                                        title="Կայք: "
+                                        title={`${t("Web")}:`}
                                         value={<span dangerouslySetInnerHTML={{__html : getClientRights?.mediator_website}}  />}
                                         icon={<IconGlobe />}
                                     />
@@ -112,7 +114,7 @@ export default function Contents(props) {
                                     <DownloadDocumentButton 
                                         onClick={() => window.open(_regilation_documents_pdf, '_blank', 'noopener,noreferrer')}
                                         className="w-fit pr-14" > 
-                                        Regilation documents 
+                                        {t("Regulation documents")} 
                                     </DownloadDocumentButton>
                                         </SlideTop>
                                 </div>

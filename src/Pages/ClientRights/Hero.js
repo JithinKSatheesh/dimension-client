@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
@@ -11,6 +12,7 @@ import MarkdownView from 'react-showdown'
 
 export default function Hero(props) {
 
+    const {t} = useTranslation()
     const { getClientRights } = props
    
  
@@ -23,7 +25,7 @@ export default function Hero(props) {
                     <div className="container mx-auto">
                         <div className="text-2xl xl:text-2xl 2xl:text-3xl font-bold flex items-center">
                         <SlideLeft>
-                        Client rights
+                        {t("Client rights")}
                         </SlideLeft>
                         </div>
                         <div className="flex flex-wrap pt-8 items-end">
