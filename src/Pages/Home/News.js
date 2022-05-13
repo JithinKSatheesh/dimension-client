@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 
 import {ReactComponent as IconRightArrow} from 'Assets/icons/ArrowRight.svg'
@@ -71,6 +72,8 @@ export default function News(props) {
 
 export const NewsCard = (props) => {
 
+
+    const {t} = useTranslation()
     const _imageURL =  props?.item?.image?.url ? `${process.env.REACT_APP_API_URL}${props?.item?.image?.url}` : NewsPlaceholder
 
 
@@ -91,7 +94,7 @@ export const NewsCard = (props) => {
                         {truncate(props.item?.title, 50)}
                     </div>
                     <div className="py-2 xl:text-sm flex items-center font-bold">
-                        <Link to="/" > Read more </Link>
+                        <Link to="/" > {t("Read more")} </Link>
                         <div className="ml-4">
                             <IconRightArrow  />
                         </div>

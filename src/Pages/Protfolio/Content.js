@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+
+
 import { PopUpcontainer } from 'Components/PopUpcontainer'
 // import { NewsCard } from './NewsCard'
 import { SlideTop } from 'Components/SlideAnimation'
@@ -16,6 +19,8 @@ import { formatDate } from 'Utils/time'
 export default function Content(props) {
 
     // const [popup, setPopup] = useState(false)
+
+    const {t}  = useTranslation()
 
     const { getConfigs } = useStoreItem()
     // const { initProtfolio } = initStoreItem()
@@ -68,7 +73,7 @@ export default function Content(props) {
                     key={item} 
                     onClick={() => setCurrentFilter(item)}
                     className={`${currentFilter === item ? 'border-color-blue' : 'border-white'} border bg-blue-light text-dark-blue p-2 rounded-lg text-xs ml-3 mt-3 cursor-pointer`}> 
-                    {item}
+                    {t(item)}
                 </div>)
             }
         </div>)
@@ -84,7 +89,7 @@ export default function Content(props) {
                             <div className="flex justify-between items-center flex-wrap">
                                 <div className="text-2xl xl:text-2xl 2xl:text-3xl font-bold flex items-center my-2">
                                     <SlideTop>
-                                        Portfolio
+                                        {t("Portfolio")}
                                     </SlideTop>
                                 </div>
                                 <div>
@@ -103,7 +108,7 @@ export default function Content(props) {
 
                                                 return (<div key={key}>
                                                     <div className="text-dark-blue text-xl xl:text-lg 2xl:text-xl font-bold pb-6 pt-16">
-                                                            {key}
+                                                            {t(key)}
                                                     </div>
                                                     <div className="h-1 w-full bg-dark-blue mb-16"></div>
                                                     <div className="grid grid-cols-1 xl:grid-cols-4  gap-16 xl:gap-4 2xl:gap-16">

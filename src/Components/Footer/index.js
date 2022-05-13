@@ -76,24 +76,24 @@ const _brands = [Brand_1, Brand_2, Brand_3, Brand_4]
 const _researchCoverageLinks = [
     {
         link : '/market-research',
-        label : 'RESEARCH COVERAGE'
+        label : 'Research coverage'
     },
     {
         link : '/client-rights',
-        label : 'CLIENT RIGHTS'
+        label : 'Client rights'
     },
     {
         link : '/reports',
-        label : 'REPORTS'
+        label : 'Reports'
     },
     {
         link : '/regulations',
-        label : 'REGULATIONS'
+        label : 'Regultions'
     },
     
     {
         link : '/news',
-        label : 'NEWS'
+        label : 'News'
     },
     {
         link : '/faq',
@@ -101,7 +101,7 @@ const _researchCoverageLinks = [
     },
     {
         link : '/careers',
-        label : 'CAREERS'
+        label : 'Careers'
     },
 ]
 

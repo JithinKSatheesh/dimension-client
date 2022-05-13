@@ -1,4 +1,6 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next'
+
 import { DetailsButton } from 'Components/Buttons';
 import {SlideBottom} from 'Components/SlideAnimation'
 
@@ -12,6 +14,7 @@ import { truncate } from 'Utils/string';
 export const NewsCard = (props) => {
 
     const { item, id } = props;
+    const {t} = useTranslation()
 
     const _imageURL =  item?.image?.data ? `${process.env.REACT_APP_API_URL}${item?.image?.data?.attributes?.url}` : NewsPlaceholder
 
@@ -48,7 +51,7 @@ export const NewsCard = (props) => {
                                 /> */}
                         </p>
                         <div className=" text-left xl:text-right text-sm 2xl:text-sm 3xl:text-base">
-                            <DetailsButton to={`/news/${id}`}> Read more </DetailsButton>
+                            <DetailsButton to={`/news/${id}`}> {t("Read more")} </DetailsButton>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { SlideBottom } from 'Components/SlideAnimation'
 import { truncate } from 'Utils/string'
@@ -20,6 +21,8 @@ import initStoreItem from 'Store/hooks/initStoreItems'
 export default function Protfolio(props) {
 
     // const [protfolioData, setProtfolioData] = useState([])
+
+    
 
     const { getConfigs } = useStoreItem()
     // const { initProtfolio } = initStoreItem()
@@ -68,6 +71,8 @@ export default function Protfolio(props) {
 
 export const ProtfolioCard = (props) => {
 
+    const {t} = useTranslation()
+
     const _APIimage = props?.item?.image?.url
     const _imageURL = _APIimage ? `${process.env.REACT_APP_API_URL}${_APIimage}` : ''
 
@@ -76,7 +81,7 @@ export const ProtfolioCard = (props) => {
     return (
         <SlideBottom>
 
-            <div className="bg-blue-light rounded-xl p-7  hover-border-outline-white border-2">
+            <div className="bg-blue-light rounded-xl p-7  hover-border-outline-white border-2 flex flex-col h-full justify-between">
                 <div
                     style={{
                         backgroundImage: `url(${_imageURL})`,
@@ -89,10 +94,10 @@ export const ProtfolioCard = (props) => {
                 <div className="py-5 text-center font-semibold text-xl xl:text-lg text-dark-blue">
                     {props?.item?.title}
                 </div>
-                <div className="text-center text-blue h-12 xl:h-10 xl:text-sm">
-                    {props?.item?.type_of_project}
+                <div className="text-center text-blue  xl:h-10 xl:text-sm mb-3">
+                    {t(props?.item?.type_of_project)}
                 </div>
-                <div className=" text-center text-xs xl:text-xs 2xl:text-sm text-dark-blue h-28 xl:h-24 overflow-hidden truncate-2">
+                <div className=" text-center text-xs xl:text-xs 2xl:text-xs text-dark-blue   overflow-hidden truncate-2">
                     {truncate(props?.item?.description)}
                 </div>
                 <div className="text-center py-5">
@@ -100,9 +105,9 @@ export const ProtfolioCard = (props) => {
                         target="_blank"
                         href={props?.item?.link}>
                         <div
-                            className='btn w-full bg-dark-blue-grad py-3 text-center rounded-xl text-white font-semibold'
+                            className='text-xs btn w-full bg-dark-blue-grad py-3 text-center rounded-xl text-white font-semibold'
                         >
-                            Read&nbsp;more
+                            {t("Read more")}
                         </div>
                     </a>
                     {/* <DetailsButton to=""> Read&nbsp;more </DetailsButton> */}

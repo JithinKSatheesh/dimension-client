@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { SlideTop } from 'Components/SlideAnimation'
 import { useScrollBehaviours } from 'Components/Hooks/useScrollBehaviours'
@@ -20,6 +21,7 @@ import { GetFunctions } from "API/fetch"
 export default function Content(props) {
 
     // const { getArticles } = useStoreItem()
+    const {t} = useTranslation()
 
     const [data, setData] = useState([])
     const [page, setPage] = useState(1)
@@ -108,7 +110,7 @@ export default function Content(props) {
                             <div className="flex flex-wrap justify-between items-center">
                                 <div className=" text-2xl  xl:text-2xl   2xl:text-3xl  font-bold flex items-center my-2">
                                     <SlideTop>
-                                        News
+                                        {t("News")}
                                     </SlideTop>
                                 </div>
                                 <div className='flex '>

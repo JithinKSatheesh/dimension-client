@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { getMonth } from 'Utils/time';
 import { PdfDownloadButton } from 'Components/Buttons';
+import { useTranslation } from 'react-i18next';
 
 export const FactSheetLayout = (props) => {
 
     const { data } = props;
+    const {t} = useTranslation()
 
     // const _dataSorted = [...data].sort()
 
@@ -22,7 +24,7 @@ export const FactSheetLayout = (props) => {
                 onClick={() => setShow(!show)}
                 className=" text-dark-blue font-bold text-xs pt-8 pb-2 flex items-center cursor-pointer">
                 <div className='mr-3'>
-                    Archives
+                    {t("Archives")}
                 </div>
                 <div className="flex-grow h-1 w-full bg-dark-blue"></div>
                 <div className="ml-3">
@@ -57,6 +59,7 @@ const GridButtonLayout = ({ data }) => {
 
 const FactsheetButton = ({ item }) => {
 
+    const {t} = useTranslation()
     const pdf_url = item?.pdf?.url;
     const url_ = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : '';
 
@@ -64,7 +67,7 @@ const FactsheetButton = ({ item }) => {
         key={item?.id}
         onClick={() => window.open(url_, '_blank', 'noopener,noreferrer')}
         className="text-xs xl:text-xs 2xl:text-xs h-16"
-        title={`Factsheet (${getMonth(item?.year)} ${(new Date(item?.year).getFullYear())})`} />
+        title={`${t("Factsheet")} (${getMonth(item?.year)} ${(new Date(item?.year).getFullYear())})`} />
 
     );
 
