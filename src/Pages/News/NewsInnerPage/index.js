@@ -8,6 +8,7 @@ import Innercontent from './InnerContent'
 import News from 'Pages/Home/News'
 import Footer from 'Components/Footer'
 
+
 import {GetFunctions} from 'API/fetch'
 import { isEmpty } from 'Utils/string'
 
@@ -19,14 +20,19 @@ export default function Index(props) {
 
     const { id } = useParams()
     const [data, setData] = useState({})
+    
 
     const { ScrollToTop } = useScrollBehaviours()
 
+    
 
     const fetchNews = async() => {
         try {
 
-            const res = await GetFunctions.fetchArticles({ populate : ["image"]}, id)
+            const res = await GetFunctions.fetchArticles({ 
+                populate : ["image"],
+            
+            }, id)
             const data = res?.data?.data || {}
             setData(data)
 
@@ -42,6 +48,7 @@ export default function Index(props) {
     useEffect(() => {
         ScrollToTop()
         fetchNews()
+        console.log("called")
     }, [id])
     
 

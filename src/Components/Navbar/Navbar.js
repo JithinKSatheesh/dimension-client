@@ -128,10 +128,15 @@ export function Navbar(props) {
                         {/* ------------------------ */}
                         {/* mobile menu burger */}
                         {/* ------------------------ */}
-                        <div
-                            onClick={() => setOpen(true)}
-                            className={`block xl:hidden  ${variant === 'white' && 'text-white'} cursor-pointer `}>
-                            <Burger />
+                        <div className='flex items-center xl:hidden'>
+                            <div  className={`lang py-3 pr-3 self-center cursor-pointer ${variant === 'white' && 'text-white'}`}>
+                                <LangDropDown />
+                            </div>
+                            <div
+                                onClick={() => setOpen(true)}
+                                className={`  ${variant === 'white' && 'text-white'} cursor-pointer `}>
+                                <Burger />
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useTranslation } from 'react-i18next';
 // import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
 // import { ReactComponent as IconShield  } from 'Assets/icons/service_shield.svg'
 // import { ReactComponent as IconManage } from 'Assets/icons/service_manage.svg'
@@ -17,6 +17,7 @@ import { truncate } from 'Utils/string';
 export default function Service(props) {
 
     const { getConfigs } = useStoreItem()
+    const {t} = useTranslation()
 
     const homePage = getConfigs?.configs?.home_page
 
@@ -32,7 +33,7 @@ export default function Service(props) {
                 <div className=" pb-10 text-sm xl:text-xs 2xl:text-sm 3xl:text-base xl:leading-5 2xl:leading-5 text-dark-blue">
                     { props?.descritpion}
                 </div>
-                <DetailsButton to={props?.to}> Details </DetailsButton>
+                <DetailsButton to={props?.to}> {t("Details")} </DetailsButton>
 
             </div>
         )

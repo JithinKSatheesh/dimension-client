@@ -3,8 +3,8 @@ import React, {createContext, useReducer} from 'react';
 const stateModal = {
     configs : {},
     hy : {},
-    en : {}
-    
+    en : {},
+    currentLang : 'hy'
   }
   
   const initialState = {...stateModal};
@@ -23,14 +23,15 @@ const StateProvider = ( { children } ) => {
               ...state, 
               configs : { ...action?.payload?.default }, 
               hy :  { ...action?.payload?.hy },
-              en :  { ...action?.payload?.en }
+              en :  { ...action?.payload?.en },
+              currentLang : 'hy'
             }
           return newState;
         case 'locale_hy':
-          newState = { ...state,  configs :  state?.hy }
+          newState = { ...state,  configs :  state?.hy, currentLang : 'hy' }
           return newState;
         case 'locale_en':
-          newState = { ...state,  configs :  state?.en }
+          newState = { ...state,  configs :  state?.en, currentLang : 'en' }
           return newState;
         case 'clearState' :
           return {  ...stateModal  }

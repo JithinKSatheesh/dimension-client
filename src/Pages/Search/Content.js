@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+
 import { useSearchParams, Link } from 'react-router-dom'
 import Fuse from 'fuse.js'
 import { ReactComponent as Search } from 'Assets/icons/search.svg'
@@ -10,6 +12,7 @@ import { data } from './searchData'
 export default function Content(props) {
 
     const [val, setVal] = useState('')
+    const {t} = useTranslation()
 
     const [searchKey, setSearchKey] = useState('')
     const [searchParams, setSearchParams] = useSearchParams();
@@ -41,7 +44,7 @@ export default function Content(props) {
                         <div>
                             <DetailsButton
                                 onClick={() => setSearchKey(val)} className="py-4 ml-3" >
-                                Search
+                                {t("Search")}
                             </DetailsButton>
                         </div>
                     </div>

@@ -22,6 +22,10 @@ export default function Content(props) {
 
     // const { getArticles } = useStoreItem()
     const {t} = useTranslation()
+    
+    const { getConfigs } = useStoreItem()
+    const lang = getConfigs?.currentLang
+
 
     const [data, setData] = useState([])
     const [page, setPage] = useState(1)
@@ -30,7 +34,6 @@ export default function Content(props) {
     const [loading, setLoading] = useState(false)
 
     const { ScrollToTop } = useScrollBehaviours()
-    
 
     const _date =data?.[0]?.attributes?.updatedAt
 
@@ -43,8 +46,10 @@ export default function Content(props) {
             setLoading(true)
             const res = await GetFunctions.fetchArticles({ 
                 sort :  filter === 'Recent' ?  ["publishedAt"] :  ["publishedAt:desc"] ,
-                populate : ["image"], pagination : 
-                { pageSize : 4, pageCount, page } })
+                populate : ["image"], 
+                locale : lang,
+                pagination :  { pageSize : 4, pageCount, page } 
+            })
             const _data = res?.data?.data
             setData(_data)
             const  _pageCount  = res?.data?.meta?.pagination?.pageCount
@@ -99,7 +104,7 @@ export default function Content(props) {
         fetchNewsData()
         ScrollToTop()
 
-    }, [page, filter])
+    }, [page, filter, lang])
 
     return (
         <>

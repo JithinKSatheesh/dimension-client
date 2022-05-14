@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
@@ -10,6 +11,7 @@ import {ReactComponent as Struct2Mob} from 'Assets/corporate_struct/struct_2_mob
 
 export default function Corporatestructure(props) {
 
+    const {t} = useTranslation()
 
     return (
         <>
@@ -18,7 +20,7 @@ export default function Corporatestructure(props) {
                     <div className="py-36">
                         <div className="mb-6 text-white font-bold text-2xl xl:text-3xl pb-16">
                             <SlideLeft>
-                                Corporate structure
+                                {t("Corporate structure")}
                             </SlideLeft>
                         </div>
                         {/*  Desktop view */}
