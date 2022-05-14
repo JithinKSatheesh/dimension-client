@@ -25,13 +25,21 @@
         "Careers" : "Աշխատատեղեր",
         "Contact us" : "Կապ մեզ հետ",
         "This page was last updated" : "Թարմացվել է",
+        "Our Business Principles" : "Գործարար սկզբունքներ",
+        "Ownership" : "Բաժնետերեր",
+        "Our partners" : "Մեր գործընկերները",
+        
 
 
         "More" : "Ավելին",
-        "Close" : "",
+        "Close" : "Close",
+        
         "Board member" : "Խորհրդի անդամ",
         "Advisory group" : "Խորհրդատվական խումբ",
         "Core team" : "Անձնակազմ",
+        "Shareholders" : "Բաժնետերեր",
+        "Participation in share Capital" : "Մասնակցության չափը կանոնադրական կապիտալում",
+
         "Dimension Armenia" : "Dimension Armenia",
         "AMD Bond Index" : "AMD Bond Index",
         "All" : "Բոլորը ",
@@ -43,7 +51,7 @@
         "YTD" : "Տարվա\u00a0սկզբից",
         "Since Inception" : "Մեկնարկից\u00a0մինչև\u00a0հաշվետու\u00a0օր",
 
-        "Indices" : "Indices",
+        "Indices" : "ինդեքսներ",
         "USD Corporate Bond Index" : "USD Corporate Bond Index",
         "Since Inception Total Return" : "Ստեղծման պահից եկամտաբերություն",
         "Index Performance" : "Ինդեքսի եկամտաբերություն",
@@ -84,8 +92,8 @@
         "Rules of Central Depository of Armenia can be viewed and" : "Հայաստանի Կենտրոնական Դեպոզիտարիայի կանոններին կարող եք ծանոթանալ",
         "downloaded here" : "այստեղ",
 
-        "Have another questions?" : "",
-        "send request" : "",
+        "Have another questions?" : "Have another questions?",
+        "send request" : "send request",
         "Stock exchange & Central depository rules" : "Բորսայի և դեպոզիտարիայի կանոններ",
 
         "Position" : "Հաստիք",
@@ -104,7 +112,7 @@
 
         "Tarrifs" : "Սակագներ ",
         "Search" : "Փնտրել",
-        "Search result for" : "",
+        "Search result for" : "Search result for",
 
         "Office of the financical System Mediator" : "Ֆինանսական համակարգի հաշտարարի գրասենյակ",
         "Mediator" : "Հաշտարար",

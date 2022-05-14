@@ -16,6 +16,14 @@ export default function Hero(props) {
 
     const {aboutPageData} = props
 
+    const _aboutImg1URL = aboutPageData?.hero_image_1?.url
+    const _aboutImg2URL = aboutPageData?.hero_image_2?.url
+
+    const _aboutImg1 = _aboutImg1URL ? `${process.env.REACT_APP_API_URL}${_aboutImg1URL}` : AboutImage1
+    const _aboutImg2 = _aboutImg1URL ? `${process.env.REACT_APP_API_URL}${_aboutImg2URL}` : AboutImage2
+
+    // console.log(_aboutImg1)
+
     return (
         <>
             <div id="about" className="about-wrapper-1 w-full">
@@ -49,8 +57,10 @@ export default function Hero(props) {
                                 <div className="w-full xl:w-1/2   mb-16 xl:pl-8">
                                     <div className='w-full h-full relative rounded-xl mx-auto xl:mx-0   xl:ml-auto'>
                                         <JustAppear>
-                                        <div className="absolute w-full h-full  hero-img-overlay rounded-xl"></div>
-                                        <img src={AboutImage1} alt="" className='w-full h-full rounded-xl' />
+                                        <div className="relative w-full h-full  rounded-xl">
+                                            <div className="absolute  hero-img-overlay w-full h-full"></div>
+                                            <img src={_aboutImg1} alt="" className='w-full h-full rounded-xl' />
+                                        </div>
                                         </JustAppear>
                                     </div>
                                 </div>
@@ -80,7 +90,7 @@ export default function Hero(props) {
                                 <div className="w-full xl:w-1/2 mb-16 order-2 xl:order-1 xl:pr-8">
                                     <div 
                                         style={{
-                                            background : `radial-gradient(527.72% 147.43% at 14.08% -13.43%, rgba(0, 97, 145, 0.5) 34.9%, rgba(0, 97, 146, 0) 98.96%),url(${AboutImage2}) `,
+                                            background : `radial-gradient(527.72% 147.43% at 14.08% -13.43%, rgba(0, 97, 145, 0.5) 34.9%, rgba(0, 97, 146, 0) 98.96%),url(${_aboutImg2}) `,
                                             backgroundSize : 'cover, cover'
                                         }}
                                         className='h-64 xl:h-full w-full relative rounded-xl mx-auto xl:mx-0   xl:mr-auto'>

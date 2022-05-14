@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
@@ -10,6 +11,8 @@ import { Markdown } from 'react-showdown'
 export default function Ownership(props) {
 
     const { getAboutPage, aboutPageData, ownershipData } = props
+
+    const {t} = useTranslation()
 
     // const data = getAboutPage?.about ?? []
     const ownership = ownershipData || []
@@ -84,8 +87,8 @@ export default function Ownership(props) {
 
                                     <div className="rounded-xl w-full">
                                         <div className="flex justify-between text-sm xl:text-sm 2xl:text-base bg-dark-blue-grad p-7 text-white rounded-t-xl font-bold">
-                                            <div>Shareholders</div>
-                                            <div className='text-right w-32 xl:w-fit'>Participation in share Capital</div>
+                                            <div>{t("Shareholders")}</div>
+                                            <div className='text-right w-32 xl:w-fit'> {t("Participation in share Capital")} </div>
                                         </div>
                                         <div className="bg-blue-light text-dark-blue text-lg xl:text-sm 2xl:text-xl rounded-b-xl">
                                             {ownership?.length <= 0 ?

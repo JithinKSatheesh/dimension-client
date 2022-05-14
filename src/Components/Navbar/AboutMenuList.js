@@ -18,12 +18,12 @@ export const AboutMenuList = [
     {
         id: 4,
         to: '/about#team',
-        label: ' Team'
+        label: 'Team'
     },
     {
         id: 5,
         to: '/about#partners',
-        label: ' Our partners'
+        label: 'Our partners'
     },
     {
         id: 6,
@@ -38,6 +38,6 @@ export const AboutMenuList = [
     {
         id: 8,
         to: '/about#statuory-documents',
-        label: 'Statuory documents'
+        label: 'Statutory documents'
     },
 ];

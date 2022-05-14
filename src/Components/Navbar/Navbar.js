@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
+
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from 'Assets/icons/logo.svg';
 import { ReactComponent as LogoWhite } from 'Assets/icons/logo_white.svg';
@@ -18,9 +20,9 @@ import Outsideclick from 'Components/Hooks/OutsideClick';
 
 export function Navbar(props) {
 
+    const {t} = useTranslation()
     const { variant = '', float = false, _floatNav } = props;
 
-   
 
     const [isHover, toggleHover] = useState(false);
     const [open, setOpen] = useState(false);
@@ -72,7 +74,7 @@ export function Navbar(props) {
                                 onHoverEnd={toggleHoverOut}
                                 variant={variant}
                                 isHover={isHover === 'about'}
-                                to="/about"> About&nbsp;us&nbsp;&nbsp;<DownArrow />
+                                to="/about"> <Trans i18nKey={"About us"}>About&nbsp;us&nbsp;</Trans>&nbsp;<DownArrow />
                                 <div className="">
                                     <AboutDropdown isHover={isHover === 'about'} />
                                 </div>
@@ -82,7 +84,7 @@ export function Navbar(props) {
                                 onHoverEnd={toggleHoverOut}
                                 isHover={isHover === 'services'}
                                 variant={variant}
-                                to="/services/capital-market">Services&nbsp;&nbsp;<DownArrow />
+                                to="/services/capital-market"> <Trans i18nKey={"Services"}>Services&nbsp;</Trans>&nbsp;<DownArrow />
                                 <div className="">
                                     <ServiceDropdown isHover={isHover === 'services'} />
                                 </div>
@@ -93,7 +95,7 @@ export function Navbar(props) {
                                 isHover={isHover === 'indices'}
                                 variant={variant}
                                 to="/indices">
-                                Indices
+                                {t("Indices")}
                             </NavLinks>
 
                             <NavLinks
@@ -102,7 +104,7 @@ export function Navbar(props) {
                                 isHover={isHover === 'protfolio'}
                                 variant={variant}
                                 to="/protfolio">
-                                Portfolio
+                                {t("Portfolio")}
                             </NavLinks>
                             <NavLinks
                                 onHoverStart={() => toggleHover('news')}
@@ -110,7 +112,7 @@ export function Navbar(props) {
                                 isHover={isHover === 'news'}
                                 variant={variant}
                                 to="/news">
-                                news
+                                {t("News")}
                             </NavLinks>
                         </div>
                         <div className="lang  hidden xl:flex text-dark-blue">
@@ -167,7 +169,7 @@ const LangDropDown = () => {
             <Outsideclick onOutsideClick={() => setOpen(false)}>
             <div className="absolute top-12 -left-3 balloon w-fit backdrop-blur-xl bg-[#006191] text-white font-bold text-xs py-1  rounded-xl">
                 <div onClick={() =>changeLang('Eng')} className=" p-2 bg-menu-blue-light"> English </div>
-                <div onClick={() =>changeLang('Arm') } className=" p-2 bg-menu-blue-light"> Armenian </div>
+                <div onClick={() =>changeLang('Arm') } className=" p-2 bg-menu-blue-light"> ՀԱՅ </div>
             </div>
             </Outsideclick>
             }

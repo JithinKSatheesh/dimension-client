@@ -2,6 +2,7 @@ import React from 'react'
 
 import { SlideLeft, SlideRight, JustAppear, SlideBottom } from 'Components/SlideAnimation'
 
+import AboutImage1 from 'Assets/img/about_principles.png'
 
 // ** icons
 import { ReactComponent as QualityAndProfessionalism } from 'Assets/icons/about/quality_and_professionalism.svg'
@@ -15,6 +16,8 @@ export default function Buisnessprinciples(props) {
 
     const { aboutPageData } = props
 
+    const _aboutImg1URL = aboutPageData?.buisness_principle_image?.url
+    const _aboutImg1 = _aboutImg1URL ? `${process.env.REACT_APP_API_URL}${_aboutImg1URL}` : AboutImage1
 
     const _BuisnessPrinciples = [
         {
@@ -78,7 +81,12 @@ export default function Buisnessprinciples(props) {
                         </div>
                         <div className="flex flex-wrap">
                             <div className="w-full xl:w-1/3 order-2 xl:order-1">
-                                <div className="w-full max-w-xl h-96  xl:h-full rounded-xl  about-principle-wrapper ">
+                                <div 
+                                    style={{
+                                        backgroundImage: `linear-gradient(102.45deg, rgba(0, 97, 146, 0.6) 2.71%, rgba(0, 97, 146, 0) 99.17%), url(${_aboutImg1})`,
+                                        backgroundSize: 'cover'
+                                    }}
+                                    className="w-full max-w-xl h-96  xl:h-full rounded-xl   ">
                                     {/* Image placeholder */}
                                 </div>
                             </div>

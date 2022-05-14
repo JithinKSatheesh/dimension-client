@@ -7,6 +7,10 @@ export default function Hero(props) {
     
     const {homepageData} = props
 
+    const _HeroImgURL = homepageData?.hero_image?.url 
+    const _heroImg =  _HeroImgURL ? `${process.env.REACT_APP_API_URL}${_HeroImgURL}` : HeroImg
+    // console.log(homepageData?.hero_image?.url)
+
     return (
         <>
             <div className="w-full px-4 py-12 xl:py-24 2xl:py-36 hero-wrapper">
@@ -36,7 +40,7 @@ export default function Hero(props) {
                         <div className='max-w-lg xl:max-w-xs 2xl:max-w-lg 3xl:max-w-2xl relative rounded-xl'>
                             <JustAppear>
                             <div className="absolute w-full h-full hero-img-overlay rounded-xl"></div>
-                            <img src={HeroImg} alt="" className='w-full rounded-xl' />
+                            <img src={_heroImg} alt="" className='w-full rounded-xl' />
                             </JustAppear>
                         </div>
                     </div>

@@ -1,10 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const FilterTab = (props) => {
 
     const { active, changeActive , filters} = props;
 
-    
+    const {t} = useTranslation()
 
     return (
         <div className="grid grid-cols-3 gap-0 border-color-blue-grad border rounded-2xl">
@@ -20,7 +21,7 @@ export const FilterTab = (props) => {
                     `}
                 onClick={() => changeActive(item.value)}
             >
-               <div className='w-16 xl:w-fit mx-auto  text-center'>{item.label}</div> 
+               <div className='w-16 xl:w-fit mx-auto  text-center'>{t(item.label)}</div> 
             </div>
             )}
         </div>

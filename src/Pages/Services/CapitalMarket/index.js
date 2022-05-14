@@ -6,8 +6,8 @@ import { useScrollBehaviours } from 'Components/Hooks/useScrollBehaviours'
 
 import Hero from './Hero'
 import Contents from './Contents'
-import Otherservices from './OtherServices'
-import Footer from 'Components/Footer'
+// import Otherservices from './OtherServices'
+// import Footer from 'Components/Footer'
 
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
@@ -22,7 +22,7 @@ export default function Capitalmarket(props) {
     const { initAllConfigs } = initStoreItem()
     
     
-    useEffect(() => initAllConfigs(), [])
+    // useEffect(() => initAllConfigs(), [])
 
     const { ScrollToTop } = useScrollBehaviours()
     

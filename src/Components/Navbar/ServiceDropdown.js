@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { ReactComponent as IconRightArrow } from 'Assets/icons/ArrowRight.svg';
-import { ServiceMenuList } from './ServiceMenuList';
+import useServiceMenuList from './ServiceMenuList';
+import MarkdownView from 'react-showdown';
 
 
 export const ServiceDropdown = (props) => {
@@ -30,6 +31,7 @@ export const ServiceDropdown = (props) => {
         }
     };
     
+    const { ServiceMenuList } = useServiceMenuList()
 
 
     return (
@@ -82,7 +84,8 @@ export const MenuContent = (props) => {
                     </div> */}
                     <ul className='list-disc'>
                         {props?.list?.map(item => <li className='pb-3 ml-4'>
-                            {item}
+                            
+                            <MarkdownView markdown={(`${item}`)?.replace(/(<|&lt;)br\s*\/*(>|&gt;)/g," ")} /> 
                         </li>)}
                     </ul>
                 </div>

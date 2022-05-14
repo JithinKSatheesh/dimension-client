@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from "framer-motion";
 
-import { MenuContent } from './ServiceDropdown'
-import { RenderMenuLinks } from './AboutDropdown';
+// import { MenuContent } from './ServiceDropdown'
+// import { RenderMenuLinks } from './AboutDropdown';
 import { ServiceRenderMenuList } from './ServiceDropdown';
 import { AboutMenuList } from "./AboutMenuList";
-import { ServiceMenuList } from './ServiceMenuList';
+import useServiceMenuList from './ServiceMenuList';
 
 import { AddressData, AddressDataArray } from 'Components/Footer/AddressData'
 import {socialMedia} from 'Components/Footer'
 
 import { ReactComponent as LogoWhite } from 'Assets/icons/logo_white.svg';
 import { ReactComponent as DownArrow } from 'Assets/icons/downsmall.svg';
-import { ReactComponent as IconHome } from 'Assets/icons/service_home_blue.svg';
-import { ReactComponent as IconShield } from 'Assets/icons/service_shield_blue.svg';
-import { ReactComponent as IconManage } from 'Assets/icons/service_manage_blue.svg';
+// import { ReactComponent as IconHome } from 'Assets/icons/service_home_blue.svg';
+// import { ReactComponent as IconShield } from 'Assets/icons/service_shield_blue.svg';
+// import { ReactComponent as IconManage } from 'Assets/icons/service_manage_blue.svg';
 
 
 
@@ -26,6 +26,7 @@ export const MobileMenu = (props) => {
     const IconClose = () => <svg fill='currentColor' width="24" height="24" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" /></svg>;
 
 
+    const {ServiceMenuList} = useServiceMenuList()
 
     return (
 

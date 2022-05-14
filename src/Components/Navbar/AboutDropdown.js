@@ -1,14 +1,18 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { AboutMenuList } from './AboutMenuList';
 
 export const RenderMenuLinks = ({ MenuList }) => {
 
+    const {t} = useTranslation()
+
     return (<>
         {MenuList.map(link =>
-            <Link key={link.id} to={link.to} className="lg:text-xs  3xl:text-base grow bg-menu-blue-light text-white py-7 text-center">
-                {link.label}
+            <Link key={link.id} to={link.to} className="lg:text-xs  3xl:text-base grow bg-menu-blue-light text-white py-7 text-center mx-2">
+                {t(link.label)}
             </Link >)}
     </>)
 }
