@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useTranslation, Trans } from 'react-i18next';
 
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
@@ -10,10 +11,12 @@ import { UpdateStatus } from 'Components/UpdateStatus'
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
-import { Markdown } from 'react-showdown'
+import MarkdownView, { Markdown } from 'react-showdown'
 import { formatDate } from 'Utils/time'
 
 export default function Content(props) {
+
+    const {t} = useTranslation()
 
     const { getRegulations } = useStoreItem()
     const { initRegulationsPage } = initStoreItem()
@@ -46,8 +49,7 @@ export default function Content(props) {
                     <div className="py-36">
                         <div className="text-dark-blue font-bold text-2xl xl:text-2xl  3xl:text-3xl pb-24">
                            <SlideLeft>
-
-                            Laws
+                            {t("Laws")}
                            </SlideLeft>
                         </div>
                         <JustAppear>
@@ -90,12 +92,13 @@ export default function Content(props) {
                                 <div className="">
                                     <div className="text-2xl text-2xl xl:text-2xl  3xl:text-3xl  font-bold h-16 xl:h-24 2xl:h-32">
                                         <SlideBottom>
-                                        Legal acts
+                                        {t("Legal acts")}
                                         </SlideBottom>
                                     </div>
                                     <div className='max-w-2xl text-sm xl:text-xs 2xl:text-sm 3xl:text-base'>
                                         <SlideTop>
-                                        {_page?.legal_acts_description}
+                                            <MarkdownView markdown={_page?.legal_acts_description} />
+                                        
                                         {/* Central Bank's regulations governing the activities of investment companies have been translated into English and can be downloaded by accessing the relevant section of the Central Bank's official website. */}
                                         </SlideTop>
                                     </div>
@@ -104,23 +107,25 @@ export default function Content(props) {
                                 <div className="">
                                     <div className="text-2xl text-2xl xl:text-2xl  3xl:text-3xl  font-bold h-24 xl:h-24 2xl:h-32">
                                        <SlideBottom>
+                                           <Trans i18nKey={"Stock exchange & Central depository rules"}>
                                         Stock exchange & <br /> Central depository rules
+                                           </Trans>
                                        </SlideBottom>
                                     </div>
                                     <div className='text-sm xl:text-xs 2xl:text-sm 3xl:text-base'>
                                         <SlideTop>
                                         <div className="pb-3">
-                                            Rules of AMX Armenia stock exchange can be viewed and
+                                            {t("Rules of AMX Armenia stock exchange can be viewed and")}
                                             <span 
                                                 onClick={() => window.open(_rules_of_amx_armenia, '_blank', 'noopener,noreferrer')}
-                                                className='font-bold cursor-pointer'> downloaded here.</span>
+                                                className='font-bold cursor-pointer'> {t("downloaded here")}.</span>
                                         </div>
                                         <div>
 
-                                            Rules of Central Depository of Armenia can be viewed and
+                                            {t("Rules of Central Depository of Armenia can be viewed and")}
                                             <span 
                                                 onClick={() => window.open(_rules_of_central_depository, '_blank', 'noopener,noreferrer')}
-                                                className='font-bold cursor-pointer'> downloaded here.</span>
+                                                className='font-bold cursor-pointer'> {t("downloaded here")}.</span>
                                         </div>
                                         </SlideTop>
                                     </div>

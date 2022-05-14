@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next'
 import * as yup from 'yup';
 
 import { IconDownload } from './Content';
@@ -23,7 +24,7 @@ import 'react-phone-input-2/lib/style.css'
 export const ApplyForJob = (props) => {
 
     const { popup } = props
-
+    const {t} = useTranslation()
     const fileMaxLength = 4000000
 
     const [loading, setLoading] = useState(false)
@@ -176,7 +177,7 @@ export const ApplyForJob = (props) => {
         />
 
         <div className="relative ">
-            <div className="py-3 text-xs"> Phone </div>
+            <div className="py-3 text-xs"> {t("Phone")} </div>
             <PhoneInput
                 country={'am'}
                 value={phone}
@@ -195,7 +196,7 @@ export const ApplyForJob = (props) => {
         </div>
 
 
-        <div className="py-3 text-xs"> Upload CV </div>
+        <div className="py-3 text-xs"> {t("Upload CV")}</div>
         {/* <FileUploadContainer /> */}
         {/* ============================================== */}
         <div

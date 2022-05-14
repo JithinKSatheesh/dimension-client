@@ -88,7 +88,7 @@ const _researchCoverageLinks = [
     },
     {
         link : '/regulations',
-        label : 'Regultions'
+        label : 'Regulations'
     },
     
     {

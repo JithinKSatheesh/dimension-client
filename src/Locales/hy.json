@@ -16,7 +16,7 @@
         "Research coverage" : "Հետազոտություններ",
         "Client rights" : "Հաճախորդի իրավունքներ",
         "Reports" : "Հաշվետվություններ",
-        "Regultions" : "Կարգավորումներ ",
+        "Regulations" : "Կարգավորումներ ",
         "News" : "Նորություններ ",
         "All news" : "Նորություններ",
         "Portfolio" : "Պորտֆել",
@@ -76,13 +76,20 @@
         "Quarterly" : "ԵՌԱՄՍՅԱԿԱՅԻՆ",
         "Normatives" : "ՆՈՐՄԱՏԻՎՆԵՐ",
 
+        "Laws" : "Օրենքներ",
+        "Legal acts" : "Իրավական ակտեր",
         "Rules of AMX Armenia stock exchange can be viewed and downloaded here." : "Հայաստանի ֆոնդային բորսայի կանոններին կարող եք ծանոթանալ այստեղ",
         "Rules of Central Depository of Armenia can be viewed and downloaded here." : "Հայաստանի Կենտրոնական Դեպոզիտարիայի կանոններին կարող եք ծանոթանալ այստեղ",
+        "Rules of AMX Armenia stock exchange can be viewed and" : "AMX Հայաստանի ֆոնդային բորսայի կանոններին կարող եք ծանոթանալ",
+        "Rules of Central Depository of Armenia can be viewed and" : "Հայաստանի Կենտրոնական Դեպոզիտարիայի կանոններին կարող եք ծանոթանալ",
+        "downloaded here" : "այստեղ",
+
         "Have another questions?" : "",
         "send request" : "",
-        
-        "position" : "Հաստիք",
-        "job type" : "Աշխատանքի նկարագրություն",
+        "Stock exchange & Central depository rules" : "Բորսայի և դեպոզիտարիայի կանոններ",
+
+        "Position" : "Հաստիք",
+        "Job type" : "Աշխատանքի նկարագրություն",
         "Due date" : "Վերջնաժամկետ",
         "Apply for a job" : "Դիմել թափուր աշխատատեղերի համար",
         "Full Name" : "Անուն Ազգանուն",
@@ -99,6 +106,7 @@
         "Search" : "Փնտրել",
         "Search result for" : "",
 
+        "Office of the financical System Mediator" : "Ֆինանսական համակարգի հաշտարարի գրասենյակ",
         "Mediator" : "Հաշտարար",
         "Address" : "Հասցե",
         "Fax" : "Ֆաքս",

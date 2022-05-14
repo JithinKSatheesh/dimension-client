@@ -69,8 +69,8 @@ export default function Contents(props) {
                             <div className="w-full xl:w-[400px] 3xl:w-[500px] pb-7">
                                 <div className="text-sm text-dark-blue ">
                                     <SlideBottom>
-
-                                    Ֆինանսական համակարգի հաշտարարի գրասենյակ:
+                                    {t("Office of the financical System Mediator")}:
+                                    
                                     </SlideBottom>
                                 </div>
                                 <div className="py-5 text-dark-blue">

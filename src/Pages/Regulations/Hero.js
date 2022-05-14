@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
@@ -11,7 +12,9 @@ import { DownloadDocumentButton } from 'Components/Buttons'
 // import { ReactComponent as IconHome  } from 'Assets/icons/service_home.svg'
 
 export default function Hero(props) {
-    
+
+    const {t} = useTranslation()
+
     const {config} = props
     console.log(config)
 
@@ -24,7 +27,7 @@ export default function Hero(props) {
                     <div className="container mx-auto">
                         <div className="text-2xl xl:text-2xl 2xl:text-3xl font-bold flex items-center">
                        <SlideLeft>
-                        Regulations
+                        {t("Regulations")}
                        </SlideLeft>
                         </div>
                         <div className="flex flex-wrap pt-8 items-end">

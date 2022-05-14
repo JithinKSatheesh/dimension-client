@@ -1,9 +1,12 @@
 import React from 'react';
 import Outsideclick from 'Components/Hooks/OutsideClick';
+import { useTranslation } from 'react-i18next'
 
 const IconClose = () => <svg fill='currentColor' width="16" height="16" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" /></svg>;
 
 export const PopUpcontainer = (props) => {
+    
+    const {t} = useTranslation()
 
     return (
         <>
@@ -16,7 +19,7 @@ export const PopUpcontainer = (props) => {
                                 <div className="font-bold p-5 text-white bg-dark-blue-grad rounded-t-xl">
                                     <div className="flex items-center justify-between">
                                         <div>
-                                            {props?.heading}
+                                            {t(props?.heading)}
                                         </div>
                                         <div className='cursor-pointer' onClick={props.onClose}>
                                             <IconClose />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import { useTranslation } from 'react-i18next'
 import { PopUpcontainer } from 'Components/PopUpcontainer'
 
 // import { ReactComponent as IconDownload } from 'Assets/icons/download_2.svg';
@@ -18,9 +18,9 @@ export const IconDownload = () => <svg fill='white' width="24" height="24" viewB
 
 export default function Content(props) {
 
+    const {t} = useTranslation()
     const [expanded, setExpanded] = useState(false)
     const [popup, setPopup] = useState(false)
-
     // const { getCareers } = useStoreItem()
     // const { initCareers } = initStoreItem()
     
@@ -103,7 +103,7 @@ export default function Content(props) {
             </div>
             {/* _________________________________________ */}
             {/* _________________________________________ */}
-            <PopUpcontainer heading="Apply for a job" onClose={() => setPopup(false)} open={popup}  >
+            <PopUpcontainer heading={t("Apply for a job")} onClose={() => setPopup(false)} open={popup}  >
                 <ApplyForJob popup={popup} />
             </PopUpcontainer>
         </>
