@@ -40,7 +40,7 @@ export default function Statuorydocuments(props) {
             <div id="statuory-documents" className="about-wrapper-8">
                 <div className="container mx-auto ">
                     <div className="pt-36 pb-32">
-                        <div className="mb-6 text-dark-blue font-bold text-2xl xl:text-3xl pb-16">
+                        <div className="mb-6 text-dark-blue font-bold text-2xl xl:text-2xl 2xl:text-3xl pb-16">
                             <SlideLeft>
                                 {aboutPageData?.statutory_documents_title}
                             </SlideLeft>
