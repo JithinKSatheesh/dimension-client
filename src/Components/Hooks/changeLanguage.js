@@ -11,6 +11,7 @@ export default function Changelanguage(props) {
     
     const changeToEnglish = () => {
         i18n.changeLanguage('en')
+        localStorage.setItem("currentLang", "en")
         // console.log("lang__chg")
         _StoreConfigs.dispatch({
             type: 'locale_en'
@@ -19,6 +20,7 @@ export default function Changelanguage(props) {
 
     const changeToArm = () => {
         i18n.changeLanguage('hy')
+        localStorage.setItem("currentLang", "hy")
         // console.log("lang__chg")
         _StoreConfigs.dispatch({
             type: 'locale_hy'
@@ -26,8 +28,17 @@ export default function Changelanguage(props) {
 
     }
 
+    const initLanguage = () => {
+        const langNow = localStorage.getItem("currentLang")
+        if(langNow === 'hy') {
+            changeToArm()
+        } else {
+            changeToEnglish()
+        }
+    }
+
     useEffect(() => {
-        changeToArm()
+        initLanguage()
     }, [])
 
     return {changeToEnglish, changeToArm}
