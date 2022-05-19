@@ -30,10 +30,10 @@ export default function Changelanguage(props) {
 
     const initLanguage = () => {
         const langNow = localStorage.getItem("currentLang")
-        if(langNow === 'hy') {
-            changeToArm()
-        } else {
+        if(langNow === 'en') {
             changeToEnglish()
+        } else {
+            changeToArm()
         }
     }
 
