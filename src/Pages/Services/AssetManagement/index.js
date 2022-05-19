@@ -22,7 +22,7 @@ export default function Capitalmarket(props) {
     const { getConfigs } = useStoreItem()
     const { initAllConfigs } = initStoreItem()
 
-    useEffect(() => initAllConfigs(), [])
+    // useEffect(() => initAllConfigs(), [])
 
     const { ScrollToTop } = useScrollBehaviours()
 

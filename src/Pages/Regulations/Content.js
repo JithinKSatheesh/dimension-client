@@ -38,7 +38,7 @@ export default function Content(props) {
 
     
 
-    useEffect(() => initRegulationsPage(), [])
+    // useEffect(() => initRegulationsPage(), [])
 
 
     return (

@@ -29,7 +29,7 @@ export default function News(props) {
     const data = _data?.slice(0, 4)
     // const _date = getConfigs?.configs?.home_page?.news?.[0]?.updatedAt
 
-    useEffect(() => initArticles(), [])
+    // useEffect(() => initArticles(), [])
     
 
     return (
