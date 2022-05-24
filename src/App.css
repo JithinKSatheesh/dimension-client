@@ -345,6 +345,13 @@
   background-repeat: no-repeat;
 }
 
+.career-wrapper-1{
+  background-image: url('./Assets/img/bg_abstract_left.png');
+  background-position: left 0px;
+  background-repeat: no-repeat;
+}
+
+
 .news-wrapper-1 {
   background-image: url('./Assets/img/bg_abstract_left.png');
   background-position: left -0px;

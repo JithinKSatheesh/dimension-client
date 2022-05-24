@@ -71,8 +71,6 @@ const _aboutLinks = [
     },
 ]
 
-const _brands = [Brand_1, Brand_2, Brand_3, Brand_4]
-
 const _researchCoverageLinks = [
     {
         link : '/market-research',
@@ -143,6 +141,26 @@ export default function Index(props) {
         email: footerData?.contact_email,
         address: footerData?.contact_address
     };
+
+
+    const _brands = [{
+        img: Brand_1,
+        link: footerData?.URL_abcfinance
+    }
+        , {
+        img: Brand_2,
+        link: footerData?.URL_fsm,
+    }
+        , {
+        img: Brand_3,
+        link: footerData?.URL_fininfo
+    }
+        , {
+        img: Brand_4,
+        link: footerData?.URL_cba
+    }
+    ]
+
 
     const socialMedia = [
         {
@@ -217,7 +235,7 @@ export default function Index(props) {
                                 <RenderAddressData item={AddressData} />
                             <div className="mt-16 flex justify-center xl:justify-start">
                                 {socialMedia.map(link => 
-                                    <a href={link.link} className='mr-4'> 
+                                    <a href={link.link} target="_blank" className='mr-4'> 
                                         <div className="bg-dark-blue rounded-full hover:bg-white ">
                                             <link.icon className='text-white-blue-hover' />
                                         </div>
@@ -229,10 +247,12 @@ export default function Index(props) {
                 </div>
                 <div className="flex flex-wrap items-center justify-center xl:justify-between">
                     <div className="flex items-center order-2 xl:order-1 mb-10  lg:w-5/12">
-                        {_brands.map((image, index) => 
+                        {_brands.map((item, index) => 
                             <div className={`'grow ${index !== (_brands.length - 1) && 'mr-11'}`}>
-                                <img src={image} alt="" 
-                                    className="w-full hover:brightness-0 hover:invert hover:translate-x-2" />
+                                <a href={item?.link} target="_blank">
+                                    <img src={item?.img} alt="" 
+                                        className="w-full hover:brightness-0 hover:invert hover:translate-x-2" />
+                                </a>
                             </div>
                         )}
                     </div>
@@ -252,7 +272,9 @@ export default function Index(props) {
                         <div className="w-full text-sm xl:text-xs text-white  order-2  xl:order-3 mb-5 xl:mb-0 ">
                             <div className='mx-auto xl:ml-auto xl:mr-0 flex justify-center xl:justify-end'>
                                 <div className="mr-3">Powered by</div>  
+                                <a href="https://www.exitstudio.xyz/" target={"_blank"}>
                                 <img src={Brand_5} alt="" className="brightness-0 invert" />
+                                </a>
                             </div>
                         </div>
                     </div>

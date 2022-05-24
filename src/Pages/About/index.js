@@ -74,7 +74,7 @@ export default function About(props) {
                 <Team teamData={teamData} aboutPageData={aboutPageData} />
                 <Partners aboutPageData={aboutPageData} partnersData={partnersData} />
                 <Mission getHomePageData={getConfigs?.configs?.home_page} />
-                <Corporatestructure />
+                <Corporatestructure aboutPageData={aboutPageData} />
                 <Statuorydocuments statuatoryDocs={statuatoryDocs} aboutPageData={aboutPageData}  />
                 {/* <Footer /> */}
             </div>

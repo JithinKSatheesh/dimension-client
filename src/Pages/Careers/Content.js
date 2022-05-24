@@ -41,7 +41,7 @@ export default function Content(props) {
 
     return (
         <>
-            <div className=" faq-wrapper-2">
+            <div className=" career-wrapper-1">
                 <div className="container mx-auto ">
                     <div className="py-24">
                         <div className="flex justify-between items-center ">

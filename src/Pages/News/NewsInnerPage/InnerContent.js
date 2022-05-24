@@ -28,9 +28,9 @@ export default function Innercontent(props) {
                                 background: `radial-gradient(527.72% 147.43% at 14.08% -13.43%, rgba(0, 97, 145, 0.5) 34.9%, rgba(0, 97, 146, 0) 98.96%), url(${_imageURL})`,
                                 backgroundSize: 'cover, cover',
                                 backgroundRepeat: 'no-repeat, no-repeat',
-                                backgroundPosition: 'center, center'
+                                backgroundPosition: 'center, top'
                             }}
-                            className="w-full h-72   overflow-hidden rounded-xl  bg-center">
+                            className="w-full h-72 2xl:h-96   overflow-hidden rounded-xl  bg-center">
                             {/* <img src={item?.img} alt="" className='h-full mx-auto xl:ml-0' /> */}
                         </div>
                     </div>
