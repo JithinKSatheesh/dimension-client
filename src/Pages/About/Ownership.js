@@ -73,12 +73,14 @@ export default function Ownership(props) {
                                     </SlideBottom>
                                 </div>
                                 <SlideTop>
-                                    <Button1
-                                        className="hidden xl:flex"
-                                        file={_central_bank_regulation_pdf}
-                                        label={aboutPageData?.ownership_central_bank_regulation_pdf_title}
+                                    {_central_bank_regulation_pdf &&
+                                        <Button1
+                                            className="hidden xl:flex"
+                                            file={_central_bank_regulation_pdf}
+                                            label={aboutPageData?.ownership_central_bank_regulation_pdf_title}
                                         // label={"Հայտարարություն ՀՀ կենտրոնական բանկի կանոնակարգ 8/03 15-րդ հոդվածի պահանջների մասին"}
-                                    />
+                                        />
+                                    }
 
                                 </SlideTop>
                             </div>
@@ -105,14 +107,15 @@ export default function Ownership(props) {
                                         </div>
                                     </div>
                                 </SlideRight>
-
-                                <div
-                                    onClick={() => window.open(_central_bank_regulation_pdf, '_blank', 'noopener,noreferrer')}
-                                    className="btn-download-darkBlue  flex mx-auto xl:hidden items-center justify-center max-w-lg border-2  p-6  mt-16 rounded-xl text-sm cursor-pointer ">
-                                    <div className='mr-7'><IconDownload /></div>
-                                    {aboutPageData?.ownership_central_bank_regulation_pdf_title}
-                                    {/* Հայտարարություն ՀՀ կենտրոնական բանկի կանոնակարգ 8/03 15-րդ հոդվածի պահանջների մասին */}
-                                </div>
+                                {_central_bank_regulation_pdf &&
+                                    <div
+                                        onClick={() => window.open(_central_bank_regulation_pdf, '_blank', 'noopener,noreferrer')}
+                                        className="btn-download-darkBlue  flex mx-auto xl:hidden items-center justify-center max-w-lg border-2  p-6  mt-16 rounded-xl text-sm cursor-pointer ">
+                                        <div className='mr-7'><IconDownload /></div>
+                                        {aboutPageData?.ownership_central_bank_regulation_pdf_title}
+                                        {/* Հայտարարություն ՀՀ կենտրոնական բանկի կանոնակարգ 8/03 15-րդ հոդվածի պահանջների մասին */}
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>

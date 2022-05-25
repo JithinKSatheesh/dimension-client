@@ -11,7 +11,7 @@ export default function Contents(props) {
     const {getServices, servicePageData} = props
     const [expanded, setExpanded] = useState(false)
 
-    {console.log(servicePageData)}
+    // {console.log(servicePageData)}
 
 
     return (

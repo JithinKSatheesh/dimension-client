@@ -58,11 +58,13 @@ export default function Contents(props) {
                                     </div>
                                     <div className='hidden xl:block text-sm '>
                                         <SlideTop>
-
-                                        <DownloadDocumentButton 
-                                            onClick={() => window.open(_regilation_documents_pdf, '_blank', 'noopener,noreferrer')}
-                                            className="w-fit pr-14" > {t("Regulation documents")} </DownloadDocumentButton>
-                                            </SlideTop>
+                                            {
+                                                _regilation_documents_pdf &&
+                                                <DownloadDocumentButton
+                                                    onClick={() => window.open(_regilation_documents_pdf, '_blank', 'noopener,noreferrer')}
+                                                    className="w-fit pr-14" > {t("Regulation documents")} </DownloadDocumentButton>
+                                            }
+                                        </SlideTop>
                                     </div>
                                 </div>
                             </div>
@@ -110,12 +112,13 @@ export default function Contents(props) {
                               
                                 <div className='block xl:hidden text-sm'>
                                     <SlideTop>
-
-                                    <DownloadDocumentButton 
-                                        onClick={() => window.open(_regilation_documents_pdf, '_blank', 'noopener,noreferrer')}
-                                        className="w-fit pr-14" > 
-                                        {t("Regulation documents")} 
-                                    </DownloadDocumentButton>
+                                        {_regilation_documents_pdf &&
+                                            <DownloadDocumentButton
+                                                onClick={() => window.open(_regilation_documents_pdf, '_blank', 'noopener,noreferrer')}
+                                                className="w-fit pr-14" >
+                                                {t("Regulation documents")}
+                                            </DownloadDocumentButton>
+                                        }
                                         </SlideTop>
                                 </div>
                             </div>

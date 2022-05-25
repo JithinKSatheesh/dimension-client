@@ -3,11 +3,23 @@ export const data = [
       "title": "News",
       "desc": "Visit news page",
       "link" : "/news",
-      "tags": ["page", "Նորություններ"]
+      "tags": ["page", "Նորություններ",]
+    },
+    {
+      "title": "Նորություններ",
+      "desc": "Նորություններ",
+      "link" : "/news",
+      "tags": ["page", "Նորություններ", "ինդեքսներ"]
     },
     {
       "title": "FAQ",
       "desc": "Visit FAQ page",
+      "tags": ["page", "Հաճախ տրվող հարցեր"],
+      "link" : "/faq",
+    },
+    {
+      "title": "Հաճախ տրվող հարցեր",
+      "desc": "Հաճախ տրվող հարցեր",
       "tags": ["page", "Հաճախ տրվող հարցեր"],
       "link" : "/faq",
     },

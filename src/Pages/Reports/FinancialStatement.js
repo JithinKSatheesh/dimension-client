@@ -24,11 +24,30 @@ export default function Financialstatement(props) {
     } = initStoreItem()
 
     const reports = getConfigs?.configs?.reports
-
-
+    
+    
+    const _annualreports = reports?.annual_report || []
     const _financialStatementAnnual = reports?.annual_financial_statement ?? []
     const _financialStatementsQuaterly = reports?.quaterly_financial_statement ?? []
     const _normatives = reports?.normatives ?? []
+
+    const getUpdateTime = () => {
+        const date1 = _financialStatementAnnual?.[0]?.updatedAt || '01/01/2022'
+        const date2 = _financialStatementsQuaterly?.[0]?.updatedAt || '01/01/2022'
+        const date3 = _normatives?.[0]?.updatedAt || '01/01/2022'
+        const date4 = _annualreports?.[0]?.updatedAt || '01/01/2022'
+
+        const _date1 = (new Date(date1)).getTime()
+        const _date2 = (new Date(date2)).getTime()
+        const _date3 = (new Date(date3)).getTime()
+        const _date4 = (new Date(date4)).getTime()
+
+        const _updateDate = Math.max(_date1, _date2, _date3, _date4)
+        const updatedDate = new Date(_updateDate)
+        return updatedDate ? updatedDate : ''
+
+        
+    }
 
     // console.log(_financialStatementAnnual , "@@")
 
@@ -62,11 +81,13 @@ export default function Financialstatement(props) {
         const url_ = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : ''
 
 
-        return (<ReportDownloadButton
+        return (<>
+        {url_ && <ReportDownloadButton
             title={title ? title : item?.year}
             onClick={() => window.open(url_, '_blank', 'noopener,noreferrer')}
             className=""
-        />
+        />}
+        </>
         )
 
 
@@ -145,7 +166,7 @@ export default function Financialstatement(props) {
                 </div>
             </div>
         </div>
-        <UpdateStatus  date={formatDate(getConfigs?.configs?.reports?.investor_relation?.update_date)} />
+        <UpdateStatus  date={formatDate(getUpdateTime())} />
         </>
     )
 }

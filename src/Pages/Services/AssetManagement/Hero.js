@@ -19,7 +19,7 @@ export default function Hero(props) {
     const pdf_url = servicePageData?.regilation_documents?.url ?? ''
     const _regilation_documents_asset_management_pdf = pdf_url ? `${process.env.REACT_APP_API_URL}${pdf_url}` : ''
 
-    console.log(data?.attributes)
+    // console.log(data?.attributes)
 
     return (
         <>
@@ -44,14 +44,17 @@ export default function Hero(props) {
                                
                                 </SlideBottom>
                             </div>
+                            {/* {console.log(servicePageData)} */}
                             <div className="w-full h-full xl:w-1/2 mb-16 flex  justify-end xl:text-xs 2xl:text-base">
                                 <SlideTop>
-
-                                <DownloadDocumentButton 
-                                    onClick={() => window.open(_regilation_documents_asset_management_pdf, '_blank', 'noopener,noreferrer')}
-                                    className="w-fit pl-5 pr-14">
-                                    {t("Regulation documents")}
-                                </DownloadDocumentButton>
+                                {
+                                    _regilation_documents_asset_management_pdf &&
+                                    <DownloadDocumentButton
+                                        onClick={() => window.open(_regilation_documents_asset_management_pdf, '_blank', 'noopener,noreferrer')}
+                                        className="w-fit pl-5 pr-14">
+                                        {t("Regulation documents")}
+                                    </DownloadDocumentButton>
+                                }
                                 </SlideTop>
                             </div>
                         </div>

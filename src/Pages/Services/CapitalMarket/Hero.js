@@ -54,12 +54,14 @@ export default function Hero(props) {
                             </div>
                             <div className="w-full h-full xl:w-1/2 mb-16 flex  justify-end">
                                 <SlideBottom>
-
-                            <DownloadDocumentButton 
-                                onClick={() => window.open(_regilation_documents_capital_market_pdf, '_blank', 'noopener,noreferrer')}
-                                className="w-fit pl-5 pr-14 text-sm xl:text-xs 2xl:text-sm 3xl:text-base">
-                                    {t("Regulation documents")}
-                                </DownloadDocumentButton>
+                                    {
+                                        _regilation_documents_capital_market_pdf &&
+                                        <DownloadDocumentButton
+                                            onClick={() => window.open(_regilation_documents_capital_market_pdf, '_blank', 'noopener,noreferrer')}
+                                            className="w-fit pl-5 pr-14 text-sm xl:text-xs 2xl:text-sm 3xl:text-base">
+                                            {t("Regulation documents")}
+                                        </DownloadDocumentButton>
+                                    }
                                 </SlideBottom>
                             </div>
                         </div>
