@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslation, Trans } from 'react-i18next'
 
 import { SlideBottom } from 'Components/SlideAnimation'
 import { truncate } from 'Utils/string'
@@ -47,7 +47,11 @@ export default function Protfolio(props) {
                         </div>
                         <div className="text-base xl:text-sm text-blue flex items-center cursor-pointer">
                             <Link to='/protfolio'>
-                                <div className="mr-3 font-bold">All&nbsp;projects</div>
+                                <div className="mr-3 font-bold">
+                                    <Trans i18nKey={"All projects"} >
+                                    All&nbsp;projects
+                                    </Trans>
+                                    </div>
                             </Link>
                             <IconRightArrow />
                         </div>
