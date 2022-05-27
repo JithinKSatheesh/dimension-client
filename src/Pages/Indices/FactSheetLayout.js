@@ -67,7 +67,7 @@ const FactsheetButton = ({ item }) => {
         key={item?.id}
         onClick={() => window.open(url_, '_blank', 'noopener,noreferrer')}
         className="text-xs xl:text-xs 2xl:text-xs h-16"
-        title={`${t("Factsheet")} (${getMonth(item?.year)} ${(new Date(item?.year).getFullYear())})`} />
+        title={`${t("Factsheet")} ${t(getMonth(item?.year))} ${(new Date(item?.year).getFullYear())}`} />
 
     );
 

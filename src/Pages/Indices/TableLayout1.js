@@ -29,7 +29,7 @@ export const TableLayout1 = (props) => {
                     </thead>
                     <tbody className='text-blue text-xs'>
                         <tr>
-                            <td className="border px-2 py-2  border-slate-300 font-bold">Total&nbsp;Return&nbsp;(%)</td>
+                            <td className="border px-2 py-2  border-slate-300 font-bold"><Trans i18nKey={"Total Return"}>Total&nbsp;Return&nbsp;</Trans>(%)</td>
                             <td className="border px-2 py-2 text-right border-slate-300 "> {data?.index_performance_1_month} </td>
                             <td className="border px-2 py-2 text-right border-slate-300 "> {data?.index_performance_3_month} </td>
                             <td className="border px-2 py-2 text-right border-slate-300 "> {data?.index_performance_6_month} </td>

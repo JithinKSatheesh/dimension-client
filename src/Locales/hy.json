@@ -18,7 +18,7 @@
         "Reports" : "Հաշվետվություններ",
         "Regulations" : "Կարգավորումներ ",
         "News" : "Նորություններ ",
-        "All news" : "բոլոր նորությունները",
+        "All news" : "Բոլոր նորությունները",
         
         "Portfolio" : "Պորտֆել",
         "All Protfolios" : "",
@@ -49,7 +49,7 @@
         
         "1 Month" : "1\u00a0ամիս",
         "3 Month" : "3\u00a0ամիս",
-        "6 Month" : "3\u00a0ամիս",
+        "6 Month" : "6\u00a0ամիս",
         "1 Year" : "1\u00a0տարի",
         "YTD" : "Տարվա\u00a0սկզբից",
         "Since Inception" : "Մեկնարկից\u00a0մինչև\u00a0հաշվետու\u00a0օր",
@@ -60,7 +60,7 @@
         "Index Performance" : "Ինդեքսի եկամտաբերություն",
         "Index Statistics" : "Ինդեքսի վիճակագրություն",
         "Index Description" : "Ինդեքսի նկարագիր",
-        "Total Return" : "Եկամտաբերություն",
+        "Total Return" : "Եկամտաբերություն\u00a0",
         "INDEX MARKET VALUE (AMD Million)" : "Ինդեքսի շուկայական արժեք (ՀՀ միլիոն դրամ)",
         "NUMBER OF CONSTITUENT BONDS" : "Ներառված պարտատոմսերի քանակը",
         "Government Bonds" : "Պետական պարտատոմսեր",
@@ -120,6 +120,19 @@
         "Back to news" : "բոլոր նորությունները",
         "All researches" : "Բոլոր հետազոտությունները",
         "All projects" : "Բոլորը",
+
+        "Jan": "Հունվ",
+        "Feb": "Փետ",
+        "Mar": "Մար",
+        "Apr": "Ապր",
+        "May": "Մայ",
+        "Jun": "Հուն",
+        "July": "Հուլ",
+        "Aug": "Օգոս",
+        "Sept": "Սեպ",
+        "Oct": "Հոկ",
+        "Nov": "Նոյ",
+        "Dec": "Դեկ",
         
 
         "Office of the financical System Mediator" : "Ֆինանսական համակարգի հաշտարարի գրասենյակ",

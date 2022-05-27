@@ -21,10 +21,10 @@ export default function Corporatestructure(props) {
     const {aboutPageData} = props
 
     const _StructNewURL = aboutPageData?.corporate_structure_image_desktop?.url
-    const _StructNew =  _StructNewURL ?  `${process.env.REACT_APP_API_URL}${_StructNewURL}` : StructNew
+    const _StructNew =  _StructNewURL ?  `${process.env.REACT_APP_API_URL}${_StructNewURL}` : ''
     
-    const _StructNewMobURL = aboutPageData?.corporate_structure_image_desktop?.url
-    const _StructNewMob =  _StructNewMobURL ?  `${process.env.REACT_APP_API_URL}${_StructNewMobURL}` : StructNewMob
+    const _StructNewMobURL = aboutPageData?.corporate_structure_image_mobile?.url
+    const _StructNewMob =  _StructNewMobURL ?  `${process.env.REACT_APP_API_URL}${_StructNewMobURL}` : ''
 
     return (
         <>
