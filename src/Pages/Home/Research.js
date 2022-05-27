@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslation, Trans } from 'react-i18next'
 
 import { truncate } from 'Utils/string'
 import {ReactComponent as IconRightArrow} from 'Assets/icons/ArrowRight.svg'
@@ -46,7 +46,11 @@ export default function Research(props) {
                         </div>
                         <div className="text-base text-white flex items-center cursor-pointer">
                             <Link to="/market-research">
-                            <div className="mr-3 font-bold">All&nbsp;researches</div>
+                            <div className="mr-3 font-bold">
+                                <Trans i18nKey={"All researches"} >
+                                    All&nbsp;researches
+                                </Trans>
+                            </div>
                             </Link>
                             <IconRightArrow  />
                         </div>
