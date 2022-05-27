@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation, Trans } from 'react-i18next';
 
 // import { MenuContent } from './ServiceDropdown'
 // import { RenderMenuLinks } from './AboutDropdown';
@@ -21,6 +22,7 @@ import { ReactComponent as DownArrow } from 'Assets/icons/downsmall.svg';
 
 export const MobileMenu = (props) => {
 
+    const {t} = useTranslation()
     const { open, setOpen } = props
 
     const IconClose = () => <svg fill='currentColor' width="24" height="24" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" /></svg>;
@@ -46,8 +48,9 @@ export const MobileMenu = (props) => {
                         header={<>
                             <div className="flex items-center font-bold cursor-pointer">
                                 <div className='py-5'>
-                                    About&nbsp;us&nbsp;&nbsp;
-                                </div>
+                                <Trans i18nKey={"About us"}>About&nbsp;us&nbsp;</Trans>
+                                  
+                                </div>&nbsp;
                                 <DownArrow />
                             </div>
                         </>}
@@ -57,7 +60,7 @@ export const MobileMenu = (props) => {
                                     AboutMenuList.map(link =>
                                         <div key={link.id} className='py-5'>
                                             <Link to={link.to} className="">
-                                                {link.label}
+                                                {t(link.label)}
                                             </Link >
                                         </div>
                                     )
@@ -68,7 +71,7 @@ export const MobileMenu = (props) => {
                         header={<>
                             <div className="flex items-center font-bold cursor-pointer">
                                 <div className='py-5 '>
-                                    Services&nbsp;&nbsp;
+                                <Trans i18nKey={"Services"}>Services&nbsp;</Trans>&nbsp;
                                 </div>
                                 <DownArrow />
                             </div>
@@ -80,9 +83,9 @@ export const MobileMenu = (props) => {
                                 )
                             }
                         </>} />
-                    <div className='py-5 font-bold'> <Link to="/indices"> Indices </Link> </div>
-                    <div className='py-5 font-bold'> <Link to="/protfolio"> Portfolio </Link> </div>
-                    <div className='py-5 font-bold'> <Link to="/news"> news </Link> </div>
+                    <div className='py-5 font-bold'> <Link to="/indices"> {t("Indices")} </Link> </div>
+                    <div className='py-5 font-bold'> <Link to="/protfolio"> {t("Portfolio")} </Link> </div>
+                    <div className='py-5 font-bold'> <Link to="/news"> {t("News")} </Link> </div>
                     {/* <div className='py-5 font-bold'> <Link to="/contacts"> contacts </Link> </div> */}
 
                 </div>
@@ -97,7 +100,7 @@ export const MobileMenu = (props) => {
                 </div>
                 <div className="py-8 flex text-blue-400">
                     {socialMedia.map(link =>
-                        <a href={link.link} className='mr-4'>
+                        <a href={link.link} target="_blank" className='mr-4'>
                             <div className="bg-dark-blue rounded-full hover:bg-white ">
                                 <link.icon className='text-white-blue-hover' width={30} height={30} />
                             </div>

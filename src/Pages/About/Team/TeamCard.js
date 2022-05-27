@@ -26,8 +26,8 @@ export const TeamCard = (props) => {
     const SocialLinks = () => (
         <div className="flex">
         <a href={item?.linkedin_link} target="_blank" className='mr-3'> <IconLinkedin /> </a>
-        <a href={item?.twitter_link} target="_blank" className='mr-3'> <IconTwitter /> </a>
-        <a href={item?.fb_link} target="_blank" > <IconFB /> </a>
+        {/* <a href={item?.twitter_link} target="_blank" className='mr-3'> <IconTwitter /> </a>
+        <a href={item?.fb_link} target="_blank" > <IconFB /> </a> */}
     </div>
 
     )

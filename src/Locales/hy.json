@@ -18,7 +18,8 @@
         "Reports" : "Հաշվետվություններ",
         "Regulations" : "Կարգավորումներ ",
         "News" : "Նորություններ ",
-        "All news" : "Նորություններ",
+        "All news" : "բոլոր նորությունները",
+        
         "Portfolio" : "Պորտֆել",
         "All Protfolios" : "",
         "FAQ" : "Հաճախ տրվող հարցեր",
@@ -33,6 +34,8 @@
 
         "More" : "Ավելին",
         "Close" : "Close",
+        "Research request" : "Ստանալ հետազոտությունը ",
+
         
         "Board member" : "Խորհրդի անդամ",
         "Advisory group" : "Խորհրդատվական խումբ",
@@ -106,13 +109,15 @@
         "Upload CV" : "Ուղարկել CV",
         "Submit" : "Հաստատել ",
         "Get it" : "Get it",
-        "Details" : "Մանրամասներ",
+        "Details" : "Կարդալ ավելին",
 
         
 
         "Tarrifs" : "Սակագներ ",
         "Search" : "Փնտրել",
         "Search result for" : "Search result for",
+
+        "Back to news" : "բոլոր նորությունները",
 
         "Office of the financical System Mediator" : "Ֆինանսական համակարգի հաշտարարի գրասենյակ",
         "Mediator" : "Հաշտարար",

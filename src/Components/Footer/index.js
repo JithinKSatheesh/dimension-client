@@ -28,6 +28,11 @@ import { SearchBox } from './SearchBox'
 
 export const socialMedia = [
     {
+        id:4,
+        icon : LinkedinIcon ,
+        link : 'https://fb.com',
+    },
+    {
         id:1,
         icon : FacebookIcon ,
         link : 'https://fb.com',
@@ -37,11 +42,7 @@ export const socialMedia = [
         icon : Instagram ,
         link : 'https://fb.com',
     },
-    {
-        id:4,
-        icon : LinkedinIcon ,
-        link : 'https://fb.com',
-    }
+    
 ]
 
 const _aboutLinks = [
@@ -164,6 +165,11 @@ export default function Index(props) {
 
     const socialMedia = [
         {
+            id:4,
+            icon : LinkedinIcon ,
+            link : footerData?.linkedIn_link
+        },
+        {
             id:1,
             icon : FacebookIcon ,
             link : footerData?.fb_link
@@ -173,11 +179,7 @@ export default function Index(props) {
             icon : Instagram ,
             link : footerData?.insta_link
         },
-        {
-            id:4,
-            icon : LinkedinIcon ,
-            link : footerData?.linkedIn_link
-        }
+       
     ]
     
 

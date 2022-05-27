@@ -1,8 +1,10 @@
 import React from 'react';
-
+import { useTranslation } from 'react-i18next';
 
 
 export const ServiceDetailsButton = (props) => {
+
+    const {t} = useTranslation()
 
     return (
         <div className="rounded-xl bg-blue-light flex flex-wrap justify-between items-center p-7 cursor-pointer hover-border-outline border-2 xl:max-h-32">
@@ -10,7 +12,7 @@ export const ServiceDetailsButton = (props) => {
                 <div className='w-full xl:w-fit mb-8 xl:mb-0' >
                     {props?.icon}
                 </div>
-                <div className="font-bold w-[170px]  ">
+                <div className="font-bold w-[170px] text-dark-blue ">
                     {props?.title}
                 </div>
             </div>
@@ -18,7 +20,7 @@ export const ServiceDetailsButton = (props) => {
                 <div
                     onClick={props?.onClick}
                     className="bg-dark-blue-grad px-12 py-3 text-white xl:text-xs 2xl:text-sm font-bold rounded-xl cursor-pointer">
-                    Details
+                    {t("Details")}
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
+import { useTranslation, Trans } from 'react-i18next'
 
 
 import {ReactComponent as IconRightArrow} from 'Assets/icons/ArrowRight.svg'
@@ -42,7 +42,11 @@ export default function News(props) {
                     </div>
                         <Link to="/news">
                     <div className="text-base text-white flex items-center cursor-pointer">
-                        <div className="mr-3 font-bold xl:text-sm 2xl:text-base">All&nbsp;news</div>
+                        <div className="mr-3 font-bold xl:text-sm 2xl:text-base"> 
+                            <Trans i18nKey={"All news"}>
+                                All&nbsp;news
+                            </Trans>
+                            </div>
                         <IconRightArrow />
                     </div>
                         </Link>

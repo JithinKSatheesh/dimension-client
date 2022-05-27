@@ -84,10 +84,11 @@ export function Navbar(props) {
                                 onHoverEnd={toggleHoverOut}
                                 isHover={isHover === 'services'}
                                 variant={variant}
-                                to="/services/capital-market"> <Trans i18nKey={"Services"}>Services&nbsp;</Trans>&nbsp;<DownArrow />
-                                <div className="">
-                                    <ServiceDropdown isHover={isHover === 'services'} />
-                                </div>
+                                to="/services/capital-market"> 
+                                    <Trans i18nKey={"Services"}>Services&nbsp;</Trans>&nbsp;<DownArrow />
+                                    <div className="">
+                                        <ServiceDropdown isHover={isHover === 'services'} />
+                                    </div>
                             </NavLinks>
                             <NavLinks
                                 onHoverStart={() => toggleHover('indices')}
@@ -173,8 +174,8 @@ const LangDropDown = () => {
             {open &&
             <Outsideclick onOutsideClick={() => setOpen(false)}>
             <div className="absolute top-12 -left-3 balloon w-fit backdrop-blur-xl bg-[#006191] text-white font-bold text-xs py-1  rounded-xl">
-                <div onClick={() =>changeLang('Eng')} className=" p-2 bg-menu-blue-light"> English </div>
-                <div onClick={() =>changeLang('Arm') } className=" p-2 bg-menu-blue-light"> ՀԱՅ </div>
+                <div onClick={() =>changeLang('Eng')} className=" p-2 px-4 bg-menu-blue-light"> ENG </div>
+                <div onClick={() =>changeLang('Arm') } className=" p-2 px-4 bg-menu-blue-light"> ՀԱՅ </div>
             </div>
             </Outsideclick>
             }
