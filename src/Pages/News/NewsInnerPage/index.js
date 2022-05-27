@@ -30,7 +30,7 @@ export default function Index(props) {
         try {
 
             const res = await GetFunctions.fetchArticles({ 
-                populate : ["image"],
+                populate : ["image", "cover_image_wide"],
             
             }, id)
             const data = res?.data?.data || {}
