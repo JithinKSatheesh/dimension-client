@@ -67,7 +67,7 @@ export const TeamCard = (props) => {
                     <div className="w-72 overflow-none">
                         <img src={_imageURL} alt="" className='w-full bg-blue-light rounded-xl relative overflow-none ' />
                     </div>
-                    {console.log(item)}
+                    {/* {console.log(item)} */}
                     {
                         item?.type_of_qualification &&
                         <>

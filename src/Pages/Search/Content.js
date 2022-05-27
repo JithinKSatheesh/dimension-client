@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useSearchParams, Link } from 'react-router-dom'
-import Fuse from 'fuse.js'
+import { useSearchParams } from 'react-router-dom'
 import { ReactComponent as Search } from 'Assets/icons/search.svg'
 
 import { DetailsButton } from 'Components/Buttons'
 
-import { data } from './searchData'
+import { SearchResult } from './SearchResult'
 
 export default function Content(props) {
 
@@ -80,59 +79,3 @@ export const SearchBox = (props) => {
     )
 }
 
-const SearchResult = (props) => {
-
-    const { searchKey } = props
-
-    const options = {
-        includeScore: true,
-        // Search in `author` and in `tags` array
-        keys: ['title', 'desc', 'tags']
-    }
-
-    const fuse = new Fuse(data, options)
-
-    const result = fuse.search(searchKey)
-
-    //   console.log(result)
-
-    return (
-        <div>
-            <div className="py-12 text-dark-blue text-sm">
-                Search result for : <span className="font-bold">{searchKey}</span>
-            </div>
-            <div className=''>
-                {[...result].map(item => <SearchCard item={item?.item} />)}
-
-            </div>
-            {(result?.length <= 0) && <div>
-                <div className="text-center text-dark-blue">
-                    No result found!
-                </div>
-            </div>}
-        </div>
-    )
-}
-
-
-const SearchCard = (props) => {
-
-    const { title, desc, link } = props?.item
-
-    return (
-        <Link to={link} >
-            <div className='bg-blue-light rounded-xl text-dark-blue p-6 mb-12'>
-                <div className="text-sm py-2">
-                    {link}
-                </div>
-                <div className="text-xl py-2 font-bold">
-                    {title}
-                </div>
-                <div className='py-2'>
-                    {desc}
-                </div>
-
-            </div>
-        </Link>
-    )
-}

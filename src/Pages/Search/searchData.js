@@ -3,48 +3,48 @@ export const data = [
       "title": "News",
       "desc": "Visit news page",
       "link" : "/news",
-      "tags": ["page", "Նորություններ",]
+      "tags": [ "Նորություններ",]
     },
     {
       "title": "Նորություններ",
       "desc": "Նորություններ",
       "link" : "/news",
-      "tags": ["page", "Նորություններ", "ինդեքսներ"]
+      "tags": [ "Նորություններ"]
     },
     {
       "title": "FAQ",
       "desc": "Visit FAQ page",
-      "tags": ["page", "Հաճախ տրվող հարցեր"],
+      "tags": [ "Հաճախ տրվող հարցեր"],
       "link" : "/faq",
     },
     {
       "title": "Հաճախ տրվող հարցեր",
       "desc": "Հաճախ տրվող հարցեր",
-      "tags": ["page", "Հաճախ տրվող հարցեր"],
+      "tags": [ "Հաճախ տրվող հարցեր"],
       "link" : "/faq",
     },
     {
       "title": "About us",
       "desc": "Visit About page",
-      "tags": ["page", "Ընկերության մասին"],
+      "tags": [ ""],
       "link" : "/about#about",
     },
     {
       "title": "Shareholders",
       "desc": "Visit About page",
-      "tags": ["page", "Բաժնետերեր"],
+      "tags": [ "Բաժնետերեր"],
       "link" : "/about#ownership",
     },
     {
       "title": "Team members",
       "desc": "Visit About page",
-      "tags": ["page", "Մեր թիմը"],
+      "tags": [ ""],
       "link" : "/about#team",
     },
     {
       "title": "indices",
       "desc": "Dimension Armenia AMD Bond Index and Dimension Armenia USD Corporate Bond Index",
-      "tags": ["page", "graph", "ինդեքսներ"],
+      "tags": [ "graph", ""],
       "link" : "/indices",
     },
     {
@@ -74,7 +74,50 @@ export const data = [
     {
       "title": "Factsheets",
       "desc": "Dimension Armenia AMD Bond Index and Dimension Armenia USD Corporate Bond Index",
-      "tags": ["pdf", "Monthly", 'ինդեքսներ'],
+      "tags": ["pdf", "Monthly"],
       "link" : "/indices",
     },
+    // Armenian translation
+    // About
+    {
+      "title": "Մեր մասին",
+      "desc": "«Դայմենշն» փակ բաժնետիրական ընկերությունը հիմնադրվել է 2018թ․-ին։ Դայմենշն ներդրումային ընկերությունը գրանցվել և լիցենզավորվել է Հայաստանի Հանրապետության Կենտրոնական բանկի կողմից 2018թ․-ի սեպտեմբերի 28-ին։",
+      "tags": ["Մեր թիմը", "Մեր բիզնեսի սկզբունքները", 'Սեփականություն', "Մեր գործընկերները", "Մեր առաքելությունը", "Մեր տեսլականը", "Կազմակերպչական կառուցվածք", "Կանոնադրական փաստաթղթեր", "Բաժնետերեր"],
+      "link" : "/about",
+    },
+    {
+      "title": "Մեր թիմը",
+      "desc": "Խորհրդի, Խորհրդատվական, Անձնակազմ",
+      "tags": ["Խորհրդի անդամ", "Խորհրդատվական խումբ", 'Անձնակազմ'],
+      "link" : "/about#team",
+    },
+    //  Services
+    {
+      "title": "Խորհրդատվություն կապիտալի շուկաներում",
+      "desc": "Միաձուլումներ և ձեռքբերումներ, Հաշվապահական հաշվեկշռի/ հաշվետվությունների/ վերաբերյալ խորհրդատվություն և կապիտալի վերակառուցում, Մասնավոր տեղաբաշխումներ, Հետազոտական և վերլուծական ծառայություններ",
+      "tags": ["ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐ"],
+      "link" : "/services/capital-market",
+    },
+    {
+      "title": "Արժեթղթերի գործառնություններով պայմանավորված ծառայություններ",
+      "desc": "Արժեթղթերի տեղաբաշխում, Բորսաներում ցուցակման ծառայություն, Շուկա ստեղծողի ծառայություններ, Ռեեստրավարում և պահառություն",
+      "tags": ["ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐ"],
+      "link" : "/services/investment-security",
+    },
+    {
+      "title": "Ակտիվների կառավարում",
+      "desc": "Ֆոնդերի կառավարում, Պորտֆելի կառավարում",
+      "tags": ["ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐ"],
+      "link" : "/services/asset-management",
+    },
+    // Indices
+    {
+      "title": "ինդեքսներ",
+      "desc": "Տեղեկագիր , AMD Bond Index, USD Corporate Bond Index",
+      "tags": ["Տեղեկագիր"],
+      "link" : "/indices",
+    },
+
+    
+
   ]
