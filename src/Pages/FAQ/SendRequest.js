@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { UpdateStatus } from 'Components/UpdateStatus'
 import { PopUpcontainer } from 'Components/PopUpcontainer'
 import { FaqPopUp} from './FaqPopUp'
@@ -8,6 +9,7 @@ import { formatDate } from 'Utils/time'
 
 export default function Sendrequest(props) {
 
+    const {t} = useTranslation()
     const [popup, setPopup] = useState(false)
     const { getConfigs } = useStoreItem()
 
@@ -20,14 +22,14 @@ export default function Sendrequest(props) {
                         <div className="flex flex-wrap justify-end  p-5 border-blue-light border-b border-t items-center ">
                             <div className="w-full xl:w-1/2 py-5 xl:py-0">
                                 <div className="font-bold  text-3xl xl:text-xl 2xl:text-2xl 3xl:text-3xl text-white text-center xl:text-left">
-                                    Have another questions?
+                                    {t("Have other questions?")}
                                 </div>
                             </div>
                             <div className="w-full xl:w-1/2 py-5 xl:py-0">
                                 <div 
                                     onClick={() => setPopup(true)} 
                                     className="mx-auto xl:ml-auto xl:mr-0 border border-blue-light rounded-xl py-2 px-5 cursor-pointer text-center xl:w-fit max-w-sm font-bold text-white">
-                                    Send request
+                                    {t("Send request")}
                                 </div>
                             </div>
                         </div>

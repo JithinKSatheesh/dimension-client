@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { PopUpcontainer } from 'Components/PopUpcontainer'
 // import { NewsCard } from './NewsCard'
 import { SlideTop } from 'Components/SlideAnimation'
@@ -20,6 +21,7 @@ export default function Content(props) {
 
     // const [popup, setPopup] = useState(false)
 
+    const {t} = useTranslation()
     const { getConfigs } = useStoreItem()
     // const { initProtfolio } = initStoreItem()
 
@@ -39,7 +41,7 @@ export default function Content(props) {
                             <div className="flex justify-between items-center flex-wrap">
                                 <div className="text-2xl xl:text-2xl 2xl:text-3xl font-bold flex items-center my-2">
                                     <SlideTop>
-                                        Tarrifs
+                                        {t("Tarrifs")}
                                     </SlideTop>
                                 </div>
                             </div>

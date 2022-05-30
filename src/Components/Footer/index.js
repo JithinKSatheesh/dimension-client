@@ -19,6 +19,9 @@ import Brand_2 from 'Assets/brands/brand2.png'
 import Brand_3 from 'Assets/brands/fininfo.png'
 import Brand_4 from 'Assets/brands/brand3.png'
 import Brand_5 from 'Assets/brands/exit.png'
+import Brand_6 from 'Assets/brands/AMX.png'
+
+
 import {  RenderAddressData } from './AddressData'
 
 import { PdfDownloadButton } from 'Components/Buttons'
@@ -144,22 +147,28 @@ export default function Index(props) {
     };
 
 
-    const _brands = [{
-        img: Brand_1,
-        link: footerData?.URL_abcfinance
-    }
-        , {
-        img: Brand_2,
-        link: footerData?.URL_fsm,
-    }
-        , {
-        img: Brand_3,
-        link: footerData?.URL_fininfo
-    }
-        , {
-        img: Brand_4,
-        link: footerData?.URL_cba
-    }
+    const _brands = [
+        {
+            img: Brand_1,
+            link: footerData?.URL_abcfinance
+        }, 
+        {
+            img: Brand_2,
+            link: footerData?.URL_fsm,
+        }, 
+        {
+            img: Brand_3,
+            link: footerData?.URL_fininfo
+        }, 
+        {
+            img: Brand_4,
+            link: footerData?.URL_cba
+        },
+        {
+            img: Brand_6,
+            link: footerData?.URL_amx
+        },
+
     ]
 
 

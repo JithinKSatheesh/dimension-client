@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { formatDate, getMonth } from 'Utils/time'
 import { ChartLayout } from './ChartLayout'
 
@@ -14,11 +15,11 @@ import { FactSheetLayout } from './FactSheetLayout'
 
 export default function Amdindex(props) {
 
+    const {t} = useTranslation()
     const { getIndicesData, getConfigs } = useStoreItem()
     const { initUsdIndicesGraph, initUsdIndexTableData, initUsdIndicesFactsheets, initAllConfigs} = initStoreItem()
 
     const configs = getConfigs?.configs?.indices?.usd
-
     const _tableData = configs?.indices_usd_table || {}
     const _pdfData = configs?.indices_usd_factsheet|| []
     // const _graphData = getIndicesData?.usdIndicesGraph || []
@@ -74,7 +75,7 @@ export default function Amdindex(props) {
             <div className="flex flex-wrap">
                 <div className="w-full xl:w-6/12 order-2 xl:order-1">
                     <div className="text-2xl text-dark-blue font-bold py-8">
-                        Index Description
+                        {t("Index Description")}
                     </div>
                     <div className=" text-dark-blue pb-8 text-sm">
                         {_tableData?.index_description}

@@ -6,13 +6,16 @@ import Footer from 'Components/Footer'
 
 // ** hooks
 import { useScrollBehaviours } from 'Components/Hooks/useScrollBehaviours'
+import Changelanguage from 'Components/Hooks/changeLanguage'
 
 export default function Index(props) {
     
-const { ScrollToTop } = useScrollBehaviours()
+    const { ScrollToTop } = useScrollBehaviours()
+    const {initLanguage} = Changelanguage()
 
     useEffect(() => {
         ScrollToTop()
+        initLanguage()
     }, [])
 
     return (

@@ -23,6 +23,7 @@
         "Portfolio" : "Պորտֆել",
         "All Protfolios" : "",
         "FAQ" : "Հաճախ տրվող հարցեր",
+        
         "Careers" : "Աշխատատեղեր",
         "Contact us" : "Կապ մեզ հետ",
         "This page was last updated" : "Թարմացվել է",
@@ -95,8 +96,8 @@
         "Rules of Central Depository of Armenia can be viewed and" : "Հայաստանի Կենտրոնական Դեպոզիտարիայի կանոններին կարող եք ծանոթանալ",
         "downloaded here" : "այստեղ",
 
-        "Have another questions?" : "Have another questions?",
-        "send request" : "send request",
+        "Have other questions?" : "Այլ հարցերի դեպքում",
+        "Send request" : "Ուղարկել հարցում",
         "Stock exchange & Central depository rules" : "Բորսայի և դեպոզիտարիայի կանոններ",
 
         "Position" : "Հաստիք",
@@ -108,7 +109,7 @@
         "Phone" : "Հեռախոս",
         "Upload CV" : "Ուղարկել CV",
         "Submit" : "Հաստատել ",
-        "Get it" : "Get it",
+        "Get it" : "Ստանալ",
         "Details" : "Կարդալ ավելին",
 
         
@@ -121,19 +122,20 @@
         "All researches" : "Բոլոր հետազոտությունները",
         "All projects" : "Բոլորը",
 
-        "Jan": "Հունվ",
-        "Feb": "Փետ",
-        "Mar": "Մար",
-        "Apr": "Ապր",
-        "May": "Մայ",
-        "Jun": "Հուն",
-        "July": "Հուլ",
-        "Aug": "Օգոս",
-        "Sept": "Սեպ",
-        "Oct": "Հոկ",
-        "Nov": "Նոյ",
-        "Dec": "Դեկ",
+        "January": "Հունվար",
+        "February": "Փետրվար",
+        "March": "Մարտ",
+        "April": "Ապրիլ",
+        "May": "Մայիս",
+        "June": "Հունիս",
+        "July": "Հուլիս",
+        "August": "Օգոստոս",
+        "September": "Սեպտեմբեր",
+        "October": "Հոկտեմբեր",
+        "November": "Նոյեմբեր",
+        "December": "Դեկտեմբեր",
         
+        "What are you interested in?" : "What are you interested in?",
 
         "Office of the financical System Mediator" : "Ֆինանսական համակարգի հաշտարարի գրասենյակ",
         "Mediator" : "Հաշտարար",

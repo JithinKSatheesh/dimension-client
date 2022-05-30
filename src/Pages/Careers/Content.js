@@ -13,6 +13,7 @@ import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
 import { ApplyForJob } from './ApplyForJob';
 import { CareerCard } from './CareerCard';
+import { Markdown } from 'react-showdown'
 
 export const IconDownload = () => <svg fill='white' width="24" height="24" viewBox="0 0 24 24"><path d="M8 10h-5l9-10 9 10h-5v10h-8v-10zm11 9v3h-14v-3h-2v5h18v-5h-2z" /></svg>
 
@@ -54,7 +55,10 @@ export default function Content(props) {
                         </div>
                         <div className="pb-16 text-dark-blue text-sm xl:text-xs 2xl:text-sm xl:leading-6 2xl:leading-7">
                             <JustAppear>
-                                {careerPage?.description}
+                                <Markdown 
+                                markup={careerPage?.description}
+                                />
+                                
                             </JustAppear>
                         </div>
                         {data?.length <= 0 ?

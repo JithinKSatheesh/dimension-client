@@ -116,16 +116,22 @@ export default function Content(props) {
                                         <SlideTop>
                                         <div className="pb-3">
                                             {t("Rules of AMX Armenia stock exchange can be viewed and")}
-                                            <span 
+                                            {/* <span 
                                                 onClick={() => window.open(_rules_of_amx_armenia, '_blank', 'noopener,noreferrer')}
-                                                className='font-bold cursor-pointer'> {t("downloaded here")}.</span>
+                                                className='font-bold cursor-pointer'> {t("downloaded here")}.</span> */}
+                                            <a href={_page?.rules_of_amx_armenia_URL} target="_blank" className='font-bold cursor-pointer'> 
+                                                &nbsp;{t("downloaded here")}.
+                                            </a>
                                         </div>
                                         <div>
 
                                             {t("Rules of Central Depository of Armenia can be viewed and")}
-                                            <span 
+                                            {/* <span 
                                                 onClick={() => window.open(_rules_of_central_depository, '_blank', 'noopener,noreferrer')}
-                                                className='font-bold cursor-pointer'> {t("downloaded here")}.</span>
+                                                className='font-bold cursor-pointer'> {t("downloaded here")}.</span> */}
+                                             <a href={_page?.rules_of_central_depository_URL} target="_blank" className='font-bold cursor-pointer'> 
+                                             &nbsp;{t("downloaded here")}.
+                                            </a>
                                         </div>
                                         </SlideTop>
                                     </div>

@@ -6,7 +6,7 @@ export const formatDate = (date, time = true) => {
 }
 
 export const getMonth = (date) => {
-    const _months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
+    const _months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     const _date = new Date(date)
     return _months[_date.getMonth()]
 }

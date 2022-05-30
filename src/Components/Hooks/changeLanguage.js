@@ -41,5 +41,5 @@ export default function Changelanguage(props) {
         initLanguage()
     }, [])
 
-    return {changeToEnglish, changeToArm}
+    return {changeToEnglish, changeToArm, initLanguage}
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import * as yup from 'yup';
 
 import { GetFunctions } from 'API/fetch'
@@ -11,7 +12,7 @@ export const FaqPopUp = (props) => {
 
     // const { popup } = props;
 
-
+    const {t} = useTranslation()
     const [loading, setLoading] = useState(false)
     const [success, setSuccess] = useState(false)
 
@@ -93,7 +94,7 @@ export const FaqPopUp = (props) => {
                     loading={loading}
                 />
                 <div className="py-3 text-xs">
-                    What are you interested in?
+                    {t("What are you interested in?")}
                 </div>
                 <textarea
                     name='details'

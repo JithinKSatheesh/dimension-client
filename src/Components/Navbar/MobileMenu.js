@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation, Trans } from 'react-i18next';
@@ -14,6 +14,7 @@ import {socialMedia} from 'Components/Footer'
 
 import { ReactComponent as LogoWhite } from 'Assets/icons/logo_white.svg';
 import { ReactComponent as DownArrow } from 'Assets/icons/downsmall.svg';
+import Changelanguage from 'Components/Hooks/changeLanguage';
 // import { ReactComponent as IconHome } from 'Assets/icons/service_home_blue.svg';
 // import { ReactComponent as IconShield } from 'Assets/icons/service_shield_blue.svg';
 // import { ReactComponent as IconManage } from 'Assets/icons/service_manage_blue.svg';
@@ -29,6 +30,12 @@ export const MobileMenu = (props) => {
 
 
     const {ServiceMenuList} = useServiceMenuList()
+
+    const {initLanguage} = Changelanguage()
+
+    useEffect(() => {
+        initLanguage()
+    }, [])
 
     return (
 

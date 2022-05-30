@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 
 // ** hooks
 import { useScrollBehaviours } from 'Components/Hooks/useScrollBehaviours'
+import Changelanguage from 'Components/Hooks/changeLanguage'
 
 import Hero from './Hero'
 import Questions from './Questions'
@@ -12,9 +13,11 @@ import Footer from 'Components/Footer'
 export default function Index(props) {
 
     const { ScrollToTop } = useScrollBehaviours()
+    const {initLanguage} = Changelanguage()
 
     useEffect(() => {
         ScrollToTop()
+        initLanguage()
     }, [])
 
     return (
