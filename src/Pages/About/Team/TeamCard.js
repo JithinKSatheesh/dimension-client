@@ -19,7 +19,7 @@ export const TeamCard = (props) => {
     const _imageURL = item?.image?.url ? `${process.env.REACT_APP_API_URL}${item?.image?.url}` : '/assets/photos/profile.png'
 
     const ImageCard = ({ img_url, className }) => (
-        <div className={`h-72  bg-blue-light rounded-t-xl relative overflow-hidden ${className}`}>
+        <div className={`h-72 2xl:h-[360px]  bg-blue-light rounded-t-xl relative overflow-hidden ${className}`}>
             <img src={img_url} alt="" className='mx-auto   w-full absolute bottom-0' />
         </div>)
 
