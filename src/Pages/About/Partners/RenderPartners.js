@@ -31,6 +31,7 @@ export const RenderPartners = (props) => {
 
 export const RenderPartnerExpanded = (props) => {
 
+    const {t} = useTranslation()
     const { item, onClick } = props;
     const _image = item?.logo?.url ? `${process.env.REACT_APP_API_URL}${item?.logo?.url}` : '';
 
@@ -40,7 +41,7 @@ export const RenderPartnerExpanded = (props) => {
             <div className="p-8 rounded-xl bg-blue-light text-blue  hover-border-outline border-2 max-w-xl h-full  w-full">
                 <ImageSection _image={_image} />
                 <DescriptionSection item={item} />
-                <AddressSection item={item} onClick={onClick} btnLabel={<>&nbsp;Close&nbsp;</>}  />
+                <AddressSection item={item} onClick={onClick} btnLabel={<>&nbsp;{t("Close")}&nbsp;</>}  />
             </div>
         </SlideBottom>
     );

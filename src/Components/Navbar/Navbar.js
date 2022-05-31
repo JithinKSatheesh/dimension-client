@@ -129,7 +129,7 @@ export function Navbar(props) {
                         {/* ------------------------ */}
                         {/* mobile menu burger */}
                         {/* ------------------------ */}
-                        <div className='flex items-center xl:hidden'>
+                        <div className='flex items-center xl:hidden text-dark-blue'>
                             <div  className={`lang py-3 pr-3 self-center cursor-pointer ${variant === 'white' && 'text-white'}`}>
                                 <LangDropDown />
                             </div>

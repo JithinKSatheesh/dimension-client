@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useTranslation } from 'react-i18next';
 import Fuse from 'fuse.js';
 import { data } from './searchData';
@@ -8,6 +8,11 @@ import { SearchCard } from "./SearchCard";
 import useStoreItem from 'Store/hooks/getStoreItems'
 import { TeamCard } from 'Pages/About/Team/TeamCard';
 import { ProtfolioCard } from 'Pages/Home/Protfolio';
+
+// ***
+import { GetFunctions } from "API/fetch"
+import { NewsCard } from 'Pages/News/NewsCard';
+import { ResearchCard } from 'Pages/Home/Research';
 
 export const SearchResult = (props) => {
 
@@ -52,7 +57,55 @@ export const SearchResult = (props) => {
     const fuse3 = new Fuse(protfolioCombined, options3);
     const result_protfolio = fuse3.search(searchKey);
 
-    console.log(result_protfolio)
+    // -------------------------
+    // News  search
+    // -------------------------
+
+    const [loading, setLoading] = useState(false)
+    const [newsResult, setNewsResult] = useState([])
+
+    const fetchNewsData = async () => {
+        try {
+            setLoading(true)
+            const res = await GetFunctions.fetchArticles({ 
+                populate : ["image"],
+                fields : ["title", "description", "updatedAt"],
+                locale : "all",
+                _q : searchKey
+            })
+            const _data = res?.data?.data
+            console.log(_data)
+            setNewsResult(_data)
+            
+        } catch (ex) {
+            console.log(ex)
+        }
+        setLoading(false)
+    }
+
+    const options4 = {
+        keys: ['attributes.title']
+    };
+    const fuse4 = new Fuse(newsResult, options4);
+    const result_news = fuse4.search(searchKey);
+
+    useEffect(() => {
+        fetchNewsData()
+    }, [searchKey])
+
+    // console.log(result_news)
+
+    // -------------------------
+    // Fuse Protfoio search
+    // -------------------------
+    const researchEn = getConfigs?.en?.market_research || []
+    const researchhy = getConfigs?.hy?.market_research || []
+    const researchCombined = [...researchEn, ...researchhy]
+    const options5 = {
+        keys: ['title']
+    };
+    const fuse5 = new Fuse(researchCombined, options5);
+    const result_research = fuse5.search(searchKey);
     
 
 
@@ -77,6 +130,16 @@ export const SearchResult = (props) => {
                     </div>
                 </div>
                 : null}
+            {result_research.length > 0 ?
+                <div className="py-5">
+                    <div className="py-5 text-2xl text-dark-blue font-bold text-center lg:text-left">
+                        {t("Research coverage")}
+                    </div>
+                    <div className="grid grid-cols-1 xl:grid-cols-4 gap-12 mb-24">
+                        {[...result_research].map(item => <ResearchCard key={item.id} item={item?.item} />)}
+                    </div>
+                </div>
+                : null}
             {result_team.length > 0 ?
                 <div className="py-5">
                     <div className="pb-5 text-2xl text-dark-blue font-bold text-center lg:text-left">
@@ -87,10 +150,21 @@ export const SearchResult = (props) => {
                     </div>
                 </div>
                 : null}
+            {result_news.length > 0 ?
+                <div className="py-5">
+                    <div className="pb-5 text-2xl text-dark-blue font-bold text-center lg:text-left">
+                        {t("Team")}
+                    </div>
+                    <div className="grid grid-cols-1 gap-4 mb-24">
+                        
+                        {[...result_news].map(news => <NewsCard key={news?.item?.id} id={news?.item?.id} item={news?.item?.attributes} />)}
+                    </div>
+                </div>
+                : null}
             
             {(result?.length <= 0) && <div>
                 <div className="text-center text-dark-blue">
-                    No result found!
+                    {/* No result found! */}
                 </div>
             </div>}
         </div>

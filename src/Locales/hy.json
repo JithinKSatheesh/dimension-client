@@ -34,7 +34,7 @@
 
 
         "More" : "Ավելին",
-        "Close" : "Close",
+        "Close" : "Փակել",
         "Research request" : "Ստանալ հետազոտությունը ",
 
         
@@ -135,7 +135,8 @@
         "November": "Նոյեմբեր",
         "December": "Դեկտեմբեր",
         
-        "What are you interested in?" : "What are you interested in?",
+        "What are you interested in?" : "Բովանդակություն",
+        "Subject" : "Վերնագիր",
 
         "Office of the financical System Mediator" : "Ֆինանսական համակարգի հաշտարարի գրասենյակ",
         "Mediator" : "Հաշտարար",

@@ -1,82 +1,5 @@
 export const data = [
-    {
-      "title": "News",
-      "desc": "Visit news page",
-      "link" : "/news",
-      "tags": [ "Նորություններ",]
-    },
-    {
-      "title": "Նորություններ",
-      "desc": "Նորություններ",
-      "link" : "/news",
-      "tags": [ "Նորություններ"]
-    },
-    {
-      "title": "FAQ",
-      "desc": "Visit FAQ page",
-      "tags": [ "Հաճախ տրվող հարցեր"],
-      "link" : "/faq",
-    },
-    {
-      "title": "Հաճախ տրվող հարցեր",
-      "desc": "Հաճախ տրվող հարցեր",
-      "tags": [ "Հաճախ տրվող հարցեր"],
-      "link" : "/faq",
-    },
-    {
-      "title": "About us",
-      "desc": "Visit About page",
-      "tags": [ ""],
-      "link" : "/about#about",
-    },
-    {
-      "title": "Shareholders",
-      "desc": "Visit About page",
-      "tags": [ "Բաժնետերեր"],
-      "link" : "/about#ownership",
-    },
-    {
-      "title": "Team members",
-      "desc": "Visit About page",
-      "tags": [ ""],
-      "link" : "/about#team",
-    },
-    {
-      "title": "indices",
-      "desc": "Dimension Armenia AMD Bond Index and Dimension Armenia USD Corporate Bond Index",
-      "tags": [ "graph", ""],
-      "link" : "/indices",
-    },
-    {
-      "title": "Regilation documents",
-      "desc": "Capital Markets Advisory",
-      "tags": ["pdf", "Խորհրդատվություն կապիտալի շուկաներում", "Արժեթղթերի գործառնություններով պայմանավորված ծառայություններ", "Ակտիվների կառավարում"],
-      "link" : "/services/capital-market",
-    },
-    {
-      "title": "Regilation documents",
-      "desc": "Investment Securities Services",
-      "tags": ["pdf",  "Խորհրդատվություն կապիտալի շուկաներում", "Արժեթղթերի գործառնություններով պայմանավորված ծառայություններ", "Ակտիվների կառավարում"],
-      "link" : "/services/investment-security",
-    },
-    {
-      "title": "Regilation documents",
-      "desc": "Asset Management",
-      "tags": ["pdf",  "Խորհրդատվություն կապիտալի շուկաներում", "Արժեթղթերի գործառնություններով պայմանավորված ծառայություններ", "Ակտիվների կառավարում"],
-      "link" : "/services/asset-management",
-    },
-    {
-      "title": "Statuory Documents",
-      "desc": "Licence, Charter, Regilation documents",
-      "tags": ["pdf", "License", "Charter", "Regilation documents"],
-      "link" : "/about#statuory-documents",
-    },
-    {
-      "title": "Factsheets",
-      "desc": "Dimension Armenia AMD Bond Index and Dimension Armenia USD Corporate Bond Index",
-      "tags": ["pdf", "Monthly"],
-      "link" : "/indices",
-    },
+   
     // Armenian translation
     // About
     {
@@ -114,8 +37,22 @@ export const data = [
     {
       "title": "ինդեքսներ",
       "desc": "Տեղեկագիր , AMD Bond Index, USD Corporate Bond Index",
-      "tags": ["Տեղեկագիր"],
+      "tags": ["Տեղեկագիր", "Ինդեքսի նկարագիր"],
       "link" : "/indices",
+    },
+    // Market Research
+    {
+      "title": "Հետազոտություններ",
+      "desc": "Հետազոտություններ",
+      "tags": ["Հետազոտություններ"],
+      "link" : "/market-research",
+    },
+    // Client rights
+    {
+      "title": "Հաճախորդի իրավունքներ",
+      "desc": "Հաճախորդի իրավունքներ",
+      "tags": ["Հաճախորդի իրավունքներ"],
+      "link" : "/client-rights",
     },
 
     

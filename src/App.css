@@ -518,6 +518,28 @@
     background-size: auto, auto, cover, cover;
 
   }
+  .career-wrapper-1 {
+
+    background: url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png');
+    background-position: right -0px, left 500px, center;
+    background-repeat: no-repeat;
+    background-size: auto, auto, cover, cover;
+
+  }
+  .faq-wrapper-2 {
+
+    background: url('./Assets/img/bg_abs/bg_abstract_mob_1.png'), url('./Assets/img/bg_abs/bg_abstract_mob_2.png');
+    background-position: right -200px, left 500px, center;
+    background-repeat: no-repeat;
+    background-size: auto, auto, cover, cover;
+
+  }
+
+  .faq-wrapper-3 {
+    background-image: url('./Assets/img/bg_abs/bg_abstract_mob_2.png'), linear-gradient(180deg, #013651 0%, #014F77 100%);
+    background-position: left -300px, center;
+    background-repeat: no-repeat;
+  }
 
   .misc-wrapper-2 {
 

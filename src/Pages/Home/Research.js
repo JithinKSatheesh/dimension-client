@@ -103,7 +103,7 @@ export const ResearchCard = (props) => {
                 {props?.item?.title}
             </div>
             <div className=" text-center text-xs 2xl:text-xs text-dark-blue ">
-                { truncate(props?.item?.description) }
+                {(props?.item?.description) }
             </div>
             <div className="text-center py-5">
                 <GetButton 

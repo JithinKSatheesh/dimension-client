@@ -111,7 +111,7 @@ export default function Content(props) {
                                                             {t(key)}
                                                     </div>
                                                     <div className="h-1 w-full bg-dark-blue mb-16"></div>
-                                                    <div className="grid grid-cols-1 xl:grid-cols-4  gap-16 xl:gap-4 2xl:gap-16">
+                                                    <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4  gap-16 xl:gap-4 2xl:gap-16">
                                                         {[...ProtfolioList].map((item, index) =>
                                                             <ProtfolioCard key={item?.id} item={item} />)
                                                         }

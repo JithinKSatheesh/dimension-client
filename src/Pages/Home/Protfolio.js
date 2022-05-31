@@ -101,8 +101,8 @@ export const ProtfolioCard = (props) => {
                 <div className="text-center text-blue   xl:text-sm mb-3">
                     {t(props?.item?.type_of_project)}
                 </div>
-                <div className=" text-center text-xs xl:text-xs 2xl:text-xs text-dark-blue   overflow-hidden truncate-2">
-                    {truncate(props?.item?.description)}
+                <div className=" text-center text-xs xl:text-xs 2xl:text-xs text-dark-blue   overflow-hidden ">
+                    {(props?.item?.description)}
                 </div>
                 <div className="text-center py-5">
                     <a

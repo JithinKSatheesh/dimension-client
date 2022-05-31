@@ -52,7 +52,7 @@ export default function Content(props) {
                                     :
                                     <>
                                     <div className="py-16">
-                                        <div className="grid grid-cols-1 xl:grid-cols-4  gap-16 xl:gap-4 2xl:gap-16">
+                                        <div className="grid grid-cols-1 lg:grid-cols-3  xl:grid-cols-4  gap-16 xl:gap-4 2xl:gap-16">
                                             {[...data].map((item, index) =>
                                                 <ResearchCard
                                                     onClick={() => setPopup({item})}
