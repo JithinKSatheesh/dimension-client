@@ -153,7 +153,7 @@ export const SearchResult = (props) => {
             {result_news.length > 0 ?
                 <div className="py-5">
                     <div className="pb-5 text-2xl text-dark-blue font-bold text-center lg:text-left">
-                        {t("Team")}
+                        {t("News")}
                     </div>
                     <div className="grid grid-cols-1 gap-4 mb-24">
                         

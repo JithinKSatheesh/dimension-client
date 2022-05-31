@@ -19,7 +19,7 @@ export const TeamCard = (props) => {
     const _imageURL = item?.image?.url ? `${process.env.REACT_APP_API_URL}${item?.image?.url}` : '/assets/photos/profile.png'
 
     const ImageCard = ({ img_url, className }) => (
-        <div className={`h-72  bg-blue-light rounded-t-xl relative overflow-none ${className}`}>
+        <div className={`h-72  bg-blue-light rounded-t-xl relative overflow-hidden ${className}`}>
             <img src={img_url} alt="" className='mx-auto   w-full absolute bottom-0' />
         </div>)
 
@@ -39,7 +39,7 @@ export const TeamCard = (props) => {
                 {/* <div className="h-72  bg-blue-light rounded-t-xl relative overflow-none">
                 <img src={_imageURL} alt="" className='mx-auto   w-full absolute bottom-0' />
             </div> */}
-                <div className="p-7 flex flex-col justify-between xl:h-full bg-dark-blue-grad rounded-b-xl text-white bg-red-500 xl:max-h-56">
+                <div className="p-7 flex flex-col justify-between xl:h-full bg-dark-blue-grad rounded-b-xl text-white bg-red-500 xl:max-h-64">
                     <div className="text-xl xl:text-lg 2xl:text-xl font-bold pb-3">
                         {item?.full_name}
                     </div>
