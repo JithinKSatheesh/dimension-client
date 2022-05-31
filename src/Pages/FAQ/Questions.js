@@ -45,7 +45,7 @@ export default function Questions(props) {
                                                         <Accordion
                                                             id={item?.id} expanded={expanded} setExpanded={setExpanded}
                                                             className={`${expanded === item?.id ? "bg-dark-blue-grad" : 'bg-blue-light text-dark-blue'}`}
-                                                            title={item?.question}
+                                                            title={<Markdown markdown={item?.question}/>}
                                                         >
                                                             <Markdown markdown={item?.answer} />
                                                             
@@ -69,7 +69,7 @@ export default function Questions(props) {
                                                         <Accordion
                                                             id={item?.id} expanded={expanded} setExpanded={setExpanded}
                                                             className={`${expanded === item?.id ? "bg-dark-blue-grad" : 'bg-blue-light text-dark-blue'}`}
-                                                            title={item?.question}
+                                                            title={<Markdown markdown={item?.question}/>}
                                                         >
                                                             <Markdown markdown={item?.answer} />
                                                         </Accordion>
