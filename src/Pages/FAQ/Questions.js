@@ -9,6 +9,7 @@ import { ThreeDots } from 'react-loader-spinner'
 // ** Store
 import useStoreItem from 'Store/hooks/getStoreItems'
 import initStoreItem from 'Store/hooks/initStoreItems'
+import { Markdown } from 'react-showdown';
 
 
 export default function Questions(props) {
@@ -46,7 +47,8 @@ export default function Questions(props) {
                                                             className={`${expanded === item?.id ? "bg-dark-blue-grad" : 'bg-blue-light text-dark-blue'}`}
                                                             title={item?.question}
                                                         >
-                                                            {item?.answer}
+                                                            <Markdown markdown={item?.answer} />
+                                                            
                                                         </Accordion>
                                                     </SlideBottom>
                                                 </div>
@@ -69,7 +71,7 @@ export default function Questions(props) {
                                                             className={`${expanded === item?.id ? "bg-dark-blue-grad" : 'bg-blue-light text-dark-blue'}`}
                                                             title={item?.question}
                                                         >
-                                                            {item?.answer}
+                                                            <Markdown markdown={item?.answer} />
                                                         </Accordion>
                                                     </SlideBottom>
                                                 </div>

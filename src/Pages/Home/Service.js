@@ -33,7 +33,7 @@ export default function Service(props) {
                 <div className=" pb-10 text-sm xl:text-xs 2xl:text-sm 3xl:text-base xl:leading-5 2xl:leading-5 text-dark-blue">
                     { props?.descritpion}
                 </div>
-                <DetailsButton to={props?.to}> {t("Details")} </DetailsButton>
+                <DetailsButton to={props?.to} className="sm:max-w-sm"> {t("Details")} </DetailsButton>
 
             </div>
         )

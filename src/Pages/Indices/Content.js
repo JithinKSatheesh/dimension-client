@@ -40,7 +40,7 @@ export default function Container(props) {
             return (
                 <div
                     className={`
-                        text-base px-5 w-fit lg:w-72 cursor-pointer py-3 
+                        text-xs lg:text-base px-5 w-fit lg:w-72 cursor-pointer py-3 
                         ${tab === props?.id ? 'bg-dark-blue-grad text-white ' : ''} 
                         text-center
                         `}

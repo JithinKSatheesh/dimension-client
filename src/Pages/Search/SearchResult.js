@@ -67,16 +67,6 @@ export const SearchResult = (props) => {
                 {[...result].map(item => <SearchCard item={item?.item} />)}
 
             </div>
-            {result_team.length > 0 ?
-                <div className="py-5">
-                    <div className="pb-5 text-2xl text-dark-blue font-bold text-center lg:text-left">
-                        {t("Team")}
-                    </div>
-                    <div className="grid grid-cols-1 xl:grid-cols-4 gap-12 mb-24">
-                        {[...result_team].map(person => <TeamCard key={person.id} item={person?.item} />)}
-                    </div>
-                </div>
-                : null}
             {result_protfolio.length > 0 ?
                 <div className="py-5">
                     <div className="py-5 text-2xl text-dark-blue font-bold text-center lg:text-left">
@@ -87,6 +77,17 @@ export const SearchResult = (props) => {
                     </div>
                 </div>
                 : null}
+            {result_team.length > 0 ?
+                <div className="py-5">
+                    <div className="pb-5 text-2xl text-dark-blue font-bold text-center lg:text-left">
+                        {t("Team")}
+                    </div>
+                    <div className="grid grid-cols-1 xl:grid-cols-4 gap-12 mb-24">
+                        {[...result_team].map(person => <TeamCard key={person.id} item={person?.item} />)}
+                    </div>
+                </div>
+                : null}
+            
             {(result?.length <= 0) && <div>
                 <div className="text-center text-dark-blue">
                     No result found!

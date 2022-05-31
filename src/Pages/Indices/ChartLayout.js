@@ -64,16 +64,16 @@ export const ChartLayout = (props) => {
         <div className="flex flex-wrap">
             <div className="w-full flex flex-wrap justify-between">
                 <div className="flex">
-                    <div className='mb-16 mr-32'>
-                        <div className="text-sm py-5">
+                    <div className='h-20  flex flex-col  justify-between mb-16 mr-8 lg:mr-32'>
+                        <div className="text-sm ">
                             {index_current_date}
                         </div>
                         <div className="text-4xl text-blue font-bold">
                             {index_current_value}
                         </div>
                     </div>
-                    <div>
-                        <div className="text-sm py-5">
+                    <div className='h-20   flex flex-col justify-between'>
+                        <div className="text-sm ">
                             {t("Since Inception Total Return")}
                         </div>
                         <div className="text-4xl text-blue font-bold">
@@ -82,7 +82,7 @@ export const ChartLayout = (props) => {
                     </div>
                 </div>
                 <div>
-                    <div className='flex cursor-pointer mt-5'>
+                    <div className='flex cursor-pointer'>
                         <SmallButton
                             onClick={() => setShowfullData(true)}
                             label={t("All")} 

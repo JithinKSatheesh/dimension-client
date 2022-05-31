@@ -14,14 +14,14 @@ export const FilterTab = (props) => {
                 className={`
                     py-3 text-center   
                     cursor-pointer 
-                    text-base xl:text-sm 2xl:text-lg
+                    text-[9px] xl:text-sm 2xl:text-lg
                     ${active === item.value ? 'bg-dark-blue-grad border-color-blue-grad  text-white' : 'text-dark-blue'} 
                     ${index === 0 && 'rounded-l-xl  border-color-blue-grad  border-r-2'}
                     ${index === filters.length - 1 && 'rounded-r-xl border-color-blue-grad  border-l-2'}
                     `}
                 onClick={() => changeActive(item.value)}
             >
-               <div className='w-16 xl:w-fit mx-auto  text-center'>{t(item.label)}</div> 
+               <div className=' w-16 xl:w-fit mx-auto  text-center'>{t(item.label)}</div> 
             </div>
             )}
         </div>

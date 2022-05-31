@@ -41,7 +41,7 @@ export default function Protfolio(props) {
         <>
             <div className=" hero-wrapper-6">
                 <div className="container py-32 mx-auto ">
-                    <div className="flex justify-between items-center items-center pb-24 ">
+                    <div className="flex flex-wrap justify-between items-center items-center pb-24 ">
                         <div className="text-3xl xl:text-xl 2xl:text-2xl  3xl:text-3xl   font-semibold text-blue">
                             {homePage?.protfolio_title}
                         </div>
@@ -98,7 +98,7 @@ export const ProtfolioCard = (props) => {
                 <div className="py-5 text-center font-semibold text-xl xl:text-lg text-dark-blue">
                     {props?.item?.title}
                 </div>
-                <div className="text-center text-blue  xl:h-10 xl:text-sm mb-3">
+                <div className="text-center text-blue   xl:text-sm mb-3">
                     {t(props?.item?.type_of_project)}
                 </div>
                 <div className=" text-center text-xs xl:text-xs 2xl:text-xs text-dark-blue   overflow-hidden truncate-2">
@@ -109,7 +109,7 @@ export const ProtfolioCard = (props) => {
                         target="_blank"
                         href={props?.item?.link}>
                         <div
-                            className='text-xs btn w-full bg-dark-blue-grad py-3 text-center rounded-xl text-white font-semibold'
+                            className='text-xs btn  w-full mx-auto sm:max-w-sm bg-dark-blue-grad py-3 text-center rounded-xl text-white font-semibold'
                         >
                             {t("Read more")}
                         </div>

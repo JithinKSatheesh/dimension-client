@@ -62,7 +62,7 @@ export default function Content(props) {
                             </JustAppear>
                         </div>
                         {data?.length <= 0 ?
-                            <div className='flex justify-center py-16 text-dark-blue'> Nothing to display  </div>
+                            <div className='flex justify-center py-16 text-dark-blue'> ...  </div>
                             :
                             <>
 

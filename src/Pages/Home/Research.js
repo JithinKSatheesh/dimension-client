@@ -40,7 +40,7 @@ export default function Research(props) {
         <>
             <div className=" hero-wrapper-8">
                 <div className="container py-32 mx-auto  ">
-                    <div className="flex justify-between items-center pb-24 ">
+                    <div className="flex flex-wrap justify-between items-center pb-24 ">
                         <div className="text-3xl  xl:text-xl 2xl:text-2xl  3xl:text-3xl   font-semibold text-white">
                             {homePage?.market_research_title}
                         </div>
@@ -109,7 +109,7 @@ export const ResearchCard = (props) => {
                 <GetButton 
                     to={props?.to}  
                     onClick={props?.onClick}
-                    className="w-full xl:text-xs 3xl:text-xs mx-auto py-2 bg-dark-blue-grad-hover cursor-pointer">  {t("Get it")} </GetButton>
+                    className="w-full xl:text-xs 3xl:text-xs sm:max-w-sm mx-auto py-2 bg-dark-blue-grad-hover cursor-pointer">  {t("Get it")} </GetButton>
             </div>
         </div>
     )
