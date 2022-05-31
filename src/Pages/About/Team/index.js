@@ -38,7 +38,7 @@ export default function Team(props) {
         {
             id: 1,
             value: 'board_member',
-            label: "Board member"
+            label: "Board of directors"
         },
         {
             id: 2,
