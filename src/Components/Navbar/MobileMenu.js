@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation, Trans } from 'react-i18next';
 
+// ** Store
+import useStoreItem from 'Store/hooks/getStoreItems'
+
 // import { MenuContent } from './ServiceDropdown'
 // import { RenderMenuLinks } from './AboutDropdown';
 import { ServiceRenderMenuList } from './ServiceDropdown';
@@ -25,6 +28,16 @@ export const MobileMenu = (props) => {
 
     const {t} = useTranslation()
     const { open, setOpen } = props
+
+    const {  getConfigs } = useStoreItem()
+    const footerData = getConfigs?.configs?.footer
+
+    const AddressData = {
+        time: footerData?.contact_time,
+        phone:footerData?.contact_phone,
+        email: footerData?.contact_email,
+        address: footerData?.contact_address
+    };
 
     const IconClose = () => <svg fill='currentColor' width="24" height="24" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" /></svg>;
 
