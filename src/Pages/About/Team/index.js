@@ -43,7 +43,7 @@ export default function Team(props) {
         {
             id: 2,
             value: 'advisory_group',
-            label: "Advisory group"
+            label: "Global Advisory Group"
         },
         {
             id: 3,

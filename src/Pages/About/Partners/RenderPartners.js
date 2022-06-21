@@ -41,7 +41,7 @@ export const RenderPartnerExpanded = (props) => {
             <div className="p-8 rounded-xl bg-blue-light text-blue  hover-border-outline border-2 max-w-xl h-full  w-full">
                 <ImageSection _image={_image} />
                 <DescriptionSection item={item} />
-                <AddressSection item={item} onClick={onClick} btnLabel={<>&nbsp;{t("Close")}&nbsp;</>}  />
+                <AddressSection item={item} onClick={onClick} showLink={true} btnLabel={<>&nbsp;{t("Close")}&nbsp;</>}  />
             </div>
         </SlideBottom>
     );
@@ -56,12 +56,23 @@ const ImageSection = ({ _image }) => {
     )
 }
 
-const AddressSection = ({ item, onClick, btnLabel }) => {
+const AddressSection = ({ item, onClick, btnLabel, showLink = false }) => {
     return (
         <div className="flex justify-between items-center mt-10">
-            <div className="text-sm xl:text-xs 3xl:text-sm flex items-center">
-                <IconLocation className='mr-4' />
-                {item?.address}
+            <div className="text-sm xl:text-xs 3xl:text-sm ">
+                {(item?.website && showLink) ? 
+                <div className='flex items-center mb-2'>
+                    {/* <IconLocation  /> */}
+                    <svg  fill='currentColor' className='mr-4' width="18" height="18" viewBox="0 0 24 24"><path d="M17.033 6.966c.584.583.584 1.529 0 2.112l-7.955 7.956c-.583.583-1.529.583-2.112 0-.583-.583-.583-1.529 0-2.112l7.956-7.956c.582-.583 1.528-.583 2.111 0zm-9.138 13.386c-1.171 1.171-3.076 1.171-4.248 0-1.171-1.171-1.171-3.077 0-4.248l5.639-5.632c-1.892-.459-3.971.05-5.449 1.528l-2.147 2.147c-2.254 2.254-2.254 5.909 0 8.163 2.254 2.254 5.909 2.254 8.163 0l2.147-2.148c1.477-1.477 1.986-3.556 1.527-5.448l-5.632 5.638zm6.251-18.662l-2.146 2.148c-1.478 1.478-1.99 3.553-1.53 5.445l5.634-5.635c1.172-1.171 3.077-1.171 4.248 0 1.172 1.171 1.172 3.077 0 4.248l-5.635 5.635c1.893.459 3.968-.053 5.445-1.53l2.146-2.147c2.254-2.254 2.254-5.908 0-8.163-2.253-2.254-5.908-2.254-8.162-.001z"/></svg>
+                   <a target="_blank" href={item?.website}>
+                    {item?.website}
+                   </a>
+                </div>
+                : null}
+                <div className='flex items-center'>
+                    <IconLocation className='mr-4' />
+                    {item?.address}
+                </div>
             </div>
             {/* {item?.website} */}
             {/* <a href={item?.website} target="_blank"> */}

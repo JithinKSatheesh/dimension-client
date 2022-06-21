@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 export const FilterTab = (props) => {
 
@@ -9,7 +9,8 @@ export const FilterTab = (props) => {
 
     return (
         <div className="grid grid-cols-3 gap-0 border-color-blue-grad border rounded-2xl">
-            {filters.map((item, index) => <div
+            {filters.map((item, index) => 
+            <div
                 key={item.id}
                 className={`
                     py-3 text-center   
@@ -21,7 +22,7 @@ export const FilterTab = (props) => {
                     `}
                 onClick={() => changeActive(item.value)}
             >
-               <div className=' w-16 xl:w-fit mx-auto  text-center'>{t(item.label)}</div> 
+               <div className=' w-16 xl:w-fit mx-auto  text-center'> <Trans i18nKey={item.label}>{(item.label)}</Trans></div> 
             </div>
             )}
         </div>
