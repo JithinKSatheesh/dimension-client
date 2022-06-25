@@ -74,23 +74,31 @@ export const TeamCard = (props) => {
                     </div>
                     {/* {console.log(item)} */}
                     {
-                        item?.type_of_qualification  &&
+                        (item?.type_of_qualification ||  item?.qualification_details ) &&
                         <>
                             <div className="py-4">
                                 <div className="w-72 rounded-xl bg-blue-light text-dark-blue p-3">
-                                    <div className=" text-sm font-bold pb-2">
-                                        {t("Type of Qualification")}
-                                    </div>
-                                    <div className="text-xs pb-2">
-                                        <Markdown markdown={item?.type_of_qualification} />
+                                    {item?.type_of_qualification && <>
+                                        <div className=" text-sm font-bold pb-2">
+                                            {t("Type of Qualification")}
+                                        </div>
+                                        <div className="text-xs pb-2">
+                                            <Markdown markdown={item?.type_of_qualification} />
 
-                                    </div>
-                                    <div className=" text-sm font-bold ">
-                                        {t("Qualification details")}
-                                    </div>
-                                    <div className="text-xs pb-2">
-                                        <Markdown markdown={item?.qualification_details} />
-                                    </div>
+                                        </div>
+                                    </>
+                                    }
+                                    {
+                                        item?.qualification_details && <>
+                                            <div className=" text-sm font-bold ">
+                                                {t("Qualification details")}
+                                            </div>
+                                            <div className="text-xs pb-2">
+                                                <Markdown markdown={item?.qualification_details} />
+                                            </div>
+                                        </>
+                                    }
+                                   
                                 </div>
                             </div>
 
