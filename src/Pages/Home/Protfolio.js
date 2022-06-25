@@ -104,6 +104,7 @@ export const ProtfolioCard = (props) => {
                 <div className=" text-center text-xs xl:text-xs 2xl:text-xs text-dark-blue   overflow-hidden ">
                     {(props?.item?.description)}
                 </div>
+                {props?.item?.link ?
                 <div className="text-center py-5">
                     <a
                         target="_blank"
@@ -116,6 +117,9 @@ export const ProtfolioCard = (props) => {
                     </a>
                     {/* <DetailsButton to=""> Read&nbsp;more </DetailsButton> */}
                 </div>
+                : null
+                }
+
             </div>
         </SlideBottom>
 

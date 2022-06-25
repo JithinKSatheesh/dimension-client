@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ReactComponent as IconFB } from 'Assets/icons/facebook_small.svg';
 import { ReactComponent as IconTwitter } from 'Assets/icons/twitter_small.svg';
 import { ReactComponent as IconLinkedin } from 'Assets/icons/linkedin_small.svg';
+import {useTranslation} from 'react-i18next'
 
 import { SlideLeft, SlideRight, JustAppear, SlideBottom, SlideTop } from 'Components/SlideAnimation'
 
@@ -12,6 +13,7 @@ import { Markdown } from 'react-showdown';
 export const TeamCard = (props) => {
 
     const { item } = props;
+    const {t} = useTranslation();
 
     const [popup, setPopup] = useState(false)
 
@@ -72,19 +74,19 @@ export const TeamCard = (props) => {
                     </div>
                     {/* {console.log(item)} */}
                     {
-                        item?.type_of_qualification &&
+                        item?.type_of_qualification  &&
                         <>
                             <div className="py-4">
                                 <div className="w-72 rounded-xl bg-blue-light text-dark-blue p-3">
                                     <div className=" text-sm font-bold pb-2">
-                                        Type of Qualification
+                                        {t("Type of Qualification")}
                                     </div>
                                     <div className="text-xs pb-2">
                                         <Markdown markdown={item?.type_of_qualification} />
 
                                     </div>
                                     <div className=" text-sm font-bold ">
-                                        Qualification details
+                                        {t("Qualification details")}
                                     </div>
                                     <div className="text-xs pb-2">
                                         <Markdown markdown={item?.qualification_details} />
