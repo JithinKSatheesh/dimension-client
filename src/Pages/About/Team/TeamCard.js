@@ -79,16 +79,17 @@ export const TeamCard = (props) => {
                             <div className="py-4">
                                 <div className="w-72 rounded-xl bg-blue-light text-dark-blue p-3">
                                     {item?.type_of_qualification && <>
-                                        <div className=" text-sm font-bold pb-2">
+                                        {/* <div className=" text-sm font-bold pb-2">
                                             {t("Type of Qualification")}
-                                        </div>
+                                            {t("Qualification details")}
+                                        </div> */}
                                         <div className="text-xs pb-2">
                                             <Markdown markdown={item?.type_of_qualification} />
 
                                         </div>
                                     </>
                                     }
-                                    {
+                                    {/* {
                                         item?.qualification_details && <>
                                             <div className=" text-sm font-bold ">
                                                 {t("Qualification details")}
@@ -97,7 +98,7 @@ export const TeamCard = (props) => {
                                                 <Markdown markdown={item?.qualification_details} />
                                             </div>
                                         </>
-                                    }
+                                    } */}
                                    
                                 </div>
                             </div>
