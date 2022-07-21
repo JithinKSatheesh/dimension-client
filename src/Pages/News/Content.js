@@ -45,7 +45,8 @@ export default function Content(props) {
         try {
             setLoading(true)
             const res = await GetFunctions.fetchArticles({ 
-                sort :  filter === 'Recent' ?  ["publishedAt"] :  ["publishedAt:desc"] ,
+                // sort :  filter === 'Recent' ?  ["publishedAt"] :  ["publishedAt:desc"] ,
+                sort :  ["id:desc"] ,
                 populate : ["image"], 
                 fields : ["title", "description", "updatedAt"],
                 locale : lang,
