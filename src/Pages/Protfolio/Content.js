@@ -29,7 +29,7 @@ export default function Content(props) {
     
     const _date = data?.[0]?.updatedAt
 
-    const _filters = ["All","Equity Placement", "Bond Placement", "Market Making", "IPO & Listing Advisory", "M&A Advisory"]
+    const _filters = ["All","Bond Placement", "Market Making", "Research & Analyses" , "Equity Placement", "IPO & Listing Advisory", "M&A Advisory"]
 
     const [currentFilter, setCurrentFilter] = useState('All')
 
@@ -48,7 +48,14 @@ export default function Content(props) {
         return _a
     }
 
-    const mappeddData = filteredDataAsObject(data)
+    const sortFunc = (a, b) => {
+        var sortingArr = [..._filters];
+        return sortingArr.indexOf(a.type_of_project) - sortingArr.indexOf(b.type_of_project);
+    }
+    
+    const filteredMappedData = data.sort(sortFunc)
+
+    const mappeddData = filteredDataAsObject(filteredMappedData)
 
     const getFilteredMappedData = () => {
         if (currentFilter === 'All') {
