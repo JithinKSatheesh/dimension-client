@@ -22,8 +22,11 @@ export const NewsCard = (props) => {
         <SlideBottom>
 
         <div className="mb-20">
-            <div className="flex flex-wrap bg-blue-light rounded-xl">
-                <div className="w-full xl:w-1/3">
+            <div className="flex flex-wrap md:flex-nowrap justify-center  bg-blue-light rounded-xl min-h-[300px]">
+                <div  className="w-full md:w-[450px]  ">
+                    <div className="lg:hidden rounded-2xl overflow-hidden text-center p-8 sm:p-4">
+                        <img src={_imageURL} alt="" className='w-full md:w-[450px]  rounded-xl' />
+                    </div>
                     <div
                         style={{
                             background: `radial-gradient(527.72% 147.43% at 14.08% -13.43%, rgba(0, 97, 145, 0.5) 34.9%, rgba(0, 97, 146, 0) 98.96%), url(${_imageURL})`,
@@ -31,26 +34,26 @@ export const NewsCard = (props) => {
                             backgroundRepeat : 'no-repeat',
                             backgroundPosition: 'center'
                         }}
-                        className="w-full h-72 xl:h-full  overflow-hidden rounded-t-xl  xl:rounded-l-xl xl:rounded-tr-none  bg-center">
-                        {/* <img src={item?.img} alt="" className='h-full mx-auto xl:ml-0' /> */}
+                        className="hidden lg:block w-full md:h-full md:w-[450px]    overflow-hidden rounded-t-xl  xl:rounded-l-xl xl:rounded-tr-none  bg-center">
+                        
                     </div>
                 </div>
-                <div className="w-full xl:w-2/3">
+                <div className="">
                     <div className='p-7 text-dark-blue'>
                         <div className="text-sm pb-5 font-bold">
                             {item?.date}
                         </div>
-                        <div className="text-2xl xl:text-2xl 2xl:text-3xl pb-5 font-bold">
+                        <div className="text-xl xl:text-xl 2xl:text-xl pb-5 font-bold">
                             {item?.title}
                         </div>
-                        <p className='h-40 xl:h-32 overflow-hidden  text-ellipsis text-sm 2xl:text-sm 3xl:text-base'>
+                        <p className='h-40  overflow-hidden  text-ellipsis text-sm 2xl:text-sm 3xl:text-base'>
                                 {truncate(item?.description, 150)}
                                 {/* <MarkdownView
                                     markdown={item?.description}
                                     options={{ tables: false, emoji: true }}
                                 /> */}
                         </p>
-                        <div className=" text-left xl:text-right text-sm 2xl:text-sm 3xl:text-base">
+                        <div className=" text-left sm:text-right text-xs 2xl:text-xs 3xl:text-base">
                             <DetailsButton to={`/news/${id}`}> {t("Read more")} </DetailsButton>
                         </div>
                     </div>

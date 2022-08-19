@@ -26,7 +26,7 @@ export default function News(props) {
 
     const homePage = getConfigs?.configs?.home_page
     const _data = getConfigs?.configs?.home_page?.news ?? []
-    const data = _data?.slice(0, 4)
+    const data = _data?.slice(0, 6)
     // const _date = getConfigs?.configs?.home_page?.news?.[0]?.updatedAt
 
     // useEffect(() => initArticles(), [])
@@ -56,9 +56,11 @@ export default function News(props) {
                     <div className='flex justify-center '> <ThreeDots color='white' />  </div>
                     :
                     <>
-                    <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 2xl:gap-16 ">
+                    {/* <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 2xl:gap-16 "> */}
+                    <div className="flex flex-wrap ">
                         {[...data].map((item, index) => (
-                            <div key={item?.id} className={`  ${(index === 0 || index === 3) && 'col-span-1 xl:col-span-2'}`}>
+                            // <div key={item?.id} className={`  ${(index === 0 || index === 3) && 'col-span-1 xl:col-span-2'}`}>
+                            <div key={item?.id} className={` w-full sm:w-1/2 lg:w-1/3 p-4 `}>
                                 <Link to={`/news/${item?.id}#newstop`}>
                                     <NewsCard item={item} index={index} />
                                 </Link>
@@ -87,18 +89,18 @@ export const NewsCard = (props) => {
             backgroundImage : `url(${_imageURL})`,
             backgroundSize : 'cover',
         }} 
-        className="relative h-80 xl:h-56 2xl:h-80 rounded-xl" >
+        className="relative h-[300px] md:h-[250px]  xl:h-[280px] 2xl:h-[300px] rounded-xl" >
          <div className="absolute w-full h-full news-img-overlay ">
              <div className="flex h-full items-end">
                  <div className='p-7 text-white'>
                     <div className="text-sm py-2.5 font-bold">
                         {formatDate(props.item?.publishedAt)}
                     </div>
-                    <div className="text-2xl xl:text-xl  font-bold ">
+                    <div className="text-sm text-lg lg::text-2xl xl:text-xl  font-bold ">
                         {truncate(props.item?.title, 50)}
                     </div>
                     <div className="py-2 xl:text-sm flex items-center font-bold">
-                        <Link to="/" > {t("Read more")} </Link>
+                        <Link to={`/news/${props?.item?.id}#newstop`} > {t("Read more")} </Link>
                         <div className="ml-4">
                             <IconRightArrow  />
                         </div>
